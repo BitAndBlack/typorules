@@ -124,6 +124,7 @@ The currently existing rule sets are:
 
 -   [`EnglishRuleSet`](./src/RuleSet/EnglishRuleSet.php)
 -   [`GermanRuleSet`](./src/RuleSet/GermanRuleSet.php)
+-   [`AdvancedTypographyRuleSet`](./src/RuleSet/AdvancedTypographyRuleSet.php)
 
 You can use custom rule sets by implementing the [`RuleSetInterface`](./src/RuleSet/RuleSetInterface.php).
 

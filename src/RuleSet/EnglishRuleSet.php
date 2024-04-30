@@ -17,11 +17,10 @@ use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenNumberAndUnitRule;
 use BitAndBlack\TypoRules\Rule\AddSpaceBehindDotRule;
 use BitAndBlack\TypoRules\Rule\AddSpaceBehindExclamationMarkRule;
 use BitAndBlack\TypoRules\Rule\AddSpaceBehindQuestionMarkRule;
-use BitAndBlack\TypoRules\Rule\AddSpaceBetweenBracketsRule;
 use BitAndBlack\TypoRules\Rule\BindNumberToNumberRule;
-use BitAndBlack\TypoRules\Rule\BindWordAfterColonRule;
 use BitAndBlack\TypoRules\Rule\ConvertCharactersToAtCharRule;
 use BitAndBlack\TypoRules\Rule\ConvertCharactersToCopyrightCharRule;
+use BitAndBlack\TypoRules\Rule\ConvertCharactersToRegisteredCharRule;
 use BitAndBlack\TypoRules\Rule\ConvertCharactersToTrademarkCharRule;
 use BitAndBlack\TypoRules\Rule\ConvertDashToEmDashRule;
 use BitAndBlack\TypoRules\Rule\ConvertDotsToEllipsisRule;
@@ -43,12 +42,10 @@ class EnglishRuleSet extends AbstractRuleSet implements RuleSetInterface
             new AddSpaceBehindDotRule(),
             new AddSpaceBehindExclamationMarkRule(),
             new AddSpaceBehindQuestionMarkRule(),
-            new AddSpaceBetweenBracketsRule(),
             new BindNumberToNumberRule(),
-            new BindWordAfterColonRule(),
             new ConvertCharactersToAtCharRule(),
             new ConvertCharactersToCopyrightCharRule(),
-            new ConvertCharactersToTrademarkCharRule(),
+            new ConvertCharactersToRegisteredCharRule(),
             new ConvertCharactersToTrademarkCharRule(),
             new ConvertDashToEmDashRule(),
             new ConvertDotsToEllipsisRule(),
