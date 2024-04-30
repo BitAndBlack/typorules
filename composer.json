@@ -1,0 +1,55 @@
+{
+    "name": "bitandblack/typorules",
+    "description": "Typographic improvements for professional-looking and easy-to-read texts.",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Tobias Köngeter",
+            "email": "hello@bitandblack.com",
+            "homepage": "https://www.bitandblack.com"
+        }
+    ],
+    "homepage": "https://www.bitandblack.com",
+    "funding": [
+        {
+            "type": "buymeacoffee",
+            "url": "https://www.buymeacoffee.com/tobiaskoengeter"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "bitandblack/composer-helper": "^1.0",
+        "bitandblack/helpers": "^1.0 || ^2.0"
+    },
+    "require-dev": {
+        "org_heigl/hyphenator": "^3.0",
+        "phpstan/phpstan": "^1.0",
+        "phpunit/phpunit": "^11.0",
+        "rector/rector": "^1.0",
+        "symplify/easy-coding-standard": "^12.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "BitAndBlack\\TypoRules\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "BitAndBlack\\TypoRules\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {
+        "phpstan": "php vendor/bin/phpstan analyse --configuration ./phpstan.neon --memory-limit=-1 --ansi",
+        "phpunit": "php vendor/bin/phpunit --configuration ./phpunit.xml --colors=always",
+        "refactor": "php vendor/bin/rector && php vendor/bin/ecs --fix"
+    },
+    "scripts-descriptions": {
+        "phpstan": "Runs PHPStan over the src folder and the tests folder.",
+        "phpunit": "Runs PHPUnit.",
+        "refactor": "Runs tools to refactor the code."
+    }
+}
