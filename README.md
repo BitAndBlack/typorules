@@ -146,7 +146,7 @@ However, in some cases, you probably want to create an exact diff view. This can
 $content = 'Content before';
 $contentFixed = 'Content, that has been fixed';
 
-$diff = CharacterDiff::create()->getDiff($content, $contentFixed)
+$diff = CharacterDiff::create()->getDiff($content, $contentFixed);
 ```
 
 The [`CharacterDiff`](./src/Diff/CharacterDiff.php) class can be initialized with the [`CliOutput`](./src/Diff/Output/CliOutput.php) or the [`HtmlOutput`](./src/Diff/Output/HtmlOutput.php) class, and will decide the output format by itself if you don't set up one of those.
