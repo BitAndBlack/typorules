@@ -18,9 +18,15 @@ use BitAndBlack\TypoRules\CharactersEnum;
  */
 class AddSoftHyphenBetweenDashSeparatedWordsRule extends AbstractRule implements RuleInterface
 {
-    protected int $minLengthWordBefore = 3;
+    protected int $minLengthWordBefore;
 
-    protected int $minLengthWordAfter = 3;
+    protected int $minLengthWordAfter;
+
+    public function __construct()
+    {
+        $this->minLengthWordBefore = 3;
+        $this->minLengthWordAfter = 3;
+    }
 
     public static function create(): self
     {
