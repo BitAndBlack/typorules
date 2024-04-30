@@ -36,9 +36,11 @@ abstract class AbstractRuleSet implements RuleSetInterface
     {
         $violations = [];
 
-        foreach ($this->getRuleSet() as $ruleClassString) {
-            $rule = new $ruleClassString();
-            array_push($violations, ...$rule->getViolations($content));
+        foreach ($this->getRuleSet() as $rule) {
+            array_push(
+                $violations,
+                ...$rule->getViolations($content)
+            );
         }
 
         return $violations;
@@ -50,8 +52,7 @@ abstract class AbstractRuleSet implements RuleSetInterface
      */
     public function getContentFixed(string $content): string
     {
-        foreach ($this->getRuleSet() as $ruleClassString) {
-            $rule = new $ruleClassString($content);
+        foreach ($this->getRuleSet() as $rule) {
             $content = $rule->getContentFixed($content);
         }
 
