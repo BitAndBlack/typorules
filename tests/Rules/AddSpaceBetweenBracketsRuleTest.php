@@ -26,7 +26,7 @@ class AddSpaceBetweenBracketsRuleTest extends AbstractRuleTestClass
     {
         yield [
             'a) Es geht los (warum auch immer)! Was(es)wir es?',
-            'a' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . ') Es geht los (' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . 'warum auch immer' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . ')! Was(' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . 'es' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . ')wir es?',
+            'a' . CharactersEnum::HAIR_SPACE->value . ') Es geht los (' . CharactersEnum::HAIR_SPACE->value . 'warum auch immer' . CharactersEnum::HAIR_SPACE->value . ')! Was(' . CharactersEnum::HAIR_SPACE->value . 'es' . CharactersEnum::HAIR_SPACE->value . ')wir es?',
             'a) Es geht los (warum au...',
         ];
     }
