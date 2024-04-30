@@ -16,7 +16,26 @@ namespace BitAndBlack\TypoRules\Rule;
  */
 class RemoveUnnecessaryExclamationMarksRule extends AbstractRule implements RuleInterface
 {
-    protected string $searchPattern = '/\!{3,}/';
+    private int $maxCountExclamationMark;
 
-    protected string $replacePattern = '!!';
+    public function __construct()
+    {
+        $this->maxCountExclamationMark = 2;
+    }
+
+    public function getSearchPattern(): string
+    {
+        return '/\!{' . ($this->maxCountExclamationMark + 1) . ',}/';
+    }
+
+    public function getReplacePattern(): string
+    {
+        return str_repeat('!', $this->maxCountExclamationMark);
+    }
+
+    public function setMaxCountExclamationMark(int $maxCountExclamationMark): self
+    {
+        $this->maxCountExclamationMark = $maxCountExclamationMark;
+        return $this;
+    }
 }

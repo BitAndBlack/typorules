@@ -16,7 +16,26 @@ namespace BitAndBlack\TypoRules\Rule;
  */
 class RemoveUnnecessaryQuestionMarksRule extends AbstractRule implements RuleInterface
 {
-    protected string $searchPattern = '/\?{3,}/';
+    private int $maxCountQuestionMark;
 
-    protected string $replacePattern = '??';
+    public function __construct()
+    {
+        $this->maxCountQuestionMark = 2;
+    }
+
+    public function getSearchPattern(): string
+    {
+        return '/\?{' . ($this->maxCountQuestionMark + 1) . ',}/';
+    }
+
+    public function getReplacePattern(): string
+    {
+        return str_repeat('?', $this->maxCountQuestionMark);
+    }
+
+    public function setMaxCountQuestionMark(int $maxCountQuestionMark): self
+    {
+        $this->maxCountQuestionMark = $maxCountQuestionMark;
+        return $this;
+    }
 }
