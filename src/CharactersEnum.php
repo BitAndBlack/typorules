@@ -39,6 +39,11 @@ enum CharactersEnum: string
     case ELLIPSIS = '…';
 
     /**
+     * &#8202;
+     */
+    case HAIR_SPACE = "\xE2\x80\x8A";
+
+    /**
      * &laquo;
     */
     case LAQUO = '«';
