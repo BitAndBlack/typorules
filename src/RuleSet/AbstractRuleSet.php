@@ -24,12 +24,19 @@ abstract class AbstractRuleSet implements RuleSetInterface
      */
     protected array $ruleset = [];
 
+    /**
+     * Returns a list of all rules in this rule set.
+     *
+     * @return array<int, RuleInterface>
+     */
     public function getRuleSet(): array
     {
         return $this->ruleset;
     }
 
     /**
+     * Returns a list of all violations in the given input.
+     *
      * @return array<int, Violation>
      */
     public function getViolations(string $content): array
@@ -47,6 +54,8 @@ abstract class AbstractRuleSet implements RuleSetInterface
     }
 
     /**
+     * Returns the fixed content.
+     *
      * @param string $content
      * @return string
      */

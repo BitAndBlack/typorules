@@ -20,6 +20,8 @@ abstract class AbstractRule implements RuleInterface
     protected string $replacePattern;
 
     /**
+     * Returns a list of all violations in the given input.
+     *
      * @return array<int, Violation>
      */
     public function getViolations(string $content): array
@@ -46,6 +48,8 @@ abstract class AbstractRule implements RuleInterface
     }
 
     /**
+     * Returns the search pattern for this rule.
+     *
      * @return string
      */
     public function getSearchPattern(): string
@@ -54,6 +58,8 @@ abstract class AbstractRule implements RuleInterface
     }
 
     /**
+     * Returns the replacement pattern for this rule.
+     *
      * @return string
      */
     public function getReplacePattern(): string
@@ -62,6 +68,8 @@ abstract class AbstractRule implements RuleInterface
     }
 
     /**
+     * Returns the fixed input content.
+     *
      * @return string
      */
     public function getContentFixed(string $content): string

@@ -18,7 +18,7 @@ interface RuleInterface
     /**
      * Returns a list of all violations in the given input.
      *
-     * @return Violation[]
+     * @return array<int, Violation>
      */
     public function getViolations(string $content): array;
 
