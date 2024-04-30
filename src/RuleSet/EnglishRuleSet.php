@@ -57,4 +57,9 @@ class EnglishRuleSet extends AbstractRuleSet implements RuleSetInterface
             new RemoveUnnecessaryQuestionMarksRule(),
         );
     }
+
+    public static function create(): self
+    {
+        return new self();
+    }
 }

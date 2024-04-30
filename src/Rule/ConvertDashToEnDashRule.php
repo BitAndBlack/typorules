@@ -21,6 +21,10 @@ class ConvertDashToEnDashRule extends AbstractRule implements RuleInterface
     protected string $searchPattern = '/\s\-\s/';
 
     protected string $replacePattern = ' {endash} ';
+    public static function create(): self
+    {
+        return new self();
+    }
 
     public function getReplacePattern(): string
     {

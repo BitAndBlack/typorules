@@ -53,6 +53,11 @@ class AddSoftHyphenToWordRule extends AbstractRule implements RuleInterface
         $this->minWordCharacterCount = $this->minCharacterCountBefore + $this->minCharacterCountAfter;
     }
 
+    public static function create(): self
+    {
+        return new self();
+    }
+
     public function setLanguageCode(?string $languageCode): self
     {
         $this->languageCode = $languageCode;

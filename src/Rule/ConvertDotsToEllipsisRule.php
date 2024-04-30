@@ -18,6 +18,11 @@ use BitAndBlack\TypoRules\CharactersEnum;
  */
 class ConvertDotsToEllipsisRule extends AbstractRule implements RuleInterface
 {
+    public static function create(): self
+    {
+        return new self();
+    }
+
     public function getSearchPattern(): string
     {
         return '/(\.(\s?)){3,}/';

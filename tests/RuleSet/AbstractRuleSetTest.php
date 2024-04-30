@@ -22,6 +22,10 @@ class AbstractRuleSetTest extends TestCase
         $rule = new RemoveDuplicatedWhitespaceRule();
 
         $ruleSet = new class() extends AbstractRuleSet {
+            public static function create(): self
+            {
+                return new self();
+            }
         };
 
         $ruleSet->withRule($rule);
@@ -48,6 +52,11 @@ class AbstractRuleSetTest extends TestCase
                 $this->withRule(
                     new RemoveDuplicatedWhitespaceRule(),
                 );
+            }
+
+            public static function create(): self
+            {
+                return new self();
             }
         };
 

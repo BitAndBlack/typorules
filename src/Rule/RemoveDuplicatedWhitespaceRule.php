@@ -19,4 +19,9 @@ class RemoveDuplicatedWhitespaceRule extends AbstractRule implements RuleInterfa
     protected string $searchPattern = '/\s{2,}/';
 
     protected string $replacePattern = ' ';
+
+    public static function create(): self
+    {
+        return new self();
+    }
 }

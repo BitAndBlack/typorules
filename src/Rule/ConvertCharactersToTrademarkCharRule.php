@@ -20,6 +20,11 @@ class ConvertCharactersToTrademarkCharRule extends AbstractRule implements RuleI
 {
     protected string $searchPattern = '/\((t|T)(m|M)\)/';
 
+    public static function create(): self
+    {
+        return new self();
+    }
+
     public function getReplacePattern(): string
     {
         return CharactersEnum::TRADEMARK->value;

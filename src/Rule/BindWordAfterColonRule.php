@@ -27,6 +27,11 @@ class BindWordAfterColonRule extends AbstractRule implements RuleInterface
         $this->nonBreakingSpace = CharactersEnum::NON_BREAKING_SPACE->value;
     }
 
+    public static function create(): self
+    {
+        return new self();
+    }
+
     public function getReplacePattern(): string
     {
         return ', $1' . $this->nonBreakingSpace;

@@ -18,6 +18,11 @@ use BitAndBlack\TypoRules\CharactersEnum;
  */
 class ConvertCharactersToCopyrightCharRule extends AbstractRule implements RuleInterface
 {
+    public static function create(): self
+    {
+        return new self();
+    }
+
     public function getSearchPattern(): string
     {
         return '/\((' . CharactersEnum::ALL_SPACES->value . ')*(c|C)(' . CharactersEnum::ALL_SPACES->value . ')*\)/';

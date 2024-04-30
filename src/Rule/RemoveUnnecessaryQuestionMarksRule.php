@@ -23,6 +23,11 @@ class RemoveUnnecessaryQuestionMarksRule extends AbstractRule implements RuleInt
         $this->maxCountQuestionMark = 2;
     }
 
+    public static function create(): self
+    {
+        return new self();
+    }
+
     public function getSearchPattern(): string
     {
         return '/\?{' . ($this->maxCountQuestionMark + 1) . ',}/';

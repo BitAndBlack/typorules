@@ -17,4 +17,8 @@ namespace BitAndBlack\TypoRules\RuleSet;
  */
 class CustomRuleSet extends AbstractRuleSet implements RuleSetInterface
 {
+    public static function create(): self
+    {
+        return new self();
+    }
 }

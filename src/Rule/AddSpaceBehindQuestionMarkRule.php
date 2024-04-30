@@ -19,4 +19,9 @@ class AddSpaceBehindQuestionMarkRule extends AbstractRule implements RuleInterfa
     protected string $searchPattern = '/\?(?!\s|\?)(?!$)/';
 
     protected string $replacePattern = '? ';
+
+    public static function create(): self
+    {
+        return new self();
+    }
 }

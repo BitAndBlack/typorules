@@ -25,6 +25,11 @@ class AddNonBreakingSpaceBetweenNumberAndUnitRule extends AbstractRule implement
         $this->nonBreakingSpace = CharactersEnum::NON_BREAKING_SPACE_THIN->value;
     }
 
+    public static function create(): self
+    {
+        return new self();
+    }
+
     public function getSearchPattern(): string
     {
         return '/([\dº])(' . CharactersEnum::ALL_SPACES->value . ')+([º°%Ω฿₵¢₡$₫֏€ƒ₲₴₭£₤₺₦₨₱៛₹$₪৳₸₮₩¥]{1})/';

@@ -20,6 +20,11 @@ class ConvertCharactersToRegisteredCharRule extends AbstractRule implements Rule
 {
     protected string $searchPattern = '/\((r|R)\)/';
 
+    public static function create(): self
+    {
+        return new self();
+    }
+
     public function getReplacePattern(): string
     {
         return CharactersEnum::REGISTERED->value;

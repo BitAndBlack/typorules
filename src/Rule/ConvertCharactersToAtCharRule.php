@@ -20,6 +20,11 @@ class ConvertCharactersToAtCharRule extends AbstractRule implements RuleInterfac
 {
     protected string $searchPattern = '/\(at\)/';
 
+    public static function create(): self
+    {
+        return new self();
+    }
+
     public function getReplacePattern(): string
     {
         return CharactersEnum::AT->value;

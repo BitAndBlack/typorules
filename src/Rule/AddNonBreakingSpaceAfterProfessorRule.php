@@ -25,6 +25,11 @@ class AddNonBreakingSpaceAfterProfessorRule extends AbstractRule implements Rule
         $this->nonBreakingSpace = CharactersEnum::NON_BREAKING_SPACE_THIN->value;
     }
 
+    public static function create(): self
+    {
+        return new self();
+    }
+
     public function getSearchPattern(): string
     {
         return '/(Prof\.)(' . CharactersEnum::ALL_SPACES->value . ')+/';

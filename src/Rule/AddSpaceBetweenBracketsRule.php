@@ -20,6 +20,11 @@ class AddSpaceBetweenBracketsRule extends AbstractRule implements RuleInterface
 {
     protected string $searchPattern = '/(?<=(\(|\[|\{))(?=[^ ])|(?<=[^ ])(?=(\)|\^]|\}))/';
 
+    public static function create(): self
+    {
+        return new self();
+    }
+
     public function getReplacePattern(): string
     {
         return CharactersEnum::HAIR_SPACE->value;

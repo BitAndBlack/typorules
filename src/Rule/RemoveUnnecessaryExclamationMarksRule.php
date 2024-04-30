@@ -23,6 +23,11 @@ class RemoveUnnecessaryExclamationMarksRule extends AbstractRule implements Rule
         $this->maxCountExclamationMark = 2;
     }
 
+    public static function create(): self
+    {
+        return new self();
+    }
+
     public function getSearchPattern(): string
     {
         return '/\!{' . ($this->maxCountExclamationMark + 1) . ',}/';

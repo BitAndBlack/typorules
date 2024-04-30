@@ -25,6 +25,11 @@ class AddNonBreakingSpaceBetweenNumberAndJahrRule extends AbstractRule implement
         $this->nonBreakingSpace = CharactersEnum::NON_BREAKING_SPACE->value;
     }
 
+    public static function create(): self
+    {
+        return new self();
+    }
+
     public function getSearchPattern(): string
     {
         return '/(?<=\d)(' . CharactersEnum::ALL_SPACES->value . ')+(?=Jahr)/';

@@ -23,6 +23,11 @@ class BindNumberToNumberRule extends AbstractRule implements RuleInterface
         return '/(Nr\.|Nummer)[' . CharactersEnum::ALL_SPACES->value . '](\d)/';
     }
 
+    public static function create(): self
+    {
+        return new self();
+    }
+
     public function getReplacePattern(): string
     {
         return '$1' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . '$2';

@@ -25,4 +25,9 @@ class AdvancedTypographyRuleSet extends AbstractRuleSet implements RuleSetInterf
             new BindWordAfterColonRule(),
         );
     }
+
+    public static function create(): self
+    {
+        return new self();
+    }
 }

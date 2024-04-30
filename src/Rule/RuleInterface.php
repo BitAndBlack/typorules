@@ -15,6 +15,8 @@ use BitAndBlack\TypoRules\Violation;
 
 interface RuleInterface
 {
+    public static function create(): self;
+
     /**
      * Returns a list of all violations in the given input.
      *

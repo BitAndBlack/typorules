@@ -20,6 +20,11 @@ class AddSpaceBehindDotRule extends AbstractRule implements RuleInterface
 {
     protected string $replacePattern = '. ';
 
+    public static function create(): self
+    {
+        return new self();
+    }
+
     public function getSearchPattern(): string
     {
         return '/(?<!^\d)(?<!\s\d)\.(?!' . CharactersEnum::ALL_SPACES->value . ')(?!$)/';

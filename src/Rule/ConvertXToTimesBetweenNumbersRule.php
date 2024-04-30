@@ -18,6 +18,11 @@ use BitAndBlack\TypoRules\CharactersEnum;
  */
 class ConvertXToTimesBetweenNumbersRule extends AbstractRule implements RuleInterface
 {
+    public static function create(): self
+    {
+        return new self();
+    }
+
     public function getSearchPattern(): string
     {
         return '/(\d)([' . CharactersEnum::ALL_SPACES->value . ']*)(x|X)([' . CharactersEnum::ALL_SPACES->value . ']*)(\d)/';

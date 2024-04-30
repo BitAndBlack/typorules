@@ -22,6 +22,11 @@ class AddSoftHyphenBetweenDashSeparatedWordsRule extends AbstractRule implements
 
     protected int $minLengthWordAfter = 3;
 
+    public static function create(): self
+    {
+        return new self();
+    }
+
     public function getSearchPattern(): string
     {
         return '/(\w{' . $this->minLengthWordBefore . ',})\/(\w{' . $this->minLengthWordBefore . ',})/';

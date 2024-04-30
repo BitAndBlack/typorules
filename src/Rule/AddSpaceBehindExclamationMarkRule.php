@@ -19,4 +19,9 @@ class AddSpaceBehindExclamationMarkRule extends AbstractRule implements RuleInte
     protected string $searchPattern = '/!(?!\s|\!)(?!$)/';
 
     protected string $replacePattern = '! ';
+
+    public static function create(): self
+    {
+        return new self();
+    }
 }

@@ -16,6 +16,8 @@ use BitAndBlack\TypoRules\Violation;
 
 interface RuleSetInterface
 {
+    public static function create(): self;
+
     /**
      * Returns a list of all rules in this rule set.
      *

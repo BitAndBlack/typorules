@@ -25,6 +25,11 @@ class AddNonBreakingSpaceBetweenEingetragenerAndVereinRule extends AbstractRule 
         $this->nonBreakingSpace = CharactersEnum::NON_BREAKING_SPACE_THIN->value;
     }
 
+    public static function create(): self
+    {
+        return new self();
+    }
+
     public function getSearchPattern(): string
     {
         return '/(?<=e\.)(' . CharactersEnum::ALL_SPACES->value . ')*(?=V\.)/';
