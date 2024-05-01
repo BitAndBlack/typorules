@@ -143,6 +143,8 @@ However, in some cases, you probably want to create an exact diff view. This can
 ```php
 <?php
 
+use BitAndBlack\TypoRules\Diff\CharacterDiff;
+
 $content = 'Content before';
 $contentFixed = 'Content, that has been fixed';
 
