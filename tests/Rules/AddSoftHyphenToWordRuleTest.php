@@ -36,4 +36,22 @@ class AddSoftHyphenToWordRuleTest extends AbstractRuleTestClass
             null,
         ];
     }
+
+    public function testCanChangeSettings(): void
+    {
+        $addSoftHyphenToWordRule = AddSoftHyphenToWordRule::create()
+            ->setMinCharacterCountBefore(2)
+            ->setMinCharacterCountBefore(2)
+            ->setMinWordCharacterCount(6)
+            ->setHyphen('&shy;')
+        ;
+
+        $content = 'Bodenseefelchen';
+        $contentFixed = $addSoftHyphenToWordRule->getContentFixed($content);
+
+        self::assertSame(
+            'Bo&shy;den&shy;see&shy;felchen',
+            $contentFixed
+        );
+    }
 }
