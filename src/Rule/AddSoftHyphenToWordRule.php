@@ -21,19 +21,17 @@ use Org\Heigl\Hyphenator\Hyphenator;
  */
 class AddSoftHyphenToWordRule extends AbstractRule implements RuleInterface
 {
-    protected string $searchPattern = '/(\w{10,})/';
-
     protected string $replacePattern = '$1';
 
     protected ?string $languageCode = null;
 
     protected string $hyphen;
 
-    private int $minCharacterCountBefore;
+    protected int $minCharacterCountBefore;
 
-    private int $minCharacterCountAfter;
+    protected int $minCharacterCountAfter;
 
-    private int $minWordCharacterCount;
+    protected int $minWordCharacterCount;
 
     /**
      * @throws MissingDependencyException
@@ -56,6 +54,11 @@ class AddSoftHyphenToWordRule extends AbstractRule implements RuleInterface
     public static function create(): self
     {
         return new self();
+    }
+
+    public function getSearchPattern(): string
+    {
+        return '/(\w{' . $this->minWordCharacterCount . ',})/';
     }
 
     public function setLanguageCode(?string $languageCode): self
@@ -100,18 +103,20 @@ class AddSoftHyphenToWordRule extends AbstractRule implements RuleInterface
             ->setMinWordLength($this->minWordCharacterCount)
         ;
 
+        $replacement = static function ($match) use ($hyphenator): string {
+            $word = $match[0];
+            $wordHyphenated = $hyphenator->hyphenate($word);
+
+            if (!is_string($wordHyphenated)) {
+                return $word;
+            }
+
+            return $wordHyphenated;
+        };
+
         return (string) preg_replace_callback(
-            $this->searchPattern,
-            static function ($match) use ($hyphenator): string {
-                $word = $match[0];
-                $wordHyphenated = $hyphenator->hyphenate($word);
-
-                if (!is_string($wordHyphenated)) {
-                    return '';
-                }
-
-                return $wordHyphenated;
-            },
+            $this->getSearchPattern(),
+            $replacement,
             $content
         );
     }
