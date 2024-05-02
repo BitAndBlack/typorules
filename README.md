@@ -90,6 +90,10 @@ The following rules are currently existing:
 
 -   [`AddNonBreakingSpaceAfterDoctorRule`](./src/Rule/AddNonBreakingSpaceAfterDoctorRule.php)
 -   [`AddNonBreakingSpaceAfterProfessorRule`](./src/Rule/AddNonBreakingSpaceAfterProfessorRule.php)
+-   [`AddNonBreakingSpaceBeforeColonRule`](./src/Rule/AddNonBreakingSpaceBeforeColonRule.php)
+-   [`AddNonBreakingSpaceBeforeExclamationMarkRule`](./src/Rule/AddNonBreakingSpaceBeforeExclamationMarkRule.php)
+-   [`AddNonBreakingSpaceBeforeQuestionMarkRule`](./src/Rule/AddNonBreakingSpaceBeforeQuestionMarkRule.php)
+-   [`AddNonBreakingSpaceBeforeSemicolonRule`](./src/Rule/AddNonBreakingSpaceBeforeSemicolonRule.php)
 -   [`AddNonBreakingSpaceBeforeUhrRule`](./src/Rule/AddNonBreakingSpaceBeforeUhrRule.php)
 -   [`AddNonBreakingSpaceBetweenEingetragenerAndVereinRule`](./src/Rule/AddNonBreakingSpaceBetweenEingetragenerAndVereinRule.php)
 -   [`AddNonBreakingSpaceBetweenNumberAndJahrRule`](./src/Rule/AddNonBreakingSpaceBetweenNumberAndJahrRule.php)
@@ -124,6 +128,7 @@ You can add custom rules by implementing the [`RuleInterface`](./src/Rule/RuleIn
 The currently existing rule sets are:
 
 -   [`EnglishRuleSet`](./src/RuleSet/EnglishRuleSet.php)
+-   [`FrenchRuleSet`](./src/RuleSet/FrenchRuleSet.php)
 -   [`GermanRuleSet`](./src/RuleSet/GermanRuleSet.php)
 -   [`AdvancedTypographyRuleSet`](./src/RuleSet/AdvancedTypographyRuleSet.php)
 
