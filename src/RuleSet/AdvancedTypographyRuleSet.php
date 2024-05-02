@@ -14,6 +14,7 @@ namespace BitAndBlack\TypoRules\RuleSet;
 use BitAndBlack\TypoRules\Rule\AddSoftHyphenToWordRule;
 use BitAndBlack\TypoRules\Rule\AddSpaceBetweenBracketsRule;
 use BitAndBlack\TypoRules\Rule\BindWordAfterColonRule;
+use BitAndBlack\TypoRules\Rule\BindWordAfterDotRule;
 
 class AdvancedTypographyRuleSet extends AbstractRuleSet implements RuleSetInterface
 {
@@ -22,6 +23,7 @@ class AdvancedTypographyRuleSet extends AbstractRuleSet implements RuleSetInterf
         $this->withRule(
             new AddSoftHyphenToWordRule(),
             new AddSpaceBetweenBracketsRule(),
+            new BindWordAfterDotRule(),
             new BindWordAfterColonRule(),
         );
     }

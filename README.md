@@ -101,6 +101,7 @@ The following rules are currently existing:
 -   [`AddSpaceBehindQuestionMarkRule`](./src/Rule/AddSpaceBehindQuestionMarkRule.php)
 -   [`AddSpaceBetweenBracketsRule`](./src/Rule/AddSpaceBetweenBracketsRule.php)
 -   [`BindNumberToNumberRule`](./src/Rule/BindNumberToNumberRule.php)
+-   [`BindWordAfterDotRule`](./src/Rule/BindWordAfterDotRule.php)
 -   [`BindWordAfterColonRule`](./src/Rule/BindWordAfterColonRule.php)
 -   [`ConvertCharactersToAtCharRule`](./src/Rule/ConvertCharactersToAtCharRule.php)
 -   [`ConvertCharactersToCopyrightCharRule`](./src/Rule/ConvertCharactersToCopyrightCharRule.php)
