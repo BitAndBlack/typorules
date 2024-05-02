@@ -12,27 +12,27 @@
 namespace BitAndBlack\TypoRules\Tests\Rules;
 
 use BitAndBlack\TypoRules\CharactersEnum;
-use BitAndBlack\TypoRules\Rule\BindWordAfterDotRule;
+use BitAndBlack\TypoRules\Rule\BindWordAfterQuestionMarkRule;
 use Generator;
 
-class BindWordAfterDotRuleTest extends AbstractRuleTestClass
+class BindWordAfterQuestionMarkRuleTest extends AbstractRuleTestClass
 {
     public function getBaseTestClass(): string
     {
-        return BindWordAfterDotRule::class;
+        return BindWordAfterQuestionMarkRule::class;
     }
 
     public static function getTestRuleData(): Generator
     {
         yield [
-            'Schon vorbei. Von wegen!',
-            'Schon vorbei. Von' . CharactersEnum::NON_BREAKING_SPACE->value . 'wegen!',
-            '...hon vorbei. Von wegen!',
+            'Sicher? Ich denke nicht.',
+            'Sicher? Ich' . CharactersEnum::NON_BREAKING_SPACE->value . 'denke nicht.',
+            'Sicher? Ich denke nicht.',
         ];
 
         yield [
-            'Schon vorbei. Noch nicht!',
-            'Schon vorbei. Noch nicht!',
+            'Sicher? Keinesfalls.',
+            'Sicher? Keinesfalls.',
             null,
         ];
     }

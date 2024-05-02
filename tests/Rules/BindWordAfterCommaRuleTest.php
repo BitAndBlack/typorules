@@ -12,27 +12,27 @@
 namespace BitAndBlack\TypoRules\Tests\Rules;
 
 use BitAndBlack\TypoRules\CharactersEnum;
-use BitAndBlack\TypoRules\Rule\BindWordAfterDotRule;
+use BitAndBlack\TypoRules\Rule\BindWordAfterCommaRule;
 use Generator;
 
-class BindWordAfterDotRuleTest extends AbstractRuleTestClass
+class BindWordAfterCommaRuleTest extends AbstractRuleTestClass
 {
     public function getBaseTestClass(): string
     {
-        return BindWordAfterDotRule::class;
+        return BindWordAfterCommaRule::class;
     }
 
     public static function getTestRuleData(): Generator
     {
         yield [
-            'Schon vorbei. Von wegen!',
-            'Schon vorbei. Von' . CharactersEnum::NON_BREAKING_SPACE->value . 'wegen!',
-            '...hon vorbei. Von wegen!',
+            'Glaube mir, es war so schön!',
+            'Glaube mir, es' . CharactersEnum::NON_BREAKING_SPACE->value . 'war so schön!',
+            'Glaube mir, es war so schö...',
         ];
 
         yield [
-            'Schon vorbei. Noch nicht!',
-            'Schon vorbei. Noch nicht!',
+            'Glaube mir, alles war so schön!',
+            'Glaube mir, alles war so schön!',
             null,
         ];
     }

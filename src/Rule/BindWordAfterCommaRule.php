@@ -14,9 +14,9 @@ namespace BitAndBlack\TypoRules\Rule;
 use BitAndBlack\TypoRules\CharactersEnum;
 
 /**
- * @see \BitAndBlack\TypoRules\Tests\Rules\BindWordAfterColonRuleTest
+ * @see \BitAndBlack\TypoRules\Tests\Rules\BindWordAfterCommaRuleTest
  */
-class BindWordAfterColonRule extends AbstractRule implements RuleInterface
+class BindWordAfterCommaRule extends AbstractRule implements RuleInterface
 {
     protected string $nonBreakingSpace;
 
@@ -35,7 +35,7 @@ class BindWordAfterColonRule extends AbstractRule implements RuleInterface
 
     public function getSearchPattern(): string
     {
-        return '/(?<=\:\s)(\w{1,' . $this->wordMaxLength . '})\s/';
+        return '/(?<=\,\s)(\w{1,' . $this->wordMaxLength . '})\s/';
     }
 
     public function getReplacePattern(): string

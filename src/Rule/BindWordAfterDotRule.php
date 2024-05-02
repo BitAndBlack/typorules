@@ -35,12 +35,12 @@ class BindWordAfterDotRule extends AbstractRule implements RuleInterface
 
     public function getSearchPattern(): string
     {
-        return '/\.\s(\w{0,' . $this->wordMaxLength . '})\s/';
+        return '/(?<=\.\s)(\w{1,' . $this->wordMaxLength . '})\s/';
     }
 
     public function getReplacePattern(): string
     {
-        return '. $1' . $this->nonBreakingSpace;
+        return '$1' . $this->nonBreakingSpace;
     }
 
     public function setNonBreakingSpace(string $nonBreakingSpace): self
