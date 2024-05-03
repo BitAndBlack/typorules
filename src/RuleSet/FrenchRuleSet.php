@@ -17,6 +17,8 @@ use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBeforeQuestionMarkRule;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBeforeSemicolonRule;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenGuillemetLeftOpenAndWordRule;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenGuillemetRightCloseAndWordRule;
+use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenGuillemetSingleLeftOpenAndWordRule;
+use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenGuillemetSingleRightCloseAndWordRule;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenNumberAndUnitRule;
 use BitAndBlack\TypoRules\Rule\AddSpaceBehindDotRule;
 use BitAndBlack\TypoRules\Rule\AddSpaceBehindExclamationMarkRule;
@@ -47,6 +49,8 @@ class FrenchRuleSet extends AbstractRuleSet implements RuleSetInterface
             new AddNonBreakingSpaceBeforeSemicolonRule(),
             new AddNonBreakingSpaceBetweenGuillemetLeftOpenAndWordRule(),
             new AddNonBreakingSpaceBetweenGuillemetRightCloseAndWordRule(),
+            new AddNonBreakingSpaceBetweenGuillemetSingleLeftOpenAndWordRule(),
+            new AddNonBreakingSpaceBetweenGuillemetSingleRightCloseAndWordRule(),
             new AddSpaceBehindDotRule(),
             new AddSpaceBehindExclamationMarkRule(),
             new AddSpaceBehindQuestionMarkRule(),

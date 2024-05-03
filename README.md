@@ -98,6 +98,8 @@ The following rules are currently existing:
 -   [`AddNonBreakingSpaceBetweenEingetragenerAndVereinRule`](./src/Rule/AddNonBreakingSpaceBetweenEingetragenerAndVereinRule.php)
 -   [`AddNonBreakingSpaceBetweenGuillemetLeftOpenAndWordRule`](./src/Rule/AddNonBreakingSpaceBetweenGuillemetLeftOpenAndWordRule.php)
 -   [`AddNonBreakingSpaceBetweenGuillemetRightCloseAndWordRule`](./src/Rule/AddNonBreakingSpaceBetweenGuillemetRightCloseAndWordRule.php)
+-   [`AddNonBreakingSpaceBetweenGuillemetSingleLeftOpenAndWordRule`](./src/Rule/AddNonBreakingSpaceBetweenGuillemetSingleLeftOpenAndWordRule.php)
+-   [`AddNonBreakingSpaceBetweenGuillemetSingleRightCloseAndWordRule`](./src/Rule/AddNonBreakingSpaceBetweenGuillemetSingleRightCloseAndWordRule.php)
 -   [`AddNonBreakingSpaceBetweenNumberAndJahrRule`](./src/Rule/AddNonBreakingSpaceBetweenNumberAndJahrRule.php)
 -   [`AddNonBreakingSpaceBetweenNumberAndUnitRule`](./src/Rule/AddNonBreakingSpaceBetweenNumberAndUnitRule.php)
 -   [`AddSoftHyphenBetweenDashSeparatedWordsRule`](./src/Rule/AddSoftHyphenBetweenDashSeparatedWordsRule.php)
