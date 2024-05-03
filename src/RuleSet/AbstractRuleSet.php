@@ -109,4 +109,41 @@ abstract class AbstractRuleSet implements RuleSetInterface
 
         return $this;
     }
+
+    /**
+     * Adds one or more rule sets with all its rules to the set list.
+     *
+     * @return AbstractRuleSet
+     */
+    public function withRuleSet(RuleSetInterface ...$ruleSets): self
+    {
+        foreach ($ruleSets as $ruleSet) {
+            $this->withRule(
+                ...$ruleSet->getRuleSet()
+            );
+        }
+
+        return $this;
+    }
+
+    /**
+     * Removes one or more rule sets with all its rules from the set list.
+     *
+     * @param RuleSetInterface|class-string<RuleSetInterface> ...$ruleSets
+     * @return AbstractRuleSet
+     */
+    public function withoutRuleSet(RuleSetInterface|string ...$ruleSets): self
+    {
+        foreach ($ruleSets as $ruleSet) {
+            if (is_string($ruleSet)) {
+                $ruleSet = new $ruleSet();
+            }
+
+            $this->withoutRule(
+                ...$ruleSet->getRuleSet()
+            );
+        }
+
+        return $this;
+    }
 }

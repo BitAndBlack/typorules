@@ -53,4 +53,19 @@ interface RuleSetInterface
      * @return RuleSetInterface
      */
     public function withoutRule(RuleInterface|string ...$rules): RuleSetInterface;
+
+    /**
+     * Adds one or more rule sets with all its rules to the set list.
+     *
+     * @return RuleSetInterface
+     */
+    public function withRuleSet(RuleSetInterface ...$ruleSets): RuleSetInterface;
+
+    /**
+     * Removes one or more rule sets with all its rules from the set list.
+     *
+     * @param RuleSetInterface|class-string<RuleSetInterface> ...$ruleSets
+     * @return RuleSetInterface
+     */
+    public function withoutRuleSet(RuleSetInterface|string ...$ruleSets): RuleSetInterface;
 }
