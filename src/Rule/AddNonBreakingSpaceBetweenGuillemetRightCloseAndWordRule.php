@@ -32,7 +32,7 @@ class AddNonBreakingSpaceBetweenGuillemetRightCloseAndWordRule extends AbstractR
 
     public function getSearchPattern(): string
     {
-        return '/(?<=\w)(' . CharactersEnum::ALL_SPACES->value . ')*(?=' . CharactersEnum::RAQUO->value . ')/';
+        return '/(?<=\w)(' . CharactersEnum::ALL_SPACES->value . ')*(?=' . CharactersEnum::RIGHT_ANGLE_QUOTE->value . ')/';
     }
 
     public function getReplacePattern(): string

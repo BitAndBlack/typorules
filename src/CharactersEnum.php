@@ -45,8 +45,13 @@ enum CharactersEnum: string
 
     /**
      * &laquo;
-    */
-    case LAQUO = '«';
+     */
+    case LEFT_ANGLE_QUOTE = '«';
+
+    /**
+     * &lsaquo;
+     */
+    case LEFT_ANGLE_QUOTE_SINGLE = '‹';
 
     /**
      * &ldquo; or &#8220;
@@ -75,8 +80,13 @@ enum CharactersEnum: string
 
     /**
      * &raquo;
-    */
-    case RAQUO = '»';
+     */
+    case RIGHT_ANGLE_QUOTE = '»';
+
+    /**
+     * &rsaquo;
+     */
+    case RIGHT_ANGLE_QUOTE_SINGLE = '›';
 
     /**
      * &rdquo; or &#8221;

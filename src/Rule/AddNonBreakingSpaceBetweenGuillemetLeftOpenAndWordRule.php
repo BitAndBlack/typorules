@@ -32,7 +32,7 @@ class AddNonBreakingSpaceBetweenGuillemetLeftOpenAndWordRule extends AbstractRul
 
     public function getSearchPattern(): string
     {
-        return '/(?<=' . CharactersEnum::LAQUO->value . ')(' . CharactersEnum::ALL_SPACES->value . ')*(?=\w)/';
+        return '/(?<=' . CharactersEnum::LEFT_ANGLE_QUOTE->value . ')(' . CharactersEnum::ALL_SPACES->value . ')*(?=\w)/';
     }
 
     public function getReplacePattern(): string
