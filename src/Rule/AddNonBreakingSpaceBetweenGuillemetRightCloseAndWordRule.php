@@ -14,9 +14,9 @@ namespace BitAndBlack\TypoRules\Rule;
 use BitAndBlack\TypoRules\CharactersEnum;
 
 /**
- * @see \BitAndBlack\TypoRules\Tests\Rules\AddNonBreakingSpaceBetweenGullimetLeftOpenAndWordRuleTest
+ * @see \BitAndBlack\TypoRules\Tests\Rules\AddNonBreakingSpaceBetweenGuillemetRightCloseAndWordRuleTest
  */
-class AddNonBreakingSpaceBetweenGullimetLeftOpenAndWordRule extends AbstractRule implements RuleInterface
+class AddNonBreakingSpaceBetweenGuillemetRightCloseAndWordRule extends AbstractRule implements RuleInterface
 {
     protected string $nonBreakingSpace;
 
@@ -32,7 +32,7 @@ class AddNonBreakingSpaceBetweenGullimetLeftOpenAndWordRule extends AbstractRule
 
     public function getSearchPattern(): string
     {
-        return '/(?<=' . CharactersEnum::LAQUO->value . ')(' . CharactersEnum::ALL_SPACES->value . ')*(?=\w)/';
+        return '/(?<=\w)(' . CharactersEnum::ALL_SPACES->value . ')*(?=' . CharactersEnum::RAQUO->value . ')/';
     }
 
     public function getReplacePattern(): string

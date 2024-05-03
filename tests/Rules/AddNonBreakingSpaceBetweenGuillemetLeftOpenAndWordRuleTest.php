@@ -12,14 +12,14 @@
 namespace BitAndBlack\TypoRules\Tests\Rules;
 
 use BitAndBlack\TypoRules\CharactersEnum;
-use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenGullimetLeftOpenAndWordRule;
+use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenGuillemetLeftOpenAndWordRule;
 use Generator;
 
-class AddNonBreakingSpaceBetweenGullimetLeftOpenAndWordRuleTest extends AbstractRuleTestClass
+class AddNonBreakingSpaceBetweenGuillemetLeftOpenAndWordRuleTest extends AbstractRuleTestClass
 {
     public function getBaseTestClass(): string
     {
-        return AddNonBreakingSpaceBetweenGullimetLeftOpenAndWordRule::class;
+        return AddNonBreakingSpaceBetweenGuillemetLeftOpenAndWordRule::class;
     }
 
     public static function getTestRuleData(): Generator
