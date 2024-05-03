@@ -35,5 +35,11 @@ class BindWordAfterDotRuleTest extends AbstractRuleTestClass
             'Schon vorbei. Noch nicht!',
             null,
         ];
+
+        yield [
+            'Schon vorbei. Ein Schlüsselelement.',
+            'Schon vorbei. Ein Schlüsselelement.',
+            null,
+        ];
     }
 }
