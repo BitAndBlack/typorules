@@ -27,12 +27,18 @@ class BindWordAfterSemicolonRuleTest extends AbstractRuleTestClass
         yield [
             'Glaube mir; es war so schön!',
             'Glaube mir; es' . CharactersEnum::NON_BREAKING_SPACE->value . 'war so schön!',
-            'Glaube mir; es war so schö...',
+            'Glaube mir; es war so schön!',
         ];
 
         yield [
             'Glaube mir; alles war so schön!',
             'Glaube mir; alles war so schön!',
+            null,
+        ];
+
+        yield [
+            'Glaube mir; ein Schlüsselelement!',
+            'Glaube mir; ein Schlüsselelement!',
             null,
         ];
     }

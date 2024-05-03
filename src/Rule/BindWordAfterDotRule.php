@@ -22,13 +22,13 @@ class BindWordAfterDotRule extends AbstractRule implements RuleInterface
 
     protected int $wordMaxLength;
 
-    protected int $wordWordAheadMaxLength;
+    protected int $wordAheadMaxLength;
 
     public function __construct()
     {
         $this->nonBreakingSpace = CharactersEnum::NON_BREAKING_SPACE->value;
         $this->wordMaxLength = 3;
-        $this->wordWordAheadMaxLength = 5;
+        $this->wordAheadMaxLength = 5;
     }
 
     public static function create(): self
@@ -38,7 +38,7 @@ class BindWordAfterDotRule extends AbstractRule implements RuleInterface
 
     public function getSearchPattern(): string
     {
-        return '/(?<=\.\s)(\w{1,' . $this->wordMaxLength . '})\s(\w{0,' . $this->wordWordAheadMaxLength . '})(?!\w)/u';
+        return '/(?<=\.\s)(\w{1,' . $this->wordMaxLength . '})\s(\w{0,' . $this->wordAheadMaxLength . '})(?!\w)/u';
     }
 
     public function getReplacePattern(): string
@@ -58,9 +58,9 @@ class BindWordAfterDotRule extends AbstractRule implements RuleInterface
         return $this;
     }
 
-    public function setWordWordAheadMaxLength(int $wordWordAheadMaxLength): self
+    public function setWordAheadMaxLength(int $wordAheadMaxLength): self
     {
-        $this->wordWordAheadMaxLength = $wordWordAheadMaxLength;
+        $this->wordAheadMaxLength = $wordAheadMaxLength;
         return $this;
     }
 }

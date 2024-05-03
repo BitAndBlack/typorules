@@ -35,5 +35,11 @@ class BindWordAfterQuestionMarkRuleTest extends AbstractRuleTestClass
             'Sicher? Keinesfalls.',
             null,
         ];
+
+        yield [
+            'Sicher? Ein Schlüsselelement!',
+            'Sicher? Ein Schlüsselelement!',
+            null,
+        ];
     }
 }

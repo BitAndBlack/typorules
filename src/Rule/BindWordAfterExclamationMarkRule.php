@@ -22,10 +22,13 @@ class BindWordAfterExclamationMarkRule extends AbstractRule implements RuleInter
 
     protected int $wordMaxLength;
 
+    protected int $wordAheadMaxLength;
+
     public function __construct()
     {
         $this->nonBreakingSpace = CharactersEnum::NON_BREAKING_SPACE->value;
         $this->wordMaxLength = 3;
+        $this->wordAheadMaxLength = 5;
     }
 
     public static function create(): self
@@ -35,12 +38,12 @@ class BindWordAfterExclamationMarkRule extends AbstractRule implements RuleInter
 
     public function getSearchPattern(): string
     {
-        return '/(?<=\!\s)(\w{1,' . $this->wordMaxLength . '})\s/';
+        return '/(?<=\!\s)(\w{1,' . $this->wordMaxLength . '})\s(\w{0,' . $this->wordAheadMaxLength . '})(?!\w)/u';
     }
 
     public function getReplacePattern(): string
     {
-        return '$1' . $this->nonBreakingSpace;
+        return '$1' . $this->nonBreakingSpace . '$2';
     }
 
     public function setNonBreakingSpace(string $nonBreakingSpace): self
@@ -52,6 +55,12 @@ class BindWordAfterExclamationMarkRule extends AbstractRule implements RuleInter
     public function setWordMaxLength(int $wordMaxLength): self
     {
         $this->wordMaxLength = $wordMaxLength;
+        return $this;
+    }
+
+    public function setWordAheadMaxLength(int $wordAheadMaxLength): self
+    {
+        $this->wordAheadMaxLength = $wordAheadMaxLength;
         return $this;
     }
 }
