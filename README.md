@@ -96,6 +96,8 @@ The following rules are currently existing:
 -   [`AddNonBreakingSpaceBeforeSemicolonRule`](./src/Rule/AddNonBreakingSpaceBeforeSemicolonRule.php)
 -   [`AddNonBreakingSpaceBeforeUhrRule`](./src/Rule/AddNonBreakingSpaceBeforeUhrRule.php)
 -   [`AddNonBreakingSpaceBetweenEingetragenerAndVereinRule`](./src/Rule/AddNonBreakingSpaceBetweenEingetragenerAndVereinRule.php)
+-   [`AddNonBreakingSpaceBetweenGullimetLeftOpenAndWordRule`](./src/Rule/AddNonBreakingSpaceBetweenGullimetLeftOpenAndWordRule.php)
+-   [`AddNonBreakingSpaceBetweenGullimetRightCloseAndWordRule`](./src/Rule/AddNonBreakingSpaceBetweenGullimetRightCloseAndWordRule.php)
 -   [`AddNonBreakingSpaceBetweenNumberAndJahrRule`](./src/Rule/AddNonBreakingSpaceBetweenNumberAndJahrRule.php)
 -   [`AddNonBreakingSpaceBetweenNumberAndUnitRule`](./src/Rule/AddNonBreakingSpaceBetweenNumberAndUnitRule.php)
 -   [`AddSoftHyphenBetweenDashSeparatedWordsRule`](./src/Rule/AddSoftHyphenBetweenDashSeparatedWordsRule.php)
