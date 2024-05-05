@@ -12,10 +12,19 @@
 namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\TypoRules\CharactersEnum;
+use BitAndBlack\TypoRules\Documentation\Description;
+use BitAndBlack\TypoRules\Documentation\TransformationExample;
 
 /**
  * @see \BitAndBlack\TypoRules\Tests\Rules\AddNonBreakingSpaceBeforeColonRuleTest
  */
+#[Description(
+    'Add a non breaking space between before a colon to disallow separating it from the word before.'
+)]
+#[TransformationExample(
+    'Concept, création et réalisation technique : Bit&Black',
+    "Concept, création et réalisation technique\xE2\x80\xAF: Bit&Black",
+)]
 class AddNonBreakingSpaceBeforeColonRule extends AbstractRule implements RuleInterface
 {
     protected string $nonBreakingSpace;

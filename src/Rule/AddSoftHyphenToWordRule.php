@@ -13,12 +13,22 @@ namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\Composer\Composer;
 use BitAndBlack\TypoRules\CharactersEnum;
+use BitAndBlack\TypoRules\Documentation\Configuration;
+use BitAndBlack\TypoRules\Documentation\Description;
+use BitAndBlack\TypoRules\Documentation\TransformationExample;
 use BitAndBlack\TypoRules\Exception\MissingDependencyException;
 use Org\Heigl\Hyphenator\Hyphenator;
 
 /**
  * @see \BitAndBlack\TypoRules\Tests\Rules\AddSoftHyphenToWordRuleTest
  */
+#[Description(
+    'Add a soft hyphen to words to allow hyphenation. This can make the typeface appear calmer and leads to better utilisation of the available type width.'
+)]
+#[TransformationExample(
+    'Bodensee',
+    "Boden\xC2\xADsee",
+)]
 class AddSoftHyphenToWordRule extends AbstractRule implements RuleInterface
 {
     protected string $replacePattern = '$1';
@@ -61,30 +71,35 @@ class AddSoftHyphenToWordRule extends AbstractRule implements RuleInterface
         return '/(\w{' . $this->minWordCharacterCount . ',})/';
     }
 
+    #[Configuration('Define the language code.')]
     public function setLanguageCode(?string $languageCode): self
     {
         $this->languageCode = $languageCode;
         return $this;
     }
 
+    #[Configuration('Define the hyphenation character.')]
     public function setHyphen(string $hyphen): self
     {
         $this->hyphen = $hyphen;
         return $this;
     }
 
+    #[Configuration('Define, how many characters a word must have before the first hyphen may appear.')]
     public function setMinCharacterCountBefore(int $minCharacterCountBefore): self
     {
         $this->minCharacterCountBefore = $minCharacterCountBefore;
         return $this;
     }
 
+    #[Configuration('Define, how many characters a word must have after the last hyphen.')]
     public function setMinCharacterCountAfter(int $minCharacterCountAfter): self
     {
         $this->minCharacterCountAfter = $minCharacterCountAfter;
         return $this;
     }
 
+    #[Configuration('Define the minimum length a word must have to be hyphenated.')]
     public function setMinWordCharacterCount(int $minWordCharacterCount): self
     {
         $this->minWordCharacterCount = $minWordCharacterCount;
