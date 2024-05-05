@@ -55,19 +55,19 @@ Add a non breaking space after `Dr.`. This binds the title and the name together
 
 #### Transformation example
 
-With a thin non breaking space (`\xE2\x80\xAF`):
+-   With a thin non breaking space (`\xE2\x80\xAF`):
 
-```diff
-- Dr. Max Mustermann
-+ Dr. Max Mustermann
-```
+    ```diff
+    - Dr. Max Mustermann
+    + Dr. Max Mustermann
+    ```
 
-With a non breaking space for html (`&nbsp;`):
+-   With a non breaking space for html (`&nbsp;`):
 
-```diff
-- Dr. Max Mustermann
-+ Dr.&nbsp;Max Mustermann
-```
+    ```diff
+    - Dr. Max Mustermann
+    + Dr.&nbsp;Max Mustermann
+    ```
 
 #### Possible rule customization
 
@@ -81,7 +81,7 @@ There is 1 possibility to customize this rule:
 
 #### File
 
-This class is located under [./src/Rule/AddNonBreakingSpaceAfterDoctorRule.php](./src/Rule/AddNonBreakingSpaceAfterDoctorRule.php)
+This class is located under [../src/Rule/AddNonBreakingSpaceAfterDoctorRule.php](../src/Rule/AddNonBreakingSpaceAfterDoctorRule.php)
 
 ----
 
@@ -93,18 +93,33 @@ Add a non breaking space after `Prof.`. This binds the title and the name togeth
 
 #### Transformation example
 
-```diff
-- Prof. Max Mustermann
-+ Prof. Max Mustermann
-```
+-   With a thin non breaking space (`\xE2\x80\xAF`):
+
+    ```diff
+    - Prof. Max Mustermann
+    + Prof. Max Mustermann
+    ```
+
+-   With a non breaking space for html (`&nbsp;`):
+
+    ```diff
+    - Prof. Max Mustermann
+    + Prof.&nbsp;Max Mustermann
+    ```
 
 #### Possible rule customization
 
-This rule doesn't allow any customization.
+There is 1 possibility to customize this rule:
+
+-   Configure the type of the space. Per default, a small non breaking space will be used.
+
+    ```php
+    $addNonBreakingSpaceAfterProfessorRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
 
 #### File
 
-This class is located under [./src/Rule/AddNonBreakingSpaceAfterProfessorRule.php](./src/Rule/AddNonBreakingSpaceAfterProfessorRule.php)
+This class is located under [../src/Rule/AddNonBreakingSpaceAfterProfessorRule.php](../src/Rule/AddNonBreakingSpaceAfterProfessorRule.php)
 
 ----
 
@@ -127,7 +142,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [./src/Rule/AddNonBreakingSpaceBeforeColonRule.php](./src/Rule/AddNonBreakingSpaceBeforeColonRule.php)
+This class is located under [../src/Rule/AddNonBreakingSpaceBeforeColonRule.php](../src/Rule/AddNonBreakingSpaceBeforeColonRule.php)
 
 ----
 
@@ -135,7 +150,7 @@ This class is located under [./src/Rule/AddNonBreakingSpaceBeforeColonRule.php](
 
 #### Description
 
-No description provided.
+Add a non breaking space between before a exclamation mark to disallow separating it from the word before.
 
 #### Possible rule customization
 
@@ -143,7 +158,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [./src/Rule/AddNonBreakingSpaceBeforeExclamationMarkRule.php](./src/Rule/AddNonBreakingSpaceBeforeExclamationMarkRule.php)
+This class is located under [../src/Rule/AddNonBreakingSpaceBeforeExclamationMarkRule.php](../src/Rule/AddNonBreakingSpaceBeforeExclamationMarkRule.php)
 
 ----
 
@@ -151,7 +166,7 @@ This class is located under [./src/Rule/AddNonBreakingSpaceBeforeExclamationMark
 
 #### Description
 
-No description provided.
+Add a non breaking space between before a question mark to disallow separating it from the word before.
 
 #### Possible rule customization
 
@@ -159,7 +174,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [./src/Rule/AddNonBreakingSpaceBeforeQuestionMarkRule.php](./src/Rule/AddNonBreakingSpaceBeforeQuestionMarkRule.php)
+This class is located under [../src/Rule/AddNonBreakingSpaceBeforeQuestionMarkRule.php](../src/Rule/AddNonBreakingSpaceBeforeQuestionMarkRule.php)
 
 ----
 
@@ -167,7 +182,7 @@ This class is located under [./src/Rule/AddNonBreakingSpaceBeforeQuestionMarkRul
 
 #### Description
 
-No description provided.
+Add a non breaking space between before a semicolon to disallow separating it from the word before.
 
 #### Possible rule customization
 
@@ -175,7 +190,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [./src/Rule/AddNonBreakingSpaceBeforeSemicolonRule.php](./src/Rule/AddNonBreakingSpaceBeforeSemicolonRule.php)
+This class is located under [../src/Rule/AddNonBreakingSpaceBeforeSemicolonRule.php](../src/Rule/AddNonBreakingSpaceBeforeSemicolonRule.php)
 
 ----
 
@@ -183,7 +198,7 @@ This class is located under [./src/Rule/AddNonBreakingSpaceBeforeSemicolonRule.p
 
 #### Description
 
-No description provided.
+Add a non breaking space between before the word `Uhr` to disallow separating it from the time before.
 
 #### Possible rule customization
 
@@ -191,7 +206,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [./src/Rule/AddNonBreakingSpaceBeforeUhrRule.php](./src/Rule/AddNonBreakingSpaceBeforeUhrRule.php)
+This class is located under [../src/Rule/AddNonBreakingSpaceBeforeUhrRule.php](../src/Rule/AddNonBreakingSpaceBeforeUhrRule.php)
 
 ----
 
@@ -199,7 +214,7 @@ This class is located under [./src/Rule/AddNonBreakingSpaceBeforeUhrRule.php](./
 
 #### Description
 
-No description provided.
+Add a non breaking space between between `e.` and `V.` to disallow separating those two.
 
 #### Possible rule customization
 
@@ -207,7 +222,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [./src/Rule/AddNonBreakingSpaceBetweenEingetragenerAndVereinRule.php](./src/Rule/AddNonBreakingSpaceBetweenEingetragenerAndVereinRule.php)
+This class is located under [../src/Rule/AddNonBreakingSpaceBetweenEingetragenerAndVereinRule.php](../src/Rule/AddNonBreakingSpaceBetweenEingetragenerAndVereinRule.php)
 
 ----
 
@@ -223,7 +238,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [./src/Rule/AddNonBreakingSpaceBetweenGuillemetLeftOpenAndWordRule.php](./src/Rule/AddNonBreakingSpaceBetweenGuillemetLeftOpenAndWordRule.php)
+This class is located under [../src/Rule/AddNonBreakingSpaceBetweenGuillemetLeftOpenAndWordRule.php](../src/Rule/AddNonBreakingSpaceBetweenGuillemetLeftOpenAndWordRule.php)
 
 ----
 
@@ -239,7 +254,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [./src/Rule/AddNonBreakingSpaceBetweenGuillemetRightCloseAndWordRule.php](./src/Rule/AddNonBreakingSpaceBetweenGuillemetRightCloseAndWordRule.php)
+This class is located under [../src/Rule/AddNonBreakingSpaceBetweenGuillemetRightCloseAndWordRule.php](../src/Rule/AddNonBreakingSpaceBetweenGuillemetRightCloseAndWordRule.php)
 
 ----
 
@@ -255,7 +270,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [./src/Rule/AddNonBreakingSpaceBetweenGuillemetSingleLeftOpenAndWordRule.php](./src/Rule/AddNonBreakingSpaceBetweenGuillemetSingleLeftOpenAndWordRule.php)
+This class is located under [../src/Rule/AddNonBreakingSpaceBetweenGuillemetSingleLeftOpenAndWordRule.php](../src/Rule/AddNonBreakingSpaceBetweenGuillemetSingleLeftOpenAndWordRule.php)
 
 ----
 
@@ -271,7 +286,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [./src/Rule/AddNonBreakingSpaceBetweenGuillemetSingleRightCloseAndWordRule.php](./src/Rule/AddNonBreakingSpaceBetweenGuillemetSingleRightCloseAndWordRule.php)
+This class is located under [../src/Rule/AddNonBreakingSpaceBetweenGuillemetSingleRightCloseAndWordRule.php](../src/Rule/AddNonBreakingSpaceBetweenGuillemetSingleRightCloseAndWordRule.php)
 
 ----
 
@@ -287,7 +302,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [./src/Rule/AddNonBreakingSpaceBetweenNumberAndJahrRule.php](./src/Rule/AddNonBreakingSpaceBetweenNumberAndJahrRule.php)
+This class is located under [../src/Rule/AddNonBreakingSpaceBetweenNumberAndJahrRule.php](../src/Rule/AddNonBreakingSpaceBetweenNumberAndJahrRule.php)
 
 ----
 
@@ -303,7 +318,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [./src/Rule/AddNonBreakingSpaceBetweenNumberAndUnitRule.php](./src/Rule/AddNonBreakingSpaceBetweenNumberAndUnitRule.php)
+This class is located under [../src/Rule/AddNonBreakingSpaceBetweenNumberAndUnitRule.php](../src/Rule/AddNonBreakingSpaceBetweenNumberAndUnitRule.php)
 
 ----
 
@@ -319,7 +334,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [./src/Rule/AddSoftHyphenBetweenDashSeparatedWordsRule.php](./src/Rule/AddSoftHyphenBetweenDashSeparatedWordsRule.php)
+This class is located under [../src/Rule/AddSoftHyphenBetweenDashSeparatedWordsRule.php](../src/Rule/AddSoftHyphenBetweenDashSeparatedWordsRule.php)
 
 ----
 
@@ -372,7 +387,7 @@ There are 5 possibilities to customize this rule:
 
 #### File
 
-This class is located under [./src/Rule/AddSoftHyphenToWordRule.php](./src/Rule/AddSoftHyphenToWordRule.php)
+This class is located under [../src/Rule/AddSoftHyphenToWordRule.php](../src/Rule/AddSoftHyphenToWordRule.php)
 
 ----
 
@@ -388,7 +403,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [./src/Rule/AddSpaceBehindDotRule.php](./src/Rule/AddSpaceBehindDotRule.php)
+This class is located under [../src/Rule/AddSpaceBehindDotRule.php](../src/Rule/AddSpaceBehindDotRule.php)
 
 ----
 
@@ -404,7 +419,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [./src/Rule/AddSpaceBehindExclamationMarkRule.php](./src/Rule/AddSpaceBehindExclamationMarkRule.php)
+This class is located under [../src/Rule/AddSpaceBehindExclamationMarkRule.php](../src/Rule/AddSpaceBehindExclamationMarkRule.php)
 
 ----
 
@@ -420,7 +435,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [./src/Rule/AddSpaceBehindQuestionMarkRule.php](./src/Rule/AddSpaceBehindQuestionMarkRule.php)
+This class is located under [../src/Rule/AddSpaceBehindQuestionMarkRule.php](../src/Rule/AddSpaceBehindQuestionMarkRule.php)
 
 ----
 
@@ -436,7 +451,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [./src/Rule/AddSpaceBetweenBracketsRule.php](./src/Rule/AddSpaceBetweenBracketsRule.php)
+This class is located under [../src/Rule/AddSpaceBetweenBracketsRule.php](../src/Rule/AddSpaceBetweenBracketsRule.php)
 
 ----
 
@@ -452,7 +467,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [./src/Rule/BindNumberToNumberRule.php](./src/Rule/BindNumberToNumberRule.php)
+This class is located under [../src/Rule/BindNumberToNumberRule.php](../src/Rule/BindNumberToNumberRule.php)
 
 ----
 
@@ -468,7 +483,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [./src/Rule/BindWordAfterColonRule.php](./src/Rule/BindWordAfterColonRule.php)
+This class is located under [../src/Rule/BindWordAfterColonRule.php](../src/Rule/BindWordAfterColonRule.php)
 
 ----
 
@@ -484,7 +499,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [./src/Rule/BindWordAfterCommaRule.php](./src/Rule/BindWordAfterCommaRule.php)
+This class is located under [../src/Rule/BindWordAfterCommaRule.php](../src/Rule/BindWordAfterCommaRule.php)
 
 ----
 
@@ -500,7 +515,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [./src/Rule/BindWordAfterDotRule.php](./src/Rule/BindWordAfterDotRule.php)
+This class is located under [../src/Rule/BindWordAfterDotRule.php](../src/Rule/BindWordAfterDotRule.php)
 
 ----
 
@@ -516,7 +531,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [./src/Rule/BindWordAfterExclamationMarkRule.php](./src/Rule/BindWordAfterExclamationMarkRule.php)
+This class is located under [../src/Rule/BindWordAfterExclamationMarkRule.php](../src/Rule/BindWordAfterExclamationMarkRule.php)
 
 ----
 
@@ -532,7 +547,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [./src/Rule/BindWordAfterQuestionMarkRule.php](./src/Rule/BindWordAfterQuestionMarkRule.php)
+This class is located under [../src/Rule/BindWordAfterQuestionMarkRule.php](../src/Rule/BindWordAfterQuestionMarkRule.php)
 
 ----
 
@@ -548,7 +563,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [./src/Rule/BindWordAfterSemicolonRule.php](./src/Rule/BindWordAfterSemicolonRule.php)
+This class is located under [../src/Rule/BindWordAfterSemicolonRule.php](../src/Rule/BindWordAfterSemicolonRule.php)
 
 ----
 
@@ -564,7 +579,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [./src/Rule/ConvertCharactersToAtCharRule.php](./src/Rule/ConvertCharactersToAtCharRule.php)
+This class is located under [../src/Rule/ConvertCharactersToAtCharRule.php](../src/Rule/ConvertCharactersToAtCharRule.php)
 
 ----
 
@@ -580,7 +595,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [./src/Rule/ConvertCharactersToCopyrightCharRule.php](./src/Rule/ConvertCharactersToCopyrightCharRule.php)
+This class is located under [../src/Rule/ConvertCharactersToCopyrightCharRule.php](../src/Rule/ConvertCharactersToCopyrightCharRule.php)
 
 ----
 
@@ -596,7 +611,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [./src/Rule/ConvertCharactersToRegisteredCharRule.php](./src/Rule/ConvertCharactersToRegisteredCharRule.php)
+This class is located under [../src/Rule/ConvertCharactersToRegisteredCharRule.php](../src/Rule/ConvertCharactersToRegisteredCharRule.php)
 
 ----
 
@@ -612,7 +627,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [./src/Rule/ConvertCharactersToTrademarkCharRule.php](./src/Rule/ConvertCharactersToTrademarkCharRule.php)
+This class is located under [../src/Rule/ConvertCharactersToTrademarkCharRule.php](../src/Rule/ConvertCharactersToTrademarkCharRule.php)
 
 ----
 
@@ -628,7 +643,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [./src/Rule/ConvertDashToEmDashRule.php](./src/Rule/ConvertDashToEmDashRule.php)
+This class is located under [../src/Rule/ConvertDashToEmDashRule.php](../src/Rule/ConvertDashToEmDashRule.php)
 
 ----
 
@@ -644,7 +659,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [./src/Rule/ConvertDashToEnDashRule.php](./src/Rule/ConvertDashToEnDashRule.php)
+This class is located under [../src/Rule/ConvertDashToEnDashRule.php](../src/Rule/ConvertDashToEnDashRule.php)
 
 ----
 
@@ -660,7 +675,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [./src/Rule/ConvertDotsToEllipsisRule.php](./src/Rule/ConvertDotsToEllipsisRule.php)
+This class is located under [../src/Rule/ConvertDotsToEllipsisRule.php](../src/Rule/ConvertDotsToEllipsisRule.php)
 
 ----
 
@@ -676,7 +691,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [./src/Rule/ConvertSpacesBetweenTimesAndNumbersRule.php](./src/Rule/ConvertSpacesBetweenTimesAndNumbersRule.php)
+This class is located under [../src/Rule/ConvertSpacesBetweenTimesAndNumbersRule.php](../src/Rule/ConvertSpacesBetweenTimesAndNumbersRule.php)
 
 ----
 
@@ -692,7 +707,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [./src/Rule/ConvertXToTimesBetweenNumbersRule.php](./src/Rule/ConvertXToTimesBetweenNumbersRule.php)
+This class is located under [../src/Rule/ConvertXToTimesBetweenNumbersRule.php](../src/Rule/ConvertXToTimesBetweenNumbersRule.php)
 
 ----
 
@@ -708,7 +723,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [./src/Rule/RemoveDuplicatedWhitespaceRule.php](./src/Rule/RemoveDuplicatedWhitespaceRule.php)
+This class is located under [../src/Rule/RemoveDuplicatedWhitespaceRule.php](../src/Rule/RemoveDuplicatedWhitespaceRule.php)
 
 ----
 
@@ -724,7 +739,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [./src/Rule/RemoveSpaceBeforeCommaRule.php](./src/Rule/RemoveSpaceBeforeCommaRule.php)
+This class is located under [../src/Rule/RemoveSpaceBeforeCommaRule.php](../src/Rule/RemoveSpaceBeforeCommaRule.php)
 
 ----
 
@@ -740,7 +755,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [./src/Rule/RemoveUnnecessaryExclamationMarksRule.php](./src/Rule/RemoveUnnecessaryExclamationMarksRule.php)
+This class is located under [../src/Rule/RemoveUnnecessaryExclamationMarksRule.php](../src/Rule/RemoveUnnecessaryExclamationMarksRule.php)
 
 ----
 
@@ -756,7 +771,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [./src/Rule/RemoveUnnecessaryQuestionMarksRule.php](./src/Rule/RemoveUnnecessaryQuestionMarksRule.php)
+This class is located under [../src/Rule/RemoveUnnecessaryQuestionMarksRule.php](../src/Rule/RemoveUnnecessaryQuestionMarksRule.php)
 
 ----
 

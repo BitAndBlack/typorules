@@ -12,10 +12,14 @@
 namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\TypoRules\CharactersEnum;
+use BitAndBlack\TypoRules\Documentation\Description;
 
 /**
  * @see \BitAndBlack\TypoRules\Tests\Rules\AddNonBreakingSpaceBeforeExclamationMarkRuleTest
  */
+#[Description(
+    'Add a non breaking space between before a exclamation mark to disallow separating it from the word before.'
+)]
 class AddNonBreakingSpaceBeforeExclamationMarkRule extends AbstractRule implements RuleInterface
 {
     protected string $nonBreakingSpace;

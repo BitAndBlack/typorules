@@ -12,10 +12,14 @@
 namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\TypoRules\CharactersEnum;
+use BitAndBlack\TypoRules\Documentation\Description;
 
 /**
  * @see \BitAndBlack\TypoRules\Tests\Rules\AddNonBreakingSpaceBetweenEingetragenerAndVereinRuleTest
  */
+#[Description(
+    'Add a non breaking space between between `e.` and `V.` to disallow separating those two.'
+)]
 class AddNonBreakingSpaceBetweenEingetragenerAndVereinRule extends AbstractRule implements RuleInterface
 {
     protected string $nonBreakingSpace;

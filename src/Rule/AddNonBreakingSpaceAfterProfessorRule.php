@@ -12,6 +12,7 @@
 namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\TypoRules\CharactersEnum;
+use BitAndBlack\TypoRules\Documentation\Configuration;
 use BitAndBlack\TypoRules\Documentation\Description;
 use BitAndBlack\TypoRules\Documentation\TransformationExample;
 
@@ -24,6 +25,12 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 #[TransformationExample(
     'Prof. Max Mustermann',
     "Prof.\xE2\x80\xAFMax Mustermann",
+    'With a thin non breaking space (`\xE2\x80\xAF`)'
+)]
+#[TransformationExample(
+    'Prof. Max Mustermann',
+    'Prof.&nbsp;Max Mustermann',
+    'With a non breaking space for html (`&nbsp;`)'
 )]
 class AddNonBreakingSpaceAfterProfessorRule extends AbstractRule implements RuleInterface
 {
@@ -49,6 +56,7 @@ class AddNonBreakingSpaceAfterProfessorRule extends AbstractRule implements Rule
         return '$1' . $this->nonBreakingSpace;
     }
 
+    #[Configuration('Configure the type of the space. Per default, a small non breaking space will be used.')]
     public function setNonBreakingSpace(string $nonBreakingSpace): self
     {
         $this->nonBreakingSpace = $nonBreakingSpace;

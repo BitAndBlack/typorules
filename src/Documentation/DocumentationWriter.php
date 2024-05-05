@@ -56,23 +56,33 @@ class DocumentationWriter
             if ([] !== $transformationExamples = $documentation->getTransformationExamples()) {
                 $output .= '#### Transformation example';
 
+                $isList = false;
+
                 foreach ($transformationExamples as $transformationExample) {
                     $output .= PHP_EOL;
                     $output .= PHP_EOL;
 
                     if (isset($transformationExample[2])) {
-                        $output .= $transformationExample[2] . ':';
+                        $isList = true;
+
+                        $output .= '-   ' . $transformationExample[2] . ':';
                         $output .= PHP_EOL;
                         $output .= PHP_EOL;
                     }
 
-                    $output .= '```diff';
+                    $addition= '';
+
+                    if (true === $isList) {
+                        $addition = '    ';
+                    }
+
+                    $output .= $addition . '```diff';
                     $output .= PHP_EOL;
-                    $output .= '- ' . $transformationExample[0];
+                    $output .= $addition . '- ' . $transformationExample[0];
                     $output .= PHP_EOL;
-                    $output .= '+ ' . $transformationExample[1];
+                    $output .= $addition . '+ ' . $transformationExample[1];
                     $output .= PHP_EOL;
-                    $output .= '```';
+                    $output .= $addition . '```';
                 }
 
                 $output .= PHP_EOL;
@@ -111,7 +121,7 @@ class DocumentationWriter
             $output .= PHP_EOL;
 
             $relativePath = $documentation->getRelativePath(
-                dirname(new VendorPath()),
+                dirname(new VendorPath()) . DIRECTORY_SEPARATOR . 'docs',
                 $documentation->getPath()
             );
 

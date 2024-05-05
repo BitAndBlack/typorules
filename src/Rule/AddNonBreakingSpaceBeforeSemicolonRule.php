@@ -12,10 +12,14 @@
 namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\TypoRules\CharactersEnum;
+use BitAndBlack\TypoRules\Documentation\Description;
 
 /**
  * @see \BitAndBlack\TypoRules\Tests\Rules\AddNonBreakingSpaceBeforeColonRuleTest
  */
+#[Description(
+    'Add a non breaking space between before a semicolon to disallow separating it from the word before.'
+)]
 class AddNonBreakingSpaceBeforeSemicolonRule extends AbstractRule implements RuleInterface
 {
     protected string $nonBreakingSpace;

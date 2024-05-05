@@ -12,10 +12,14 @@
 namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\TypoRules\CharactersEnum;
+use BitAndBlack\TypoRules\Documentation\Description;
 
 /**
  * @see \BitAndBlack\TypoRules\Tests\Rules\AddNonBreakingSpaceBeforeQuestionMarkRuleTest
  */
+#[Description(
+    'Add a non breaking space between before a question mark to disallow separating it from the word before.'
+)]
 class AddNonBreakingSpaceBeforeQuestionMarkRule extends AbstractRule implements RuleInterface
 {
     protected string $nonBreakingSpace;
