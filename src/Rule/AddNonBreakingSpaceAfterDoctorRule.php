@@ -25,6 +25,12 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 #[TransformationExample(
     'Dr. Max Mustermann',
     "Dr.\xE2\x80\xAFMax Mustermann",
+    'With a thin non breaking space (`\xE2\x80\xAF`)'
+)]
+#[TransformationExample(
+    'Dr. Max Mustermann',
+    'Dr.&nbsp;Max Mustermann',
+    'With a non breaking space for html (`&nbsp;`)'
 )]
 class AddNonBreakingSpaceAfterDoctorRule extends AbstractRule implements RuleInterface
 {

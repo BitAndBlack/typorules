@@ -55,9 +55,18 @@ Add a non breaking space after `Dr.`. This binds the title and the name together
 
 #### Transformation example
 
+With a thin non breaking space (`\xE2\x80\xAF`):
+
 ```diff
 - Dr. Max Mustermann
 + Dr. Max Mustermann
+```
+
+With a non breaking space for html (`&nbsp;`):
+
+```diff
+- Dr. Max Mustermann
++ Dr.&nbsp;Max Mustermann
 ```
 
 #### Possible rule customization

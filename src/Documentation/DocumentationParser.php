@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * Bit&Black TypoRules.
+ *
+ * @author Tobias Köngeter
+ * @copyright Copyright © Bit&Black
+ * @link https://www.bitandblack.com
+ * @license MIT
+ */
+
 namespace BitAndBlack\TypoRules\Documentation;
 
 use BitAndBlack\Composer\VendorPath;
@@ -65,6 +74,7 @@ class DocumentationParser
                     $documentation->addTransformationExample(
                         $classAttributeInstance->getBefore(),
                         $classAttributeInstance->getAfter(),
+                        $classAttributeInstance->getDescription(),
                     );
                     continue;
                 }

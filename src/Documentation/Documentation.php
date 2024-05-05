@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * Bit&Black TypoRules.
+ *
+ * @author Tobias Köngeter
+ * @copyright Copyright © Bit&Black
+ * @link https://www.bitandblack.com
+ * @license MIT
+ */
+
 namespace BitAndBlack\TypoRules\Documentation;
 
 use ReflectionClass;
@@ -20,8 +29,9 @@ class Documentation
      */
     private array $configurationPossibilities = [];
 
-    public function __construct(private readonly string $className)
-    {
+    public function __construct(
+        private readonly string $className,
+    ) {
     }
 
     public function getClassName(): string
@@ -65,11 +75,15 @@ class Documentation
         return $this->transformationExamples;
     }
 
-    public function addTransformationExample(string $before, string $after): self
-    {
+    public function addTransformationExample(
+        string $before,
+        string $after,
+        ?string $description = null,
+    ): self {
         $this->transformationExamples[] = [
             $before,
             $after,
+            $description,
         ];
         return $this;
     }

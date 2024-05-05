@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * Bit&Black TypoRules.
+ *
+ * @author Tobias Köngeter
+ * @copyright Copyright © Bit&Black
+ * @link https://www.bitandblack.com
+ * @license MIT
+ */
+
 namespace BitAndBlack\TypoRules\Documentation;
 
 use BitAndBlack\Composer\VendorPath;
@@ -50,6 +59,13 @@ class DocumentationWriter
                 foreach ($transformationExamples as $transformationExample) {
                     $output .= PHP_EOL;
                     $output .= PHP_EOL;
+
+                    if (isset($transformationExample[2])) {
+                        $output .= $transformationExample[2] . ':';
+                        $output .= PHP_EOL;
+                        $output .= PHP_EOL;
+                    }
+
                     $output .= '```diff';
                     $output .= PHP_EOL;
                     $output .= '- ' . $transformationExample[0];
