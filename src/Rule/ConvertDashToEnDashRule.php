@@ -13,12 +13,17 @@ namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\TypoRules\CharactersEnum;
 use BitAndBlack\TypoRules\Documentation\Description;
+use BitAndBlack\TypoRules\Documentation\TransformationExample;
 
 /**
  * @see \BitAndBlack\TypoRules\Tests\Rules\ConvertDashToEnDashRuleTest
  */
 #[Description(
     'Convert a dash `-` into an en dash `–` when there is whitespace before and after.'
+)]
+#[TransformationExample(
+    'Und wenn schon - ich glaube nicht!',
+    'Und wenn schon – ich glaube nicht!',
 )]
 class ConvertDashToEnDashRule extends AbstractRule implements RuleInterface
 {

@@ -13,12 +13,17 @@ namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\TypoRules\CharactersEnum;
 use BitAndBlack\TypoRules\Documentation\Description;
+use BitAndBlack\TypoRules\Documentation\TransformationExample;
 
 /**
  * @see \BitAndBlack\TypoRules\Tests\Rules\AddNonBreakingSpaceBetweenNumberAndUnitRuleTest
  */
 #[Description(
     'Add a thin non breaking space between between a number and the following unit to disallow separating those two.'
+)]
+#[TransformationExample(
+    '200 ° C',
+    "200\xE2\x80\xAF° C",
 )]
 class AddNonBreakingSpaceBetweenNumberAndUnitRule extends AbstractRule implements RuleInterface
 {

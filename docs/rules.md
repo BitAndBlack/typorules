@@ -152,6 +152,13 @@ This class is located under [../src/Rule/AddNonBreakingSpaceBeforeColonRule.php]
 
 Add a non breaking space between before a exclamation mark to disallow separating it from the word before.
 
+#### Transformation example
+
+```diff
+- On y va !
++ On y va !
+```
+
 #### Possible rule customization
 
 This rule doesn't allow any customization.
@@ -167,6 +174,13 @@ This class is located under [../src/Rule/AddNonBreakingSpaceBeforeExclamationMar
 #### Description
 
 Add a non breaking space between before a question mark to disallow separating it from the word before.
+
+#### Transformation example
+
+```diff
+- On y va ?
++ On y va ?
+```
 
 #### Possible rule customization
 
@@ -184,6 +198,13 @@ This class is located under [../src/Rule/AddNonBreakingSpaceBeforeQuestionMarkRu
 
 Add a non breaking space between before a semicolon to disallow separating it from the word before.
 
+#### Transformation example
+
+```diff
+- Concept, création et réalisation technique : Bit&Black
++ Concept, création et réalisation technique : Bit&Black
+```
+
 #### Possible rule customization
 
 This rule doesn't allow any customization.
@@ -199,6 +220,13 @@ This class is located under [../src/Rule/AddNonBreakingSpaceBeforeSemicolonRule.
 #### Description
 
 Add a non breaking space before the word `Uhr` to disallow separating it from the time before.
+
+#### Transformation example
+
+```diff
+- Es ist 12.30 Uhr.
++ Es ist 12.30 Uhr.
+```
 
 #### Possible rule customization
 
@@ -216,6 +244,18 @@ This class is located under [../src/Rule/AddNonBreakingSpaceBeforeUhrRule.php](.
 
 Add a non breaking space between between `e.` and `V.` to disallow separating those two.
 
+#### Transformation example
+
+```diff
+- Supersport 500 e.V.
++ Supersport 500 e. V.
+```
+
+```diff
+- Supersport 500 e. V.
++ Supersport 500 e. V.
+```
+
 #### Possible rule customization
 
 This rule doesn't allow any customization.
@@ -231,6 +271,13 @@ This class is located under [../src/Rule/AddNonBreakingSpaceBetweenEingetragener
 #### Description
 
 Add a thin non breaking space between between a left angle quote `«` and a word **after** to disallow separating those two.
+
+#### Transformation example
+
+```diff
+- J'ai dit « non » à toi.
++ J'ai dit « non » à toi.
+```
 
 #### Possible rule customization
 
@@ -248,6 +295,13 @@ This class is located under [../src/Rule/AddNonBreakingSpaceBetweenGuillemetLeft
 
 Add a thin non breaking space between between a right angle quote `»` and a word **before** to disallow separating those two.
 
+#### Transformation example
+
+```diff
+- J'ai dit « non » à toi.
++ J'ai dit « non » à toi.
+```
+
 #### Possible rule customization
 
 This rule doesn't allow any customization.
@@ -263,6 +317,13 @@ This class is located under [../src/Rule/AddNonBreakingSpaceBetweenGuillemetRigh
 #### Description
 
 Add a thin non breaking space between between a single left angle quote `‹` and a word **after** to disallow separating those two.
+
+#### Transformation example
+
+```diff
+- Je t'ai dit « non », car « tout à l'heure, tu m'as dit ‹ oui › ».
++ Je t'ai dit « non », car « tout à l'heure, tu m'as dit ‹ oui › ».
+```
 
 #### Possible rule customization
 
@@ -280,6 +341,13 @@ This class is located under [../src/Rule/AddNonBreakingSpaceBetweenGuillemetSing
 
 Add a thin non breaking space between between a single right angle quote `›` and a word **before** to disallow separating those two.
 
+#### Transformation example
+
+```diff
+- Je t'ai dit « non », car « tout à l'heure, tu m'as dit ‹ oui › ».
++ Je t'ai dit « non », car « tout à l'heure, tu m'as dit ‹ oui › ».
+```
+
 #### Possible rule customization
 
 This rule doesn't allow any customization.
@@ -295,6 +363,13 @@ This class is located under [../src/Rule/AddNonBreakingSpaceBetweenGuillemetSing
 #### Description
 
 Add a non breaking space between between `Jahr` and the number before to disallow separating those two.
+
+#### Transformation example
+
+```diff
+- Vor 30 Jahren
++ Vor 30 Jahren
+```
 
 #### Possible rule customization
 
@@ -312,6 +387,13 @@ This class is located under [../src/Rule/AddNonBreakingSpaceBetweenNumberAndJahr
 
 Add a thin non breaking space between between a number and the following unit to disallow separating those two.
 
+#### Transformation example
+
+```diff
+- 200 ° C
++ 200 ° C
+```
+
 #### Possible rule customization
 
 This rule doesn't allow any customization.
@@ -327,6 +409,13 @@ This class is located under [../src/Rule/AddNonBreakingSpaceBetweenNumberAndUnit
 #### Description
 
 Add a non breaking space between between to words that have a dash between `/` to **allow** separating those two. This can improve the text wrap when having long words-
+
+#### Transformation example
+
+```diff
+- Von Paris/Frankreich nach Stuttgart/Deutschland.
++ Von Paris/­Frankreich nach Stuttgart/­Deutschland.
+```
 
 #### Possible rule customization
 
@@ -397,6 +486,13 @@ This class is located under [../src/Rule/AddSoftHyphenToWordRule.php](../src/Rul
 
 Add a missing space behind a dot `.`.
 
+#### Transformation example
+
+```diff
+- Ganz am Ende.Wie geht's weiter.
++ Ganz am Ende. Wie geht's weiter.
+```
+
 #### Possible rule customization
 
 This rule doesn't allow any customization.
@@ -412,6 +508,13 @@ This class is located under [../src/Rule/AddSpaceBehindDotRule.php](../src/Rule/
 #### Description
 
 Add a missing space behind an exclamation mark `!`.
+
+#### Transformation example
+
+```diff
+- Ganz am Ende!Wie geht's weiter!
++ Ganz am Ende! Wie geht's weiter!
+```
 
 #### Possible rule customization
 
@@ -429,6 +532,13 @@ This class is located under [../src/Rule/AddSpaceBehindExclamationMarkRule.php](
 
 Add a missing space behind a question mark `?`.
 
+#### Transformation example
+
+```diff
+- Ganz am Ende?Wie geht's weiter!
++ Ganz am Ende? Wie geht's weiter!
+```
+
 #### Possible rule customization
 
 This rule doesn't allow any customization.
@@ -444,6 +554,13 @@ This class is located under [../src/Rule/AddSpaceBehindQuestionMarkRule.php](../
 #### Description
 
 Add a hair space between brackets. The space will be added behind left (opening) brackets and before right (closing) brackets.
+
+#### Transformation example
+
+```diff
+- Es geht los (warum auch immer)!
++ Es geht los ( warum auch immer )!
+```
 
 #### Possible rule customization
 
@@ -461,6 +578,18 @@ This class is located under [../src/Rule/AddSpaceBetweenBracketsRule.php](../src
 
 Add a thin non breaking space between the words `Nr.` or `Nummer` and a following number to disallow separating them from each other.
 
+#### Transformation example
+
+```diff
+- Das ist Nr. 8.
++ Das ist Nr. 8.
+```
+
+```diff
+- Das ist Nummer 8.
++ Das ist Nummer 8.
+```
+
 #### Possible rule customization
 
 This rule doesn't allow any customization.
@@ -476,6 +605,13 @@ This class is located under [../src/Rule/BindNumberToNumberRule.php](../src/Rule
 #### Description
 
 Replace a whitespace with a non breaking space between a short word and its following word if the short word follows a colon. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.
+
+#### Transformation example
+
+```diff
+- Glaube mir: es war so schön!
++ Glaube mir: es war so schön!
+```
 
 #### Possible rule customization
 
@@ -493,6 +629,13 @@ This class is located under [../src/Rule/BindWordAfterColonRule.php](../src/Rule
 
 Replace a whitespace with a non breaking space between a short word and its following word if the short word follows a comma. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.
 
+#### Transformation example
+
+```diff
+- Glaube mir, es war so schön!
++ Glaube mir, es war so schön!
+```
+
 #### Possible rule customization
 
 This rule doesn't allow any customization.
@@ -508,6 +651,13 @@ This class is located under [../src/Rule/BindWordAfterCommaRule.php](../src/Rule
 #### Description
 
 Replace a whitespace with a non breaking space between a short word and its following word if the short word follows a dot. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.
+
+#### Transformation example
+
+```diff
+- Schon vorbei. Von wegen!
++ Schon vorbei. Von wegen!
+```
 
 #### Possible rule customization
 
@@ -525,6 +675,13 @@ This class is located under [../src/Rule/BindWordAfterDotRule.php](../src/Rule/B
 
 Replace a whitespace with a non breaking space between a short word and its following word if the short word follows an exclamation mark. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.
 
+#### Transformation example
+
+```diff
+- Sicher! Ich denke nicht.
++ Sicher! Ich denke nicht.
+```
+
 #### Possible rule customization
 
 This rule doesn't allow any customization.
@@ -540,6 +697,13 @@ This class is located under [../src/Rule/BindWordAfterExclamationMarkRule.php](.
 #### Description
 
 Replace a whitespace with a non breaking space between a short word and its following word if the short word follows a question mark. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.
+
+#### Transformation example
+
+```diff
+- Sicher? Ich denke nicht.
++ Sicher? Ich denke nicht.
+```
 
 #### Possible rule customization
 
@@ -557,6 +721,13 @@ This class is located under [../src/Rule/BindWordAfterQuestionMarkRule.php](../s
 
 Replace a whitespace with a non breaking space between a short word and its following word if the short word follows a semicolon. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.
 
+#### Transformation example
+
+```diff
+- Glaube mir; es war so schön!
++ Glaube mir; es war so schön!
+```
+
 #### Possible rule customization
 
 This rule doesn't allow any customization.
@@ -572,6 +743,13 @@ This class is located under [../src/Rule/BindWordAfterSemicolonRule.php](../src/
 #### Description
 
 Convert the characters `(at)` into an `@` character.
+
+#### Transformation example
+
+```diff
+- me(at)example.org
++ me@example.org
+```
 
 #### Possible rule customization
 
@@ -589,6 +767,13 @@ This class is located under [../src/Rule/ConvertCharactersToAtCharRule.php](../s
 
 Convert the characters `(c)` or `(C)` into an `©` character.
 
+#### Transformation example
+
+```diff
+- (c) Bit&Black
++ © Bit&Black
+```
+
 #### Possible rule customization
 
 This rule doesn't allow any customization.
@@ -604,6 +789,13 @@ This class is located under [../src/Rule/ConvertCharactersToCopyrightCharRule.ph
 #### Description
 
 Convert the characters `(r)` or `(R)` into an `®` character.
+
+#### Transformation example
+
+```diff
+- Apple(r)
++ Apple®
+```
 
 #### Possible rule customization
 
@@ -621,6 +813,13 @@ This class is located under [../src/Rule/ConvertCharactersToRegisteredCharRule.p
 
 Convert the characters `(tm)` or `(TM)` into an `™` character.
 
+#### Transformation example
+
+```diff
+- Star Wars(tm)
++ Star Wars™
+```
+
 #### Possible rule customization
 
 This rule doesn't allow any customization.
@@ -636,6 +835,13 @@ This class is located under [../src/Rule/ConvertCharactersToTrademarkCharRule.ph
 #### Description
 
 Convert a dash `-` into an em dash `—` when there is whitespace before and after.
+
+#### Transformation example
+
+```diff
+- And if so - I don't think so!
++ And if so — I don't think so!
+```
 
 #### Possible rule customization
 
@@ -653,6 +859,13 @@ This class is located under [../src/Rule/ConvertDashToEmDashRule.php](../src/Rul
 
 Convert a dash `-` into an en dash `–` when there is whitespace before and after.
 
+#### Transformation example
+
+```diff
+- Und wenn schon - ich glaube nicht!
++ Und wenn schon – ich glaube nicht!
+```
+
 #### Possible rule customization
 
 This rule doesn't allow any customization.
@@ -668,6 +881,13 @@ This class is located under [../src/Rule/ConvertDashToEnDashRule.php](../src/Rul
 #### Description
 
 Convert three or more dots `...` into an ellipsis character `…`.
+
+#### Transformation example
+
+```diff
+- Ich weiß nicht...
++ Ich weiß nicht…
+```
 
 #### Possible rule customization
 
@@ -685,6 +905,18 @@ This class is located under [../src/Rule/ConvertDotsToEllipsisRule.php](../src/R
 
 Recognises a measurement and inserts thin non breaking spaces before and after the multiplication mark `x` or `×`.
 
+#### Transformation example
+
+```diff
+- Format: 15 x 9 cm.
++ Format: 15 x 9 cm.
+```
+
+```diff
+- Format: 15 × 9 cm.
++ Format: 15 × 9 cm.
+```
+
 #### Possible rule customization
 
 This rule doesn't allow any customization.
@@ -701,6 +933,13 @@ This class is located under [../src/Rule/ConvertSpacesBetweenTimesAndNumbersRule
 
 Convert a `x` character into a multiplication sign `×`, when a measurement has been recognised.
 
+#### Transformation example
+
+```diff
+- Format: 15 x 9 cm.
++ Format: 15 × 9 cm.
+```
+
 #### Possible rule customization
 
 This rule doesn't allow any customization.
@@ -715,7 +954,14 @@ This class is located under [../src/Rule/ConvertXToTimesBetweenNumbersRule.php](
 
 #### Description
 
-No description provided.
+Remove duplicated whitespace with a single space character.
+
+#### Transformation example
+
+```diff
+- Ganz am      Ende.
++ Ganz am Ende.
+```
 
 #### Possible rule customization
 
@@ -731,7 +977,14 @@ This class is located under [../src/Rule/RemoveDuplicatedWhitespaceRule.php](../
 
 #### Description
 
-No description provided.
+Remove whitespace before a comma.
+
+#### Transformation example
+
+```diff
+- Wir glauben , dass das Sinn macht.
++ Wir glauben, dass das Sinn macht.
+```
 
 #### Possible rule customization
 
@@ -747,7 +1000,14 @@ This class is located under [../src/Rule/RemoveSpaceBeforeCommaRule.php](../src/
 
 #### Description
 
-No description provided.
+Remove duplicated exclamation marks.
+
+#### Transformation example
+
+```diff
+- Nein! Nein!! Nein!!! Nein!!!!
++ Nein! Nein!! Nein!! Nein!!
+```
 
 #### Possible rule customization
 
@@ -763,7 +1023,14 @@ This class is located under [../src/Rule/RemoveUnnecessaryExclamationMarksRule.p
 
 #### Description
 
-No description provided.
+Remove duplicated exclamation marks.
+
+#### Transformation example
+
+```diff
+- Nein? Nein?? Nein??? Nein????
++ Nein? Nein?? Nein?? Nein??
+```
 
 #### Possible rule customization
 

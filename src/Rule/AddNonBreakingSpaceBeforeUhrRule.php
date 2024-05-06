@@ -13,12 +13,17 @@ namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\TypoRules\CharactersEnum;
 use BitAndBlack\TypoRules\Documentation\Description;
+use BitAndBlack\TypoRules\Documentation\TransformationExample;
 
 /**
  * @see \BitAndBlack\TypoRules\Tests\Rules\AddNonBreakingSpaceBeforeUhrRuleTest
  */
 #[Description(
     'Add a non breaking space before the word `Uhr` to disallow separating it from the time before.'
+)]
+#[TransformationExample(
+    'Es ist 12.30 Uhr.',
+    "Es ist 12.30\xC2\xA0Uhr.",
 )]
 class AddNonBreakingSpaceBeforeUhrRule extends AbstractRule implements RuleInterface
 {

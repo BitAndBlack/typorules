@@ -12,12 +12,17 @@
 namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\TypoRules\Documentation\Description;
+use BitAndBlack\TypoRules\Documentation\TransformationExample;
 
 /**
  * @see \BitAndBlack\TypoRules\Tests\Rules\AddSpaceBehindExclamationMarkRuleTest
  */
 #[Description(
     'Add a missing space behind an exclamation mark `!`.'
+)]
+#[TransformationExample(
+    'Ganz am Ende!Wie geht\'s weiter!',
+    "Ganz am Ende! Wie geht's weiter!",
 )]
 class AddSpaceBehindExclamationMarkRule extends AbstractRule implements RuleInterface
 {

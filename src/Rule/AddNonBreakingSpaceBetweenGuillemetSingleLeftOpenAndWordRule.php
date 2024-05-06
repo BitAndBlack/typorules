@@ -13,12 +13,17 @@ namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\TypoRules\CharactersEnum;
 use BitAndBlack\TypoRules\Documentation\Description;
+use BitAndBlack\TypoRules\Documentation\TransformationExample;
 
 /**
  * @see \BitAndBlack\TypoRules\Tests\Rules\AddNonBreakingSpaceBetweenGuillemetSingleLeftOpenAndWordRuleTest
  */
 #[Description(
     'Add a thin non breaking space between between a single left angle quote `‹` and a word **after** to disallow separating those two.'
+)]
+#[TransformationExample(
+    'Je t\'ai dit « non », car « tout à l\'heure, tu m\'as dit ‹ oui › ».',
+    "Je t'ai dit « non », car « tout à l'heure, tu m'as dit ‹\xE2\x80\xAFoui › ».",
 )]
 class AddNonBreakingSpaceBetweenGuillemetSingleLeftOpenAndWordRule extends AbstractRule implements RuleInterface
 {

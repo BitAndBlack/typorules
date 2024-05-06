@@ -13,12 +13,21 @@ namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\TypoRules\CharactersEnum;
 use BitAndBlack\TypoRules\Documentation\Description;
+use BitAndBlack\TypoRules\Documentation\TransformationExample;
 
 /**
  * @see \BitAndBlack\TypoRules\Tests\Rules\AddNonBreakingSpaceBetweenEingetragenerAndVereinRuleTest
  */
 #[Description(
     'Add a non breaking space between between `e.` and `V.` to disallow separating those two.'
+)]
+#[TransformationExample(
+    'Supersport 500 e.V.',
+    "Supersport 500 e.\xC2\xA0V.",
+)]
+#[TransformationExample(
+    'Supersport 500 e. V.',
+    "Supersport 500 e.\xC2\xA0V.",
 )]
 class AddNonBreakingSpaceBetweenEingetragenerAndVereinRule extends AbstractRule implements RuleInterface
 {

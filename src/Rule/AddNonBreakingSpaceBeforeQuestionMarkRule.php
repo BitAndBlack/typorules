@@ -13,12 +13,17 @@ namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\TypoRules\CharactersEnum;
 use BitAndBlack\TypoRules\Documentation\Description;
+use BitAndBlack\TypoRules\Documentation\TransformationExample;
 
 /**
  * @see \BitAndBlack\TypoRules\Tests\Rules\AddNonBreakingSpaceBeforeQuestionMarkRuleTest
  */
 #[Description(
     'Add a non breaking space between before a question mark to disallow separating it from the word before.'
+)]
+#[TransformationExample(
+    'On y va ?',
+    "On y va\xE2\x80\xAF?",
 )]
 class AddNonBreakingSpaceBeforeQuestionMarkRule extends AbstractRule implements RuleInterface
 {

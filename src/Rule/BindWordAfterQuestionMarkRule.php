@@ -13,12 +13,17 @@ namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\TypoRules\CharactersEnum;
 use BitAndBlack\TypoRules\Documentation\Description;
+use BitAndBlack\TypoRules\Documentation\TransformationExample;
 
 /**
  * @see \BitAndBlack\TypoRules\Tests\Rules\BindWordAfterQuestionMarkRuleTest
  */
 #[Description(
     'Replace a whitespace with a non breaking space between a short word and its following word if the short word follows a question mark. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.'
+)]
+#[TransformationExample(
+    'Sicher? Ich denke nicht.',
+    "Sicher? Ich\xC2\xA0denke nicht.",
 )]
 class BindWordAfterQuestionMarkRule extends AbstractRule implements RuleInterface
 {

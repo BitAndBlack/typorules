@@ -13,12 +13,17 @@ namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\TypoRules\CharactersEnum;
 use BitAndBlack\TypoRules\Documentation\Description;
+use BitAndBlack\TypoRules\Documentation\TransformationExample;
 
 /**
  * @see \BitAndBlack\TypoRules\Tests\Rules\ConvertCharactersToRegisteredCharRuleTest
  */
 #[Description(
     'Convert the characters `(r)` or `(R)` into an `®` character.'
+)]
+#[TransformationExample(
+    'Apple(r)',
+    'Apple®',
 )]
 class ConvertCharactersToRegisteredCharRule extends AbstractRule implements RuleInterface
 {

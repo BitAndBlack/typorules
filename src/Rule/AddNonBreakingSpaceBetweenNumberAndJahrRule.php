@@ -13,12 +13,17 @@ namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\TypoRules\CharactersEnum;
 use BitAndBlack\TypoRules\Documentation\Description;
+use BitAndBlack\TypoRules\Documentation\TransformationExample;
 
 /**
  * @see \BitAndBlack\TypoRules\Tests\Rules\AddNonBreakingSpaceBetweenNumberAndJahrRuleTest
  */
 #[Description(
     'Add a non breaking space between between `Jahr` and the number before to disallow separating those two.'
+)]
+#[TransformationExample(
+    'Vor 30 Jahren',
+    "Vor 30\xC2\xA0Jahren",
 )]
 class AddNonBreakingSpaceBetweenNumberAndJahrRule extends AbstractRule implements RuleInterface
 {

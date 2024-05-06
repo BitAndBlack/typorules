@@ -13,12 +13,17 @@ namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\TypoRules\CharactersEnum;
 use BitAndBlack\TypoRules\Documentation\Description;
+use BitAndBlack\TypoRules\Documentation\TransformationExample;
 
 /**
  * @see \BitAndBlack\TypoRules\Tests\Rules\ConvertXToTimesBetweenNumbersRuleTest
  */
 #[Description(
     'Convert a `x` character into a multiplication sign `×`, when a measurement has been recognised.'
+)]
+#[TransformationExample(
+    'Format: 15 x 9 cm.',
+    'Format: 15 × 9 cm.',
 )]
 class ConvertXToTimesBetweenNumbersRule extends AbstractRule implements RuleInterface
 {
