@@ -230,7 +230,7 @@ This class is located under [../src/Rule/AddNonBreakingSpaceBetweenEingetragener
 
 #### Description
 
-No description provided.
+Add a thin non breaking space between between a left angle quote `«` and a word **after** to disallow separating those two.
 
 #### Possible rule customization
 
@@ -246,7 +246,7 @@ This class is located under [../src/Rule/AddNonBreakingSpaceBetweenGuillemetLeft
 
 #### Description
 
-No description provided.
+Add a thin non breaking space between between a right angle quote `»` and a word **before** to disallow separating those two.
 
 #### Possible rule customization
 
@@ -262,7 +262,7 @@ This class is located under [../src/Rule/AddNonBreakingSpaceBetweenGuillemetRigh
 
 #### Description
 
-No description provided.
+Add a thin non breaking space between between a single left angle quote `‹` and a word **after** to disallow separating those two.
 
 #### Possible rule customization
 
@@ -278,7 +278,7 @@ This class is located under [../src/Rule/AddNonBreakingSpaceBetweenGuillemetSing
 
 #### Description
 
-No description provided.
+Add a thin non breaking space between between a single right angle quote `›` and a word **before** to disallow separating those two.
 
 #### Possible rule customization
 
@@ -294,7 +294,7 @@ This class is located under [../src/Rule/AddNonBreakingSpaceBetweenGuillemetSing
 
 #### Description
 
-No description provided.
+Add a non breaking space between between `Jahr` and the number before to disallow separating those two.
 
 #### Possible rule customization
 
@@ -310,7 +310,7 @@ This class is located under [../src/Rule/AddNonBreakingSpaceBetweenNumberAndJahr
 
 #### Description
 
-No description provided.
+Add a thin non breaking space between between a number and the following unit to disallow separating those two.
 
 #### Possible rule customization
 
@@ -326,7 +326,7 @@ This class is located under [../src/Rule/AddNonBreakingSpaceBetweenNumberAndUnit
 
 #### Description
 
-No description provided.
+Add a non breaking space between between to words that have a dash between `/` to **allow** separating those two. This can improve the text wrap when having long words-
 
 #### Possible rule customization
 
@@ -395,7 +395,7 @@ This class is located under [../src/Rule/AddSoftHyphenToWordRule.php](../src/Rul
 
 #### Description
 
-No description provided.
+Add a missing space behind a dot `.`.
 
 #### Possible rule customization
 
@@ -411,7 +411,7 @@ This class is located under [../src/Rule/AddSpaceBehindDotRule.php](../src/Rule/
 
 #### Description
 
-No description provided.
+Add a missing space behind an exclamation mark `!`.
 
 #### Possible rule customization
 
@@ -427,7 +427,7 @@ This class is located under [../src/Rule/AddSpaceBehindExclamationMarkRule.php](
 
 #### Description
 
-No description provided.
+Add a missing space behind a question mark `?`.
 
 #### Possible rule customization
 
@@ -443,7 +443,7 @@ This class is located under [../src/Rule/AddSpaceBehindQuestionMarkRule.php](../
 
 #### Description
 
-No description provided.
+Add a hair space between brackets. The space will be added behind left (opening) brackets and before right (closing) brackets.
 
 #### Possible rule customization
 

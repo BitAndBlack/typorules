@@ -12,10 +12,14 @@
 namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\TypoRules\CharactersEnum;
+use BitAndBlack\TypoRules\Documentation\Description;
 
 /**
  * @see \BitAndBlack\TypoRules\Tests\Rules\AddNonBreakingSpaceBetweenNumberAndJahrRuleTest
  */
+#[Description(
+    'Add a non breaking space between between `Jahr` and the number before to disallow separating those two.'
+)]
 class AddNonBreakingSpaceBetweenNumberAndJahrRule extends AbstractRule implements RuleInterface
 {
     protected string $nonBreakingSpace;

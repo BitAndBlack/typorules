@@ -11,9 +11,14 @@
 
 namespace BitAndBlack\TypoRules\Rule;
 
+use BitAndBlack\TypoRules\Documentation\Description;
+
 /**
  * @see \BitAndBlack\TypoRules\Tests\Rules\AddSpaceBehindExclamationMarkRuleTest
  */
+#[Description(
+    'Add a missing space behind an exclamation mark `!`.'
+)]
 class AddSpaceBehindExclamationMarkRule extends AbstractRule implements RuleInterface
 {
     protected string $searchPattern = '/!(?!\s|\!)(?!$)/';

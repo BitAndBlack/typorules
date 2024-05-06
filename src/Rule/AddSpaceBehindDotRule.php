@@ -12,10 +12,14 @@
 namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\TypoRules\CharactersEnum;
+use BitAndBlack\TypoRules\Documentation\Description;
 
 /**
  * @see \BitAndBlack\TypoRules\Tests\Rules\AddSpaceBehindDotRuleTest
  */
+#[Description(
+    'Add a missing space behind a dot `.`.'
+)]
 class AddSpaceBehindDotRule extends AbstractRule implements RuleInterface
 {
     protected string $replacePattern = '. ';

@@ -12,10 +12,14 @@
 namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\TypoRules\CharactersEnum;
+use BitAndBlack\TypoRules\Documentation\Description;
 
 /**
  * @see \BitAndBlack\TypoRules\Tests\Rules\AddNonBreakingSpaceBetweenNumberAndUnitRuleTest
  */
+#[Description(
+    'Add a thin non breaking space between between a number and the following unit to disallow separating those two.'
+)]
 class AddNonBreakingSpaceBetweenNumberAndUnitRule extends AbstractRule implements RuleInterface
 {
     protected string $nonBreakingSpace;

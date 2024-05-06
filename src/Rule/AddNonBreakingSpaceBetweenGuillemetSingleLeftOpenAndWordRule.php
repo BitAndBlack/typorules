@@ -12,10 +12,14 @@
 namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\TypoRules\CharactersEnum;
+use BitAndBlack\TypoRules\Documentation\Description;
 
 /**
  * @see \BitAndBlack\TypoRules\Tests\Rules\AddNonBreakingSpaceBetweenGuillemetSingleLeftOpenAndWordRuleTest
  */
+#[Description(
+    'Add a thin non breaking space between between a single left angle quote `‹` and a word **after** to disallow separating those two.'
+)]
 class AddNonBreakingSpaceBetweenGuillemetSingleLeftOpenAndWordRule extends AbstractRule implements RuleInterface
 {
     protected string $nonBreakingSpace;

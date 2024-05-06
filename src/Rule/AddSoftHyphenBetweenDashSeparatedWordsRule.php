@@ -12,10 +12,14 @@
 namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\TypoRules\CharactersEnum;
+use BitAndBlack\TypoRules\Documentation\Description;
 
 /**
  * @see \BitAndBlack\TypoRules\Tests\Rules\AddHyphenBetweenDashSeparatedWordsRuleTest
  */
+#[Description(
+    'Add a non breaking space between between to words that have a dash between `/` to **allow** separating those two. This can improve the text wrap when having long words-'
+)]
 class AddSoftHyphenBetweenDashSeparatedWordsRule extends AbstractRule implements RuleInterface
 {
     protected int $minLengthWordBefore;

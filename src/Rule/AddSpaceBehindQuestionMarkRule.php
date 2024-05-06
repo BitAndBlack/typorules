@@ -11,9 +11,14 @@
 
 namespace BitAndBlack\TypoRules\Rule;
 
+use BitAndBlack\TypoRules\Documentation\Description;
+
 /**
  * @see \BitAndBlack\TypoRules\Tests\Rules\AddSpaceBehindQuestionMarkRuleTest
  */
+#[Description(
+    'Add a missing space behind a question mark `?`.'
+)]
 class AddSpaceBehindQuestionMarkRule extends AbstractRule implements RuleInterface
 {
     protected string $searchPattern = '/\?(?!\s|\?)(?!$)/';
