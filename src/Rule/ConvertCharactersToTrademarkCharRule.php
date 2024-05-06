@@ -12,10 +12,14 @@
 namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\TypoRules\CharactersEnum;
+use BitAndBlack\TypoRules\Documentation\Description;
 
 /**
  * @see \BitAndBlack\TypoRules\Tests\Rules\ConvertCharactersToTrademarkCharRuleTest
  */
+#[Description(
+    'Convert the characters `(tm)` or `(TM)` into an `™` character.'
+)]
 class ConvertCharactersToTrademarkCharRule extends AbstractRule implements RuleInterface
 {
     protected string $searchPattern = '/\((t|T)(m|M)\)/';

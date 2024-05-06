@@ -18,7 +18,7 @@ use BitAndBlack\TypoRules\Documentation\Description;
  * @see \BitAndBlack\TypoRules\Tests\Rules\AddNonBreakingSpaceBeforeUhrRuleTest
  */
 #[Description(
-    'Add a non breaking space between before the word `Uhr` to disallow separating it from the time before.'
+    'Add a non breaking space before the word `Uhr` to disallow separating it from the time before.'
 )]
 class AddNonBreakingSpaceBeforeUhrRule extends AbstractRule implements RuleInterface
 {

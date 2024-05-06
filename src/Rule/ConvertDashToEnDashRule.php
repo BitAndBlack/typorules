@@ -12,10 +12,14 @@
 namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\TypoRules\CharactersEnum;
+use BitAndBlack\TypoRules\Documentation\Description;
 
 /**
  * @see \BitAndBlack\TypoRules\Tests\Rules\ConvertDashToEnDashRuleTest
  */
+#[Description(
+    'Convert a dash `-` into an en dash `–` when there is whitespace before and after.'
+)]
 class ConvertDashToEnDashRule extends AbstractRule implements RuleInterface
 {
     protected string $searchPattern = '/\s\-\s/';

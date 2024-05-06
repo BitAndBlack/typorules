@@ -12,10 +12,14 @@
 namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\TypoRules\CharactersEnum;
+use BitAndBlack\TypoRules\Documentation\Description;
 
 /**
  * @see \BitAndBlack\TypoRules\Tests\Rules\BindNumberToNumberRuleTest
  */
+#[Description(
+    'Add a thin non breaking space between the words `Nr.` or `Nummer` and a following number to disallow separating them from each other.'
+)]
 class BindNumberToNumberRule extends AbstractRule implements RuleInterface
 {
     public function getSearchPattern(): string

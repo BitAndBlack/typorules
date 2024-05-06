@@ -198,7 +198,7 @@ This class is located under [../src/Rule/AddNonBreakingSpaceBeforeSemicolonRule.
 
 #### Description
 
-Add a non breaking space between before the word `Uhr` to disallow separating it from the time before.
+Add a non breaking space before the word `Uhr` to disallow separating it from the time before.
 
 #### Possible rule customization
 
@@ -459,7 +459,7 @@ This class is located under [../src/Rule/AddSpaceBetweenBracketsRule.php](../src
 
 #### Description
 
-No description provided.
+Add a thin non breaking space between the words `Nr.` or `Nummer` and a following number to disallow separating them from each other.
 
 #### Possible rule customization
 
@@ -475,7 +475,7 @@ This class is located under [../src/Rule/BindNumberToNumberRule.php](../src/Rule
 
 #### Description
 
-No description provided.
+Replace a whitespace with a non breaking space between a short word and its following word if the short word follows a colon. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.
 
 #### Possible rule customization
 
@@ -491,7 +491,7 @@ This class is located under [../src/Rule/BindWordAfterColonRule.php](../src/Rule
 
 #### Description
 
-No description provided.
+Replace a whitespace with a non breaking space between a short word and its following word if the short word follows a comma. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.
 
 #### Possible rule customization
 
@@ -507,7 +507,7 @@ This class is located under [../src/Rule/BindWordAfterCommaRule.php](../src/Rule
 
 #### Description
 
-No description provided.
+Replace a whitespace with a non breaking space between a short word and its following word if the short word follows a dot. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.
 
 #### Possible rule customization
 
@@ -523,7 +523,7 @@ This class is located under [../src/Rule/BindWordAfterDotRule.php](../src/Rule/B
 
 #### Description
 
-No description provided.
+Replace a whitespace with a non breaking space between a short word and its following word if the short word follows an exclamation mark. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.
 
 #### Possible rule customization
 
@@ -539,7 +539,7 @@ This class is located under [../src/Rule/BindWordAfterExclamationMarkRule.php](.
 
 #### Description
 
-No description provided.
+Replace a whitespace with a non breaking space between a short word and its following word if the short word follows a question mark. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.
 
 #### Possible rule customization
 
@@ -555,7 +555,7 @@ This class is located under [../src/Rule/BindWordAfterQuestionMarkRule.php](../s
 
 #### Description
 
-No description provided.
+Replace a whitespace with a non breaking space between a short word and its following word if the short word follows a semicolon. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.
 
 #### Possible rule customization
 
@@ -571,7 +571,7 @@ This class is located under [../src/Rule/BindWordAfterSemicolonRule.php](../src/
 
 #### Description
 
-No description provided.
+Convert the characters `(at)` into an `@` character.
 
 #### Possible rule customization
 
@@ -587,7 +587,7 @@ This class is located under [../src/Rule/ConvertCharactersToAtCharRule.php](../s
 
 #### Description
 
-No description provided.
+Convert the characters `(c)` or `(C)` into an `©` character.
 
 #### Possible rule customization
 
@@ -603,7 +603,7 @@ This class is located under [../src/Rule/ConvertCharactersToCopyrightCharRule.ph
 
 #### Description
 
-No description provided.
+Convert the characters `(r)` or `(R)` into an `®` character.
 
 #### Possible rule customization
 
@@ -619,7 +619,7 @@ This class is located under [../src/Rule/ConvertCharactersToRegisteredCharRule.p
 
 #### Description
 
-No description provided.
+Convert the characters `(tm)` or `(TM)` into an `™` character.
 
 #### Possible rule customization
 
@@ -635,7 +635,7 @@ This class is located under [../src/Rule/ConvertCharactersToTrademarkCharRule.ph
 
 #### Description
 
-No description provided.
+Convert a dash `-` into an em dash `—` when there is whitespace before and after.
 
 #### Possible rule customization
 
@@ -651,7 +651,7 @@ This class is located under [../src/Rule/ConvertDashToEmDashRule.php](../src/Rul
 
 #### Description
 
-No description provided.
+Convert a dash `-` into an en dash `–` when there is whitespace before and after.
 
 #### Possible rule customization
 
@@ -667,7 +667,7 @@ This class is located under [../src/Rule/ConvertDashToEnDashRule.php](../src/Rul
 
 #### Description
 
-No description provided.
+Convert three or more dots `...` into an ellipsis character `…`.
 
 #### Possible rule customization
 
@@ -683,7 +683,7 @@ This class is located under [../src/Rule/ConvertDotsToEllipsisRule.php](../src/R
 
 #### Description
 
-No description provided.
+Recognises a measurement and inserts thin non breaking spaces before and after the multiplication mark `x` or `×`.
 
 #### Possible rule customization
 
@@ -699,7 +699,7 @@ This class is located under [../src/Rule/ConvertSpacesBetweenTimesAndNumbersRule
 
 #### Description
 
-No description provided.
+Convert a `x` character into a multiplication sign `×`, when a measurement has been recognised.
 
 #### Possible rule customization
 

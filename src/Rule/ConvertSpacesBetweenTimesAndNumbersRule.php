@@ -12,10 +12,14 @@
 namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\TypoRules\CharactersEnum;
+use BitAndBlack\TypoRules\Documentation\Description;
 
 /**
  * @see \BitAndBlack\TypoRules\Tests\Rules\ConvertSpacesBetweenTimesAndNumbersRuleTest
  */
+#[Description(
+    'Recognises a measurement and inserts thin non breaking spaces before and after the multiplication mark `x` or `×`.'
+)]
 class ConvertSpacesBetweenTimesAndNumbersRule extends AbstractRule implements RuleInterface
 {
     public static function create(): self

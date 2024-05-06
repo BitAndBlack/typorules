@@ -12,10 +12,14 @@
 namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\TypoRules\CharactersEnum;
+use BitAndBlack\TypoRules\Documentation\Description;
 
 /**
  * @see \BitAndBlack\TypoRules\Tests\Rules\ConvertDotsToEllipsisRuleTest
  */
+#[Description(
+    'Convert three or more dots `...` into an ellipsis character `…`.'
+)]
 class ConvertDotsToEllipsisRule extends AbstractRule implements RuleInterface
 {
     public static function create(): self

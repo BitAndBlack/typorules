@@ -12,10 +12,14 @@
 namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\TypoRules\CharactersEnum;
+use BitAndBlack\TypoRules\Documentation\Description;
 
 /**
  * @see \BitAndBlack\TypoRules\Tests\Rules\ConvertCharactersToAtCharRuleTest
  */
+#[Description(
+    'Convert the characters `(at)` into an `@` character.'
+)]
 class ConvertCharactersToAtCharRule extends AbstractRule implements RuleInterface
 {
     protected string $searchPattern = '/\(at\)/';

@@ -12,10 +12,14 @@
 namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\TypoRules\CharactersEnum;
+use BitAndBlack\TypoRules\Documentation\Description;
 
 /**
  * @see \BitAndBlack\TypoRules\Tests\Rules\ConvertCharactersToCopyrightCharRuleTest
  */
+#[Description(
+    'Convert the characters `(c)` or `(C)` into an `©` character.'
+)]
 class ConvertCharactersToCopyrightCharRule extends AbstractRule implements RuleInterface
 {
     public static function create(): self

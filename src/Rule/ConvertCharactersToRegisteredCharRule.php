@@ -12,10 +12,14 @@
 namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\TypoRules\CharactersEnum;
+use BitAndBlack\TypoRules\Documentation\Description;
 
 /**
  * @see \BitAndBlack\TypoRules\Tests\Rules\ConvertCharactersToRegisteredCharRuleTest
  */
+#[Description(
+    'Convert the characters `(r)` or `(R)` into an `®` character.'
+)]
 class ConvertCharactersToRegisteredCharRule extends AbstractRule implements RuleInterface
 {
     protected string $searchPattern = '/\((r|R)\)/';
