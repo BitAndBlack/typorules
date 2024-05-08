@@ -73,7 +73,7 @@ Add a non breaking space after `Dr.`. This binds the title and the name together
 
 There is 1 possibility to customize this rule:
 
--   Configure the type of the space. Per default, a small non breaking space will be used.
+-   Configure the type of the space. Per default, a thin non breaking space will be used.
 
     ```php
     $addNonBreakingSpaceAfterDoctorRule->setNonBreakingSpace($nonBreakingSpace);
@@ -111,7 +111,7 @@ Add a non breaking space after `Prof.`. This binds the title and the name togeth
 
 There is 1 possibility to customize this rule:
 
--   Configure the type of the space. Per default, a small non breaking space will be used.
+-   Configure the type of the space. Per default, a thin non breaking space will be used.
 
     ```php
     $addNonBreakingSpaceAfterProfessorRule->setNonBreakingSpace($nonBreakingSpace);
@@ -138,7 +138,13 @@ Add a non breaking space between before a colon to disallow separating it from t
 
 #### Possible rule customization
 
-This rule doesn't allow any customization.
+There is 1 possibility to customize this rule:
+
+-   Configure the type of the space. Per default, a thin non breaking space will be used.
+
+    ```php
+    $addNonBreakingSpaceBeforeColonRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
 
 #### File
 
@@ -161,7 +167,13 @@ Add a non breaking space between before a exclamation mark to disallow separatin
 
 #### Possible rule customization
 
-This rule doesn't allow any customization.
+There is 1 possibility to customize this rule:
+
+-   Configure the type of the space. Per default, a thin non breaking space will be used.
+
+    ```php
+    $addNonBreakingSpaceBeforeExclamationMarkRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
 
 #### File
 
@@ -184,7 +196,13 @@ Add a non breaking space between before a question mark to disallow separating i
 
 #### Possible rule customization
 
-This rule doesn't allow any customization.
+There is 1 possibility to customize this rule:
+
+-   Configure the type of the space. Per default, a thin non breaking space will be used.
+
+    ```php
+    $addNonBreakingSpaceBeforeQuestionMarkRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
 
 #### File
 
@@ -207,7 +225,13 @@ Add a non breaking space between before a semicolon to disallow separating it fr
 
 #### Possible rule customization
 
-This rule doesn't allow any customization.
+There is 1 possibility to customize this rule:
+
+-   Configure the type of the space. Per default, a thin non breaking space will be used.
+
+    ```php
+    $addNonBreakingSpaceBeforeSemicolonRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
 
 #### File
 
@@ -230,7 +254,13 @@ Add a non breaking space before the word `Uhr` to disallow separating it from th
 
 #### Possible rule customization
 
-This rule doesn't allow any customization.
+There is 1 possibility to customize this rule:
+
+-   Configure the type of the space. Per default, a non breaking space will be used.
+
+    ```php
+    $addNonBreakingSpaceBeforeUhrRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
 
 #### File
 
@@ -258,7 +288,13 @@ Add a non breaking space between between `e.` and `V.` to disallow separating th
 
 #### Possible rule customization
 
-This rule doesn't allow any customization.
+There is 1 possibility to customize this rule:
+
+-   Configure the type of the space. Per default, a thin non breaking space will be used.
+
+    ```php
+    $addNonBreakingSpaceBetweenEingetragenerAndVereinRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
 
 #### File
 
@@ -281,7 +317,13 @@ Add a thin non breaking space between between a left angle quote `«` and a word
 
 #### Possible rule customization
 
-This rule doesn't allow any customization.
+There is 1 possibility to customize this rule:
+
+-   Configure the type of the space. Per default, a thin non breaking space will be used.
+
+    ```php
+    $addNonBreakingSpaceBetweenGuillemetLeftOpenAndWordRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
 
 #### File
 
@@ -304,7 +346,13 @@ Add a thin non breaking space between between a right angle quote `»` and a wor
 
 #### Possible rule customization
 
-This rule doesn't allow any customization.
+There is 1 possibility to customize this rule:
+
+-   Configure the type of the space. Per default, a thin non breaking space will be used.
+
+    ```php
+    $addNonBreakingSpaceBetweenGuillemetRightCloseAndWordRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
 
 #### File
 
@@ -327,7 +375,13 @@ Add a thin non breaking space between between a single left angle quote `‹` an
 
 #### Possible rule customization
 
-This rule doesn't allow any customization.
+There is 1 possibility to customize this rule:
+
+-   Configure the type of the space. Per default, a thin non breaking space will be used.
+
+    ```php
+    $addNonBreakingSpaceBetweenGuillemetSingleLeftOpenAndWordRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
 
 #### File
 
@@ -350,7 +404,13 @@ Add a thin non breaking space between between a single right angle quote `›` a
 
 #### Possible rule customization
 
-This rule doesn't allow any customization.
+There is 1 possibility to customize this rule:
+
+-   Configure the type of the space. Per default, a thin non breaking space will be used.
+
+    ```php
+    $addNonBreakingSpaceBetweenGuillemetSingleRightCloseAndWordRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
 
 #### File
 
@@ -373,7 +433,13 @@ Add a non breaking space between between `Jahr` and the number before to disallo
 
 #### Possible rule customization
 
-This rule doesn't allow any customization.
+There is 1 possibility to customize this rule:
+
+-   Configure the type of the space. Per default, a non breaking space will be used.
+
+    ```php
+    $addNonBreakingSpaceBetweenNumberAndJahrRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
 
 #### File
 
@@ -396,7 +462,13 @@ Add a thin non breaking space between between a number and the following unit to
 
 #### Possible rule customization
 
-This rule doesn't allow any customization.
+There is 1 possibility to customize this rule:
+
+-   Configure the type of the space. Per default, a thin non breaking space will be used.
+
+    ```php
+    $addNonBreakingSpaceBetweenNumberAndUnitRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
 
 #### File
 
@@ -615,7 +687,13 @@ Replace a whitespace with a non breaking space between a short word and its foll
 
 #### Possible rule customization
 
-This rule doesn't allow any customization.
+There is 1 possibility to customize this rule:
+
+-   Configure the type of the space. Per default, a non breaking space will be used.
+
+    ```php
+    $bindWordAfterColonRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
 
 #### File
 
@@ -638,7 +716,13 @@ Replace a whitespace with a non breaking space between a short word and its foll
 
 #### Possible rule customization
 
-This rule doesn't allow any customization.
+There is 1 possibility to customize this rule:
+
+-   Configure the type of the space. Per default, a non breaking space will be used.
+
+    ```php
+    $bindWordAfterCommaRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
 
 #### File
 
@@ -661,7 +745,13 @@ Replace a whitespace with a non breaking space between a short word and its foll
 
 #### Possible rule customization
 
-This rule doesn't allow any customization.
+There is 1 possibility to customize this rule:
+
+-   Configure the type of the space. Per default, a non breaking space will be used.
+
+    ```php
+    $bindWordAfterDotRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
 
 #### File
 
@@ -684,7 +774,13 @@ Replace a whitespace with a non breaking space between a short word and its foll
 
 #### Possible rule customization
 
-This rule doesn't allow any customization.
+There is 1 possibility to customize this rule:
+
+-   Configure the type of the space. Per default, a non breaking space will be used.
+
+    ```php
+    $bindWordAfterExclamationMarkRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
 
 #### File
 
@@ -707,7 +803,13 @@ Replace a whitespace with a non breaking space between a short word and its foll
 
 #### Possible rule customization
 
-This rule doesn't allow any customization.
+There is 1 possibility to customize this rule:
+
+-   Configure the type of the space. Per default, a non breaking space will be used.
+
+    ```php
+    $bindWordAfterQuestionMarkRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
 
 #### File
 
@@ -730,7 +832,13 @@ Replace a whitespace with a non breaking space between a short word and its foll
 
 #### Possible rule customization
 
-This rule doesn't allow any customization.
+There is 1 possibility to customize this rule:
+
+-   Configure the type of the space. Per default, a non breaking space will be used.
+
+    ```php
+    $bindWordAfterSemicolonRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
 
 #### File
 

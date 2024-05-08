@@ -56,7 +56,7 @@ class AddNonBreakingSpaceAfterProfessorRule extends AbstractRule implements Rule
         return '$1' . $this->nonBreakingSpace;
     }
 
-    #[Configuration('Configure the type of the space. Per default, a small non breaking space will be used.')]
+    #[Configuration('Configure the type of the space. Per default, a thin non breaking space will be used.')]
     public function setNonBreakingSpace(string $nonBreakingSpace): self
     {
         $this->nonBreakingSpace = $nonBreakingSpace;

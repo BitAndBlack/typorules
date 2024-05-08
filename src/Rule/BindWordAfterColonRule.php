@@ -12,6 +12,7 @@
 namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\TypoRules\CharactersEnum;
+use BitAndBlack\TypoRules\Documentation\Configuration;
 use BitAndBlack\TypoRules\Documentation\Description;
 use BitAndBlack\TypoRules\Documentation\TransformationExample;
 
@@ -55,6 +56,7 @@ class BindWordAfterColonRule extends AbstractRule implements RuleInterface
         return '$1' . $this->nonBreakingSpace . '$2';
     }
 
+    #[Configuration('Configure the type of the space. Per default, a non breaking space will be used.')]
     public function setNonBreakingSpace(string $nonBreakingSpace): self
     {
         $this->nonBreakingSpace = $nonBreakingSpace;
