@@ -6,6 +6,7 @@ use BitAndBlack\Composer\VendorPath;
 use BitAndBlack\TypoRules\Documentation\DocumentationParser;
 use BitAndBlack\TypoRules\Documentation\DocumentationWriter;
 use BitAndBlack\TypoRules\Rule\RuleInterface;
+use BitAndBlack\TypoRules\RuleSet\RuleSetInterface;
 use ReflectionException;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -33,6 +34,17 @@ class DocumentationCreateCommand extends Command
         $documentationWriter = new DocumentationWriter($documentations);
         $documentationWriter->create(
             $root . 'docs' . DIRECTORY_SEPARATOR . 'rules.md',
+        );
+
+        $documentationParser = new DocumentationParser();
+        $documentations = $documentationParser->getDocumentations(
+            $root . 'src' . DIRECTORY_SEPARATOR . 'RuleSet',
+            RuleSetInterface::class
+        );
+
+        $documentationWriter = new DocumentationWriter($documentations);
+        $documentationWriter->create(
+            $root . 'docs' . DIRECTORY_SEPARATOR . 'rulesets.md',
         );
 
         return Command::SUCCESS;
