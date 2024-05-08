@@ -491,7 +491,19 @@ Add a non breaking space between between to words that have a dash between `/` t
 
 #### Possible rule customization
 
-This rule doesn't allow any customization.
+There are 2 possibilities to customize this rule:
+
+-   Configure the minimum length for the word **before** the dash. It needs to have a length of `3` characters per default.
+
+    ```php
+    $addSoftHyphenBetweenDashSeparatedWordsRule->setMinLengthWordBefore($minLengthWordBefore);
+    ```
+
+-   Configure the minimum length for the word **after** the dash. It needs to have a length of `3` characters per default.
+
+    ```php
+    $addSoftHyphenBetweenDashSeparatedWordsRule->setMinLengthWordAfter($minLengthWordAfter);
+    ```
 
 #### File
 
@@ -687,12 +699,24 @@ Replace a whitespace with a non breaking space between a short word and its foll
 
 #### Possible rule customization
 
-There is 1 possibility to customize this rule:
+There are 3 possibilities to customize this rule:
 
 -   Configure the type of the space. Per default, a non breaking space will be used.
 
     ```php
     $bindWordAfterColonRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
+
+-   Configure the minimum length for the word after the colon. It needs to have a length of at least `3` characters per default.
+
+    ```php
+    $bindWordAfterColonRule->setWordMaxLength($wordMaxLength);
+    ```
+
+-   Configure the maximum length for the **second** word after the colon. By default, it must not have more than `5` characters.
+
+    ```php
+    $bindWordAfterColonRule->setWordAheadMaxLength($wordAheadMaxLength);
     ```
 
 #### File
@@ -716,12 +740,24 @@ Replace a whitespace with a non breaking space between a short word and its foll
 
 #### Possible rule customization
 
-There is 1 possibility to customize this rule:
+There are 3 possibilities to customize this rule:
 
 -   Configure the type of the space. Per default, a non breaking space will be used.
 
     ```php
     $bindWordAfterCommaRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
+
+-   Configure the minimum length for the word after the comma. It needs to have a length of at least `3` characters per default.
+
+    ```php
+    $bindWordAfterCommaRule->setWordMaxLength($wordMaxLength);
+    ```
+
+-   Configure the maximum length for the **second** word after the comma. By default, it must not have more than `5` characters.
+
+    ```php
+    $bindWordAfterCommaRule->setWordAheadMaxLength($wordAheadMaxLength);
     ```
 
 #### File
@@ -745,12 +781,24 @@ Replace a whitespace with a non breaking space between a short word and its foll
 
 #### Possible rule customization
 
-There is 1 possibility to customize this rule:
+There are 3 possibilities to customize this rule:
 
 -   Configure the type of the space. Per default, a non breaking space will be used.
 
     ```php
     $bindWordAfterDotRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
+
+-   Configure the minimum length for the word after the dot. It needs to have a length of at least `3` characters per default.
+
+    ```php
+    $bindWordAfterDotRule->setWordMaxLength($wordMaxLength);
+    ```
+
+-   Configure the maximum length for the **second** word after the dot. By default, it must not have more than `5` characters.
+
+    ```php
+    $bindWordAfterDotRule->setWordAheadMaxLength($wordAheadMaxLength);
     ```
 
 #### File
@@ -774,12 +822,24 @@ Replace a whitespace with a non breaking space between a short word and its foll
 
 #### Possible rule customization
 
-There is 1 possibility to customize this rule:
+There are 3 possibilities to customize this rule:
 
 -   Configure the type of the space. Per default, a non breaking space will be used.
 
     ```php
     $bindWordAfterExclamationMarkRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
+
+-   Configure the minimum length for the word after the exclamation mark. It needs to have a length of at least `3` characters per default.
+
+    ```php
+    $bindWordAfterExclamationMarkRule->setWordMaxLength($wordMaxLength);
+    ```
+
+-   Configure the maximum length for the **second** word after the exclamation mark. By default, it must not have more than `5` characters.
+
+    ```php
+    $bindWordAfterExclamationMarkRule->setWordAheadMaxLength($wordAheadMaxLength);
     ```
 
 #### File
@@ -803,12 +863,24 @@ Replace a whitespace with a non breaking space between a short word and its foll
 
 #### Possible rule customization
 
-There is 1 possibility to customize this rule:
+There are 3 possibilities to customize this rule:
 
 -   Configure the type of the space. Per default, a non breaking space will be used.
 
     ```php
     $bindWordAfterQuestionMarkRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
+
+-   Configure the minimum length for the word after the question mark. It needs to have a length of at least `3` characters per default.
+
+    ```php
+    $bindWordAfterQuestionMarkRule->setWordMaxLength($wordMaxLength);
+    ```
+
+-   Configure the maximum length for the **second** word after the question mark. By default, it must not have more than `5` characters.
+
+    ```php
+    $bindWordAfterQuestionMarkRule->setWordAheadMaxLength($wordAheadMaxLength);
     ```
 
 #### File
@@ -832,12 +904,24 @@ Replace a whitespace with a non breaking space between a short word and its foll
 
 #### Possible rule customization
 
-There is 1 possibility to customize this rule:
+There are 3 possibilities to customize this rule:
 
 -   Configure the type of the space. Per default, a non breaking space will be used.
 
     ```php
     $bindWordAfterSemicolonRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
+
+-   Configure the minimum length for the word after the semicolon. It needs to have a length of at least `3` characters per default.
+
+    ```php
+    $bindWordAfterSemicolonRule->setWordMaxLength($wordMaxLength);
+    ```
+
+-   Configure the maximum length for the **second** word after the semicolon. By default, it must not have more than `5` characters.
+
+    ```php
+    $bindWordAfterSemicolonRule->setWordAheadMaxLength($wordAheadMaxLength);
     ```
 
 #### File
@@ -1119,7 +1203,13 @@ Remove duplicated exclamation marks.
 
 #### Possible rule customization
 
-This rule doesn't allow any customization.
+There is 1 possibility to customize this rule:
+
+-   Configure the maximum permitted number of exclamation marks. This is `2` by default.
+
+    ```php
+    $removeUnnecessaryExclamationMarksRule->setMaxCountExclamationMark($maxCountExclamationMark);
+    ```
 
 #### File
 
@@ -1142,7 +1232,13 @@ Remove duplicated exclamation marks.
 
 #### Possible rule customization
 
-This rule doesn't allow any customization.
+There is 1 possibility to customize this rule:
+
+-   Configure the maximum permitted number of question marks. This is 2 by default.
+
+    ```php
+    $removeUnnecessaryQuestionMarksRule->setMaxCountQuestionMark($maxCountQuestionMark);
+    ```
 
 #### File
 

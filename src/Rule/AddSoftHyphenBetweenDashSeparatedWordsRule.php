@@ -12,6 +12,7 @@
 namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\TypoRules\CharactersEnum;
+use BitAndBlack\TypoRules\Documentation\Configuration;
 use BitAndBlack\TypoRules\Documentation\Description;
 use BitAndBlack\TypoRules\Documentation\TransformationExample;
 
@@ -52,12 +53,14 @@ class AddSoftHyphenBetweenDashSeparatedWordsRule extends AbstractRule implements
         return '$1/' . CharactersEnum::SOFT_HYPHEN->value . '$2';
     }
 
+    #[Configuration('Configure the minimum length for the word **before** the dash. It needs to have a length of `3` characters per default.')]
     public function setMinLengthWordBefore(int $minLengthWordBefore): self
     {
         $this->minLengthWordBefore = $minLengthWordBefore;
         return $this;
     }
 
+    #[Configuration('Configure the minimum length for the word **after** the dash. It needs to have a length of `3` characters per default.')]
     public function setMinLengthWordAfter(int $minLengthWordAfter): self
     {
         $this->minLengthWordAfter = $minLengthWordAfter;

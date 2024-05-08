@@ -63,12 +63,14 @@ class BindWordAfterCommaRule extends AbstractRule implements RuleInterface
         return $this;
     }
 
+    #[Configuration('Configure the minimum length for the word after the comma. It needs to have a length of at least `3` characters per default.')]
     public function setWordMaxLength(int $wordMaxLength): self
     {
         $this->wordMaxLength = $wordMaxLength;
         return $this;
     }
 
+    #[Configuration('Configure the maximum length for the **second** word after the comma. By default, it must not have more than `5` characters.')]
     public function setWordAheadMaxLength(int $wordAheadMaxLength): self
     {
         $this->wordAheadMaxLength = $wordAheadMaxLength;
