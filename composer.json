@@ -29,6 +29,9 @@
         "rector/rector": "^1.0",
         "symplify/easy-coding-standard": "^12.0"
     },
+    "suggest": {
+        "bitandblack/indesign-characters": "If you want to uses spaces for Adobe InDesign."
+    },
     "autoload": {
         "psr-4": {
             "BitAndBlack\\TypoRules\\": "src/"
