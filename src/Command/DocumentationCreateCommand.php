@@ -2,8 +2,10 @@
 
 namespace BitAndBlack\TypoRules\Command;
 
+use BitAndBlack\Composer\VendorPath;
 use BitAndBlack\TypoRules\Documentation\DocumentationParser;
 use BitAndBlack\TypoRules\Documentation\DocumentationWriter;
+use BitAndBlack\TypoRules\Rule\RuleInterface;
 use ReflectionException;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -18,16 +20,20 @@ class DocumentationCreateCommand extends Command
         ;
     }
 
-    /**
-     * @throws ReflectionException
-     */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $documentationParser = new DocumentationParser();
-        $documentations = $documentationParser->getDocumentations();
+        $root = dirname(new VendorPath()) . DIRECTORY_SEPARATOR;
 
-        $documentationWriter = new DocumentationWriter();
-        $documentationWriter->create($documentations);
+        $documentationParser = new DocumentationParser();
+        $documentations = $documentationParser->getDocumentations(
+            $root . 'src' . DIRECTORY_SEPARATOR . 'Rule',
+            RuleInterface::class
+        );
+
+        $documentationWriter = new DocumentationWriter($documentations);
+        $documentationWriter->create(
+            $root . 'docs' . DIRECTORY_SEPARATOR . 'rules.md',
+        );
 
         return Command::SUCCESS;
     }

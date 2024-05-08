@@ -12,6 +12,7 @@
 namespace BitAndBlack\TypoRules\Documentation;
 
 use ReflectionClass;
+use ReflectionException;
 
 class Documentation
 {
@@ -20,7 +21,7 @@ class Documentation
     private ?string $path = null;
 
     /**
-     * @var array<int, array<int, string>>
+     * @var array<int, array<int, string|null>>
      */
     private array $transformationExamples = [];
 
@@ -29,16 +30,25 @@ class Documentation
      */
     private array $configurationPossibilities = [];
 
+    /**
+     * @param class-string $className
+     */
     public function __construct(
         private readonly string $className,
     ) {
     }
 
+    /**
+     * @return class-string
+     */
     public function getClassName(): string
     {
         return $this->className;
     }
 
+    /**
+     * @throws ReflectionException
+     */
     public function getClassNameShort(): string
     {
         $reflectionClass = new ReflectionClass($this->getClassName());
@@ -68,7 +78,7 @@ class Documentation
     }
 
     /**
-     * @return array<int, array<int, string>>
+     * @return array<int, array<int, string|null>>
      */
     public function getTransformationExamples(): array
     {
@@ -93,7 +103,7 @@ class Documentation
      *
      * @return string
      */
-    public function getRelativePath(string $from, string $to)
+    public function getRelativePath(string $from, string $to): string
     {
         // some compatibility fixes for Windows paths
         $from = is_dir($from) ? rtrim($from, '\/') . '/' : $from;

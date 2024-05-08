@@ -18,21 +18,26 @@ class DocumentationWriter
     /**
      * @param array<int, Documentation> $documentations
      */
-    public function create(array $documentations): void
+    public function __construct(
+        private readonly array $documentations,
+    ) {
+    }
+
+    public function create(string $file): bool
     {
         $output = '';
 
         $output .= '# Rules documentation';
         $output .= PHP_EOL;
         $output .= PHP_EOL;
-        $output .= 'There are currently ' . count($documentations) . ' rules available.';
+        $output .= 'There are currently ' . count($this->documentations) . ' rules available.';
         $output .= PHP_EOL;
         $output .= PHP_EOL;
         $output .= '## TOC';
         $output .= PHP_EOL;
         $output .= PHP_EOL;
 
-        foreach ($documentations as $key => $documentation) {
+        foreach ($this->documentations as $key => $documentation) {
             $output .= '-   [`' . $documentation->getClassNameShort() . '`](#' . strtolower($documentation->getClassNameShort()) . ')';
             $output .= PHP_EOL;
         }
@@ -42,7 +47,7 @@ class DocumentationWriter
         $output .= PHP_EOL;
         $output .= PHP_EOL;
 
-        foreach ($documentations as $key => $documentation) {
+        foreach ($this->documentations as $key => $documentation) {
             $output .= '### `' . $documentation->getClassNameShort() . '`';
             $output .= PHP_EOL;
             $output .= PHP_EOL;
@@ -70,7 +75,7 @@ class DocumentationWriter
                         $output .= PHP_EOL;
                     }
 
-                    $addition= '';
+                    $addition = '';
 
                     if (true === $isList) {
                         $addition = '    ';
@@ -116,26 +121,26 @@ class DocumentationWriter
 
             $output .= PHP_EOL;
             $output .= PHP_EOL;
-            $output .= '#### File';
-            $output .= PHP_EOL;
-            $output .= PHP_EOL;
 
-            $relativePath = $documentation->getRelativePath(
-                dirname(new VendorPath()) . DIRECTORY_SEPARATOR . 'docs',
-                $documentation->getPath()
-            );
+            if (null !== $path = $documentation->getPath()) {
+                $relativePath = $documentation->getRelativePath(
+                    dirname(new VendorPath()) . DIRECTORY_SEPARATOR . 'docs',
+                    $path
+                );
 
-            $output .= 'This class is located under [' . $relativePath . '](' . $relativePath . ')';
-            $output .= PHP_EOL;
-            $output .= PHP_EOL;
+                $output .= '#### File';
+                $output .= PHP_EOL;
+                $output .= PHP_EOL;
+                $output .= 'This class is located under [' . $relativePath . '](' . $relativePath . ')';
+                $output .= PHP_EOL;
+                $output .= PHP_EOL;
+            }
+
             $output .= '----';
             $output .= PHP_EOL;
             $output .= PHP_EOL;
         }
 
-        file_put_contents(
-            dirname(new VendorPath()) . DIRECTORY_SEPARATOR . 'docs' . DIRECTORY_SEPARATOR . 'rules.md',
-            $output
-        );
+        return false !== file_put_contents($file, $output);
     }
 }

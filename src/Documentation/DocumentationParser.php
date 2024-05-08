@@ -11,11 +11,8 @@
 
 namespace BitAndBlack\TypoRules\Documentation;
 
-use BitAndBlack\Composer\VendorPath;
-use BitAndBlack\TypoRules\Rule\RuleInterface;
 use Nette\Loaders\RobotLoader;
 use ReflectionClass;
-use ReflectionException;
 use ReflectionMethod;
 
 class DocumentationParser
@@ -25,26 +22,27 @@ class DocumentationParser
     }
 
     /**
+     * @param class-string $implementedClass
      * @return array<int, Documentation>
-     * @throws ReflectionException
      */
-    public function getDocumentations(): array
+    public function getDocumentations(string $directory, string $implementedClass): array
     {
-        $rulePath = dirname(new VendorPath()) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'Rule';
-
         $loader = new RobotLoader();
-        $loader->addDirectory($rulePath);
-
+        $loader->addDirectory($directory);
         $loader->rebuild();
 
+        /** @var array<class-string, string> $indexedClasses */
         $indexedClasses = $loader->getIndexedClasses();
-
         $documentations = [];
 
         foreach ($indexedClasses as $class => $path) {
             $implementations = class_implements($class);
 
-            if (false === in_array(RuleInterface::class, $implementations, true)) {
+            if (false === is_array($implementations)) {
+                $implementations = [];
+            }
+
+            if (false === in_array($implementedClass, $implementations, true)) {
                 continue;
             }
 
@@ -119,8 +117,7 @@ class DocumentationParser
         usort(
             $documentations,
             static fn (Documentation $itemA, Documentation $itemB): int => $itemA->getClassName() <=> $itemB->getClassName()
-        )
-        ;
+        );
 
         return $documentations;
     }
