@@ -27,7 +27,7 @@ use Org\Heigl\Hyphenator\Hyphenator;
 )]
 #[TransformationExample(
     'Bodensee',
-    "Boden\xC2\xADsee",
+    'Boden\xC2\xADsee',
 )]
 class AddSoftHyphenToWordRule extends AbstractRule implements RuleInterface
 {

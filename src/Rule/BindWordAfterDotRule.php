@@ -23,7 +23,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 )]
 #[TransformationExample(
     'Schon vorbei. Von wegen!',
-    "Schon vorbei. Von\xC2\xA0wegen!",
+    'Schon vorbei. Von\xC2\xA0wegen!',
 )]
 class BindWordAfterDotRule extends AbstractRule implements RuleInterface
 {

@@ -23,11 +23,11 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 )]
 #[TransformationExample(
     'Supersport 500 e.V.',
-    "Supersport 500 e.\xC2\xA0V.",
+    'Supersport 500 e.\xC2\xA0V.',
 )]
 #[TransformationExample(
     'Supersport 500 e. V.',
-    "Supersport 500 e.\xC2\xA0V.",
+    'Supersport 500 e.\xC2\xA0V.',
 )]
 class AddNonBreakingSpaceBetweenEingetragenerAndVereinRule extends AbstractRule implements RuleInterface
 {

@@ -23,7 +23,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 )]
 #[TransformationExample(
     'Sicher! Ich denke nicht.',
-    "Sicher! Ich\xC2\xA0denke nicht.",
+    'Sicher! Ich\xC2\xA0denke nicht.',
 )]
 class BindWordAfterExclamationMarkRule extends AbstractRule implements RuleInterface
 {

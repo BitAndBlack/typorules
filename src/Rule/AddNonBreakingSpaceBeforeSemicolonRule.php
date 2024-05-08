@@ -23,7 +23,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 )]
 #[TransformationExample(
     'Concept, création et réalisation technique : Bit&Black',
-    "Concept, création et réalisation technique\xE2\x80\xAF: Bit&Black",
+    'Concept, création et réalisation technique\xE2\x80\xAF: Bit&Black',
 )]
 class AddNonBreakingSpaceBeforeSemicolonRule extends AbstractRule implements RuleInterface
 {

@@ -23,7 +23,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 )]
 #[TransformationExample(
     'Glaube mir: es war so schön!',
-    "Glaube mir: es\xC2\xA0war so schön!",
+    'Glaube mir: es\xC2\xA0war so schön!',
 )]
 class BindWordAfterColonRule extends AbstractRule implements RuleInterface
 {

@@ -23,7 +23,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 )]
 #[TransformationExample(
     '200 ° C',
-    "200\xE2\x80\xAF° C",
+    '200\xE2\x80\xAF° C',
 )]
 class AddNonBreakingSpaceBetweenNumberAndUnitRule extends AbstractRule implements RuleInterface
 {

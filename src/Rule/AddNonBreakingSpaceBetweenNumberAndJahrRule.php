@@ -23,7 +23,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 )]
 #[TransformationExample(
     'Vor 30 Jahren',
-    "Vor 30\xC2\xA0Jahren",
+    'Vor 30\xC2\xA0Jahren',
 )]
 class AddNonBreakingSpaceBetweenNumberAndJahrRule extends AbstractRule implements RuleInterface
 {

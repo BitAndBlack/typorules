@@ -23,7 +23,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 )]
 #[TransformationExample(
     'On y va !',
-    "On y va\xE2\x80\xAF!",
+    'On y va\xE2\x80\xAF!',
 )]
 class AddNonBreakingSpaceBeforeExclamationMarkRule extends AbstractRule implements RuleInterface
 {

@@ -23,7 +23,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 )]
 #[TransformationExample(
     'Ganz am Ende.Wie geht\'s weiter.',
-    "Ganz am Ende. Wie geht's weiter.",
+    'Ganz am Ende. Wie geht\'s weiter.',
 )]
 class AddSpaceBehindDotRule extends AbstractRule implements RuleInterface
 {

@@ -23,11 +23,11 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 )]
 #[TransformationExample(
     'Das ist Nr. 8.',
-    "Das ist Nr.\xE2\x80\xAF8.",
+    'Das ist Nr.\xE2\x80\xAF8.',
 )]
 #[TransformationExample(
     'Das ist Nummer 8.',
-    "Das ist Nummer\xE2\x80\xAF8.",
+    'Das ist Nummer\xE2\x80\xAF8.',
 )]
 class BindNumberToNumberRule extends AbstractRule implements RuleInterface
 {

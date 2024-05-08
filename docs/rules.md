@@ -59,7 +59,7 @@ Add a non breaking space after `Dr.`. This binds the title and the name together
 
     ```diff
     - Dr. Max Mustermann
-    + Dr. Max Mustermann
+    + Dr.\xE2\x80\xAFMax Mustermann
     ```
 
 -   With a non breaking space for html (`&nbsp;`):
@@ -97,7 +97,7 @@ Add a non breaking space after `Prof.`. This binds the title and the name togeth
 
     ```diff
     - Prof. Max Mustermann
-    + Prof. Max Mustermann
+    + Prof.\xE2\x80\xAFMax Mustermann
     ```
 
 -   With a non breaking space for html (`&nbsp;`):
@@ -133,7 +133,7 @@ Add a non breaking space between before a colon to disallow separating it from t
 
 ```diff
 - Concept, création et réalisation technique : Bit&Black
-+ Concept, création et réalisation technique : Bit&Black
++ Concept, création et réalisation technique\xE2\x80\xAF: Bit&Black
 ```
 
 #### Possible rule customization
@@ -156,7 +156,7 @@ Add a non breaking space between before a exclamation mark to disallow separatin
 
 ```diff
 - On y va !
-+ On y va !
++ On y va\xE2\x80\xAF!
 ```
 
 #### Possible rule customization
@@ -179,7 +179,7 @@ Add a non breaking space between before a question mark to disallow separating i
 
 ```diff
 - On y va ?
-+ On y va ?
++ On y va\xE2\x80\xAF?
 ```
 
 #### Possible rule customization
@@ -202,7 +202,7 @@ Add a non breaking space between before a semicolon to disallow separating it fr
 
 ```diff
 - Concept, création et réalisation technique : Bit&Black
-+ Concept, création et réalisation technique : Bit&Black
++ Concept, création et réalisation technique\xE2\x80\xAF: Bit&Black
 ```
 
 #### Possible rule customization
@@ -225,7 +225,7 @@ Add a non breaking space before the word `Uhr` to disallow separating it from th
 
 ```diff
 - Es ist 12.30 Uhr.
-+ Es ist 12.30 Uhr.
++ Es ist 12.30\xC2\xA0Uhr.
 ```
 
 #### Possible rule customization
@@ -248,12 +248,12 @@ Add a non breaking space between between `e.` and `V.` to disallow separating th
 
 ```diff
 - Supersport 500 e.V.
-+ Supersport 500 e. V.
++ Supersport 500 e.\xC2\xA0V.
 ```
 
 ```diff
 - Supersport 500 e. V.
-+ Supersport 500 e. V.
++ Supersport 500 e.\xC2\xA0V.
 ```
 
 #### Possible rule customization
@@ -276,7 +276,7 @@ Add a thin non breaking space between between a left angle quote `«` and a word
 
 ```diff
 - J'ai dit « non » à toi.
-+ J'ai dit « non » à toi.
++ J'ai dit «\xE2\x80\xAFnon » à toi.
 ```
 
 #### Possible rule customization
@@ -299,7 +299,7 @@ Add a thin non breaking space between between a right angle quote `»` and a wor
 
 ```diff
 - J'ai dit « non » à toi.
-+ J'ai dit « non » à toi.
++ J'ai dit « non\xE2\x80\xAF» à toi.
 ```
 
 #### Possible rule customization
@@ -322,7 +322,7 @@ Add a thin non breaking space between between a single left angle quote `‹` an
 
 ```diff
 - Je t'ai dit « non », car « tout à l'heure, tu m'as dit ‹ oui › ».
-+ Je t'ai dit « non », car « tout à l'heure, tu m'as dit ‹ oui › ».
++ Je t'ai dit « non », car « tout à l'heure, tu m'as dit ‹\xE2\x80\xAFoui › ».
 ```
 
 #### Possible rule customization
@@ -345,7 +345,7 @@ Add a thin non breaking space between between a single right angle quote `›` a
 
 ```diff
 - Je t'ai dit « non », car « tout à l'heure, tu m'as dit ‹ oui › ».
-+ Je t'ai dit « non », car « tout à l'heure, tu m'as dit ‹ oui › ».
++ Je t'ai dit « non », car « tout à l'heure, tu m'as dit ‹ oui\xE2\x80\xAF› ».
 ```
 
 #### Possible rule customization
@@ -368,7 +368,7 @@ Add a non breaking space between between `Jahr` and the number before to disallo
 
 ```diff
 - Vor 30 Jahren
-+ Vor 30 Jahren
++ Vor 30\xC2\xA0Jahren
 ```
 
 #### Possible rule customization
@@ -391,7 +391,7 @@ Add a thin non breaking space between between a number and the following unit to
 
 ```diff
 - 200 ° C
-+ 200 ° C
++ 200\xE2\x80\xAF° C
 ```
 
 #### Possible rule customization
@@ -414,7 +414,7 @@ Add a non breaking space between between to words that have a dash between `/` t
 
 ```diff
 - Von Paris/Frankreich nach Stuttgart/Deutschland.
-+ Von Paris/­Frankreich nach Stuttgart/­Deutschland.
++ Von Paris/\xC2\xADFrankreich nach Stuttgart/\xC2\xADDeutschland.
 ```
 
 #### Possible rule customization
@@ -437,7 +437,7 @@ Add a soft hyphen to words to allow hyphenation. This can make the typeface appe
 
 ```diff
 - Bodensee
-+ Boden­see
++ Boden\xC2\xADsee
 ```
 
 #### Possible rule customization
@@ -559,7 +559,7 @@ Add a hair space between brackets. The space will be added behind left (opening)
 
 ```diff
 - Es geht los (warum auch immer)!
-+ Es geht los ( warum auch immer )!
++ Es geht los (\xE2\x80\x8Awarum auch immer\xE2\x80\x8A)!
 ```
 
 #### Possible rule customization
@@ -582,12 +582,12 @@ Add a thin non breaking space between the words `Nr.` or `Nummer` and a followin
 
 ```diff
 - Das ist Nr. 8.
-+ Das ist Nr. 8.
++ Das ist Nr.\xE2\x80\xAF8.
 ```
 
 ```diff
 - Das ist Nummer 8.
-+ Das ist Nummer 8.
++ Das ist Nummer\xE2\x80\xAF8.
 ```
 
 #### Possible rule customization
@@ -610,7 +610,7 @@ Replace a whitespace with a non breaking space between a short word and its foll
 
 ```diff
 - Glaube mir: es war so schön!
-+ Glaube mir: es war so schön!
++ Glaube mir: es\xC2\xA0war so schön!
 ```
 
 #### Possible rule customization
@@ -633,7 +633,7 @@ Replace a whitespace with a non breaking space between a short word and its foll
 
 ```diff
 - Glaube mir, es war so schön!
-+ Glaube mir, es war so schön!
++ Glaube mir, es\xC2\xA0war so schön!
 ```
 
 #### Possible rule customization
@@ -656,7 +656,7 @@ Replace a whitespace with a non breaking space between a short word and its foll
 
 ```diff
 - Schon vorbei. Von wegen!
-+ Schon vorbei. Von wegen!
++ Schon vorbei. Von\xC2\xA0wegen!
 ```
 
 #### Possible rule customization
@@ -679,7 +679,7 @@ Replace a whitespace with a non breaking space between a short word and its foll
 
 ```diff
 - Sicher! Ich denke nicht.
-+ Sicher! Ich denke nicht.
++ Sicher! Ich\xC2\xA0denke nicht.
 ```
 
 #### Possible rule customization
@@ -702,7 +702,7 @@ Replace a whitespace with a non breaking space between a short word and its foll
 
 ```diff
 - Sicher? Ich denke nicht.
-+ Sicher? Ich denke nicht.
++ Sicher? Ich\xC2\xA0denke nicht.
 ```
 
 #### Possible rule customization
@@ -725,7 +725,7 @@ Replace a whitespace with a non breaking space between a short word and its foll
 
 ```diff
 - Glaube mir; es war so schön!
-+ Glaube mir; es war so schön!
++ Glaube mir; es\xC2\xA0war so schön!
 ```
 
 #### Possible rule customization
@@ -909,12 +909,12 @@ Recognises a measurement and inserts thin non breaking spaces before and after t
 
 ```diff
 - Format: 15 x 9 cm.
-+ Format: 15 x 9 cm.
++ Format: 15\xE2\x80\xAFx\xE2\x80\xAF9 cm.
 ```
 
 ```diff
 - Format: 15 × 9 cm.
-+ Format: 15 × 9 cm.
++ Format: 15\xE2\x80\xAF×\xE2\x80\xAF9 cm.
 ```
 
 #### Possible rule customization

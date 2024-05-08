@@ -23,7 +23,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 )]
 #[TransformationExample(
     'J\'ai dit « non » à toi.',
-    "J'ai dit «\xE2\x80\xAFnon » à toi.",
+    'J\'ai dit «\xE2\x80\xAFnon » à toi.',
 )]
 class AddNonBreakingSpaceBetweenGuillemetLeftOpenAndWordRule extends AbstractRule implements RuleInterface
 {

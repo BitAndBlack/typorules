@@ -23,7 +23,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 )]
 #[TransformationExample(
     'Von Paris/Frankreich nach Stuttgart/Deutschland.',
-    "Von Paris/\xC2\xADFrankreich nach Stuttgart/\xC2\xADDeutschland.",
+    'Von Paris/\xC2\xADFrankreich nach Stuttgart/\xC2\xADDeutschland.',
 )]
 class AddSoftHyphenBetweenDashSeparatedWordsRule extends AbstractRule implements RuleInterface
 {

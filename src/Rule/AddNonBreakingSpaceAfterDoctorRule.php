@@ -24,7 +24,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 )]
 #[TransformationExample(
     'Dr. Max Mustermann',
-    "Dr.\xE2\x80\xAFMax Mustermann",
+    'Dr.\xE2\x80\xAFMax Mustermann',
     'With a thin non breaking space (`\xE2\x80\xAF`)'
 )]
 #[TransformationExample(

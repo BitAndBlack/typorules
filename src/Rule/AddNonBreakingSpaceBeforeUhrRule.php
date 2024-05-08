@@ -23,7 +23,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 )]
 #[TransformationExample(
     'Es ist 12.30 Uhr.',
-    "Es ist 12.30\xC2\xA0Uhr.",
+    'Es ist 12.30\xC2\xA0Uhr.',
 )]
 class AddNonBreakingSpaceBeforeUhrRule extends AbstractRule implements RuleInterface
 {

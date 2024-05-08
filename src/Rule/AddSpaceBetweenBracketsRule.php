@@ -23,7 +23,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 )]
 #[TransformationExample(
     'Es geht los (warum auch immer)!',
-    "Es geht los (\xE2\x80\x8Awarum auch immer\xE2\x80\x8A)!",
+    'Es geht los (\xE2\x80\x8Awarum auch immer\xE2\x80\x8A)!',
 )]
 class AddSpaceBetweenBracketsRule extends AbstractRule implements RuleInterface
 {

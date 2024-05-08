@@ -23,7 +23,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 )]
 #[TransformationExample(
     'Je t\'ai dit « non », car « tout à l\'heure, tu m\'as dit ‹ oui › ».',
-    "Je t'ai dit « non », car « tout à l'heure, tu m'as dit ‹\xE2\x80\xAFoui › ».",
+    'Je t\'ai dit « non », car « tout à l\'heure, tu m\'as dit ‹\xE2\x80\xAFoui › ».',
 )]
 class AddNonBreakingSpaceBetweenGuillemetSingleLeftOpenAndWordRule extends AbstractRule implements RuleInterface
 {

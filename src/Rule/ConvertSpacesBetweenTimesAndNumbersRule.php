@@ -23,11 +23,11 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 )]
 #[TransformationExample(
     'Format: 15 x 9 cm.',
-    "Format: 15\xE2\x80\xAFx\xE2\x80\xAF9 cm.",
+    'Format: 15\xE2\x80\xAFx\xE2\x80\xAF9 cm.',
 )]
 #[TransformationExample(
     'Format: 15 × 9 cm.',
-    "Format: 15\xE2\x80\xAF×\xE2\x80\xAF9 cm.",
+    'Format: 15\xE2\x80\xAF×\xE2\x80\xAF9 cm.',
 )]
 class ConvertSpacesBetweenTimesAndNumbersRule extends AbstractRule implements RuleInterface
 {
