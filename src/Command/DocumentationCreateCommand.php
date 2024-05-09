@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * Bit&Black TypoRules.
+ *
+ * @author Tobias Köngeter
+ * @copyright Copyright © Bit&Black
+ * @link https://www.bitandblack.com
+ * @license MIT
+ */
+
 namespace BitAndBlack\TypoRules\Command;
 
 use BitAndBlack\Composer\VendorPath;
@@ -7,7 +16,6 @@ use BitAndBlack\TypoRules\Documentation\DocumentationParser;
 use BitAndBlack\TypoRules\Documentation\DocumentationWriter;
 use BitAndBlack\TypoRules\Rule\RuleInterface;
 use BitAndBlack\TypoRules\RuleSet\RuleSetInterface;
-use ReflectionException;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -18,6 +26,7 @@ class DocumentationCreateCommand extends Command
     {
         $this
             ->setName('documentation:create')
+            ->setDescription('Creates the documentation files for all rules and rule sets.')
         ;
     }
 
