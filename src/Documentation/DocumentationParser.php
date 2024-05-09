@@ -19,7 +19,7 @@ class DocumentationParser
 {
     /**
      * @param class-string $implementedClass
-     * @return array<int, Documentation>
+     * @return array<int, ClassDocumentation>
      */
     public function getDocumentations(string $directory, string $implementedClass): array
     {
@@ -46,10 +46,10 @@ class DocumentationParser
                 continue;
             }
 
-            $documentation = new Documentation($class);
-            $documentation->setPath($path);
+            $classDocumentation = new ClassDocumentation($class);
+            $classDocumentation->setPath($path);
 
-            $documentations[] = $documentation;
+            $documentations[] = $classDocumentation;
 
             $reflectionClass = new ReflectionClass($class);
             $attributes = $reflectionClass->getAttributes();
@@ -58,14 +58,14 @@ class DocumentationParser
                 $classAttributeInstance = $attribute->newInstance();
 
                 if ($classAttributeInstance instanceof Description) {
-                    $documentation->setDescription(
+                    $classDocumentation->setDescription(
                         $classAttributeInstance->getDescription()
                     );
                     continue;
                 }
 
                 if ($classAttributeInstance instanceof TransformationExample) {
-                    $documentation->addTransformationExample(
+                    $classDocumentation->addTransformationExample(
                         $classAttributeInstance->getBefore(),
                         $classAttributeInstance->getAfter(),
                         $classAttributeInstance->getDescription(),
@@ -98,10 +98,10 @@ class DocumentationParser
                             )
                         );
 
-                        $shortName = lcfirst($documentation->getClassNameShort());
+                        $shortName = lcfirst($classDocumentation->getClassNameShort());
                         $exampleConfiguration = '$' . $shortName . '->' . $methodName . '(' . $methodParametersString . ');';
 
-                        $documentation->addConfigurationPossibility(
+                        $classDocumentation->addConfigurationPossibility(
                             $methodAttributeInstance->getDescription(),
                             $exampleConfiguration
                         );
@@ -112,7 +112,7 @@ class DocumentationParser
 
         usort(
             $documentations,
-            static fn (Documentation $itemA, Documentation $itemB): int => $itemA->getClassName() <=> $itemB->getClassName()
+            static fn (ClassDocumentation $itemA, ClassDocumentation $itemB): int => $itemA->getClassName() <=> $itemB->getClassName()
         );
 
         return $documentations;

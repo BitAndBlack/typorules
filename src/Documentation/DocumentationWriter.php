@@ -20,7 +20,7 @@ class DocumentationWriter
     private string $classDescriptionPlural;
 
     /**
-     * @param array<int, Documentation> $documentations
+     * @param array<int, ClassDocumentation> $documentations
      */
     public function __construct(
         private readonly array $documentations,
