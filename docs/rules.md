@@ -81,7 +81,7 @@ There is 1 possibility to customize this rule:
 
 #### File
 
-This class is located under [../src/Rule/AddNonBreakingSpaceAfterDoctorRule.php](../src/Rule/AddNonBreakingSpaceAfterDoctorRule.php)
+This rule is located under [../src/Rule/AddNonBreakingSpaceAfterDoctorRule.php](../src/Rule/AddNonBreakingSpaceAfterDoctorRule.php)
 
 ----
 
@@ -119,7 +119,7 @@ There is 1 possibility to customize this rule:
 
 #### File
 
-This class is located under [../src/Rule/AddNonBreakingSpaceAfterProfessorRule.php](../src/Rule/AddNonBreakingSpaceAfterProfessorRule.php)
+This rule is located under [../src/Rule/AddNonBreakingSpaceAfterProfessorRule.php](../src/Rule/AddNonBreakingSpaceAfterProfessorRule.php)
 
 ----
 
@@ -148,7 +148,7 @@ There is 1 possibility to customize this rule:
 
 #### File
 
-This class is located under [../src/Rule/AddNonBreakingSpaceBeforeColonRule.php](../src/Rule/AddNonBreakingSpaceBeforeColonRule.php)
+This rule is located under [../src/Rule/AddNonBreakingSpaceBeforeColonRule.php](../src/Rule/AddNonBreakingSpaceBeforeColonRule.php)
 
 ----
 
@@ -177,7 +177,7 @@ There is 1 possibility to customize this rule:
 
 #### File
 
-This class is located under [../src/Rule/AddNonBreakingSpaceBeforeExclamationMarkRule.php](../src/Rule/AddNonBreakingSpaceBeforeExclamationMarkRule.php)
+This rule is located under [../src/Rule/AddNonBreakingSpaceBeforeExclamationMarkRule.php](../src/Rule/AddNonBreakingSpaceBeforeExclamationMarkRule.php)
 
 ----
 
@@ -206,7 +206,7 @@ There is 1 possibility to customize this rule:
 
 #### File
 
-This class is located under [../src/Rule/AddNonBreakingSpaceBeforeQuestionMarkRule.php](../src/Rule/AddNonBreakingSpaceBeforeQuestionMarkRule.php)
+This rule is located under [../src/Rule/AddNonBreakingSpaceBeforeQuestionMarkRule.php](../src/Rule/AddNonBreakingSpaceBeforeQuestionMarkRule.php)
 
 ----
 
@@ -235,7 +235,7 @@ There is 1 possibility to customize this rule:
 
 #### File
 
-This class is located under [../src/Rule/AddNonBreakingSpaceBeforeSemicolonRule.php](../src/Rule/AddNonBreakingSpaceBeforeSemicolonRule.php)
+This rule is located under [../src/Rule/AddNonBreakingSpaceBeforeSemicolonRule.php](../src/Rule/AddNonBreakingSpaceBeforeSemicolonRule.php)
 
 ----
 
@@ -264,7 +264,7 @@ There is 1 possibility to customize this rule:
 
 #### File
 
-This class is located under [../src/Rule/AddNonBreakingSpaceBeforeUhrRule.php](../src/Rule/AddNonBreakingSpaceBeforeUhrRule.php)
+This rule is located under [../src/Rule/AddNonBreakingSpaceBeforeUhrRule.php](../src/Rule/AddNonBreakingSpaceBeforeUhrRule.php)
 
 ----
 
@@ -298,7 +298,7 @@ There is 1 possibility to customize this rule:
 
 #### File
 
-This class is located under [../src/Rule/AddNonBreakingSpaceBetweenEingetragenerAndVereinRule.php](../src/Rule/AddNonBreakingSpaceBetweenEingetragenerAndVereinRule.php)
+This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenEingetragenerAndVereinRule.php](../src/Rule/AddNonBreakingSpaceBetweenEingetragenerAndVereinRule.php)
 
 ----
 
@@ -327,7 +327,7 @@ There is 1 possibility to customize this rule:
 
 #### File
 
-This class is located under [../src/Rule/AddNonBreakingSpaceBetweenGuillemetLeftOpenAndWordRule.php](../src/Rule/AddNonBreakingSpaceBetweenGuillemetLeftOpenAndWordRule.php)
+This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenGuillemetLeftOpenAndWordRule.php](../src/Rule/AddNonBreakingSpaceBetweenGuillemetLeftOpenAndWordRule.php)
 
 ----
 
@@ -356,7 +356,7 @@ There is 1 possibility to customize this rule:
 
 #### File
 
-This class is located under [../src/Rule/AddNonBreakingSpaceBetweenGuillemetRightCloseAndWordRule.php](../src/Rule/AddNonBreakingSpaceBetweenGuillemetRightCloseAndWordRule.php)
+This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenGuillemetRightCloseAndWordRule.php](../src/Rule/AddNonBreakingSpaceBetweenGuillemetRightCloseAndWordRule.php)
 
 ----
 
@@ -385,7 +385,7 @@ There is 1 possibility to customize this rule:
 
 #### File
 
-This class is located under [../src/Rule/AddNonBreakingSpaceBetweenGuillemetSingleLeftOpenAndWordRule.php](../src/Rule/AddNonBreakingSpaceBetweenGuillemetSingleLeftOpenAndWordRule.php)
+This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenGuillemetSingleLeftOpenAndWordRule.php](../src/Rule/AddNonBreakingSpaceBetweenGuillemetSingleLeftOpenAndWordRule.php)
 
 ----
 
@@ -414,7 +414,7 @@ There is 1 possibility to customize this rule:
 
 #### File
 
-This class is located under [../src/Rule/AddNonBreakingSpaceBetweenGuillemetSingleRightCloseAndWordRule.php](../src/Rule/AddNonBreakingSpaceBetweenGuillemetSingleRightCloseAndWordRule.php)
+This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenGuillemetSingleRightCloseAndWordRule.php](../src/Rule/AddNonBreakingSpaceBetweenGuillemetSingleRightCloseAndWordRule.php)
 
 ----
 
@@ -443,7 +443,7 @@ There is 1 possibility to customize this rule:
 
 #### File
 
-This class is located under [../src/Rule/AddNonBreakingSpaceBetweenNumberAndJahrRule.php](../src/Rule/AddNonBreakingSpaceBetweenNumberAndJahrRule.php)
+This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenNumberAndJahrRule.php](../src/Rule/AddNonBreakingSpaceBetweenNumberAndJahrRule.php)
 
 ----
 
@@ -472,7 +472,7 @@ There is 1 possibility to customize this rule:
 
 #### File
 
-This class is located under [../src/Rule/AddNonBreakingSpaceBetweenNumberAndUnitRule.php](../src/Rule/AddNonBreakingSpaceBetweenNumberAndUnitRule.php)
+This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenNumberAndUnitRule.php](../src/Rule/AddNonBreakingSpaceBetweenNumberAndUnitRule.php)
 
 ----
 
@@ -507,7 +507,7 @@ There are 2 possibilities to customize this rule:
 
 #### File
 
-This class is located under [../src/Rule/AddSoftHyphenBetweenDashSeparatedWordsRule.php](../src/Rule/AddSoftHyphenBetweenDashSeparatedWordsRule.php)
+This rule is located under [../src/Rule/AddSoftHyphenBetweenDashSeparatedWordsRule.php](../src/Rule/AddSoftHyphenBetweenDashSeparatedWordsRule.php)
 
 ----
 
@@ -560,7 +560,7 @@ There are 5 possibilities to customize this rule:
 
 #### File
 
-This class is located under [../src/Rule/AddSoftHyphenToWordRule.php](../src/Rule/AddSoftHyphenToWordRule.php)
+This rule is located under [../src/Rule/AddSoftHyphenToWordRule.php](../src/Rule/AddSoftHyphenToWordRule.php)
 
 ----
 
@@ -583,7 +583,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [../src/Rule/AddSpaceBehindDotRule.php](../src/Rule/AddSpaceBehindDotRule.php)
+This rule is located under [../src/Rule/AddSpaceBehindDotRule.php](../src/Rule/AddSpaceBehindDotRule.php)
 
 ----
 
@@ -606,7 +606,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [../src/Rule/AddSpaceBehindExclamationMarkRule.php](../src/Rule/AddSpaceBehindExclamationMarkRule.php)
+This rule is located under [../src/Rule/AddSpaceBehindExclamationMarkRule.php](../src/Rule/AddSpaceBehindExclamationMarkRule.php)
 
 ----
 
@@ -629,7 +629,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [../src/Rule/AddSpaceBehindQuestionMarkRule.php](../src/Rule/AddSpaceBehindQuestionMarkRule.php)
+This rule is located under [../src/Rule/AddSpaceBehindQuestionMarkRule.php](../src/Rule/AddSpaceBehindQuestionMarkRule.php)
 
 ----
 
@@ -652,7 +652,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [../src/Rule/AddSpaceBetweenBracketsRule.php](../src/Rule/AddSpaceBetweenBracketsRule.php)
+This rule is located under [../src/Rule/AddSpaceBetweenBracketsRule.php](../src/Rule/AddSpaceBetweenBracketsRule.php)
 
 ----
 
@@ -680,7 +680,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [../src/Rule/BindNumberToNumberRule.php](../src/Rule/BindNumberToNumberRule.php)
+This rule is located under [../src/Rule/BindNumberToNumberRule.php](../src/Rule/BindNumberToNumberRule.php)
 
 ----
 
@@ -721,7 +721,7 @@ There are 3 possibilities to customize this rule:
 
 #### File
 
-This class is located under [../src/Rule/BindWordAfterColonRule.php](../src/Rule/BindWordAfterColonRule.php)
+This rule is located under [../src/Rule/BindWordAfterColonRule.php](../src/Rule/BindWordAfterColonRule.php)
 
 ----
 
@@ -762,7 +762,7 @@ There are 3 possibilities to customize this rule:
 
 #### File
 
-This class is located under [../src/Rule/BindWordAfterCommaRule.php](../src/Rule/BindWordAfterCommaRule.php)
+This rule is located under [../src/Rule/BindWordAfterCommaRule.php](../src/Rule/BindWordAfterCommaRule.php)
 
 ----
 
@@ -803,7 +803,7 @@ There are 3 possibilities to customize this rule:
 
 #### File
 
-This class is located under [../src/Rule/BindWordAfterDotRule.php](../src/Rule/BindWordAfterDotRule.php)
+This rule is located under [../src/Rule/BindWordAfterDotRule.php](../src/Rule/BindWordAfterDotRule.php)
 
 ----
 
@@ -844,7 +844,7 @@ There are 3 possibilities to customize this rule:
 
 #### File
 
-This class is located under [../src/Rule/BindWordAfterExclamationMarkRule.php](../src/Rule/BindWordAfterExclamationMarkRule.php)
+This rule is located under [../src/Rule/BindWordAfterExclamationMarkRule.php](../src/Rule/BindWordAfterExclamationMarkRule.php)
 
 ----
 
@@ -885,7 +885,7 @@ There are 3 possibilities to customize this rule:
 
 #### File
 
-This class is located under [../src/Rule/BindWordAfterQuestionMarkRule.php](../src/Rule/BindWordAfterQuestionMarkRule.php)
+This rule is located under [../src/Rule/BindWordAfterQuestionMarkRule.php](../src/Rule/BindWordAfterQuestionMarkRule.php)
 
 ----
 
@@ -926,7 +926,7 @@ There are 3 possibilities to customize this rule:
 
 #### File
 
-This class is located under [../src/Rule/BindWordAfterSemicolonRule.php](../src/Rule/BindWordAfterSemicolonRule.php)
+This rule is located under [../src/Rule/BindWordAfterSemicolonRule.php](../src/Rule/BindWordAfterSemicolonRule.php)
 
 ----
 
@@ -949,7 +949,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [../src/Rule/ConvertCharactersToAtCharRule.php](../src/Rule/ConvertCharactersToAtCharRule.php)
+This rule is located under [../src/Rule/ConvertCharactersToAtCharRule.php](../src/Rule/ConvertCharactersToAtCharRule.php)
 
 ----
 
@@ -972,7 +972,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [../src/Rule/ConvertCharactersToCopyrightCharRule.php](../src/Rule/ConvertCharactersToCopyrightCharRule.php)
+This rule is located under [../src/Rule/ConvertCharactersToCopyrightCharRule.php](../src/Rule/ConvertCharactersToCopyrightCharRule.php)
 
 ----
 
@@ -995,7 +995,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [../src/Rule/ConvertCharactersToRegisteredCharRule.php](../src/Rule/ConvertCharactersToRegisteredCharRule.php)
+This rule is located under [../src/Rule/ConvertCharactersToRegisteredCharRule.php](../src/Rule/ConvertCharactersToRegisteredCharRule.php)
 
 ----
 
@@ -1018,7 +1018,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [../src/Rule/ConvertCharactersToTrademarkCharRule.php](../src/Rule/ConvertCharactersToTrademarkCharRule.php)
+This rule is located under [../src/Rule/ConvertCharactersToTrademarkCharRule.php](../src/Rule/ConvertCharactersToTrademarkCharRule.php)
 
 ----
 
@@ -1041,7 +1041,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [../src/Rule/ConvertDashToEmDashRule.php](../src/Rule/ConvertDashToEmDashRule.php)
+This rule is located under [../src/Rule/ConvertDashToEmDashRule.php](../src/Rule/ConvertDashToEmDashRule.php)
 
 ----
 
@@ -1064,7 +1064,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [../src/Rule/ConvertDashToEnDashRule.php](../src/Rule/ConvertDashToEnDashRule.php)
+This rule is located under [../src/Rule/ConvertDashToEnDashRule.php](../src/Rule/ConvertDashToEnDashRule.php)
 
 ----
 
@@ -1087,7 +1087,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [../src/Rule/ConvertDotsToEllipsisRule.php](../src/Rule/ConvertDotsToEllipsisRule.php)
+This rule is located under [../src/Rule/ConvertDotsToEllipsisRule.php](../src/Rule/ConvertDotsToEllipsisRule.php)
 
 ----
 
@@ -1115,7 +1115,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [../src/Rule/ConvertSpacesBetweenTimesAndNumbersRule.php](../src/Rule/ConvertSpacesBetweenTimesAndNumbersRule.php)
+This rule is located under [../src/Rule/ConvertSpacesBetweenTimesAndNumbersRule.php](../src/Rule/ConvertSpacesBetweenTimesAndNumbersRule.php)
 
 ----
 
@@ -1138,7 +1138,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [../src/Rule/ConvertXToTimesBetweenNumbersRule.php](../src/Rule/ConvertXToTimesBetweenNumbersRule.php)
+This rule is located under [../src/Rule/ConvertXToTimesBetweenNumbersRule.php](../src/Rule/ConvertXToTimesBetweenNumbersRule.php)
 
 ----
 
@@ -1161,7 +1161,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [../src/Rule/RemoveDuplicatedWhitespaceRule.php](../src/Rule/RemoveDuplicatedWhitespaceRule.php)
+This rule is located under [../src/Rule/RemoveDuplicatedWhitespaceRule.php](../src/Rule/RemoveDuplicatedWhitespaceRule.php)
 
 ----
 
@@ -1184,7 +1184,7 @@ This rule doesn't allow any customization.
 
 #### File
 
-This class is located under [../src/Rule/RemoveSpaceBeforeCommaRule.php](../src/Rule/RemoveSpaceBeforeCommaRule.php)
+This rule is located under [../src/Rule/RemoveSpaceBeforeCommaRule.php](../src/Rule/RemoveSpaceBeforeCommaRule.php)
 
 ----
 
@@ -1213,7 +1213,7 @@ There is 1 possibility to customize this rule:
 
 #### File
 
-This class is located under [../src/Rule/RemoveUnnecessaryExclamationMarksRule.php](../src/Rule/RemoveUnnecessaryExclamationMarksRule.php)
+This rule is located under [../src/Rule/RemoveUnnecessaryExclamationMarksRule.php](../src/Rule/RemoveUnnecessaryExclamationMarksRule.php)
 
 ----
 
@@ -1242,7 +1242,7 @@ There is 1 possibility to customize this rule:
 
 #### File
 
-This class is located under [../src/Rule/RemoveUnnecessaryQuestionMarksRule.php](../src/Rule/RemoveUnnecessaryQuestionMarksRule.php)
+This rule is located under [../src/Rule/RemoveUnnecessaryQuestionMarksRule.php](../src/Rule/RemoveUnnecessaryQuestionMarksRule.php)
 
 ----
 

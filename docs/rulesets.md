@@ -1,6 +1,6 @@
-# Rules documentation
+# Rule sets documentation
 
-There are currently 5 rules available.
+There are currently 5 rule sets available.
 
 ## TOC
 
@@ -10,7 +10,7 @@ There are currently 5 rules available.
 -   [`FrenchRuleSet`](#frenchruleset)
 -   [`GermanRuleSet`](#germanruleset)
 
-## Rules
+## Rule sets
 
 ### `AdvancedTypographyRuleSet`
 
@@ -18,13 +18,13 @@ There are currently 5 rules available.
 
 A set of rules for an advanced typography. This can be used in DTP applications, for example.
 
-#### Possible rule customization
+#### Possible rule set customization
 
-This rule doesn't allow any customization.
+This rule set doesn't allow any customization.
 
 #### File
 
-This class is located under [../src/RuleSet/AdvancedTypographyRuleSet.php](../src/RuleSet/AdvancedTypographyRuleSet.php)
+This rule set is located under [../src/RuleSet/AdvancedTypographyRuleSet.php](../src/RuleSet/AdvancedTypographyRuleSet.php)
 
 ----
 
@@ -34,13 +34,13 @@ This class is located under [../src/RuleSet/AdvancedTypographyRuleSet.php](../sr
 
 An empty set of rules that can be configured completely by yourself.
 
-#### Possible rule customization
+#### Possible rule set customization
 
-This rule doesn't allow any customization.
+This rule set doesn't allow any customization.
 
 #### File
 
-This class is located under [../src/RuleSet/CustomRuleSet.php](../src/RuleSet/CustomRuleSet.php)
+This rule set is located under [../src/RuleSet/CustomRuleSet.php](../src/RuleSet/CustomRuleSet.php)
 
 ----
 
@@ -50,13 +50,13 @@ This class is located under [../src/RuleSet/CustomRuleSet.php](../src/RuleSet/Cu
 
 A set of rules that can handle english words and english typography.
 
-#### Possible rule customization
+#### Possible rule set customization
 
-This rule doesn't allow any customization.
+This rule set doesn't allow any customization.
 
 #### File
 
-This class is located under [../src/RuleSet/EnglishRuleSet.php](../src/RuleSet/EnglishRuleSet.php)
+This rule set is located under [../src/RuleSet/EnglishRuleSet.php](../src/RuleSet/EnglishRuleSet.php)
 
 ----
 
@@ -66,13 +66,13 @@ This class is located under [../src/RuleSet/EnglishRuleSet.php](../src/RuleSet/E
 
 A set of rules that can handle french words and french typography.
 
-#### Possible rule customization
+#### Possible rule set customization
 
-This rule doesn't allow any customization.
+This rule set doesn't allow any customization.
 
 #### File
 
-This class is located under [../src/RuleSet/FrenchRuleSet.php](../src/RuleSet/FrenchRuleSet.php)
+This rule set is located under [../src/RuleSet/FrenchRuleSet.php](../src/RuleSet/FrenchRuleSet.php)
 
 ----
 
@@ -82,13 +82,13 @@ This class is located under [../src/RuleSet/FrenchRuleSet.php](../src/RuleSet/Fr
 
 A set of rules that can handle german words and german typography.
 
-#### Possible rule customization
+#### Possible rule set customization
 
-This rule doesn't allow any customization.
+This rule set doesn't allow any customization.
 
 #### File
 
-This class is located under [../src/RuleSet/GermanRuleSet.php](../src/RuleSet/GermanRuleSet.php)
+This rule set is located under [../src/RuleSet/GermanRuleSet.php](../src/RuleSet/GermanRuleSet.php)
 
 ----
 

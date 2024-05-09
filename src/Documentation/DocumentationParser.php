@@ -17,10 +17,6 @@ use ReflectionMethod;
 
 class DocumentationParser
 {
-    public function __construct()
-    {
-    }
-
     /**
      * @param class-string $implementedClass
      * @return array<int, Documentation>

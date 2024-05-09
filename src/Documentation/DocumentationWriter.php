@@ -15,24 +15,31 @@ use BitAndBlack\Composer\VendorPath;
 
 class DocumentationWriter
 {
+    private string $classDescriptionSingular;
+
+    private string $classDescriptionPlural;
+
     /**
      * @param array<int, Documentation> $documentations
      */
     public function __construct(
         private readonly array $documentations,
     ) {
+        $this->classDescriptionSingular = 'entity';
+        $this->classDescriptionPlural = 'entities';
     }
 
     public function create(string $file): bool
     {
         $output = '';
 
-        $output .= '# Rules documentation';
+        $output .= '# ' . ucfirst($this->classDescriptionPlural) . ' documentation';
         $output .= PHP_EOL;
         $output .= PHP_EOL;
-        $output .= 'There are currently ' . count($this->documentations) . ' rules available.';
+        $output .= 'There are currently ' . count($this->documentations) . ' ' . $this->classDescriptionPlural . ' available.';
         $output .= PHP_EOL;
         $output .= PHP_EOL;
+
         $output .= '## TOC';
         $output .= PHP_EOL;
         $output .= PHP_EOL;
@@ -43,7 +50,8 @@ class DocumentationWriter
         }
 
         $output .= PHP_EOL;
-        $output .= '## Rules';
+
+        $output .= '## ' . ucfirst($this->classDescriptionPlural);
         $output .= PHP_EOL;
         $output .= PHP_EOL;
 
@@ -94,7 +102,7 @@ class DocumentationWriter
                 $output .= PHP_EOL;
             }
 
-            $output .= '#### Possible rule customization';
+            $output .= '#### Possible ' . $this->classDescriptionSingular . ' customization';
             $output .= PHP_EOL;
             $output .= PHP_EOL;
 
@@ -116,7 +124,7 @@ class DocumentationWriter
                     $output .= '    ```';
                 }
             } else {
-                $output .= 'This rule doesn\'t allow any customization.';
+                $output .= 'This ' . $this->classDescriptionSingular . ' doesn\'t allow any customization.';
             }
 
             $output .= PHP_EOL;
@@ -131,7 +139,7 @@ class DocumentationWriter
                 $output .= '#### File';
                 $output .= PHP_EOL;
                 $output .= PHP_EOL;
-                $output .= 'This class is located under [' . $relativePath . '](' . $relativePath . ')';
+                $output .= 'This ' . $this->classDescriptionSingular . ' is located under [' . $relativePath . '](' . $relativePath . ')';
                 $output .= PHP_EOL;
                 $output .= PHP_EOL;
             }
@@ -142,5 +150,17 @@ class DocumentationWriter
         }
 
         return false !== file_put_contents($file, $output);
+    }
+
+    public function setClassDescriptionSingular(string $classDescriptionSingular): self
+    {
+        $this->classDescriptionSingular = $classDescriptionSingular;
+        return $this;
+    }
+
+    public function setClassDescriptionPlural(string $classDescriptionPlural): self
+    {
+        $this->classDescriptionPlural = $classDescriptionPlural;
+        return $this;
     }
 }

@@ -32,9 +32,13 @@ class DocumentationCreateCommand extends Command
         );
 
         $documentationWriter = new DocumentationWriter($documentations);
-        $documentationWriter->create(
-            $root . 'docs' . DIRECTORY_SEPARATOR . 'rules.md',
-        );
+        $documentationWriter
+            ->setClassDescriptionSingular('rule')
+            ->setClassDescriptionPlural('rules')
+            ->create(
+                $root . 'docs' . DIRECTORY_SEPARATOR . 'rules.md',
+            )
+        ;
 
         $documentationParser = new DocumentationParser();
         $documentations = $documentationParser->getDocumentations(
@@ -43,9 +47,13 @@ class DocumentationCreateCommand extends Command
         );
 
         $documentationWriter = new DocumentationWriter($documentations);
-        $documentationWriter->create(
-            $root . 'docs' . DIRECTORY_SEPARATOR . 'rulesets.md',
-        );
+        $documentationWriter
+            ->setClassDescriptionSingular('rule set')
+            ->setClassDescriptionPlural('rule sets')
+            ->create(
+                $root . 'docs' . DIRECTORY_SEPARATOR . 'rulesets.md',
+            )
+        ;
 
         return Command::SUCCESS;
     }
