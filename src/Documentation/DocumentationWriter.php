@@ -19,6 +19,8 @@ class DocumentationWriter
 
     private string $classDescriptionPlural;
 
+    private bool $addTOCtoDocumentation;
+
     /**
      * @param array<int, ClassDocumentation> $documentations
      */
@@ -27,6 +29,7 @@ class DocumentationWriter
     ) {
         $this->classDescriptionSingular = 'entity';
         $this->classDescriptionPlural = 'entities';
+        $this->addTOCtoDocumentation = true;
     }
 
     public function create(string $file): bool
@@ -40,16 +43,18 @@ class DocumentationWriter
         $output .= PHP_EOL;
         $output .= PHP_EOL;
 
-        $output .= '## TOC';
-        $output .= PHP_EOL;
-        $output .= PHP_EOL;
+        if (true === $this->addTOCtoDocumentation) {
+            $output .= '## TOC';
+            $output .= PHP_EOL;
+            $output .= PHP_EOL;
 
-        foreach ($this->documentations as $key => $documentation) {
-            $output .= '-   [`' . $documentation->getClassNameShort() . '`](#' . strtolower($documentation->getClassNameShort()) . ')';
+            foreach ($this->documentations as $key => $documentation) {
+                $output .= '-   [`' . $documentation->getClassNameShort() . '`](#' . strtolower($documentation->getClassNameShort()) . ')';
+                $output .= PHP_EOL;
+            }
+
             $output .= PHP_EOL;
         }
-
-        $output .= PHP_EOL;
 
         $output .= '## ' . ucfirst($this->classDescriptionPlural);
         $output .= PHP_EOL;
@@ -161,6 +166,12 @@ class DocumentationWriter
     public function setClassDescriptionPlural(string $classDescriptionPlural): self
     {
         $this->classDescriptionPlural = $classDescriptionPlural;
+        return $this;
+    }
+
+    public function addTOCtoDocumentation(bool $addTOCtoDocumentation): self
+    {
+        $this->addTOCtoDocumentation = $addTOCtoDocumentation;
         return $this;
     }
 }

@@ -2,14 +2,6 @@
 
 There are currently 5 rule sets available.
 
-## TOC
-
--   [`AdvancedTypographyRuleSet`](#advancedtypographyruleset)
--   [`CustomRuleSet`](#customruleset)
--   [`EnglishRuleSet`](#englishruleset)
--   [`FrenchRuleSet`](#frenchruleset)
--   [`GermanRuleSet`](#germanruleset)
-
 ## Rule sets
 
 ### `AdvancedTypographyRuleSet`

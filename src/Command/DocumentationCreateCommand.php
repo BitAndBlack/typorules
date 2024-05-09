@@ -44,6 +44,7 @@ class DocumentationCreateCommand extends Command
         $documentationWriter
             ->setClassDescriptionSingular('rule')
             ->setClassDescriptionPlural('rules')
+            ->addTOCtoDocumentation(false)
             ->create(
                 $root . 'docs' . DIRECTORY_SEPARATOR . 'rules.md',
             )
@@ -59,6 +60,7 @@ class DocumentationCreateCommand extends Command
         $documentationWriter
             ->setClassDescriptionSingular('rule set')
             ->setClassDescriptionPlural('rule sets')
+            ->addTOCtoDocumentation(false)
             ->create(
                 $root . 'docs' . DIRECTORY_SEPARATOR . 'rulesets.md',
             )

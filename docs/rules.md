@@ -2,49 +2,6 @@
 
 There are currently 40 rules available.
 
-## TOC
-
--   [`AddNonBreakingSpaceAfterDoctorRule`](#addnonbreakingspaceafterdoctorrule)
--   [`AddNonBreakingSpaceAfterProfessorRule`](#addnonbreakingspaceafterprofessorrule)
--   [`AddNonBreakingSpaceBeforeColonRule`](#addnonbreakingspacebeforecolonrule)
--   [`AddNonBreakingSpaceBeforeExclamationMarkRule`](#addnonbreakingspacebeforeexclamationmarkrule)
--   [`AddNonBreakingSpaceBeforeQuestionMarkRule`](#addnonbreakingspacebeforequestionmarkrule)
--   [`AddNonBreakingSpaceBeforeSemicolonRule`](#addnonbreakingspacebeforesemicolonrule)
--   [`AddNonBreakingSpaceBeforeUhrRule`](#addnonbreakingspacebeforeuhrrule)
--   [`AddNonBreakingSpaceBetweenEingetragenerAndVereinRule`](#addnonbreakingspacebetweeneingetragenerandvereinrule)
--   [`AddNonBreakingSpaceBetweenGuillemetLeftOpenAndWordRule`](#addnonbreakingspacebetweenguillemetleftopenandwordrule)
--   [`AddNonBreakingSpaceBetweenGuillemetRightCloseAndWordRule`](#addnonbreakingspacebetweenguillemetrightcloseandwordrule)
--   [`AddNonBreakingSpaceBetweenGuillemetSingleLeftOpenAndWordRule`](#addnonbreakingspacebetweenguillemetsingleleftopenandwordrule)
--   [`AddNonBreakingSpaceBetweenGuillemetSingleRightCloseAndWordRule`](#addnonbreakingspacebetweenguillemetsinglerightcloseandwordrule)
--   [`AddNonBreakingSpaceBetweenNumberAndJahrRule`](#addnonbreakingspacebetweennumberandjahrrule)
--   [`AddNonBreakingSpaceBetweenNumberAndUnitRule`](#addnonbreakingspacebetweennumberandunitrule)
--   [`AddSoftHyphenBetweenDashSeparatedWordsRule`](#addsofthyphenbetweendashseparatedwordsrule)
--   [`AddSoftHyphenToWordRule`](#addsofthyphentowordrule)
--   [`AddSpaceBehindDotRule`](#addspacebehinddotrule)
--   [`AddSpaceBehindExclamationMarkRule`](#addspacebehindexclamationmarkrule)
--   [`AddSpaceBehindQuestionMarkRule`](#addspacebehindquestionmarkrule)
--   [`AddSpaceBetweenBracketsRule`](#addspacebetweenbracketsrule)
--   [`BindNumberToNumberRule`](#bindnumbertonumberrule)
--   [`BindWordAfterColonRule`](#bindwordaftercolonrule)
--   [`BindWordAfterCommaRule`](#bindwordaftercommarule)
--   [`BindWordAfterDotRule`](#bindwordafterdotrule)
--   [`BindWordAfterExclamationMarkRule`](#bindwordafterexclamationmarkrule)
--   [`BindWordAfterQuestionMarkRule`](#bindwordafterquestionmarkrule)
--   [`BindWordAfterSemicolonRule`](#bindwordaftersemicolonrule)
--   [`ConvertCharactersToAtCharRule`](#convertcharacterstoatcharrule)
--   [`ConvertCharactersToCopyrightCharRule`](#convertcharacterstocopyrightcharrule)
--   [`ConvertCharactersToRegisteredCharRule`](#convertcharacterstoregisteredcharrule)
--   [`ConvertCharactersToTrademarkCharRule`](#convertcharacterstotrademarkcharrule)
--   [`ConvertDashToEmDashRule`](#convertdashtoemdashrule)
--   [`ConvertDashToEnDashRule`](#convertdashtoendashrule)
--   [`ConvertDotsToEllipsisRule`](#convertdotstoellipsisrule)
--   [`ConvertSpacesBetweenTimesAndNumbersRule`](#convertspacesbetweentimesandnumbersrule)
--   [`ConvertXToTimesBetweenNumbersRule`](#convertxtotimesbetweennumbersrule)
--   [`RemoveDuplicatedWhitespaceRule`](#removeduplicatedwhitespacerule)
--   [`RemoveSpaceBeforeCommaRule`](#removespacebeforecommarule)
--   [`RemoveUnnecessaryExclamationMarksRule`](#removeunnecessaryexclamationmarksrule)
--   [`RemoveUnnecessaryQuestionMarksRule`](#removeunnecessaryquestionmarksrule)
-
 ## Rules
 
 ### `AddNonBreakingSpaceAfterDoctorRule`
