@@ -86,59 +86,13 @@ You can find a similar example under [`/examples/example2.php`](./examples/examp
 
 ## Rules existing
 
-The following rules are currently existing:
-
--   [`AddNonBreakingSpaceAfterDoctorRule`](./src/Rule/AddNonBreakingSpaceAfterDoctorRule.php)
--   [`AddNonBreakingSpaceAfterProfessorRule`](./src/Rule/AddNonBreakingSpaceAfterProfessorRule.php)
--   [`AddNonBreakingSpaceBeforeColonRule`](./src/Rule/AddNonBreakingSpaceBeforeColonRule.php)
--   [`AddNonBreakingSpaceBeforeExclamationMarkRule`](./src/Rule/AddNonBreakingSpaceBeforeExclamationMarkRule.php)
--   [`AddNonBreakingSpaceBeforeQuestionMarkRule`](./src/Rule/AddNonBreakingSpaceBeforeQuestionMarkRule.php)
--   [`AddNonBreakingSpaceBeforeSemicolonRule`](./src/Rule/AddNonBreakingSpaceBeforeSemicolonRule.php)
--   [`AddNonBreakingSpaceBeforeUhrRule`](./src/Rule/AddNonBreakingSpaceBeforeUhrRule.php)
--   [`AddNonBreakingSpaceBetweenEingetragenerAndVereinRule`](./src/Rule/AddNonBreakingSpaceBetweenEingetragenerAndVereinRule.php)
--   [`AddNonBreakingSpaceBetweenGuillemetLeftOpenAndWordRule`](./src/Rule/AddNonBreakingSpaceBetweenGuillemetLeftOpenAndWordRule.php)
--   [`AddNonBreakingSpaceBetweenGuillemetRightCloseAndWordRule`](./src/Rule/AddNonBreakingSpaceBetweenGuillemetRightCloseAndWordRule.php)
--   [`AddNonBreakingSpaceBetweenGuillemetSingleLeftOpenAndWordRule`](./src/Rule/AddNonBreakingSpaceBetweenGuillemetSingleLeftOpenAndWordRule.php)
--   [`AddNonBreakingSpaceBetweenGuillemetSingleRightCloseAndWordRule`](./src/Rule/AddNonBreakingSpaceBetweenGuillemetSingleRightCloseAndWordRule.php)
--   [`AddNonBreakingSpaceBetweenNumberAndJahrRule`](./src/Rule/AddNonBreakingSpaceBetweenNumberAndJahrRule.php)
--   [`AddNonBreakingSpaceBetweenNumberAndUnitRule`](./src/Rule/AddNonBreakingSpaceBetweenNumberAndUnitRule.php)
--   [`AddSoftHyphenBetweenDashSeparatedWordsRule`](./src/Rule/AddSoftHyphenBetweenDashSeparatedWordsRule.php)
--   [`AddSoftHyphenToWordRule`](./src/Rule/AddSoftHyphenToWordRule.php)
--   [`AddSpaceBehindDotRule`](./src/Rule/AddSpaceBehindDotRule.php)
--   [`AddSpaceBehindExclamationMarkRule`](./src/Rule/AddSpaceBehindExclamationMarkRule.php)
--   [`AddSpaceBehindQuestionMarkRule`](./src/Rule/AddSpaceBehindQuestionMarkRule.php)
--   [`AddSpaceBetweenBracketsRule`](./src/Rule/AddSpaceBetweenBracketsRule.php)
--   [`BindNumberToNumberRule`](./src/Rule/BindNumberToNumberRule.php)
--   [`BindWordAfterColonRule`](./src/Rule/BindWordAfterColonRule.php)
--   [`BindWordAfterCommaRule`](./src/Rule/BindWordAfterCommaRule.php)
--   [`BindWordAfterDotRule`](./src/Rule/BindWordAfterDotRule.php)
--   [`BindWordAfterExclamationMarkRule`](./src/Rule/BindWordAfterExclamationMarkRule.php)
--   [`BindWordAfterQuestionMarkRule`](./src/Rule/BindWordAfterQuestionMarkRule.php)
--   [`BindWordAfterSemicolonRule`](./src/Rule/BindWordAfterSemicolonRule.php)
--   [`ConvertCharactersToAtCharRule`](./src/Rule/ConvertCharactersToAtCharRule.php)
--   [`ConvertCharactersToCopyrightCharRule`](./src/Rule/ConvertCharactersToCopyrightCharRule.php)
--   [`ConvertCharactersToRegisteredCharRule`](./src/Rule/ConvertCharactersToRegisteredCharRule.php)
--   [`ConvertCharactersToTrademarkCharRule`](./src/Rule/ConvertCharactersToTrademarkCharRule.php)
--   [`ConvertDashToEmDashRule`](./src/Rule/ConvertDashToEmDashRule.php)
--   [`ConvertDashToEnDashRule`](./src/Rule/ConvertDashToEnDashRule.php)
--   [`ConvertDotsToEllipsisRule`](./src/Rule/ConvertDotsToEllipsisRule.php)
--   [`ConvertSpacesBetweenTimesAndNumbersRule`](./src/Rule/ConvertSpacesBetweenTimesAndNumbersRule.php)
--   [`ConvertXToTimesBetweenNumbersRule`](./src/Rule/ConvertXToTimesBetweenNumbersRule.php)
--   [`RemoveDuplicatedWhitespaceRule`](./src/Rule/RemoveDuplicatedWhitespaceRule.php)
--   [`RemoveSpaceBeforeCommaRule`](./src/Rule/RemoveSpaceBeforeCommaRule.php)
--   [`RemoveUnnecessaryExclamationMarksRule`](./src/Rule/RemoveUnnecessaryExclamationMarksRule.php)
--   [`RemoveUnnecessaryQuestionMarksRule`](./src/Rule/RemoveUnnecessaryQuestionMarksRule.php)
+Read more about the existing rules under [/docs/rules.md](./docs/rules.md).
 
 You can add custom rules by implementing the [`RuleInterface`](./src/Rule/RuleInterface.php).
 
 ## Rule sets existing
 
-The currently existing rule sets are:
-
--   [`EnglishRuleSet`](./src/RuleSet/EnglishRuleSet.php)
--   [`FrenchRuleSet`](./src/RuleSet/FrenchRuleSet.php)
--   [`GermanRuleSet`](./src/RuleSet/GermanRuleSet.php)
--   [`AdvancedTypographyRuleSet`](./src/RuleSet/AdvancedTypographyRuleSet.php)
+Read more about the existing rule ses under [/docs/rulesets.md](./docs/rulesets.md).
 
 You can use custom rule sets by implementing the [`RuleSetInterface`](./src/RuleSet/RuleSetInterface.php).
 

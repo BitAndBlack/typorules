@@ -12,10 +12,24 @@
 namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\TypoRules\CharactersEnum;
+use BitAndBlack\TypoRules\Documentation\Configuration;
+use BitAndBlack\TypoRules\Documentation\Description;
+use BitAndBlack\TypoRules\Documentation\TransformationExample;
 
 /**
  * @see \BitAndBlack\TypoRules\Tests\Rules\AddNonBreakingSpaceBetweenEingetragenerAndVereinRuleTest
  */
+#[Description(
+    'Add a non breaking space between between `e.` and `V.` to disallow separating those two.'
+)]
+#[TransformationExample(
+    'Supersport 500 e.V.',
+    'Supersport 500 e.\xC2\xA0V.',
+)]
+#[TransformationExample(
+    'Supersport 500 e. V.',
+    'Supersport 500 e.\xC2\xA0V.',
+)]
 class AddNonBreakingSpaceBetweenEingetragenerAndVereinRule extends AbstractRule implements RuleInterface
 {
     protected string $nonBreakingSpace;
@@ -40,6 +54,7 @@ class AddNonBreakingSpaceBetweenEingetragenerAndVereinRule extends AbstractRule 
         return $this->nonBreakingSpace;
     }
 
+    #[Configuration('Configure the type of the space. Per default, a thin non breaking space will be used.')]
     public function setNonBreakingSpace(string $nonBreakingSpace): self
     {
         $this->nonBreakingSpace = $nonBreakingSpace;

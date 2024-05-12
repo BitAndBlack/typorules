@@ -12,10 +12,19 @@
 namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\TypoRules\CharactersEnum;
+use BitAndBlack\TypoRules\Documentation\Description;
+use BitAndBlack\TypoRules\Documentation\TransformationExample;
 
 /**
  * @see \BitAndBlack\TypoRules\Tests\Rules\ConvertDotsToEllipsisRuleTest
  */
+#[Description(
+    'Convert three or more dots `...` into an ellipsis character `…`.'
+)]
+#[TransformationExample(
+    'Ich weiß nicht...',
+    'Ich weiß nicht…',
+)]
 class ConvertDotsToEllipsisRule extends AbstractRule implements RuleInterface
 {
     public static function create(): self

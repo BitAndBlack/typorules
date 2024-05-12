@@ -11,6 +11,7 @@
 
 namespace BitAndBlack\TypoRules\RuleSet;
 
+use BitAndBlack\TypoRules\Documentation\Description;
 use BitAndBlack\TypoRules\Rule\AddSoftHyphenToWordRule;
 use BitAndBlack\TypoRules\Rule\AddSpaceBetweenBracketsRule;
 use BitAndBlack\TypoRules\Rule\BindWordAfterColonRule;
@@ -20,6 +21,9 @@ use BitAndBlack\TypoRules\Rule\BindWordAfterExclamationMarkRule;
 use BitAndBlack\TypoRules\Rule\BindWordAfterQuestionMarkRule;
 use BitAndBlack\TypoRules\Rule\BindWordAfterSemicolonRule;
 
+#[Description(
+    'A set of rules for an advanced typography. This can be used in DTP applications, for example.'
+)]
 class AdvancedTypographyRuleSet extends AbstractRuleSet implements RuleSetInterface
 {
     public function __construct()

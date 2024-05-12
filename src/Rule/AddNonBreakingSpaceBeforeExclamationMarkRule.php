@@ -12,10 +12,20 @@
 namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\TypoRules\CharactersEnum;
+use BitAndBlack\TypoRules\Documentation\Configuration;
+use BitAndBlack\TypoRules\Documentation\Description;
+use BitAndBlack\TypoRules\Documentation\TransformationExample;
 
 /**
  * @see \BitAndBlack\TypoRules\Tests\Rules\AddNonBreakingSpaceBeforeExclamationMarkRuleTest
  */
+#[Description(
+    'Add a non breaking space between before a exclamation mark to disallow separating it from the word before.'
+)]
+#[TransformationExample(
+    'On y va !',
+    'On y va\xE2\x80\xAF!',
+)]
 class AddNonBreakingSpaceBeforeExclamationMarkRule extends AbstractRule implements RuleInterface
 {
     protected string $nonBreakingSpace;
@@ -40,6 +50,7 @@ class AddNonBreakingSpaceBeforeExclamationMarkRule extends AbstractRule implemen
         return $this->nonBreakingSpace;
     }
 
+    #[Configuration('Configure the type of the space. Per default, a thin non breaking space will be used.')]
     public function setNonBreakingSpace(string $nonBreakingSpace): self
     {
         $this->nonBreakingSpace = $nonBreakingSpace;

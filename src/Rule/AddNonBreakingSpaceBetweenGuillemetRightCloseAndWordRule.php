@@ -12,10 +12,20 @@
 namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\TypoRules\CharactersEnum;
+use BitAndBlack\TypoRules\Documentation\Configuration;
+use BitAndBlack\TypoRules\Documentation\Description;
+use BitAndBlack\TypoRules\Documentation\TransformationExample;
 
 /**
  * @see \BitAndBlack\TypoRules\Tests\Rules\AddNonBreakingSpaceBetweenGuillemetRightCloseAndWordRuleTest
  */
+#[Description(
+    'Add a thin non breaking space between between a right angle quote `»` and a word **before** to disallow separating those two.'
+)]
+#[TransformationExample(
+    'J\'ai dit « non » à toi.',
+    'J\'ai dit « non\xE2\x80\xAF» à toi.',
+)]
 class AddNonBreakingSpaceBetweenGuillemetRightCloseAndWordRule extends AbstractRule implements RuleInterface
 {
     protected string $nonBreakingSpace;
@@ -40,6 +50,7 @@ class AddNonBreakingSpaceBetweenGuillemetRightCloseAndWordRule extends AbstractR
         return $this->nonBreakingSpace;
     }
 
+    #[Configuration('Configure the type of the space. Per default, a thin non breaking space will be used.')]
     public function setNonBreakingSpace(string $nonBreakingSpace): self
     {
         $this->nonBreakingSpace = $nonBreakingSpace;

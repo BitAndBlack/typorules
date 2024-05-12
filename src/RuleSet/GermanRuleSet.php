@@ -11,6 +11,7 @@
 
 namespace BitAndBlack\TypoRules\RuleSet;
 
+use BitAndBlack\TypoRules\Documentation\Description;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceAfterDoctorRule;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceAfterProfessorRule;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBeforeUhrRule;
@@ -34,6 +35,9 @@ use BitAndBlack\TypoRules\Rule\RemoveSpaceBeforeCommaRule;
 use BitAndBlack\TypoRules\Rule\RemoveUnnecessaryExclamationMarksRule;
 use BitAndBlack\TypoRules\Rule\RemoveUnnecessaryQuestionMarksRule;
 
+#[Description(
+    'A set of rules that can handle german words and german typography.'
+)]
 class GermanRuleSet extends AbstractRuleSet implements RuleSetInterface
 {
     public function __construct()

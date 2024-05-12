@@ -11,6 +11,7 @@
 
 namespace BitAndBlack\TypoRules\RuleSet;
 
+use BitAndBlack\TypoRules\Documentation\Description;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBeforeColonRule;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBeforeExclamationMarkRule;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBeforeQuestionMarkRule;
@@ -37,6 +38,9 @@ use BitAndBlack\TypoRules\Rule\RemoveSpaceBeforeCommaRule;
 use BitAndBlack\TypoRules\Rule\RemoveUnnecessaryExclamationMarksRule;
 use BitAndBlack\TypoRules\Rule\RemoveUnnecessaryQuestionMarksRule;
 
+#[Description(
+    'A set of rules that can handle french words and french typography.'
+)]
 class FrenchRuleSet extends AbstractRuleSet implements RuleSetInterface
 {
     public function __construct()

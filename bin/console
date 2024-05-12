@@ -1,0 +1,42 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * Bit&Black TypoRules.
+ *
+ * @author Tobias Köngeter
+ * @copyright Copyright © Bit&Black
+ * @link https://www.bitandblack.com
+ * @license MIT
+ */
+
+use BitAndBlack\TypoRules\Command\DocumentationCreateCommand;
+use Symfony\Component\Console\Application;
+
+/**
+ * @param string $file
+ * @return mixed
+ */
+function includeIfExists(string $file): mixed
+{
+    if (file_exists($file)) {
+        return include $file;
+    }
+
+    return false;
+}
+
+if (
+    (!$loader = includeIfExists(__DIR__ . '/../vendor/autoload.php')) &&
+    (!$loader = includeIfExists(__DIR__ . '/../../../autoload.php'))
+) {
+    $msg = 'You must set up the project dependencies, run the following commands:' . PHP_EOL .
+        'curl -sS https://getcomposer.org/installer | php' . PHP_EOL .
+        'php composer.phar install' . PHP_EOL;
+    fwrite(STDERR, $msg);
+    exit(1);
+}
+
+$application = new Application();
+$application->add(new DocumentationCreateCommand());
+$application->run();

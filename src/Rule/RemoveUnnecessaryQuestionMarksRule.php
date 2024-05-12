@@ -11,9 +11,20 @@
 
 namespace BitAndBlack\TypoRules\Rule;
 
+use BitAndBlack\TypoRules\Documentation\Configuration;
+use BitAndBlack\TypoRules\Documentation\Description;
+use BitAndBlack\TypoRules\Documentation\TransformationExample;
+
 /**
  * @see \BitAndBlack\TypoRules\Tests\Rules\RemoveUnnecessaryQuestionMarksRuleTest
  */
+#[Description(
+    'Remove duplicated exclamation marks.'
+)]
+#[TransformationExample(
+    'Nein? Nein?? Nein??? Nein????',
+    'Nein? Nein?? Nein?? Nein??',
+)]
 class RemoveUnnecessaryQuestionMarksRule extends AbstractRule implements RuleInterface
 {
     private int $maxCountQuestionMark;
@@ -38,6 +49,7 @@ class RemoveUnnecessaryQuestionMarksRule extends AbstractRule implements RuleInt
         return str_repeat('?', $this->maxCountQuestionMark);
     }
 
+    #[Configuration('Configure the maximum permitted number of question marks. This is 2 by default.')]
     public function setMaxCountQuestionMark(int $maxCountQuestionMark): self
     {
         $this->maxCountQuestionMark = $maxCountQuestionMark;
