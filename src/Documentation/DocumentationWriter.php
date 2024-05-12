@@ -12,6 +12,7 @@
 namespace BitAndBlack\TypoRules\Documentation;
 
 use BitAndBlack\Composer\VendorPath;
+use ReflectionException;
 
 class DocumentationWriter
 {
@@ -22,136 +23,114 @@ class DocumentationWriter
     private bool $addTOCtoDocumentation;
 
     /**
-     * @param array<int, ClassDocumentation> $documentations
+     * @param array<int, ClassDocumentation> $classDocumentations
      */
     public function __construct(
-        private readonly array $documentations,
+        private readonly array $classDocumentations,
     ) {
         $this->classDescriptionSingular = 'entity';
         $this->classDescriptionPlural = 'entities';
         $this->addTOCtoDocumentation = true;
     }
 
+    /**
+     * @throws ReflectionException
+     */
     public function create(string $file): bool
     {
-        $output = '';
-
-        $output .= '# ' . ucfirst($this->classDescriptionPlural) . ' documentation';
-        $output .= PHP_EOL;
-        $output .= PHP_EOL;
-        $output .= 'There are currently ' . count($this->documentations) . ' ' . $this->classDescriptionPlural . ' available.';
-        $output .= PHP_EOL;
-        $output .= PHP_EOL;
+        $output = $this->adH1(
+            ucfirst($this->classDescriptionPlural) . ' documentation'
+        );
+        $output .= $this->addSectionSeparator();
+        $output .= 'There are currently ' . count($this->classDocumentations) . ' ' . $this->classDescriptionPlural . ' available.';
+        $output .= $this->addSectionSeparator();
 
         if (true === $this->addTOCtoDocumentation) {
-            $output .= '## TOC';
-            $output .= PHP_EOL;
-            $output .= PHP_EOL;
+            $output .= $this->addH2('TOC');
+            $output .= $this->addSectionSeparator();
 
-            foreach ($this->documentations as $key => $documentation) {
-                $output .= '-   [`' . $documentation->getClassNameShort() . '`](#' . strtolower($documentation->getClassNameShort()) . ')';
+            foreach ($this->classDocumentations as $classDocumentation) {
+                $output .= '-   [`' . $classDocumentation->getClassNameShort() . '`](#' . strtolower($classDocumentation->getClassNameShort()) . ')';
                 $output .= PHP_EOL;
             }
 
             $output .= PHP_EOL;
         }
 
-        $output .= '## ' . ucfirst($this->classDescriptionPlural);
-        $output .= PHP_EOL;
-        $output .= PHP_EOL;
+        $output .= $this->addH2(
+            ucfirst($this->classDescriptionPlural)
+        );
+        $output .= $this->addSectionSeparator();
 
-        foreach ($this->documentations as $key => $documentation) {
-            $output .= '### `' . $documentation->getClassNameShort() . '`';
-            $output .= PHP_EOL;
-            $output .= PHP_EOL;
-            $output .= '#### Description';
-            $output .= PHP_EOL;
-            $output .= PHP_EOL;
-            $output .= $documentation->getDescription() ?? 'No description provided.';
-            $output .= PHP_EOL;
-            $output .= PHP_EOL;
+        foreach ($this->classDocumentations as $classDocumentation) {
+            $output .= $this->addH3('`' . $classDocumentation->getClassNameShort() . '`');
+            $output .= $this->addSectionSeparator();
+            $output .= $this->addH4('Description');
+            $output .= $this->addSectionSeparator();
+            $output .= $classDocumentation->getDescription() ?? 'No description provided.';
+            $output .= $this->addSectionSeparator();
 
-            if ([] !== $transformationExamples = $documentation->getTransformationExamples()) {
-                $output .= '#### Transformation example';
+            if ([] !== $transformationExamples = $classDocumentation->getTransformationExamples()) {
+                $output .= $this->addH4('Transformation example');
 
                 $isList = false;
 
                 foreach ($transformationExamples as $transformationExample) {
-                    $output .= PHP_EOL;
-                    $output .= PHP_EOL;
+                    $output .= $this->addSectionSeparator();
 
-                    if (isset($transformationExample[2])) {
+                    if (null !== $transformationExample['description']) {
                         $isList = true;
 
-                        $output .= '-   ' . $transformationExample[2] . ':';
-                        $output .= PHP_EOL;
-                        $output .= PHP_EOL;
+                        $output .= '-   ' . $transformationExample['description'] . ':';
+                        $output .= $this->addSectionSeparator();
                     }
 
-                    $addition = '';
+                    $indentationLevel = true === $isList ? 1 : 0;
 
-                    if (true === $isList) {
-                        $addition = '    ';
-                    }
-
-                    $output .= $addition . '```diff';
-                    $output .= PHP_EOL;
-                    $output .= $addition . '- ' . $transformationExample[0];
-                    $output .= PHP_EOL;
-                    $output .= $addition . '+ ' . $transformationExample[1];
-                    $output .= PHP_EOL;
-                    $output .= $addition . '```';
+                    $output .= $this->addDiff(
+                        $transformationExample['before'],
+                        $transformationExample['after'],
+                        $indentationLevel
+                    );
                 }
 
-                $output .= PHP_EOL;
-                $output .= PHP_EOL;
+                $output .= $this->addSectionSeparator();
             }
 
-            $output .= '#### Possible ' . $this->classDescriptionSingular . ' customization';
-            $output .= PHP_EOL;
-            $output .= PHP_EOL;
+            $output .= $this->addH4('Possible ' . $this->classDescriptionSingular . ' customization');
+            $output .= $this->addSectionSeparator();
 
-            if ([] !== $configurationPossibilities = $documentation->getConfigurationPossibilities()) {
+            if ([] !== $configurationPossibilities = $classDocumentation->getConfigurationPossibilities()) {
                 $configurationPossibilitiesCount = count($configurationPossibilities);
 
                 $output .= 'There ' . (1 === $configurationPossibilitiesCount ? 'is' : 'are') . ' ' . $configurationPossibilitiesCount . ' ' . (1 === $configurationPossibilitiesCount ? 'possibility' : 'possibilities') . ' to customize this rule:';
 
                 foreach ($configurationPossibilities as $configurationPossibility) {
-                    $output .= PHP_EOL;
-                    $output .= PHP_EOL;
+                    $output .= $this->addSectionSeparator();
                     $output .= '-   ' . $configurationPossibility[0];
-                    $output .= PHP_EOL;
-                    $output .= PHP_EOL;
-                    $output .= '    ```php';
-                    $output .= PHP_EOL;
-                    $output .= '    ' . $configurationPossibility[1];
-                    $output .= PHP_EOL;
-                    $output .= '    ```';
+                    $output .= $this->addSectionSeparator();
+                    $output .= $this->addCode('php', $configurationPossibility[1], 1);
                 }
             } else {
                 $output .= 'This ' . $this->classDescriptionSingular . ' doesn\'t allow any customization.';
             }
 
-            $output .= PHP_EOL;
-            $output .= PHP_EOL;
+            $output .= $this->addSectionSeparator();
 
-            if (null !== $path = $documentation->getPath()) {
-                $relativePath = $documentation->getRelativePath(
+            if (null !== $path = $classDocumentation->getPath()) {
+                $relativePath = $classDocumentation->getRelativePath(
                     dirname(new VendorPath()) . DIRECTORY_SEPARATOR . 'docs',
                     $path
                 );
 
-                $output .= '#### File';
-                $output .= PHP_EOL;
-                $output .= PHP_EOL;
+                $output .= $this->addH4('File');
+                $output .= $this->addSectionSeparator();
                 $output .= 'This ' . $this->classDescriptionSingular . ' is located under [' . $relativePath . '](' . $relativePath . ')';
-                $output .= PHP_EOL;
-                $output .= PHP_EOL;
+                $output .= $this->addSectionSeparator();
             }
 
-            $output .= '----';
-            $output .= PHP_EOL;
-            $output .= PHP_EOL;
+            $output .= $this->addLine();
+            $output .= $this->addSectionSeparator();
         }
 
         return false !== file_put_contents($file, $output);
@@ -173,5 +152,63 @@ class DocumentationWriter
     {
         $this->addTOCtoDocumentation = $addTOCtoDocumentation;
         return $this;
+    }
+
+    private function addSectionSeparator(): string
+    {
+        return str_repeat(PHP_EOL, 2);
+    }
+
+    private function adH1(string $h1): string
+    {
+        return '# ' . $h1;
+    }
+
+    private function addH2(string $h2): string
+    {
+        return '## ' . $h2;
+    }
+
+    private function addH3(string $h3): string
+    {
+        return '### ' . $h3;
+    }
+
+    private function addH4(string $h): string
+    {
+        return '#### ' . $h;
+    }
+
+    private function addCode(string $language, string $code, int $indentationLevel = 0): string
+    {
+        $whitspace = $this->getWhitespaceForIndentationLevel($indentationLevel);
+
+        $output = $whitspace . '```' . $language . PHP_EOL;
+        $output .= $whitspace . $code . PHP_EOL;
+        $output .= $whitspace . '```';
+
+        return $output;
+    }
+
+    private function addLine(): string
+    {
+        return '----';
+    }
+
+    private function addDiff(string $before, string $after, int $indentationLevel = 0): string
+    {
+        $whitspace = $this->getWhitespaceForIndentationLevel($indentationLevel);
+
+        $output = $whitspace . '```diff' . PHP_EOL;
+        $output .= $whitspace . '- ' . $before . PHP_EOL;
+        $output .= $whitspace . '+ ' . $after . PHP_EOL;
+        $output .= $whitspace . '```';
+
+        return $output;
+    }
+
+    private function getWhitespaceForIndentationLevel(int $indentationLevel): string
+    {
+        return str_repeat(' ', $indentationLevel * 4);
     }
 }

@@ -21,7 +21,7 @@ class DocumentationParser
      * @param class-string $implementedClass
      * @return array<int, ClassDocumentation>
      */
-    public function getDocumentations(string $directory, string $implementedClass): array
+    public function getClassDocumentations(string $directory, string $implementedClass): array
     {
         $loader = new RobotLoader();
         $loader->addDirectory($directory);
@@ -29,7 +29,7 @@ class DocumentationParser
 
         /** @var array<class-string, string> $indexedClasses */
         $indexedClasses = $loader->getIndexedClasses();
-        $documentations = [];
+        $classDocumentations = [];
 
         foreach ($indexedClasses as $class => $path) {
             $implementations = class_implements($class);
@@ -49,7 +49,7 @@ class DocumentationParser
             $classDocumentation = new ClassDocumentation($class);
             $classDocumentation->setPath($path);
 
-            $documentations[] = $classDocumentation;
+            $classDocumentations[] = $classDocumentation;
 
             $reflectionClass = new ReflectionClass($class);
             $attributes = $reflectionClass->getAttributes();
@@ -111,10 +111,10 @@ class DocumentationParser
         }
 
         usort(
-            $documentations,
+            $classDocumentations,
             static fn (ClassDocumentation $itemA, ClassDocumentation $itemB): int => $itemA->getClassName() <=> $itemB->getClassName()
         );
 
-        return $documentations;
+        return $classDocumentations;
     }
 }

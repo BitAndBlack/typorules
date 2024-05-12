@@ -35,12 +35,12 @@ class DocumentationCreateCommand extends Command
         $root = dirname(new VendorPath()) . DIRECTORY_SEPARATOR;
 
         $documentationParser = new DocumentationParser();
-        $documentations = $documentationParser->getDocumentations(
+        $classDocumentations = $documentationParser->getClassDocumentations(
             $root . 'src' . DIRECTORY_SEPARATOR . 'Rule',
             RuleInterface::class
         );
 
-        $documentationWriter = new DocumentationWriter($documentations);
+        $documentationWriter = new DocumentationWriter($classDocumentations);
         $documentationWriter
             ->setClassDescriptionSingular('rule')
             ->setClassDescriptionPlural('rules')
@@ -51,12 +51,12 @@ class DocumentationCreateCommand extends Command
         ;
 
         $documentationParser = new DocumentationParser();
-        $documentations = $documentationParser->getDocumentations(
+        $classDocumentations = $documentationParser->getClassDocumentations(
             $root . 'src' . DIRECTORY_SEPARATOR . 'RuleSet',
             RuleSetInterface::class
         );
 
-        $documentationWriter = new DocumentationWriter($documentations);
+        $documentationWriter = new DocumentationWriter($classDocumentations);
         $documentationWriter
             ->setClassDescriptionSingular('rule set')
             ->setClassDescriptionPlural('rule sets')

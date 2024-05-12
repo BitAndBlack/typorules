@@ -21,7 +21,11 @@ class ClassDocumentation
     private ?string $path = null;
 
     /**
-     * @var array<int, array<int, string|null>>
+     * @var array<int, array{
+     *     before: string,
+     *     after: string,
+     *     description: string|null,
+     * }>
      */
     private array $transformationExamples = [];
 
@@ -78,7 +82,11 @@ class ClassDocumentation
     }
 
     /**
-     * @return array<int, array<int, string|null>>
+     * @return array<int, array{
+     *      before: string,
+     *      after: string,
+     *      description: string|null,
+     *  }>
      */
     public function getTransformationExamples(): array
     {
@@ -91,9 +99,9 @@ class ClassDocumentation
         ?string $description = null,
     ): self {
         $this->transformationExamples[] = [
-            $before,
-            $after,
-            $description,
+            'before' => $before,
+            'after' => $after,
+            'description' => $description,
         ];
         return $this;
     }
