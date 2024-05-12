@@ -1,14 +1,23 @@
 #!/usr/bin/env php
 <?php
 
+/**
+ * Bit&Black TypoRules.
+ *
+ * @author Tobias Köngeter
+ * @copyright Copyright © Bit&Black
+ * @link https://www.bitandblack.com
+ * @license MIT
+ */
+
 use BitAndBlack\TypoRules\Command\DocumentationCreateCommand;
 use Symfony\Component\Console\Application;
 
 /**
- * @param $file
+ * @param string $file
  * @return mixed
  */
-function includeIfExists($file)
+function includeIfExists(string $file): mixed
 {
     if (file_exists($file)) {
         return include $file;

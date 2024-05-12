@@ -148,7 +148,7 @@ class DocumentationWriter
         return $this;
     }
 
-    public function addTOCtoDocumentation(bool $addTOCtoDocumentation): self
+    public function addTocToDocumentation(bool $addTOCtoDocumentation): self
     {
         $this->addTOCtoDocumentation = $addTOCtoDocumentation;
         return $this;

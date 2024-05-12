@@ -21,8 +21,6 @@ class Description
 {
     /**
      * The Description attribute can be used to describe a class and its meaning.
-     *
-     * @param string $description
      */
     public function __construct(
         private readonly string $description,
