@@ -20,7 +20,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
  * @see \BitAndBlack\TypoRules\Tests\Rules\AddNonBreakingSpaceBetweenNumberAndJahrRuleTest
  */
 #[Description(
-    'Add a non breaking space between between `Jahr` and the number before to disallow separating those two.'
+    'Add a non-breaking space between `Jahr` and the number before to disallow separating those two.'
 )]
 #[TransformationExample(
     'Vor 30 Jahren',
@@ -50,7 +50,7 @@ class AddNonBreakingSpaceBetweenNumberAndJahrRule extends AbstractRule implement
         return $this->nonBreakingSpace;
     }
 
-    #[Configuration('Configure the type of the space. Per default, a non breaking space will be used.')]
+    #[Configuration('Configure the type of the space. Per default, a non-breaking space will be used.')]
     public function setNonBreakingSpace(string $nonBreakingSpace): self
     {
         $this->nonBreakingSpace = $nonBreakingSpace;

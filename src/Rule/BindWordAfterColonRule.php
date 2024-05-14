@@ -20,7 +20,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
  * @see \BitAndBlack\TypoRules\Tests\Rules\BindWordAfterColonRuleTest
  */
 #[Description(
-    'Replace a whitespace with a non breaking space between a short word and its following word if the short word follows a colon. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.'
+    'Replace a whitespace with a non-breaking space between a short word and its following word if the short word follows a colon `:`. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.'
 )]
 #[TransformationExample(
     'Glaube mir: es war so schön!',
@@ -56,7 +56,7 @@ class BindWordAfterColonRule extends AbstractRule implements RuleInterface
         return '$1' . $this->nonBreakingSpace . '$2';
     }
 
-    #[Configuration('Configure the type of the space. Per default, a non breaking space will be used.')]
+    #[Configuration('Configure the type of the space. Per default, a non-breaking space will be used.')]
     public function setNonBreakingSpace(string $nonBreakingSpace): self
     {
         $this->nonBreakingSpace = $nonBreakingSpace;

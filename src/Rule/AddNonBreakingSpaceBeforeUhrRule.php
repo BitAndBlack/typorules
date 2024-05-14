@@ -20,7 +20,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
  * @see \BitAndBlack\TypoRules\Tests\Rules\AddNonBreakingSpaceBeforeUhrRuleTest
  */
 #[Description(
-    'Add a non breaking space before the word `Uhr` to disallow separating it from the time before.'
+    'Add a non-breaking space before the word `Uhr` to disallow separating it from the time before.'
 )]
 #[TransformationExample(
     'Es ist 12.30 Uhr.',
@@ -50,7 +50,7 @@ class AddNonBreakingSpaceBeforeUhrRule extends AbstractRule implements RuleInter
         return '$1' . $this->nonBreakingSpace . '$3';
     }
 
-    #[Configuration('Configure the type of the space. Per default, a non breaking space will be used.')]
+    #[Configuration('Configure the type of the space. Per default, a non-breaking space will be used.')]
     public function setNonBreakingSpace(string $nonBreakingSpace): self
     {
         $this->nonBreakingSpace = $nonBreakingSpace;

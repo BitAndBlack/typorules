@@ -19,7 +19,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
  * @see \BitAndBlack\TypoRules\Tests\Rules\ConvertSpacesBetweenTimesAndNumbersRuleTest
  */
 #[Description(
-    'Recognises a measurement and inserts thin non breaking spaces before and after the multiplication mark `x` or `×`.'
+    'Recognises a measurement and inserts thin non-breaking spaces before and after the multiplication mark `x` or `×`.'
 )]
 #[TransformationExample(
     'Format: 15 x 9 cm.',

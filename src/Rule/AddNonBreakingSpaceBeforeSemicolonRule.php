@@ -20,7 +20,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
  * @see \BitAndBlack\TypoRules\Tests\Rules\AddNonBreakingSpaceBeforeColonRuleTest
  */
 #[Description(
-    'Add a non breaking space between before a semicolon to disallow separating it from the word before.'
+    'Add a non-breaking space between before a semicolon to disallow separating it from the word before.'
 )]
 #[TransformationExample(
     'Concept, création et réalisation technique : Bit&Black',
@@ -50,7 +50,7 @@ class AddNonBreakingSpaceBeforeSemicolonRule extends AbstractRule implements Rul
         return $this->nonBreakingSpace;
     }
 
-    #[Configuration('Configure the type of the space. Per default, a thin non breaking space will be used.')]
+    #[Configuration('Configure the type of the space. Per default, a thin non-breaking space will be used.')]
     public function setNonBreakingSpace(string $nonBreakingSpace): self
     {
         $this->nonBreakingSpace = $nonBreakingSpace;

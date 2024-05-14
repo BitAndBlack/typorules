@@ -19,7 +19,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
  * @see \BitAndBlack\TypoRules\Tests\Rules\BindNumberToNumberRuleTest
  */
 #[Description(
-    'Add a thin non breaking space between the words `Nr.` or `Nummer` and a following number to disallow separating them from each other.'
+    'Add a thin non-breaking space between the words `Nr.` or `Nummer` and a following number to disallow separating them from each other.'
 )]
 #[TransformationExample(
     'Das ist Nr. 8.',

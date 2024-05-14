@@ -8,18 +8,18 @@ There are currently 42 rules available.
 
 #### Description
 
-Add a non breaking space after `Dr.`. This binds the title and the name together and makes it *easier to read*.
+Add a non-breaking space after `Dr.`. This binds the title and the name together and makes it *easier to read*.
 
 #### Transformation example
 
--   With a thin non breaking space (`\xE2\x80\xAF`):
+-   With a thin non-breaking space (`\xE2\x80\xAF`):
 
     ```diff
     - Dr. Max Mustermann
     + Dr.\xE2\x80\xAFMax Mustermann
     ```
 
--   With a non breaking space for html (`&nbsp;`):
+-   With a non-breaking space for html (`&nbsp;`):
 
     ```diff
     - Dr. Max Mustermann
@@ -30,7 +30,7 @@ Add a non breaking space after `Dr.`. This binds the title and the name together
 
 There is 1 possibility to customize this rule:
 
--   Configure the type of the space. Per default, a thin non breaking space will be used.
+-   Configure the type of the space. Per default, a thin non-breaking space will be used.
 
     ```php
     $addNonBreakingSpaceAfterDoctorRule->setNonBreakingSpace($nonBreakingSpace);
@@ -46,18 +46,18 @@ This rule is located under [../src/Rule/AddNonBreakingSpaceAfterDoctorRule.php](
 
 #### Description
 
-Add a non breaking space after `Prof.`. This binds the title and the name together and makes it *easier to read*.
+Add a non-breaking space after `Prof.`. This binds the title and the name together and makes it *easier to read*.
 
 #### Transformation example
 
--   With a thin non breaking space (`\xE2\x80\xAF`):
+-   With a thin non-breaking space (`\xE2\x80\xAF`):
 
     ```diff
     - Prof. Max Mustermann
     + Prof.\xE2\x80\xAFMax Mustermann
     ```
 
--   With a non breaking space for html (`&nbsp;`):
+-   With a non-breaking space for html (`&nbsp;`):
 
     ```diff
     - Prof. Max Mustermann
@@ -68,7 +68,7 @@ Add a non breaking space after `Prof.`. This binds the title and the name togeth
 
 There is 1 possibility to customize this rule:
 
--   Configure the type of the space. Per default, a thin non breaking space will be used.
+-   Configure the type of the space. Per default, a thin non-breaking space will be used.
 
     ```php
     $addNonBreakingSpaceAfterProfessorRule->setNonBreakingSpace($nonBreakingSpace);
@@ -84,7 +84,7 @@ This rule is located under [../src/Rule/AddNonBreakingSpaceAfterProfessorRule.ph
 
 #### Description
 
-Add a non breaking space between before a colon to disallow separating it from the word before.
+Add a non-breaking space between before a colon to disallow separating it from the word before.
 
 #### Transformation example
 
@@ -97,7 +97,7 @@ Add a non breaking space between before a colon to disallow separating it from t
 
 There is 1 possibility to customize this rule:
 
--   Configure the type of the space. Per default, a thin non breaking space will be used.
+-   Configure the type of the space. Per default, a thin non-breaking space will be used.
 
     ```php
     $addNonBreakingSpaceBeforeColonRule->setNonBreakingSpace($nonBreakingSpace);
@@ -113,7 +113,7 @@ This rule is located under [../src/Rule/AddNonBreakingSpaceBeforeColonRule.php](
 
 #### Description
 
-Add a non breaking space between before a exclamation mark to disallow separating it from the word before.
+Add a non-breaking space between before a exclamation mark to disallow separating it from the word before.
 
 #### Transformation example
 
@@ -126,7 +126,7 @@ Add a non breaking space between before a exclamation mark to disallow separatin
 
 There is 1 possibility to customize this rule:
 
--   Configure the type of the space. Per default, a thin non breaking space will be used.
+-   Configure the type of the space. Per default, a thin non-breaking space will be used.
 
     ```php
     $addNonBreakingSpaceBeforeExclamationMarkRule->setNonBreakingSpace($nonBreakingSpace);
@@ -142,7 +142,7 @@ This rule is located under [../src/Rule/AddNonBreakingSpaceBeforeExclamationMark
 
 #### Description
 
-Add a non breaking space between before a question mark to disallow separating it from the word before.
+Add a non-breaking space between before a question mark to disallow separating it from the word before.
 
 #### Transformation example
 
@@ -155,7 +155,7 @@ Add a non breaking space between before a question mark to disallow separating i
 
 There is 1 possibility to customize this rule:
 
--   Configure the type of the space. Per default, a thin non breaking space will be used.
+-   Configure the type of the space. Per default, a thin non-breaking space will be used.
 
     ```php
     $addNonBreakingSpaceBeforeQuestionMarkRule->setNonBreakingSpace($nonBreakingSpace);
@@ -171,7 +171,7 @@ This rule is located under [../src/Rule/AddNonBreakingSpaceBeforeQuestionMarkRul
 
 #### Description
 
-Add a non breaking space between before a semicolon to disallow separating it from the word before.
+Add a non-breaking space between before a semicolon to disallow separating it from the word before.
 
 #### Transformation example
 
@@ -184,7 +184,7 @@ Add a non breaking space between before a semicolon to disallow separating it fr
 
 There is 1 possibility to customize this rule:
 
--   Configure the type of the space. Per default, a thin non breaking space will be used.
+-   Configure the type of the space. Per default, a thin non-breaking space will be used.
 
     ```php
     $addNonBreakingSpaceBeforeSemicolonRule->setNonBreakingSpace($nonBreakingSpace);
@@ -200,7 +200,7 @@ This rule is located under [../src/Rule/AddNonBreakingSpaceBeforeSemicolonRule.p
 
 #### Description
 
-Add a non breaking space before the word `Uhr` to disallow separating it from the time before.
+Add a non-breaking space before the word `Uhr` to disallow separating it from the time before.
 
 #### Transformation example
 
@@ -213,7 +213,7 @@ Add a non breaking space before the word `Uhr` to disallow separating it from th
 
 There is 1 possibility to customize this rule:
 
--   Configure the type of the space. Per default, a non breaking space will be used.
+-   Configure the type of the space. Per default, a non-breaking space will be used.
 
     ```php
     $addNonBreakingSpaceBeforeUhrRule->setNonBreakingSpace($nonBreakingSpace);
@@ -229,7 +229,7 @@ This rule is located under [../src/Rule/AddNonBreakingSpaceBeforeUhrRule.php](..
 
 #### Description
 
-Add a non breaking space between between `e.` and `V.` to disallow separating those two.
+Add a non-breaking space between `e.` and `V.` to disallow separating those two.
 
 #### Transformation example
 
@@ -247,7 +247,7 @@ Add a non breaking space between between `e.` and `V.` to disallow separating th
 
 There is 1 possibility to customize this rule:
 
--   Configure the type of the space. Per default, a thin non breaking space will be used.
+-   Configure the type of the space. Per default, a thin non-breaking space will be used.
 
     ```php
     $addNonBreakingSpaceBetweenEingetragenerAndVereinRule->setNonBreakingSpace($nonBreakingSpace);
@@ -263,7 +263,7 @@ This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenEingetragenerA
 
 #### Description
 
-Add a thin non breaking space between between a left angle quote `«` and a word **after** to disallow separating those two.
+Add a thin non-breaking space between a left angle quote `«` and a word **after** to disallow separating those two.
 
 #### Transformation example
 
@@ -276,7 +276,7 @@ Add a thin non breaking space between between a left angle quote `«` and a word
 
 There is 1 possibility to customize this rule:
 
--   Configure the type of the space. Per default, a thin non breaking space will be used.
+-   Configure the type of the space. Per default, a thin non-breaking space will be used.
 
     ```php
     $addNonBreakingSpaceBetweenGuillemetLeftOpenAndWordRule->setNonBreakingSpace($nonBreakingSpace);
@@ -292,7 +292,7 @@ This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenGuillemetLeftO
 
 #### Description
 
-Add a thin non breaking space between between a right angle quote `»` and a word **before** to disallow separating those two.
+Add a thin non-breaking space between a right angle quote `»` and a word **before** to disallow separating those two.
 
 #### Transformation example
 
@@ -305,7 +305,7 @@ Add a thin non breaking space between between a right angle quote `»` and a wor
 
 There is 1 possibility to customize this rule:
 
--   Configure the type of the space. Per default, a thin non breaking space will be used.
+-   Configure the type of the space. Per default, a thin non-breaking space will be used.
 
     ```php
     $addNonBreakingSpaceBetweenGuillemetRightCloseAndWordRule->setNonBreakingSpace($nonBreakingSpace);
@@ -321,7 +321,7 @@ This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenGuillemetRight
 
 #### Description
 
-Add a thin non breaking space between between a single left angle quote `‹` and a word **after** to disallow separating those two.
+Add a thin non-breaking space between a single left angle quote `‹` and a word **after** to disallow separating those two.
 
 #### Transformation example
 
@@ -334,7 +334,7 @@ Add a thin non breaking space between between a single left angle quote `‹` an
 
 There is 1 possibility to customize this rule:
 
--   Configure the type of the space. Per default, a thin non breaking space will be used.
+-   Configure the type of the space. Per default, a thin non-breaking space will be used.
 
     ```php
     $addNonBreakingSpaceBetweenGuillemetSingleLeftOpenAndWordRule->setNonBreakingSpace($nonBreakingSpace);
@@ -350,7 +350,7 @@ This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenGuillemetSingl
 
 #### Description
 
-Add a thin non breaking space between between a single right angle quote `›` and a word **before** to disallow separating those two.
+Add a thin non-breaking space between a single right angle quote `›` and a word **before** to disallow separating those two.
 
 #### Transformation example
 
@@ -363,7 +363,7 @@ Add a thin non breaking space between between a single right angle quote `›` a
 
 There is 1 possibility to customize this rule:
 
--   Configure the type of the space. Per default, a thin non breaking space will be used.
+-   Configure the type of the space. Per default, a thin non-breaking space will be used.
 
     ```php
     $addNonBreakingSpaceBetweenGuillemetSingleRightCloseAndWordRule->setNonBreakingSpace($nonBreakingSpace);
@@ -379,7 +379,7 @@ This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenGuillemetSingl
 
 #### Description
 
-Add a non breaking space between between `Jahr` and the number before to disallow separating those two.
+Add a non-breaking space between `Jahr` and the number before to disallow separating those two.
 
 #### Transformation example
 
@@ -392,7 +392,7 @@ Add a non breaking space between between `Jahr` and the number before to disallo
 
 There is 1 possibility to customize this rule:
 
--   Configure the type of the space. Per default, a non breaking space will be used.
+-   Configure the type of the space. Per default, a non-breaking space will be used.
 
     ```php
     $addNonBreakingSpaceBetweenNumberAndJahrRule->setNonBreakingSpace($nonBreakingSpace);
@@ -408,7 +408,7 @@ This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenNumberAndJahrR
 
 #### Description
 
-Add a thin non breaking space between between a number and the following unit to disallow separating those two.
+Add a thin non-breaking space between a number and the following unit to disallow separating those two.
 
 #### Transformation example
 
@@ -421,7 +421,7 @@ Add a thin non breaking space between between a number and the following unit to
 
 There is 1 possibility to customize this rule:
 
--   Configure the type of the space. Per default, a thin non breaking space will be used.
+-   Configure the type of the space. Per default, a thin non-breaking space will be used.
 
     ```php
     $addNonBreakingSpaceBetweenNumberAndUnitRule->setNonBreakingSpace($nonBreakingSpace);
@@ -437,7 +437,7 @@ This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenNumberAndUnitR
 
 #### Description
 
-Add a non breaking space between between to words that have a dash between `/` to **allow** separating those two. This can improve the text wrap when having long words-
+Add a non-breaking space between to words that have a dash between `/` to **allow** separating those two. This can improve the text wrap when having long words-
 
 #### Transformation example
 
@@ -617,7 +617,7 @@ This rule is located under [../src/Rule/AddSpaceBetweenBracketsRule.php](../src/
 
 #### Description
 
-Add a thin non breaking space between the words `Nr.` or `Nummer` and a following number to disallow separating them from each other.
+Add a thin non-breaking space between the words `Nr.` or `Nummer` and a following number to disallow separating them from each other.
 
 #### Transformation example
 
@@ -645,7 +645,7 @@ This rule is located under [../src/Rule/BindNumberToNumberRule.php](../src/Rule/
 
 #### Description
 
-Replace a whitespace with a non breaking space between a short word and its following word if the short word follows a colon. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.
+Replace a whitespace with a non-breaking space between a short word and its following word if the short word follows a colon `:`. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.
 
 #### Transformation example
 
@@ -658,7 +658,7 @@ Replace a whitespace with a non breaking space between a short word and its foll
 
 There are 3 possibilities to customize this rule:
 
--   Configure the type of the space. Per default, a non breaking space will be used.
+-   Configure the type of the space. Per default, a non-breaking space will be used.
 
     ```php
     $bindWordAfterColonRule->setNonBreakingSpace($nonBreakingSpace);
@@ -686,7 +686,7 @@ This rule is located under [../src/Rule/BindWordAfterColonRule.php](../src/Rule/
 
 #### Description
 
-Replace a whitespace with a non breaking space between a short word and its following word if the short word follows a comma. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.
+Replace a whitespace with a non-breaking space between a short word and its following word if the short word follows a comma `,`. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.
 
 #### Transformation example
 
@@ -699,7 +699,7 @@ Replace a whitespace with a non breaking space between a short word and its foll
 
 There are 3 possibilities to customize this rule:
 
--   Configure the type of the space. Per default, a non breaking space will be used.
+-   Configure the type of the space. Per default, a non-breaking space will be used.
 
     ```php
     $bindWordAfterCommaRule->setNonBreakingSpace($nonBreakingSpace);
@@ -727,7 +727,7 @@ This rule is located under [../src/Rule/BindWordAfterCommaRule.php](../src/Rule/
 
 #### Description
 
-Replace a whitespace with a non breaking space between a short word and its following word if the short word follows a dot. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.
+Replace a whitespace with a non-breaking space between a short word and its following word if the short word follows a dot `.`. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.
 
 #### Transformation example
 
@@ -740,7 +740,7 @@ Replace a whitespace with a non breaking space between a short word and its foll
 
 There are 3 possibilities to customize this rule:
 
--   Configure the type of the space. Per default, a non breaking space will be used.
+-   Configure the type of the space. Per default, a non-breaking space will be used.
 
     ```php
     $bindWordAfterDotRule->setNonBreakingSpace($nonBreakingSpace);
@@ -768,7 +768,7 @@ This rule is located under [../src/Rule/BindWordAfterDotRule.php](../src/Rule/Bi
 
 #### Description
 
-Replace a whitespace with a non breaking space between a short word and its following word if the short word follows a em dash. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.
+Replace a whitespace with a non-breaking space between a short word and its following word if the short word follows a em dash `—`. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.
 
 #### Transformation example
 
@@ -781,7 +781,7 @@ Replace a whitespace with a non breaking space between a short word and its foll
 
 There are 3 possibilities to customize this rule:
 
--   Configure the type of the space. Per default, a non breaking space will be used.
+-   Configure the type of the space. Per default, a non-breaking space will be used.
 
     ```php
     $bindWordAfterEmDashRule->setNonBreakingSpace($nonBreakingSpace);
@@ -809,7 +809,7 @@ This rule is located under [../src/Rule/BindWordAfterEmDashRule.php](../src/Rule
 
 #### Description
 
-Replace a whitespace with a non breaking space between a short word and its following word if the short word follows a en dash. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.
+Replace a whitespace with a non-breaking space between a short word and its following word if the short word follows a en dash `–`. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.
 
 #### Transformation example
 
@@ -822,7 +822,7 @@ Replace a whitespace with a non breaking space between a short word and its foll
 
 There are 3 possibilities to customize this rule:
 
--   Configure the type of the space. Per default, a non breaking space will be used.
+-   Configure the type of the space. Per default, a non-breaking space will be used.
 
     ```php
     $bindWordAfterEnDashRule->setNonBreakingSpace($nonBreakingSpace);
@@ -850,7 +850,7 @@ This rule is located under [../src/Rule/BindWordAfterEnDashRule.php](../src/Rule
 
 #### Description
 
-Replace a whitespace with a non breaking space between a short word and its following word if the short word follows an exclamation mark. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.
+Replace a whitespace with a non-breaking space between a short word and its following word if the short word follows an exclamation mark `!`. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.
 
 #### Transformation example
 
@@ -863,7 +863,7 @@ Replace a whitespace with a non breaking space between a short word and its foll
 
 There are 3 possibilities to customize this rule:
 
--   Configure the type of the space. Per default, a non breaking space will be used.
+-   Configure the type of the space. Per default, a non-breaking space will be used.
 
     ```php
     $bindWordAfterExclamationMarkRule->setNonBreakingSpace($nonBreakingSpace);
@@ -891,7 +891,7 @@ This rule is located under [../src/Rule/BindWordAfterExclamationMarkRule.php](..
 
 #### Description
 
-Replace a whitespace with a non breaking space between a short word and its following word if the short word follows a question mark. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.
+Replace a whitespace with a non-breaking space between a short word and its following word if the short word follows a question mark `?`. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.
 
 #### Transformation example
 
@@ -904,7 +904,7 @@ Replace a whitespace with a non breaking space between a short word and its foll
 
 There are 3 possibilities to customize this rule:
 
--   Configure the type of the space. Per default, a non breaking space will be used.
+-   Configure the type of the space. Per default, a non-breaking space will be used.
 
     ```php
     $bindWordAfterQuestionMarkRule->setNonBreakingSpace($nonBreakingSpace);
@@ -932,7 +932,7 @@ This rule is located under [../src/Rule/BindWordAfterQuestionMarkRule.php](../sr
 
 #### Description
 
-Replace a whitespace with a non breaking space between a short word and its following word if the short word follows a semicolon. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.
+Replace a whitespace with a non-breaking space between a short word and its following word if the short word follows a semicolon `;`. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.
 
 #### Transformation example
 
@@ -945,7 +945,7 @@ Replace a whitespace with a non breaking space between a short word and its foll
 
 There are 3 possibilities to customize this rule:
 
--   Configure the type of the space. Per default, a non breaking space will be used.
+-   Configure the type of the space. Per default, a non-breaking space will be used.
 
     ```php
     $bindWordAfterSemicolonRule->setNonBreakingSpace($nonBreakingSpace);
@@ -1134,7 +1134,7 @@ This rule is located under [../src/Rule/ConvertDotsToEllipsisRule.php](../src/Ru
 
 #### Description
 
-Recognises a measurement and inserts thin non breaking spaces before and after the multiplication mark `x` or `×`.
+Recognises a measurement and inserts thin non-breaking spaces before and after the multiplication mark `x` or `×`.
 
 #### Transformation example
 

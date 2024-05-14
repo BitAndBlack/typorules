@@ -20,17 +20,17 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
  * @see \BitAndBlack\TypoRules\Tests\Rules\AddNonBreakingSpaceAfterDoctorRuleTest
  */
 #[Description(
-    'Add a non breaking space after `Dr.`. This binds the title and the name together and makes it *easier to read*.'
+    'Add a non-breaking space after `Dr.`. This binds the title and the name together and makes it *easier to read*.'
 )]
 #[TransformationExample(
     'Dr. Max Mustermann',
     'Dr.\xE2\x80\xAFMax Mustermann',
-    'With a thin non breaking space (`\xE2\x80\xAF`)'
+    'With a thin non-breaking space (`\xE2\x80\xAF`)'
 )]
 #[TransformationExample(
     'Dr. Max Mustermann',
     'Dr.&nbsp;Max Mustermann',
-    'With a non breaking space for html (`&nbsp;`)'
+    'With a non-breaking space for html (`&nbsp;`)'
 )]
 class AddNonBreakingSpaceAfterDoctorRule extends AbstractRule implements RuleInterface
 {
@@ -56,7 +56,7 @@ class AddNonBreakingSpaceAfterDoctorRule extends AbstractRule implements RuleInt
         return '$1' . $this->nonBreakingSpace;
     }
 
-    #[Configuration('Configure the type of the space. Per default, a thin non breaking space will be used.')]
+    #[Configuration('Configure the type of the space. Per default, a thin non-breaking space will be used.')]
     public function setNonBreakingSpace(string $nonBreakingSpace): self
     {
         $this->nonBreakingSpace = $nonBreakingSpace;

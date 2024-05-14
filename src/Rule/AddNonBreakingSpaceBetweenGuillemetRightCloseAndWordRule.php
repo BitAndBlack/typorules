@@ -20,7 +20,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
  * @see \BitAndBlack\TypoRules\Tests\Rules\AddNonBreakingSpaceBetweenGuillemetRightCloseAndWordRuleTest
  */
 #[Description(
-    'Add a thin non breaking space between between a right angle quote `»` and a word **before** to disallow separating those two.'
+    'Add a thin non-breaking space between a right angle quote `»` and a word **before** to disallow separating those two.'
 )]
 #[TransformationExample(
     'J\'ai dit « non » à toi.',
@@ -50,7 +50,7 @@ class AddNonBreakingSpaceBetweenGuillemetRightCloseAndWordRule extends AbstractR
         return $this->nonBreakingSpace;
     }
 
-    #[Configuration('Configure the type of the space. Per default, a thin non breaking space will be used.')]
+    #[Configuration('Configure the type of the space. Per default, a thin non-breaking space will be used.')]
     public function setNonBreakingSpace(string $nonBreakingSpace): self
     {
         $this->nonBreakingSpace = $nonBreakingSpace;
