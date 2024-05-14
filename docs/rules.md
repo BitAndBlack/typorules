@@ -1,6 +1,6 @@
 # Rules documentation
 
-There are currently 40 rules available.
+There are currently 42 rules available.
 
 ## Rules
 
@@ -761,6 +761,88 @@ There are 3 possibilities to customize this rule:
 #### File
 
 This rule is located under [../src/Rule/BindWordAfterDotRule.php](../src/Rule/BindWordAfterDotRule.php)
+
+----
+
+### `BindWordAfterEmDashRule`
+
+#### Description
+
+Replace a whitespace with a non breaking space between a short word and its following word if the short word follows a em dash. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.
+
+#### Transformation example
+
+```diff
+- Already over — not at all!
++ Already over — not\xC2\xA0at all!
+```
+
+#### Possible rule customization
+
+There are 3 possibilities to customize this rule:
+
+-   Configure the type of the space. Per default, a non breaking space will be used.
+
+    ```php
+    $bindWordAfterEmDashRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
+
+-   Configure the minimum length for the word after the em dash. It needs to have a length of at least `3` characters per default.
+
+    ```php
+    $bindWordAfterEmDashRule->setWordMaxLength($wordMaxLength);
+    ```
+
+-   Configure the maximum length for the **second** word after the em dash. By default, it must not have more than `5` characters.
+
+    ```php
+    $bindWordAfterEmDashRule->setWordAheadMaxLength($wordAheadMaxLength);
+    ```
+
+#### File
+
+This rule is located under [../src/Rule/BindWordAfterEmDashRule.php](../src/Rule/BindWordAfterEmDashRule.php)
+
+----
+
+### `BindWordAfterEnDashRule`
+
+#### Description
+
+Replace a whitespace with a non breaking space between a short word and its following word if the short word follows a en dash. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.
+
+#### Transformation example
+
+```diff
+- Schon vorbei – von wegen!
++ Schon vorbei – von\xC2\xA0wegen!
+```
+
+#### Possible rule customization
+
+There are 3 possibilities to customize this rule:
+
+-   Configure the type of the space. Per default, a non breaking space will be used.
+
+    ```php
+    $bindWordAfterEnDashRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
+
+-   Configure the minimum length for the word after the en dash. It needs to have a length of at least `3` characters per default.
+
+    ```php
+    $bindWordAfterEnDashRule->setWordMaxLength($wordMaxLength);
+    ```
+
+-   Configure the maximum length for the **second** word after the en dash. By default, it must not have more than `5` characters.
+
+    ```php
+    $bindWordAfterEnDashRule->setWordAheadMaxLength($wordAheadMaxLength);
+    ```
+
+#### File
+
+This rule is located under [../src/Rule/BindWordAfterEnDashRule.php](../src/Rule/BindWordAfterEnDashRule.php)
 
 ----
 

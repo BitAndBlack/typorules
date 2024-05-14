@@ -17,6 +17,8 @@ use BitAndBlack\TypoRules\Rule\AddSpaceBetweenBracketsRule;
 use BitAndBlack\TypoRules\Rule\BindWordAfterColonRule;
 use BitAndBlack\TypoRules\Rule\BindWordAfterCommaRule;
 use BitAndBlack\TypoRules\Rule\BindWordAfterDotRule;
+use BitAndBlack\TypoRules\Rule\BindWordAfterEmDashRule;
+use BitAndBlack\TypoRules\Rule\BindWordAfterEnDashRule;
 use BitAndBlack\TypoRules\Rule\BindWordAfterExclamationMarkRule;
 use BitAndBlack\TypoRules\Rule\BindWordAfterQuestionMarkRule;
 use BitAndBlack\TypoRules\Rule\BindWordAfterSemicolonRule;
@@ -34,6 +36,8 @@ class AdvancedTypographyRuleSet extends AbstractRuleSet implements RuleSetInterf
             new BindWordAfterColonRule(),
             new BindWordAfterCommaRule(),
             new BindWordAfterDotRule(),
+            new BindWordAfterEmDashRule(),
+            new BindWordAfterEnDashRule(),
             new BindWordAfterExclamationMarkRule(),
             new BindWordAfterQuestionMarkRule(),
             new BindWordAfterSemicolonRule(),
