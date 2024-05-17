@@ -5,7 +5,7 @@
 
 # Bit&Black TypoRules
 
-Typographic improvements for professional-looking and easy-to-read texts.
+Typographic improvements for professional-looking and easy-to-read texts written in PHP.
 
 ## TOC
 
