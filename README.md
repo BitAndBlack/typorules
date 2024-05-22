@@ -54,7 +54,7 @@ $violations = $removeDuplicatedWhitespaceRule->getViolations($content);
 $contentFixed = $removeDuplicatedWhitespaceRule->getContentFixed($content);
 ```
 
-You can find a similar example under [`/examples/example1.php`](./examples/example1.php).
+You can find a similar example under [`/examples/1-single-rule.php`](./examples/1-single-rule.php).
 
 ### Using a rule set
 
@@ -82,7 +82,7 @@ $violations = $englishRuleSet->getViolations($content);
 $contentFixed = $englishRuleSet->getContentFixed($content);
 ````
 
-You can find a similar example under [`/examples/example2.php`](./examples/example2.php).
+You can find a similar example under [`/examples/2-rule-set.php`](./examples/2-rule-set.php).
 
 ## Rules existing
 
