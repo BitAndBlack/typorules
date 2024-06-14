@@ -1,6 +1,6 @@
 # Rules documentation
 
-There are currently 42 rules available.
+There are currently 43 rules available.
 
 ## Rules
 
@@ -1282,6 +1282,29 @@ There is 1 possibility to customize this rule:
 #### File
 
 This rule is located under [../src/Rule/RemoveUnnecessaryQuestionMarksRule.php](../src/Rule/RemoveUnnecessaryQuestionMarksRule.php)
+
+----
+
+### `RemoveWhitespaceAtBeginningRule`
+
+#### Description
+
+Remove whitespace at the beginning of a paragraph or section.
+
+#### Transformation example
+
+```diff
+-  Wir glauben, dass das Sinn macht.
++ Wir glauben, dass das Sinn macht.
+```
+
+#### Possible rule customization
+
+This rule doesn't allow any customization.
+
+#### File
+
+This rule is located under [../src/Rule/RemoveWhitespaceAtBeginningRule.php](../src/Rule/RemoveWhitespaceAtBeginningRule.php)
 
 ----
 
