@@ -44,22 +44,22 @@
             "BitAndBlack\\TypoRules\\Tests\\": "tests/"
         }
     },
+    "bin": [
+        "bin/console"
+    ],
     "config": {
         "sort-packages": true
     },
     "scripts": {
+        "documentation": "bin/console documentation:create",
         "phpstan": "php vendor/bin/phpstan analyse --configuration ./phpstan.neon --memory-limit=-1 --ansi",
         "phpunit": "php vendor/bin/phpunit --configuration ./phpunit.xml --colors=always",
-        "refactor": "php vendor/bin/rector && php vendor/bin/ecs --fix",
-        "documentation": "bin/console documentation:create"
+        "refactor": "php vendor/bin/rector && php vendor/bin/ecs --fix"
     },
     "scripts-descriptions": {
+        "documentation": "Creates a documentation of all rules existing.",
         "phpstan": "Runs PHPStan over the src folder and the tests folder.",
         "phpunit": "Runs PHPUnit.",
-        "refactor": "Runs tools to refactor the code.",
-        "documentation": "Creates a documentation of all rules existing."
-    },
-    "bin": [
-        "bin/console"
-    ]
+        "refactor": "Runs tools to refactor the code."
+    }
 }
