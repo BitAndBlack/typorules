@@ -92,7 +92,7 @@ You can add custom rules by implementing the [`RuleInterface`](./src/Rule/RuleIn
 
 ## Rule sets existing
 
-Read more about the existing rule ses under [/docs/rulesets.md](./docs/rulesets.md).
+Read more about the existing rule sets under [/docs/rulesets.md](./docs/rulesets.md).
 
 You can use custom rule sets by implementing the [`RuleSetInterface`](./src/RuleSet/RuleSetInterface.php).
 
