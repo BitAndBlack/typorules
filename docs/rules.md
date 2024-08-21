@@ -1,6 +1,6 @@
 # Rules documentation
 
-There are currently 43 rules available.
+There are currently 45 rules available.
 
 ## Rules
 
@@ -1224,6 +1224,52 @@ This rule doesn't allow any customization.
 #### File
 
 This rule is located under [../src/Rule/RemoveSpaceBeforeCommaRule.php](../src/Rule/RemoveSpaceBeforeCommaRule.php)
+
+----
+
+### `RemoveSpaceBeforeExclamationMarkRule`
+
+#### Description
+
+Remove whitespace before an exclamation mark.
+
+#### Transformation example
+
+```diff
+- Ich glaube nicht !
++ Ich glaube nicht!
+```
+
+#### Possible rule customization
+
+This rule doesn't allow any customization.
+
+#### File
+
+This rule is located under [../src/Rule/RemoveSpaceBeforeExclamationMarkRule.php](../src/Rule/RemoveSpaceBeforeExclamationMarkRule.php)
+
+----
+
+### `RemoveSpaceBeforeQuestionMarkRule`
+
+#### Description
+
+Remove whitespace before a question mark.
+
+#### Transformation example
+
+```diff
+- Glaubst du ?
++ Glaubst du?
+```
+
+#### Possible rule customization
+
+This rule doesn't allow any customization.
+
+#### File
+
+This rule is located under [../src/Rule/RemoveSpaceBeforeQuestionMarkRule.php](../src/Rule/RemoveSpaceBeforeQuestionMarkRule.php)
 
 ----
 

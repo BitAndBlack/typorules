@@ -32,6 +32,8 @@ use BitAndBlack\TypoRules\Rule\ConvertSpacesBetweenTimesAndNumbersRule;
 use BitAndBlack\TypoRules\Rule\ConvertXToTimesBetweenNumbersRule;
 use BitAndBlack\TypoRules\Rule\RemoveDuplicatedWhitespaceRule;
 use BitAndBlack\TypoRules\Rule\RemoveSpaceBeforeCommaRule;
+use BitAndBlack\TypoRules\Rule\RemoveSpaceBeforeExclamationMarkRule;
+use BitAndBlack\TypoRules\Rule\RemoveSpaceBeforeQuestionMarkRule;
 use BitAndBlack\TypoRules\Rule\RemoveUnnecessaryExclamationMarksRule;
 use BitAndBlack\TypoRules\Rule\RemoveUnnecessaryQuestionMarksRule;
 
@@ -63,6 +65,8 @@ class GermanRuleSet extends AbstractRuleSet implements RuleSetInterface
             new ConvertXToTimesBetweenNumbersRule(),
             new RemoveDuplicatedWhitespaceRule(),
             new RemoveSpaceBeforeCommaRule(),
+            new RemoveSpaceBeforeExclamationMarkRule(),
+            new RemoveSpaceBeforeQuestionMarkRule(),
             new RemoveUnnecessaryExclamationMarksRule(),
             new RemoveUnnecessaryQuestionMarksRule(),
         );
