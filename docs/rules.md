@@ -1,6 +1,6 @@
 # Rules documentation
 
-There are currently 45 rules available.
+There are currently 54 rules available.
 
 ## Rules
 
@@ -225,6 +225,334 @@ This rule is located under [../src/Rule/AddNonBreakingSpaceBeforeUhrRule.php](..
 
 ----
 
+### `AddNonBreakingSpaceBehindWordAfterColonRule`
+
+#### Description
+
+Replace a whitespace with a non-breaking space between a short word and its following word if the short word follows a colon `:`. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.
+
+#### Transformation example
+
+```diff
+- Glaube mir: es war so schön!
++ Glaube mir: es\xC2\xA0war so schön!
+```
+
+#### Possible rule customization
+
+There are 3 possibilities to customize this rule:
+
+-   Configure the type of the space. Per default, a non-breaking space will be used.
+
+    ```php
+    $addNonBreakingSpaceBehindWordAfterColonRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
+
+-   Configure the minimum length for the word after the colon. It needs to have a length of at least `3` characters per default.
+
+    ```php
+    $addNonBreakingSpaceBehindWordAfterColonRule->setWordMaxLength($wordMaxLength);
+    ```
+
+-   Configure the maximum length for the **second** word after the colon. By default, it must not have more than `5` characters.
+
+    ```php
+    $addNonBreakingSpaceBehindWordAfterColonRule->setWordAheadMaxLength($wordAheadMaxLength);
+    ```
+
+#### File
+
+This rule is located under [../src/Rule/AddNonBreakingSpaceBehindWordAfterColonRule.php](../src/Rule/AddNonBreakingSpaceBehindWordAfterColonRule.php)
+
+----
+
+### `AddNonBreakingSpaceBehindWordAfterCommaRule`
+
+#### Description
+
+Replace a whitespace with a non-breaking space between a short word and its following word if the short word follows a comma `,`. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.
+
+#### Transformation example
+
+```diff
+- Glaube mir, es war so schön!
++ Glaube mir, es\xC2\xA0war so schön!
+```
+
+#### Possible rule customization
+
+There are 3 possibilities to customize this rule:
+
+-   Configure the type of the space. Per default, a non-breaking space will be used.
+
+    ```php
+    $addNonBreakingSpaceBehindWordAfterCommaRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
+
+-   Configure the minimum length for the word after the comma. It needs to have a length of at least `3` characters per default.
+
+    ```php
+    $addNonBreakingSpaceBehindWordAfterCommaRule->setWordMaxLength($wordMaxLength);
+    ```
+
+-   Configure the maximum length for the **second** word after the comma. By default, it must not have more than `5` characters.
+
+    ```php
+    $addNonBreakingSpaceBehindWordAfterCommaRule->setWordAheadMaxLength($wordAheadMaxLength);
+    ```
+
+#### File
+
+This rule is located under [../src/Rule/AddNonBreakingSpaceBehindWordAfterCommaRule.php](../src/Rule/AddNonBreakingSpaceBehindWordAfterCommaRule.php)
+
+----
+
+### `AddNonBreakingSpaceBehindWordAfterDotRule`
+
+#### Description
+
+Replace a whitespace with a non-breaking space between a short word and its following word if the short word follows a dot `.`. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.
+
+#### Transformation example
+
+```diff
+- Schon vorbei. Von wegen!
++ Schon vorbei. Von\xC2\xA0wegen!
+```
+
+#### Possible rule customization
+
+There are 3 possibilities to customize this rule:
+
+-   Configure the type of the space. Per default, a non-breaking space will be used.
+
+    ```php
+    $addNonBreakingSpaceBehindWordAfterDotRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
+
+-   Configure the minimum length for the word after the dot. It needs to have a length of at least `3` characters per default.
+
+    ```php
+    $addNonBreakingSpaceBehindWordAfterDotRule->setWordMaxLength($wordMaxLength);
+    ```
+
+-   Configure the maximum length for the **second** word after the dot. By default, it must not have more than `5` characters.
+
+    ```php
+    $addNonBreakingSpaceBehindWordAfterDotRule->setWordAheadMaxLength($wordAheadMaxLength);
+    ```
+
+#### File
+
+This rule is located under [../src/Rule/AddNonBreakingSpaceBehindWordAfterDotRule.php](../src/Rule/AddNonBreakingSpaceBehindWordAfterDotRule.php)
+
+----
+
+### `AddNonBreakingSpaceBehindWordAfterEmDashRule`
+
+#### Description
+
+Replace a whitespace with a non-breaking space between a short word and its following word if the short word follows a em dash `—`. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.
+
+#### Transformation example
+
+```diff
+- Already over — not at all!
++ Already over — not\xC2\xA0at all!
+```
+
+#### Possible rule customization
+
+There are 3 possibilities to customize this rule:
+
+-   Configure the type of the space. Per default, a non-breaking space will be used.
+
+    ```php
+    $addNonBreakingSpaceBehindWordAfterEmDashRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
+
+-   Configure the minimum length for the word after the em dash. It needs to have a length of at least `3` characters per default.
+
+    ```php
+    $addNonBreakingSpaceBehindWordAfterEmDashRule->setWordMaxLength($wordMaxLength);
+    ```
+
+-   Configure the maximum length for the **second** word after the em dash. By default, it must not have more than `5` characters.
+
+    ```php
+    $addNonBreakingSpaceBehindWordAfterEmDashRule->setWordAheadMaxLength($wordAheadMaxLength);
+    ```
+
+#### File
+
+This rule is located under [../src/Rule/AddNonBreakingSpaceBehindWordAfterEmDashRule.php](../src/Rule/AddNonBreakingSpaceBehindWordAfterEmDashRule.php)
+
+----
+
+### `AddNonBreakingSpaceBehindWordAfterEnDashRule`
+
+#### Description
+
+Replace a whitespace with a non-breaking space between a short word and its following word if the short word follows a en dash `–`. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.
+
+#### Transformation example
+
+```diff
+- Schon vorbei – von wegen!
++ Schon vorbei – von\xC2\xA0wegen!
+```
+
+#### Possible rule customization
+
+There are 3 possibilities to customize this rule:
+
+-   Configure the type of the space. Per default, a non-breaking space will be used.
+
+    ```php
+    $addNonBreakingSpaceBehindWordAfterEnDashRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
+
+-   Configure the minimum length for the word after the en dash. It needs to have a length of at least `3` characters per default.
+
+    ```php
+    $addNonBreakingSpaceBehindWordAfterEnDashRule->setWordMaxLength($wordMaxLength);
+    ```
+
+-   Configure the maximum length for the **second** word after the en dash. By default, it must not have more than `5` characters.
+
+    ```php
+    $addNonBreakingSpaceBehindWordAfterEnDashRule->setWordAheadMaxLength($wordAheadMaxLength);
+    ```
+
+#### File
+
+This rule is located under [../src/Rule/AddNonBreakingSpaceBehindWordAfterEnDashRule.php](../src/Rule/AddNonBreakingSpaceBehindWordAfterEnDashRule.php)
+
+----
+
+### `AddNonBreakingSpaceBehindWordAfterExclamationMarkRule`
+
+#### Description
+
+Replace a whitespace with a non-breaking space between a short word and its following word if the short word follows an exclamation mark `!`. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.
+
+#### Transformation example
+
+```diff
+- Sicher! Ich denke nicht.
++ Sicher! Ich\xC2\xA0denke nicht.
+```
+
+#### Possible rule customization
+
+There are 3 possibilities to customize this rule:
+
+-   Configure the type of the space. Per default, a non-breaking space will be used.
+
+    ```php
+    $addNonBreakingSpaceBehindWordAfterExclamationMarkRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
+
+-   Configure the minimum length for the word after the exclamation mark. It needs to have a length of at least `3` characters per default.
+
+    ```php
+    $addNonBreakingSpaceBehindWordAfterExclamationMarkRule->setWordMaxLength($wordMaxLength);
+    ```
+
+-   Configure the maximum length for the **second** word after the exclamation mark. By default, it must not have more than `5` characters.
+
+    ```php
+    $addNonBreakingSpaceBehindWordAfterExclamationMarkRule->setWordAheadMaxLength($wordAheadMaxLength);
+    ```
+
+#### File
+
+This rule is located under [../src/Rule/AddNonBreakingSpaceBehindWordAfterExclamationMarkRule.php](../src/Rule/AddNonBreakingSpaceBehindWordAfterExclamationMarkRule.php)
+
+----
+
+### `AddNonBreakingSpaceBehindWordAfterQuestionMarkRule`
+
+#### Description
+
+Replace a whitespace with a non-breaking space between a short word and its following word if the short word follows a question mark `?`. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.
+
+#### Transformation example
+
+```diff
+- Sicher? Ich denke nicht.
++ Sicher? Ich\xC2\xA0denke nicht.
+```
+
+#### Possible rule customization
+
+There are 3 possibilities to customize this rule:
+
+-   Configure the type of the space. Per default, a non-breaking space will be used.
+
+    ```php
+    $addNonBreakingSpaceBehindWordAfterQuestionMarkRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
+
+-   Configure the minimum length for the word after the question mark. It needs to have a length of at least `3` characters per default.
+
+    ```php
+    $addNonBreakingSpaceBehindWordAfterQuestionMarkRule->setWordMaxLength($wordMaxLength);
+    ```
+
+-   Configure the maximum length for the **second** word after the question mark. By default, it must not have more than `5` characters.
+
+    ```php
+    $addNonBreakingSpaceBehindWordAfterQuestionMarkRule->setWordAheadMaxLength($wordAheadMaxLength);
+    ```
+
+#### File
+
+This rule is located under [../src/Rule/AddNonBreakingSpaceBehindWordAfterQuestionMarkRule.php](../src/Rule/AddNonBreakingSpaceBehindWordAfterQuestionMarkRule.php)
+
+----
+
+### `AddNonBreakingSpaceBehindWordAfterSemicolonRule`
+
+#### Description
+
+Replace a whitespace with a non-breaking space between a short word and its following word if the short word follows a semicolon `;`. This can improve the text wrap in ragged typesetting, as short words do not remain alone at the end of a line. **Attention**: This rule is only suitable for ragged text, not for justified text.
+
+#### Transformation example
+
+```diff
+- Glaube mir; es war so schön!
++ Glaube mir; es\xC2\xA0war so schön!
+```
+
+#### Possible rule customization
+
+There are 3 possibilities to customize this rule:
+
+-   Configure the type of the space. Per default, a non-breaking space will be used.
+
+    ```php
+    $addNonBreakingSpaceBehindWordAfterSemicolonRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
+
+-   Configure the minimum length for the word after the semicolon. It needs to have a length of at least `3` characters per default.
+
+    ```php
+    $addNonBreakingSpaceBehindWordAfterSemicolonRule->setWordMaxLength($wordMaxLength);
+    ```
+
+-   Configure the maximum length for the **second** word after the semicolon. By default, it must not have more than `5` characters.
+
+    ```php
+    $addNonBreakingSpaceBehindWordAfterSemicolonRule->setWordAheadMaxLength($wordAheadMaxLength);
+    ```
+
+#### File
+
+This rule is located under [../src/Rule/AddNonBreakingSpaceBehindWordAfterSemicolonRule.php](../src/Rule/AddNonBreakingSpaceBehindWordAfterSemicolonRule.php)
+
+----
+
 ### `AddNonBreakingSpaceBetweenEingetragenerAndVereinRule`
 
 #### Description
@@ -401,6 +729,34 @@ There is 1 possibility to customize this rule:
 #### File
 
 This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenNumberAndJahrRule.php](../src/Rule/AddNonBreakingSpaceBetweenNumberAndJahrRule.php)
+
+----
+
+### `AddNonBreakingSpaceBetweenNumberAndNumberRule`
+
+#### Description
+
+Add a thin non-breaking space between the words `Nr.` or `Nummer` and a following number to disallow separating them from each other.
+
+#### Transformation example
+
+```diff
+- Das ist Nr. 8.
++ Das ist Nr.\xE2\x80\xAF8.
+```
+
+```diff
+- Das ist Nummer 8.
++ Das ist Nummer\xE2\x80\xAF8.
+```
+
+#### Possible rule customization
+
+This rule doesn't allow any customization.
+
+#### File
+
+This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenNumberAndNumberRule.php](../src/Rule/AddNonBreakingSpaceBetweenNumberAndNumberRule.php)
 
 ----
 

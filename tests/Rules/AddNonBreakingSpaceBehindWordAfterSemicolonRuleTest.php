@@ -12,18 +12,14 @@
 namespace BitAndBlack\TypoRules\Tests\Rules;
 
 use BitAndBlack\TypoRules\CharactersEnum;
-use BitAndBlack\TypoRules\Rule\BindWordAfterSemicolonRule;
+use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBehindWordAfterSemicolonRule;
 use Generator;
 
-/**
- * @deprecated
- * @todo Remove in v1.0.
- */
-class BindWordAfterSemicolonRuleTest extends AbstractRuleTestClass
+class AddNonBreakingSpaceBehindWordAfterSemicolonRuleTest extends AbstractRuleTestClass
 {
     public function getBaseTestClass(): string
     {
-        return BindWordAfterSemicolonRule::class;
+        return AddNonBreakingSpaceBehindWordAfterSemicolonRule::class;
     }
 
     public static function getTestRuleData(): Generator

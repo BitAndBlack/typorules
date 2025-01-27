@@ -12,18 +12,14 @@
 namespace BitAndBlack\TypoRules\Tests\Rules;
 
 use BitAndBlack\TypoRules\CharactersEnum;
-use BitAndBlack\TypoRules\Rule\BindNumberToNumberRule;
+use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenNumberAndNumberRule;
 use Generator;
 
-/**
- * @deprecated
- * @todo Remove in v1.0.
- */
-class BindNumberToNumberRuleTest extends AbstractRuleTestClass
+class AddNonBreakingSpaceBetweenNumberAndNumberRuleTest extends AbstractRuleTestClass
 {
     public function getBaseTestClass(): string
     {
-        return BindNumberToNumberRule::class;
+        return AddNonBreakingSpaceBetweenNumberAndNumberRule::class;
     }
 
     public static function getTestRuleData(): Generator

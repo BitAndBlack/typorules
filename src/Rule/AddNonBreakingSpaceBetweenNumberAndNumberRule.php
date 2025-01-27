@@ -11,14 +11,12 @@
 
 namespace BitAndBlack\TypoRules\Rule;
 
+use BitAndBlack\TypoRules\CharactersEnum;
 use BitAndBlack\TypoRules\Documentation\Description;
 use BitAndBlack\TypoRules\Documentation\TransformationExample;
 
 /**
- * @see \BitAndBlack\TypoRules\Tests\Rules\BindNumberToNumberRuleTest
- * @deprecated This class has been renamed. Please use {@see AddNonBreakingSpaceBetweenNumberAndNumberRule} instead.
- * @see AddNonBreakingSpaceBetweenNumberAndNumberRule
- * @todo Remove in v1.0.
+ * @see \BitAndBlack\TypoRules\Tests\Rules\AddNonBreakingSpaceBetweenNumberAndNumberRule
  */
 #[Description(
     'Add a thin non-breaking space between the words `Nr.` or `Nummer` and a following number to disallow separating them from each other.'
@@ -31,6 +29,20 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
     'Das ist Nummer 8.',
     'Das ist Nummer\xE2\x80\xAF8.',
 )]
-class BindNumberToNumberRule extends AddNonBreakingSpaceBetweenNumberAndNumberRule implements RuleInterface
+class AddNonBreakingSpaceBetweenNumberAndNumberRule extends AbstractRule implements RuleInterface
 {
+    public function getSearchPattern(): string
+    {
+        return '/(Nr\.|Nummer)[' . CharactersEnum::ALL_SPACES->value . '](\d)/';
+    }
+
+    public static function create(): self
+    {
+        return new self();
+    }
+
+    public function getReplacePattern(): string
+    {
+        return '$1' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . '$2';
+    }
 }

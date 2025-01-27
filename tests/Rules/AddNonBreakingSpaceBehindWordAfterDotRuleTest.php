@@ -12,18 +12,14 @@
 namespace BitAndBlack\TypoRules\Tests\Rules;
 
 use BitAndBlack\TypoRules\CharactersEnum;
-use BitAndBlack\TypoRules\Rule\BindWordAfterDotRule;
+use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBehindWordAfterDotRule;
 use Generator;
 
-/**
- * @deprecated
- * @todo Remove in v1.0.
- */
-class BindWordAfterDotRuleTest extends AbstractRuleTestClass
+class AddNonBreakingSpaceBehindWordAfterDotRuleTest extends AbstractRuleTestClass
 {
     public function getBaseTestClass(): string
     {
-        return BindWordAfterDotRule::class;
+        return AddNonBreakingSpaceBehindWordAfterDotRule::class;
     }
 
     public static function getTestRuleData(): Generator

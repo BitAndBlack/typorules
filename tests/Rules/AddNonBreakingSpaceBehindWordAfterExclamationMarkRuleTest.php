@@ -12,18 +12,14 @@
 namespace BitAndBlack\TypoRules\Tests\Rules;
 
 use BitAndBlack\TypoRules\CharactersEnum;
-use BitAndBlack\TypoRules\Rule\BindWordAfterExclamationMarkRule;
+use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBehindWordAfterExclamationMarkRule;
 use Generator;
 
-/**
- * @deprecated
- * @todo Remove in v1.0.
- */
-class BindWordAfterExclamationMarkRuleTest extends AbstractRuleTestClass
+class AddNonBreakingSpaceBehindWordAfterExclamationMarkRuleTest extends AbstractRuleTestClass
 {
     public function getBaseTestClass(): string
     {
-        return BindWordAfterExclamationMarkRule::class;
+        return AddNonBreakingSpaceBehindWordAfterExclamationMarkRule::class;
     }
 
     public static function getTestRuleData(): Generator

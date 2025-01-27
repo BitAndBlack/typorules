@@ -14,11 +14,11 @@ namespace BitAndBlack\TypoRules\RuleSet;
 use BitAndBlack\TypoRules\Documentation\Description;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceAfterDoctorRule;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceAfterProfessorRule;
+use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenNumberAndNumberRule;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenNumberAndUnitRule;
 use BitAndBlack\TypoRules\Rule\AddSpaceBehindDotRule;
 use BitAndBlack\TypoRules\Rule\AddSpaceBehindExclamationMarkRule;
 use BitAndBlack\TypoRules\Rule\AddSpaceBehindQuestionMarkRule;
-use BitAndBlack\TypoRules\Rule\BindNumberToNumberRule;
 use BitAndBlack\TypoRules\Rule\ConvertCharactersToAtCharRule;
 use BitAndBlack\TypoRules\Rule\ConvertCharactersToCopyrightCharRule;
 use BitAndBlack\TypoRules\Rule\ConvertCharactersToRegisteredCharRule;
@@ -42,11 +42,11 @@ class EnglishRuleSet extends AbstractRuleSet implements RuleSetInterface
         $this->withRule(
             new AddNonBreakingSpaceAfterDoctorRule(),
             new AddNonBreakingSpaceAfterProfessorRule(),
+            new AddNonBreakingSpaceBetweenNumberAndNumberRule(),
             new AddNonBreakingSpaceBetweenNumberAndUnitRule(),
             new AddSpaceBehindDotRule(),
             new AddSpaceBehindExclamationMarkRule(),
             new AddSpaceBehindQuestionMarkRule(),
-            new BindNumberToNumberRule(),
             new ConvertCharactersToAtCharRule(),
             new ConvertCharactersToCopyrightCharRule(),
             new ConvertCharactersToRegisteredCharRule(),

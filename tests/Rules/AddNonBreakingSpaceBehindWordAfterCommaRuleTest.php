@@ -12,18 +12,14 @@
 namespace BitAndBlack\TypoRules\Tests\Rules;
 
 use BitAndBlack\TypoRules\CharactersEnum;
-use BitAndBlack\TypoRules\Rule\BindWordAfterCommaRule;
+use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBehindWordAfterCommaRule;
 use Generator;
 
-/**
- * @deprecated
- * @todo Remove in v1.0.
- */
-class BindWordAfterCommaRuleTest extends AbstractRuleTestClass
+class AddNonBreakingSpaceBehindWordAfterCommaRuleTest extends AbstractRuleTestClass
 {
     public function getBaseTestClass(): string
     {
-        return BindWordAfterCommaRule::class;
+        return AddNonBreakingSpaceBehindWordAfterCommaRule::class;
     }
 
     public static function getTestRuleData(): Generator

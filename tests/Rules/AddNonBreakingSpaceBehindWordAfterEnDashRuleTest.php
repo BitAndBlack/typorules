@@ -12,18 +12,14 @@
 namespace BitAndBlack\TypoRules\Tests\Rules;
 
 use BitAndBlack\TypoRules\CharactersEnum;
-use BitAndBlack\TypoRules\Rule\BindWordAfterEnDashRule;
+use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBehindWordAfterEnDashRule;
 use Generator;
 
-/**
- * @deprecated
- * @todo Remove in v1.0.
- */
-class BindWordAfterEnDashRuleTest extends AbstractRuleTestClass
+class AddNonBreakingSpaceBehindWordAfterEnDashRuleTest extends AbstractRuleTestClass
 {
     public function getBaseTestClass(): string
     {
-        return BindWordAfterEnDashRule::class;
+        return AddNonBreakingSpaceBehindWordAfterEnDashRule::class;
     }
 
     public static function getTestRuleData(): Generator

@@ -20,11 +20,11 @@ use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenGuillemetLeftOpenAndWor
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenGuillemetRightCloseAndWordRule;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenGuillemetSingleLeftOpenAndWordRule;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenGuillemetSingleRightCloseAndWordRule;
+use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenNumberAndNumberRule;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenNumberAndUnitRule;
 use BitAndBlack\TypoRules\Rule\AddSpaceBehindDotRule;
 use BitAndBlack\TypoRules\Rule\AddSpaceBehindExclamationMarkRule;
 use BitAndBlack\TypoRules\Rule\AddSpaceBehindQuestionMarkRule;
-use BitAndBlack\TypoRules\Rule\BindNumberToNumberRule;
 use BitAndBlack\TypoRules\Rule\ConvertCharactersToAtCharRule;
 use BitAndBlack\TypoRules\Rule\ConvertCharactersToCopyrightCharRule;
 use BitAndBlack\TypoRules\Rule\ConvertCharactersToRegisteredCharRule;
@@ -55,10 +55,10 @@ class FrenchRuleSet extends AbstractRuleSet implements RuleSetInterface
             new AddNonBreakingSpaceBetweenGuillemetRightCloseAndWordRule(),
             new AddNonBreakingSpaceBetweenGuillemetSingleLeftOpenAndWordRule(),
             new AddNonBreakingSpaceBetweenGuillemetSingleRightCloseAndWordRule(),
+            new AddNonBreakingSpaceBetweenNumberAndNumberRule(),
             new AddSpaceBehindDotRule(),
             new AddSpaceBehindExclamationMarkRule(),
             new AddSpaceBehindQuestionMarkRule(),
-            new BindNumberToNumberRule(),
             new ConvertCharactersToAtCharRule(),
             new ConvertCharactersToCopyrightCharRule(),
             new ConvertCharactersToRegisteredCharRule(),

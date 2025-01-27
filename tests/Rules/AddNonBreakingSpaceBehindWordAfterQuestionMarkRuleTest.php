@@ -12,18 +12,14 @@
 namespace BitAndBlack\TypoRules\Tests\Rules;
 
 use BitAndBlack\TypoRules\CharactersEnum;
-use BitAndBlack\TypoRules\Rule\BindWordAfterQuestionMarkRule;
+use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBehindWordAfterQuestionMarkRule;
 use Generator;
 
-/**
- * @deprecated
- * @todo Remove in v1.0.
- */
-class BindWordAfterQuestionMarkRuleTest extends AbstractRuleTestClass
+class AddNonBreakingSpaceBehindWordAfterQuestionMarkRuleTest extends AbstractRuleTestClass
 {
     public function getBaseTestClass(): string
     {
-        return BindWordAfterQuestionMarkRule::class;
+        return AddNonBreakingSpaceBehindWordAfterQuestionMarkRule::class;
     }
 
     public static function getTestRuleData(): Generator

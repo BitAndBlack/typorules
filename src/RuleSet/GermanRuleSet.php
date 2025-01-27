@@ -17,11 +17,11 @@ use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceAfterProfessorRule;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBeforeUhrRule;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenEingetragenerAndVereinRule;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenNumberAndJahrRule;
+use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenNumberAndNumberRule;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenNumberAndUnitRule;
 use BitAndBlack\TypoRules\Rule\AddSpaceBehindDotRule;
 use BitAndBlack\TypoRules\Rule\AddSpaceBehindExclamationMarkRule;
 use BitAndBlack\TypoRules\Rule\AddSpaceBehindQuestionMarkRule;
-use BitAndBlack\TypoRules\Rule\BindNumberToNumberRule;
 use BitAndBlack\TypoRules\Rule\ConvertCharactersToAtCharRule;
 use BitAndBlack\TypoRules\Rule\ConvertCharactersToCopyrightCharRule;
 use BitAndBlack\TypoRules\Rule\ConvertCharactersToRegisteredCharRule;
@@ -50,11 +50,11 @@ class GermanRuleSet extends AbstractRuleSet implements RuleSetInterface
             new AddNonBreakingSpaceBeforeUhrRule(),
             new AddNonBreakingSpaceBetweenEingetragenerAndVereinRule(),
             new AddNonBreakingSpaceBetweenNumberAndJahrRule(),
+            new AddNonBreakingSpaceBetweenNumberAndNumberRule(),
             new AddNonBreakingSpaceBetweenNumberAndUnitRule(),
             new AddSpaceBehindDotRule(),
             new AddSpaceBehindExclamationMarkRule(),
             new AddSpaceBehindQuestionMarkRule(),
-            new BindNumberToNumberRule(),
             new ConvertCharactersToAtCharRule(),
             new ConvertCharactersToCopyrightCharRule(),
             new ConvertCharactersToRegisteredCharRule(),
