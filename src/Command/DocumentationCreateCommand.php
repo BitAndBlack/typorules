@@ -20,6 +20,7 @@ use ReflectionException;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Style\SymfonyStyle;
 
 class DocumentationCreateCommand extends Command
 {
@@ -36,6 +37,8 @@ class DocumentationCreateCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
+        $io = new SymfonyStyle($input, $output);
+
         $root = dirname(new VendorPath()) . DIRECTORY_SEPARATOR;
 
         $documentationParser = new DocumentationParser();
@@ -69,6 +72,8 @@ class DocumentationCreateCommand extends Command
                 $root . 'docs' . DIRECTORY_SEPARATOR . 'rulesets.md',
             )
         ;
+
+        $io->success('Documentation created.');
 
         return Command::SUCCESS;
     }
