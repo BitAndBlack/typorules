@@ -20,15 +20,15 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
  * @see \BitAndBlack\TypoRules\Tests\Rules\AddNonBreakingSpaceBeforeAndAfterAmpersandRuleTest
  */
 #[Description(
-    'Add non-breaking spaces before and after ampersand characters. This rule affects only situations, where the ampersand lays between words (`Tobias&Deborah` or `Tobias & Deborah`). Single characters (`T&D` or `T & D`) will be skipped.',
+    'Add non-breaking spaces before and after ampersand characters. This rule affects only situations, where the ampersand has whitespaces before and after (`T & D` or `Tobias & Deborah`).',
 )]
 #[TransformationExample(
-    'Welcome to Tobias&Deborah!',
+    'Welcome to Tobias & Deborah!',
     'Welcome to Tobias\xE2\x80\xAF&\xE2\x80\xAFDeborah!',
     'With a thin non-breaking space (`\xE2\x80\xAF`)'
 )]
 #[TransformationExample(
-    'Welcome to Tobias&Deborah!',
+    'Welcome to Tobias & Deborah!',
     'Welcome to Tobias&#8239;&&#8239;Deborah!',
     'With a narrow non-breaking space for html (`&#8239;`)'
 )]
@@ -48,7 +48,7 @@ class AddNonBreakingSpaceBeforeAndAfterAmpersandRule extends AbstractRule implem
 
     public function getSearchPattern(): string
     {
-        return '/(\d{2,}|\w{2,})(' . CharactersEnum::ALL_SPACES->value . ')*&(' . CharactersEnum::ALL_SPACES->value . ')*(\d{2,}|\w{2,})/';
+        return '/(\d+|\w+)(' . CharactersEnum::ALL_SPACES->value . ')+&(' . CharactersEnum::ALL_SPACES->value . ')+(\d+|\w+)/';
     }
 
     public function getReplacePattern(): string

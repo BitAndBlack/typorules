@@ -33,18 +33,18 @@ class AddNonBreakingSpaceBeforeAndAfterAmpersandRuleTest extends AbstractRuleTes
         yield [
             'Willkommen bei Tobias&Deborah',
             'Willkommen bei Tobias' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . '&' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . 'Deborah',
-            '...lkommen bei Tobias&Deborah',
-        ];
-
-        yield [
-            '2&2',
-            '2&2',
             null,
         ];
 
         yield [
             '2 & 2',
+            '2' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . '&' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . '2',
             '2 & 2',
+        ];
+
+        yield [
+            '2&2',
+            '2&2',
             null,
         ];
     }

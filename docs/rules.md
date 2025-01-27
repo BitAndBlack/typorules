@@ -84,21 +84,21 @@ This rule is located under [../src/Rule/AddNonBreakingSpaceAfterProfessorRule.ph
 
 #### Description
 
-Add non-breaking spaces before and after ampersand characters. This rule affects only situations, where the ampersand lays between words (`Tobias&Deborah` or `Tobias & Deborah`). Single characters (`T&D` or `T & D`) will be skipped.
+Add non-breaking spaces before and after ampersand characters. This rule affects only situations, where the ampersand has whitespaces before and after (`T & D` or `Tobias & Deborah`).
 
 #### Transformation example
 
 -   With a thin non-breaking space (`\xE2\x80\xAF`):
 
     ```diff
-    - Welcome to Tobias&Deborah!
+    - Welcome to Tobias & Deborah!
     + Welcome to Tobias\xE2\x80\xAF&\xE2\x80\xAFDeborah!
     ```
 
 -   With a narrow non-breaking space for html (`&#8239;`):
 
     ```diff
-    - Welcome to Tobias&Deborah!
+    - Welcome to Tobias & Deborah!
     + Welcome to Tobias&#8239;&&#8239;Deborah!
     ```
 
