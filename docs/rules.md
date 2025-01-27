@@ -84,7 +84,7 @@ This rule is located under [../src/Rule/AddNonBreakingSpaceAfterProfessorRule.ph
 
 #### Description
 
-Add non-breaking spaces before and after ampersand characters. This rule affects only situations, where the ampersand lays between words (`Tobias&Deborah`). Single characters (`T&D`) will be skipped.
+Add non-breaking spaces before and after ampersand characters. This rule affects only situations, where the ampersand lays between words (`Tobias&Deborah` or `Tobias & Deborah`). Single characters (`T&D` or `T & D`) will be skipped.
 
 #### Transformation example
 

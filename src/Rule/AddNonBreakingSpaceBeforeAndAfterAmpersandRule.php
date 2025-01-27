@@ -20,7 +20,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
  * @see \BitAndBlack\TypoRules\Tests\Rules\AddNonBreakingSpaceBeforeAndAfterAmpersandRuleTest
  */
 #[Description(
-    'Add non-breaking spaces before and after ampersand characters. This rule affects only situations, where the ampersand lays between words (`Tobias&Deborah`). Single characters (`T&D`) will be skipped.',
+    'Add non-breaking spaces before and after ampersand characters. This rule affects only situations, where the ampersand lays between words (`Tobias&Deborah` or `Tobias & Deborah`). Single characters (`T&D` or `T & D`) will be skipped.',
 )]
 #[TransformationExample(
     'Welcome to Tobias&Deborah!',
