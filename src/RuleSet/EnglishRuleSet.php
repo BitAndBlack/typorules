@@ -14,6 +14,7 @@ namespace BitAndBlack\TypoRules\RuleSet;
 use BitAndBlack\TypoRules\Documentation\Description;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceAfterDoctorRule;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceAfterProfessorRule;
+use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBeforeAndAfterAmpersandRule;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenNumberAndNumberRule;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenNumberAndUnitRule;
 use BitAndBlack\TypoRules\Rule\AddSpaceBehindDotRule;
@@ -42,6 +43,7 @@ class EnglishRuleSet extends AbstractRuleSet implements RuleSetInterface
         $this->withRule(
             new AddNonBreakingSpaceAfterDoctorRule(),
             new AddNonBreakingSpaceAfterProfessorRule(),
+            new AddNonBreakingSpaceBeforeAndAfterAmpersandRule(),
             new AddNonBreakingSpaceBetweenNumberAndNumberRule(),
             new AddNonBreakingSpaceBetweenNumberAndUnitRule(),
             new AddSpaceBehindDotRule(),

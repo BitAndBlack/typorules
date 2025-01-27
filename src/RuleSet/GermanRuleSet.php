@@ -14,6 +14,7 @@ namespace BitAndBlack\TypoRules\RuleSet;
 use BitAndBlack\TypoRules\Documentation\Description;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceAfterDoctorRule;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceAfterProfessorRule;
+use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBeforeAndAfterAmpersandRule;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBeforeUhrRule;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenEingetragenerAndVereinRule;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenNumberAndJahrRule;
@@ -47,6 +48,7 @@ class GermanRuleSet extends AbstractRuleSet implements RuleSetInterface
         $this->withRule(
             new AddNonBreakingSpaceAfterDoctorRule(),
             new AddNonBreakingSpaceAfterProfessorRule(),
+            new AddNonBreakingSpaceBeforeAndAfterAmpersandRule(),
             new AddNonBreakingSpaceBeforeUhrRule(),
             new AddNonBreakingSpaceBetweenEingetragenerAndVereinRule(),
             new AddNonBreakingSpaceBetweenNumberAndJahrRule(),

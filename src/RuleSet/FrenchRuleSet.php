@@ -12,6 +12,7 @@
 namespace BitAndBlack\TypoRules\RuleSet;
 
 use BitAndBlack\TypoRules\Documentation\Description;
+use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBeforeAndAfterAmpersandRule;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBeforeColonRule;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBeforeExclamationMarkRule;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBeforeQuestionMarkRule;
@@ -46,6 +47,7 @@ class FrenchRuleSet extends AbstractRuleSet implements RuleSetInterface
     public function __construct()
     {
         $this->withRule(
+            new AddNonBreakingSpaceBeforeAndAfterAmpersandRule(),
             new AddNonBreakingSpaceBetweenNumberAndUnitRule(),
             new AddNonBreakingSpaceBeforeColonRule(),
             new AddNonBreakingSpaceBeforeExclamationMarkRule(),

@@ -1,6 +1,6 @@
 # Rules documentation
 
-There are currently 54 rules available.
+There are currently 55 rules available.
 
 ## Rules
 
@@ -77,6 +77,44 @@ There is 1 possibility to customize this rule:
 #### File
 
 This rule is located under [../src/Rule/AddNonBreakingSpaceAfterProfessorRule.php](../src/Rule/AddNonBreakingSpaceAfterProfessorRule.php)
+
+----
+
+### `AddNonBreakingSpaceBeforeAndAfterAmpersandRule`
+
+#### Description
+
+Add non-breaking spaces before and after ampersand characters. This rule affects only situations, where the ampersand lays between words (`Tobias&Deborah`). Single characters (`T&D`) will be skipped.
+
+#### Transformation example
+
+-   With a thin non-breaking space (`\xE2\x80\xAF`):
+
+    ```diff
+    - Welcome to Tobias&Deborah!
+    + Welcome to Tobias\xE2\x80\xAF&\xE2\x80\xAFDeborah!
+    ```
+
+-   With a narrow non-breaking space for html (`&#8239;`):
+
+    ```diff
+    - Welcome to Tobias&Deborah!
+    + Welcome to Tobias&#8239;&&#8239;Deborah!
+    ```
+
+#### Possible rule customization
+
+There is 1 possibility to customize this rule:
+
+-   Configure the type of the space. Per default, a thin non-breaking space will be used.
+
+    ```php
+    $addNonBreakingSpaceBeforeAndAfterAmpersandRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
+
+#### File
+
+This rule is located under [../src/Rule/AddNonBreakingSpaceBeforeAndAfterAmpersandRule.php](../src/Rule/AddNonBreakingSpaceBeforeAndAfterAmpersandRule.php)
 
 ----
 
