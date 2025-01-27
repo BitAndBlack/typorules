@@ -89,23 +89,21 @@ class DocumentationParser
                 foreach ($attributes as $attribute) {
                     $methodAttributeInstance = $attribute->newInstance();
 
-                    if ($methodAttributeInstance instanceof Configuration) {
-                        $methodParametersString = implode(
-                            ', ',
-                            array_map(
-                                static fn ($parameter) => '$' . $parameter->getName(),
-                                $methodParameters
-                            )
-                        );
+                    $methodParametersString = implode(
+                        ', ',
+                        array_map(
+                            static fn ($parameter) => '$' . $parameter->getName(),
+                            $methodParameters
+                        )
+                    );
 
-                        $shortName = lcfirst($classDocumentation->getClassNameShort());
-                        $exampleConfiguration = '$' . $shortName . '->' . $methodName . '(' . $methodParametersString . ');';
+                    $shortName = lcfirst($classDocumentation->getClassNameShort());
+                    $exampleConfiguration = '$' . $shortName . '->' . $methodName . '(' . $methodParametersString . ');';
 
-                        $classDocumentation->addConfigurationPossibility(
-                            $methodAttributeInstance->getDescription(),
-                            $exampleConfiguration
-                        );
-                    }
+                    $classDocumentation->addConfigurationPossibility(
+                        $methodAttributeInstance->getDescription(),
+                        $exampleConfiguration
+                    );
                 }
             }
         }

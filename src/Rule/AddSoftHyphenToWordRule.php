@@ -16,6 +16,7 @@ use BitAndBlack\TypoRules\CharactersEnum;
 use BitAndBlack\TypoRules\Documentation\Configuration;
 use BitAndBlack\TypoRules\Documentation\Description;
 use BitAndBlack\TypoRules\Documentation\TransformationExample;
+use BitAndBlack\TypoRules\Exception;
 use BitAndBlack\TypoRules\Exception\MissingDependencyException;
 use Org\Heigl\Hyphenator\Hyphenator;
 
@@ -106,6 +107,9 @@ class AddSoftHyphenToWordRule extends AbstractRule implements RuleInterface
         return $this;
     }
 
+    /**
+     * @throws Exception
+     */
     public function getContentFixed(string $content): string
     {
         $hyphenator = Hyphenator::factory(null, $this->languageCode);
@@ -119,10 +123,15 @@ class AddSoftHyphenToWordRule extends AbstractRule implements RuleInterface
         ;
 
         $replacement = static function ($match) use ($hyphenator): string {
-            $word = $match[0];
+            $word = true === is_array($match) ? $match[0] : null;
+
+            if (false === is_string($word)) {
+                throw new Exception('Failed replacing word. Please report this exception.');
+            }
+
             $wordHyphenated = $hyphenator->hyphenate($word);
 
-            if (!is_string($wordHyphenated)) {
+            if (false === is_string($wordHyphenated)) {
                 return $word;
             }
 
