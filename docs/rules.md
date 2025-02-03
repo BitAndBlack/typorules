@@ -1,6 +1,6 @@
 # Rules documentation
 
-There are currently 56 rules available.
+There are currently 57 rules available.
 
 ## Rules
 
@@ -824,6 +824,51 @@ There is 1 possibility to customize this rule:
 #### File
 
 This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenNumberAndUnitRule.php](../src/Rule/AddNonBreakingSpaceBetweenNumberAndUnitRule.php)
+
+----
+
+### `AddNonBreakingSpacesForDotSeparatedDateRule`
+
+#### Description
+
+Add thin non-breaking spaces between the number of a dot separated date.
+
+#### Transformation example
+
+-   Without spaces at the beginning:
+
+    ```diff
+    - 01.03.2025
+    + 1.\xE2\x80\xA3.\xE2\x80\xA2025
+    ```
+
+-   With spaces at the beginning:
+
+    ```diff
+    - 01. 03. 2025
+    + 1.\xE2\x80\xA3.\xE2\x80\xA2025
+    ```
+
+-   With a narrow non-breaking space for html (`&#8239;`):
+
+    ```diff
+    - 01.03.2025
+    + 1.&#8239;3.&#8239;2025
+    ```
+
+#### Possible rule customization
+
+There is 1 possibility to customize this rule:
+
+-   Configure the type of the space. Per default, a thin non-breaking space will be used.
+
+    ```php
+    $addNonBreakingSpacesForDotSeparatedDateRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
+
+#### File
+
+This rule is located under [../src/Rule/AddNonBreakingSpacesForDotSeparatedDateRule.php](../src/Rule/AddNonBreakingSpacesForDotSeparatedDateRule.php)
 
 ----
 
