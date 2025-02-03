@@ -21,10 +21,10 @@ abstract class AbstractRuleTestClass extends TestCase
     #[DataProvider('getTestRuleData')]
     public function testRule(string $input, string $outputExpected, string|null $violatedPartExpected): void
     {
-        $ruleClass = $this->getBaseTestClass();
+        $baseTestClass = $this->getBaseTestClass();
 
-        $addNonBreakingSpaceBetweenNumberAndUnitRule = new $ruleClass();
-        $violations = $addNonBreakingSpaceBetweenNumberAndUnitRule->getViolations($input);
+        $ruleClass = new $baseTestClass();
+        $violations = $ruleClass->getViolations($input);
 
         if (null !== $violatedPartExpected) {
             self::assertNotEmpty(
