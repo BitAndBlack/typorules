@@ -36,12 +36,14 @@ abstract class AbstractRuleTestClass extends TestCase
 
             self::assertSame(
                 $violatedPartExpected,
-                $violation->getViolationPreview()
+                $violation->getViolationPreview(),
+                'The violation preview is not the expected one.'
             );
 
             self::assertSame(
                 $outputExpected,
-                $violation->getContentFixed()
+                $violation->getContentFixed(),
+                'The fixed violation is not the expected one.'
             );
         }
 
