@@ -12,26 +12,7 @@
 namespace BitAndBlack\TypoRules\RuleSet;
 
 use BitAndBlack\TypoRules\Documentation\Description;
-use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceAfterDoctorRule;
-use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceAfterProfessorRule;
-use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBeforeAndAfterAmpersandRule;
-use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenNumberAndNumberRule;
-use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenNumberAndUnitRule;
-use BitAndBlack\TypoRules\Rule\AddSpaceBehindDotRule;
-use BitAndBlack\TypoRules\Rule\AddSpaceBehindExclamationMarkRule;
-use BitAndBlack\TypoRules\Rule\AddSpaceBehindQuestionMarkRule;
-use BitAndBlack\TypoRules\Rule\ConvertCharactersToAtCharRule;
-use BitAndBlack\TypoRules\Rule\ConvertCharactersToCopyrightCharRule;
-use BitAndBlack\TypoRules\Rule\ConvertCharactersToRegisteredCharRule;
-use BitAndBlack\TypoRules\Rule\ConvertCharactersToTrademarkCharRule;
-use BitAndBlack\TypoRules\Rule\ConvertDashToEmDashRule;
-use BitAndBlack\TypoRules\Rule\ConvertDotsToEllipsisRule;
-use BitAndBlack\TypoRules\Rule\ConvertSpacesBetweenTimesAndNumbersRule;
-use BitAndBlack\TypoRules\Rule\ConvertXToTimesBetweenNumbersRule;
-use BitAndBlack\TypoRules\Rule\RemoveDuplicatedWhitespaceRule;
-use BitAndBlack\TypoRules\Rule\RemoveSpaceBeforeCommaRule;
-use BitAndBlack\TypoRules\Rule\RemoveUnnecessaryExclamationMarksRule;
-use BitAndBlack\TypoRules\Rule\RemoveUnnecessaryQuestionMarksRule;
+use BitAndBlack\TypoRules\Rule;
 
 #[Description(
     'A set of rules that can handle english words and english typography.'
@@ -41,26 +22,26 @@ class EnglishRuleSet extends AbstractRuleSet implements RuleSetInterface
     public function __construct()
     {
         $this->withRule(
-            new AddNonBreakingSpaceAfterDoctorRule(),
-            new AddNonBreakingSpaceAfterProfessorRule(),
-            new AddNonBreakingSpaceBeforeAndAfterAmpersandRule(),
-            new AddNonBreakingSpaceBetweenNumberAndNumberRule(),
-            new AddNonBreakingSpaceBetweenNumberAndUnitRule(),
-            new AddSpaceBehindDotRule(),
-            new AddSpaceBehindExclamationMarkRule(),
-            new AddSpaceBehindQuestionMarkRule(),
-            new ConvertCharactersToAtCharRule(),
-            new ConvertCharactersToCopyrightCharRule(),
-            new ConvertCharactersToRegisteredCharRule(),
-            new ConvertCharactersToTrademarkCharRule(),
-            new ConvertDashToEmDashRule(),
-            new ConvertDotsToEllipsisRule(),
-            new ConvertSpacesBetweenTimesAndNumbersRule(),
-            new ConvertXToTimesBetweenNumbersRule(),
-            new RemoveDuplicatedWhitespaceRule(),
-            new RemoveSpaceBeforeCommaRule(),
-            new RemoveUnnecessaryExclamationMarksRule(),
-            new RemoveUnnecessaryQuestionMarksRule(),
+            new Rule\AddNonBreakingSpaceAfterDoctorRule(),
+            new Rule\AddNonBreakingSpaceAfterProfessorRule(),
+            new Rule\AddNonBreakingSpaceBeforeAndAfterAmpersandRule(),
+            new Rule\AddNonBreakingSpaceBetweenNumberAndNumberRule(),
+            new Rule\AddNonBreakingSpaceBetweenNumberAndUnitRule(),
+            new Rule\AddSpaceBehindDotRule(),
+            new Rule\AddSpaceBehindExclamationMarkRule(),
+            new Rule\AddSpaceBehindQuestionMarkRule(),
+            new Rule\ConvertCharactersToAtCharRule(),
+            new Rule\ConvertCharactersToCopyrightCharRule(),
+            new Rule\ConvertCharactersToRegisteredCharRule(),
+            new Rule\ConvertCharactersToTrademarkCharRule(),
+            new Rule\ConvertDashToEmDashRule(),
+            new Rule\ConvertDotsToEllipsisRule(),
+            new Rule\ConvertSpacesBetweenTimesAndNumbersRule(),
+            new Rule\ConvertXToTimesBetweenNumbersRule(),
+            new Rule\RemoveDuplicatedWhitespaceRule(),
+            new Rule\RemoveSpaceBeforeCommaRule(),
+            new Rule\RemoveUnnecessaryExclamationMarksRule(),
+            new Rule\RemoveUnnecessaryQuestionMarksRule(),
         );
     }
 

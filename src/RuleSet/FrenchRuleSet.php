@@ -12,32 +12,7 @@
 namespace BitAndBlack\TypoRules\RuleSet;
 
 use BitAndBlack\TypoRules\Documentation\Description;
-use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBeforeAndAfterAmpersandRule;
-use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBeforeColonRule;
-use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBeforeExclamationMarkRule;
-use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBeforeQuestionMarkRule;
-use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBeforeSemicolonRule;
-use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenGuillemetLeftOpenAndWordRule;
-use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenGuillemetRightCloseAndWordRule;
-use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenGuillemetSingleLeftOpenAndWordRule;
-use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenGuillemetSingleRightCloseAndWordRule;
-use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenNumberAndNumberRule;
-use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenNumberAndUnitRule;
-use BitAndBlack\TypoRules\Rule\AddSpaceBehindDotRule;
-use BitAndBlack\TypoRules\Rule\AddSpaceBehindExclamationMarkRule;
-use BitAndBlack\TypoRules\Rule\AddSpaceBehindQuestionMarkRule;
-use BitAndBlack\TypoRules\Rule\ConvertCharactersToAtCharRule;
-use BitAndBlack\TypoRules\Rule\ConvertCharactersToCopyrightCharRule;
-use BitAndBlack\TypoRules\Rule\ConvertCharactersToRegisteredCharRule;
-use BitAndBlack\TypoRules\Rule\ConvertCharactersToTrademarkCharRule;
-use BitAndBlack\TypoRules\Rule\ConvertDashToEnDashRule;
-use BitAndBlack\TypoRules\Rule\ConvertDotsToEllipsisRule;
-use BitAndBlack\TypoRules\Rule\ConvertSpacesBetweenTimesAndNumbersRule;
-use BitAndBlack\TypoRules\Rule\ConvertXToTimesBetweenNumbersRule;
-use BitAndBlack\TypoRules\Rule\RemoveDuplicatedWhitespaceRule;
-use BitAndBlack\TypoRules\Rule\RemoveSpaceBeforeCommaRule;
-use BitAndBlack\TypoRules\Rule\RemoveUnnecessaryExclamationMarksRule;
-use BitAndBlack\TypoRules\Rule\RemoveUnnecessaryQuestionMarksRule;
+use BitAndBlack\TypoRules\Rule;
 
 #[Description(
     'A set of rules that can handle french words and french typography.'
@@ -47,32 +22,32 @@ class FrenchRuleSet extends AbstractRuleSet implements RuleSetInterface
     public function __construct()
     {
         $this->withRule(
-            new AddNonBreakingSpaceBeforeAndAfterAmpersandRule(),
-            new AddNonBreakingSpaceBetweenNumberAndUnitRule(),
-            new AddNonBreakingSpaceBeforeColonRule(),
-            new AddNonBreakingSpaceBeforeExclamationMarkRule(),
-            new AddNonBreakingSpaceBeforeQuestionMarkRule(),
-            new AddNonBreakingSpaceBeforeSemicolonRule(),
-            new AddNonBreakingSpaceBetweenGuillemetLeftOpenAndWordRule(),
-            new AddNonBreakingSpaceBetweenGuillemetRightCloseAndWordRule(),
-            new AddNonBreakingSpaceBetweenGuillemetSingleLeftOpenAndWordRule(),
-            new AddNonBreakingSpaceBetweenGuillemetSingleRightCloseAndWordRule(),
-            new AddNonBreakingSpaceBetweenNumberAndNumberRule(),
-            new AddSpaceBehindDotRule(),
-            new AddSpaceBehindExclamationMarkRule(),
-            new AddSpaceBehindQuestionMarkRule(),
-            new ConvertCharactersToAtCharRule(),
-            new ConvertCharactersToCopyrightCharRule(),
-            new ConvertCharactersToRegisteredCharRule(),
-            new ConvertCharactersToTrademarkCharRule(),
-            new ConvertDashToEnDashRule(),
-            new ConvertDotsToEllipsisRule(),
-            new ConvertSpacesBetweenTimesAndNumbersRule(),
-            new ConvertXToTimesBetweenNumbersRule(),
-            new RemoveDuplicatedWhitespaceRule(),
-            new RemoveSpaceBeforeCommaRule(),
-            new RemoveUnnecessaryExclamationMarksRule(),
-            new RemoveUnnecessaryQuestionMarksRule(),
+            new Rule\AddNonBreakingSpaceBeforeAndAfterAmpersandRule(),
+            new Rule\AddNonBreakingSpaceBetweenNumberAndUnitRule(),
+            new Rule\AddNonBreakingSpaceBeforeColonRule(),
+            new Rule\AddNonBreakingSpaceBeforeExclamationMarkRule(),
+            new Rule\AddNonBreakingSpaceBeforeQuestionMarkRule(),
+            new Rule\AddNonBreakingSpaceBeforeSemicolonRule(),
+            new Rule\AddNonBreakingSpaceBetweenGuillemetLeftOpenAndWordRule(),
+            new Rule\AddNonBreakingSpaceBetweenGuillemetRightCloseAndWordRule(),
+            new Rule\AddNonBreakingSpaceBetweenGuillemetSingleLeftOpenAndWordRule(),
+            new Rule\AddNonBreakingSpaceBetweenGuillemetSingleRightCloseAndWordRule(),
+            new Rule\AddNonBreakingSpaceBetweenNumberAndNumberRule(),
+            new Rule\AddSpaceBehindDotRule(),
+            new Rule\AddSpaceBehindExclamationMarkRule(),
+            new Rule\AddSpaceBehindQuestionMarkRule(),
+            new Rule\ConvertCharactersToAtCharRule(),
+            new Rule\ConvertCharactersToCopyrightCharRule(),
+            new Rule\ConvertCharactersToRegisteredCharRule(),
+            new Rule\ConvertCharactersToTrademarkCharRule(),
+            new Rule\ConvertDashToEnDashRule(),
+            new Rule\ConvertDotsToEllipsisRule(),
+            new Rule\ConvertSpacesBetweenTimesAndNumbersRule(),
+            new Rule\ConvertXToTimesBetweenNumbersRule(),
+            new Rule\RemoveDuplicatedWhitespaceRule(),
+            new Rule\RemoveSpaceBeforeCommaRule(),
+            new Rule\RemoveUnnecessaryExclamationMarksRule(),
+            new Rule\RemoveUnnecessaryQuestionMarksRule(),
         );
     }
 
