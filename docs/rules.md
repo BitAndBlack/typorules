@@ -1,6 +1,6 @@
 # Rules documentation
 
-There are currently 55 rules available.
+There are currently 56 rules available.
 
 ## Rules
 
@@ -1595,6 +1595,34 @@ This rule doesn't allow any customization.
 #### File
 
 This rule is located under [../src/Rule/RemoveDuplicatedWhitespaceRule.php](../src/Rule/RemoveDuplicatedWhitespaceRule.php)
+
+----
+
+### `RemoveLeadingZerosFromDotSeparatedDateRule`
+
+#### Description
+
+Remove unnecessary leading zeros from a dot separated date.
+
+#### Transformation example
+
+```diff
+- 01.03.2025
++ 1.3.2025
+```
+
+```diff
+- 01. 03. 2025
++ 1. 3. 2025
+```
+
+#### Possible rule customization
+
+This rule doesn't allow any customization.
+
+#### File
+
+This rule is located under [../src/Rule/RemoveLeadingZerosFromDotSeparatedDateRule.php](../src/Rule/RemoveLeadingZerosFromDotSeparatedDateRule.php)
 
 ----
 
