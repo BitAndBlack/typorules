@@ -110,11 +110,11 @@ enum CharactersEnum: string
 
     /**
      * &times;
-    */
+     */
     case TIMES = '×';
 
     /**
      * &trade;
-    */
+     */
     case TRADEMARK = '™';
 }
