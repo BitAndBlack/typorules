@@ -16,7 +16,7 @@ Typographic improvements for professional-looking and easy-to-read texts written
 -   [Rules existing](#rules-existing)
     -   [Customization](#customization)
 -   [Rule sets existing](#rule-sets-existing)
-    -   [Customization](#customization)
+    -   [Customization](#customization-1)
 -   [Display and check changes](#display-and-check-changes)
 -   [Thanks](#thanks)
 -   [Help](#help)
