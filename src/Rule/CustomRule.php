@@ -33,7 +33,7 @@ use BitAndBlack\TypoRules\Documentation\Description;
 )]
 class CustomRule extends AbstractRule implements RuleInterface
 {
-    public static function create(): RuleInterface
+    public static function create(): self
     {
         return new self();
     }
