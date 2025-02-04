@@ -1,6 +1,6 @@
 # Rules documentation
 
-There are currently 57 rules available.
+There are currently 58 rules available.
 
 ## Rules
 
@@ -1617,6 +1617,42 @@ This rule doesn't allow any customization.
 #### File
 
 This rule is located under [../src/Rule/ConvertXToTimesBetweenNumbersRule.php](../src/Rule/ConvertXToTimesBetweenNumbersRule.php)
+
+----
+
+### `CustomRule`
+
+#### Description
+
+An empty rule that can be configured completely by yourself. It allows you to define your own patterns using the two setter methods and stay in the spirit of this library:
+
+```php
+$customRule = new CustomRule();
+$customRule
+    ->setSearchPattern('\s+/')
+    ->setReplacePattern('\s')
+;
+```
+
+#### Possible rule customization
+
+There are 2 possibilities to customize this rule:
+
+-   Define the search pattern.
+
+    ```php
+    $customRule->setSearchPattern($searchPattern);
+    ```
+
+-   Define the replacement pattern.
+
+    ```php
+    $customRule->setReplacePattern($replacePattern);
+    ```
+
+#### File
+
+This rule is located under [../src/Rule/CustomRule.php](../src/Rule/CustomRule.php)
 
 ----
 
