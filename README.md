@@ -14,6 +14,7 @@ Typographic improvements for professional-looking and easy-to-read texts written
     -   [Using a single rule](#using-a-single-rule)
     -   [Using a rule set](#using-a-rule-set)
 -   [Rules existing](#rules-existing)
+    -   [Customization](#customization)
 -   [Rule sets existing](#rule-sets-existing)
     -   [Customization](#customization)
 -   [Display and check changes](#display-and-check-changes)
@@ -88,19 +89,23 @@ You can find a similar example under [`/examples/2-rule-set.php`](./examples/2-r
 
 Read more about the existing rules under [/docs/rules.md](./docs/rules.md).
 
-You can add custom rules by implementing the [`RuleInterface`](./src/Rule/RuleInterface.php).
+### Customization
+
+You can create custom rules by creating own classes and implementing the [`RuleInterface`](./src/Rule/RuleInterface.php).
+
+If you want to set up a rule completely by your own, you can use the [`CustomRule`](./src/Rule/CustomRule.php) class.
 
 ## Rule sets existing
 
 Read more about the existing rule sets under [/docs/rulesets.md](./docs/rulesets.md).
 
-You can use custom rule sets by implementing the [`RuleSetInterface`](./src/RuleSet/RuleSetInterface.php).
-
 ### Customization
 
-You can customize rule sets and add or remove rules by using the `withRule` or `withoutRule` methods.
+You can create custom rule sets by creating own classes and implementing the [`RuleSetInterface`](./src/RuleSet/RuleSetInterface.php).
 
-If you want to set up a rule set completely by your own, you can use the [`CustomRuleSet`](./src/RuleSet/CustomRuleSet.php) class.
+You can customize existing rule sets and add or remove rules by using the `withRule` or `withoutRule` methods.
+
+If you want to set up an empty rule set completely by your own, you can use the [`CustomRuleSet`](./src/RuleSet/CustomRuleSet.php) class.
 
 ## Display and check changes
 
