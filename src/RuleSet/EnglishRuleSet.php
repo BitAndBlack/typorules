@@ -25,7 +25,7 @@ class EnglishRuleSet extends AbstractRuleSet implements RuleSetInterface
             new Rule\AddNonBreakingSpaceAfterDoctorRule(),
             new Rule\AddNonBreakingSpaceAfterProfessorRule(),
             new Rule\AddNonBreakingSpaceBeforeAndAfterAmpersandRule(),
-            new Rule\AddNonBreakingSpaceBetweenNumberAndNumberRule(),
+            new Rule\AddNonBreakingSpaceBetweenWordNumberAndNumberRule(),
             new Rule\AddNonBreakingSpaceBetweenNumberAndUnitRule(),
             new Rule\AddSpaceBehindDotRule(),
             new Rule\AddSpaceBehindExclamationMarkRule(),

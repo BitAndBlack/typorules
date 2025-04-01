@@ -28,7 +28,7 @@ class GermanRuleSet extends AbstractRuleSet implements RuleSetInterface
             new Rule\AddNonBreakingSpaceBeforeUhrRule(),
             new Rule\AddNonBreakingSpaceBetweenEingetragenerAndVereinRule(),
             new Rule\AddNonBreakingSpaceBetweenNumberAndJahrRule(),
-            new Rule\AddNonBreakingSpaceBetweenNumberAndNumberRule(),
+            new Rule\AddNonBreakingSpaceBetweenWordNummerAndNumberRule(),
             new Rule\AddNonBreakingSpaceBetweenNumberAndUnitRule(),
             new Rule\AddSpaceBehindDotRule(),
             new Rule\AddSpaceBehindExclamationMarkRule(),

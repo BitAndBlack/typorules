@@ -22,8 +22,8 @@ class EnglishRuleSetTest extends TestCase
     {
         yield [
             'This is  an example sentence. From whom? From me. To you - I don\'t    know why!I\'m the one , who writes a sentence. No.1 is like the little 1x1!!! This library was created and tested and is used by and, and, and... (c) Bit&Black.',
-            'This is an example sentence. From whom? From me. To you — I don\'t know why! I\'m the one, who writes a sentence. No. 1 is like the little 1 × 1!! This library was created and tested and is used by and, and, and… © Bit&Black.',
-            13,
+            'This is an example sentence. From whom? From me. To you — I don\'t know why! I\'m the one, who writes a sentence. No. 1 is like the little 1 × 1!! This library was created and tested and is used by and, and, and… © Bit&Black.',
+            14,
         ];
     }
 

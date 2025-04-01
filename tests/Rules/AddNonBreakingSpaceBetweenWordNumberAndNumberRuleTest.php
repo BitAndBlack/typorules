@@ -12,18 +12,14 @@
 namespace BitAndBlack\TypoRules\Tests\Rules;
 
 use BitAndBlack\TypoRules\CharactersEnum;
-use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenNumberAndNumberRule;
+use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenWordNummerAndNumberRule;
 use Generator;
 
-/**
- * @deprecated
- * @todo Remove in v1.0.
- */
-class AddNonBreakingSpaceBetweenNumberAndNumberRuleTest extends AbstractRuleTestClass
+class AddNonBreakingSpaceBetweenWordNumberAndNumberRuleTest extends AbstractRuleTestClass
 {
     public function getBaseTestClass(): string
     {
-        return AddNonBreakingSpaceBetweenNumberAndNumberRule::class;
+        return AddNonBreakingSpaceBetweenWordNummerAndNumberRule::class;
     }
 
     public static function getTestRuleData(): Generator
@@ -32,6 +28,12 @@ class AddNonBreakingSpaceBetweenNumberAndNumberRuleTest extends AbstractRuleTest
             'Das ist Nr. 8.',
             'Das ist Nr.' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . '8.',
             'Das ist Nr. 8.',
+        ];
+
+        yield [
+            'Das ist Nummer 8.',
+            'Das ist Nummer' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . '8.',
+            '...s ist Nummer 8.',
         ];
     }
 }

@@ -22,8 +22,8 @@ class FrenchRuleSetTest extends TestCase
     {
         yield [
             'Il s\'agit  d\'une phrase d\'exemple.Par qui? De ma part. À toi - je ne    sais pas pourquoi! C\'est moi , qui écris une phrase. Le n°1, c\'est comme le petit 1x1 ! Cette bibliothèque a été créée, testée et est utilisée par et, et, et... (c) Bit&Black.',
-            'Il s\'agit d\'une phrase d\'exemple. Par qui ? De ma part. À toi – je ne sais pas pourquoi ! C\'est moi, qui écris une phrase. Le n° 1, c\'est comme le petit 1 × 1 ! Cette bibliothèque a été créée, testée et est utilisée par et, et, et… © Bit&Black.',
-            14,
+            'Il s\'agit d\'une phrase d\'exemple. Par qui ? De ma part. À toi – je ne sais pas pourquoi ! C\'est moi, qui écris une phrase. Le n° 1, c\'est comme le petit 1 × 1 ! Cette bibliothèque a été créée, testée et est utilisée par et, et, et… © Bit&Black.',
+            15,
         ];
     }
 

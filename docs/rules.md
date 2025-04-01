@@ -1,6 +1,6 @@
 # Rules documentation
 
-There are currently 58 rules available.
+There are currently 61 rules available.
 
 ## Rules
 
@@ -824,6 +824,100 @@ There is 1 possibility to customize this rule:
 #### File
 
 This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenNumberAndUnitRule.php](../src/Rule/AddNonBreakingSpaceBetweenNumberAndUnitRule.php)
+
+----
+
+### `AddNonBreakingSpaceBetweenWordNumberAndNumberRule`
+
+#### Description
+
+Add a thin non-breaking space between the words `Nr.` or `Number` and a following number to disallow separating them from each other.
+
+#### Transformation example
+
+```diff
+- This is no. 8.
++ This is no.\xE2\x80\xAF8.
+```
+
+```diff
+- This is number 8.
++ This is number\xE2\x80\xAF8.
+```
+
+```diff
+- № 8.
++ №\xE2\x80\xAF8.
+```
+
+#### Possible rule customization
+
+This rule doesn't allow any customization.
+
+#### File
+
+This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenWordNumberAndNumberRule.php](../src/Rule/AddNonBreakingSpaceBetweenWordNumberAndNumberRule.php)
+
+----
+
+### `AddNonBreakingSpaceBetweenWordNumeroAndNumberRule`
+
+#### Description
+
+Add a thin non-breaking space between the words `n°` or `numéro` and a following number to disallow separating them from each other.
+
+#### Transformation example
+
+```diff
+- C'est le n° 8.
++ C'est le n°\xE2\x80\xAF8.
+```
+
+```diff
+- C'est le numéro 8.
++ C'est le numéro\xE2\x80\xAF8.
+```
+
+```diff
+- N°8
++ N°\xE2\x80\xAF8
+```
+
+#### Possible rule customization
+
+This rule doesn't allow any customization.
+
+#### File
+
+This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenWordNumeroAndNumberRule.php](../src/Rule/AddNonBreakingSpaceBetweenWordNumeroAndNumberRule.php)
+
+----
+
+### `AddNonBreakingSpaceBetweenWordNummerAndNumberRule`
+
+#### Description
+
+Add a thin non-breaking space between the words `Nr.` or `Nummer` and a following number to disallow separating them from each other.
+
+#### Transformation example
+
+```diff
+- Das ist Nr. 8.
++ Das ist Nr.\xE2\x80\xAF8.
+```
+
+```diff
+- Das ist Nummer 8.
++ Das ist Nummer\xE2\x80\xAF8.
+```
+
+#### Possible rule customization
+
+This rule doesn't allow any customization.
+
+#### File
+
+This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenWordNummerAndNumberRule.php](../src/Rule/AddNonBreakingSpaceBetweenWordNummerAndNumberRule.php)
 
 ----
 

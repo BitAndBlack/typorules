@@ -32,7 +32,7 @@ class FrenchRuleSet extends AbstractRuleSet implements RuleSetInterface
             new Rule\AddNonBreakingSpaceBetweenGuillemetRightCloseAndWordRule(),
             new Rule\AddNonBreakingSpaceBetweenGuillemetSingleLeftOpenAndWordRule(),
             new Rule\AddNonBreakingSpaceBetweenGuillemetSingleRightCloseAndWordRule(),
-            new Rule\AddNonBreakingSpaceBetweenNumberAndNumberRule(),
+            new Rule\AddNonBreakingSpaceBetweenWordNumeroAndNumberRule(),
             new Rule\AddSpaceBehindDotRule(),
             new Rule\AddSpaceBehindExclamationMarkRule(),
             new Rule\AddSpaceBehindQuestionMarkRule(),
