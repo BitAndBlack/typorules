@@ -23,17 +23,18 @@ class GermanRuleSetTest extends TestCase
         yield [
             'Dies ist  ein Beispielsatz.Von wem? Von mir. An dich - Keine   Ahnung warum!Ich bin der , der einen Satz schreibt. Nr.1 ist wie das kleine 1x1!!! Diese Bibliothek wurde erstellt und getestet und wird verwendet von und, und, und... (c) Bit&Black.',
             'Dies ist ein Beispielsatz. Von wem? Von mir. An dich – Keine Ahnung warum! Ich bin der, der einen Satz schreibt. Nr. 1 ist wie das kleine 1 × 1!! Diese Bibliothek wurde erstellt und getestet und wird verwendet von und, und, und… © Bit&Black.',
+            14,
         ];
     }
 
     #[DataProvider('getCanHandleRulesData')]
-    public function testCanHandleRules(string $content, string $contentFixedExpected): void
+    public function testCanHandleRules(string $content, string $contentFixedExpected, int $violationsCountExpected): void
     {
         $germanRuleSet = new GermanRuleSet();
         $violations = $germanRuleSet->getViolations($content);
 
         self::assertCount(
-            14,
+            $violationsCountExpected,
             $violations
         );
 
