@@ -30,7 +30,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 #[TransformationExample(
     'Welcome to Tobias & Deborah!',
     'Welcome to Tobias&#8239;&&#8239;Deborah!',
-    'With a narrow non-breaking space for html (`&#8239;`)'
+    'With a narrow non-breaking space for HTML (`&#8239;`)'
 )]
 class AddNonBreakingSpaceBeforeAndAfterAmpersandRule extends AbstractRule implements RuleInterface
 {

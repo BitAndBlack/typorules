@@ -35,7 +35,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 #[TransformationExample(
     '01.03.2025',
     '1.&#8239;3.&#8239;2025',
-    'With a narrow non-breaking space for html (`&#8239;`)'
+    'With a narrow non-breaking space for HTML (`&#8239;`)'
 )]
 class AddNonBreakingSpacesForDotSeparatedDateRule extends AbstractRule implements RuleInterface
 {

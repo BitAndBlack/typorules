@@ -19,7 +19,7 @@ Add a non-breaking space after `Dr.`. This binds the title and the name together
     + Dr.\xE2\x80\xAFMax Mustermann
     ```
 
--   With a non-breaking space for html (`&nbsp;`):
+-   With a non-breaking space for HTML (`&nbsp;`):
 
     ```diff
     - Dr. Max Mustermann
@@ -57,7 +57,7 @@ Add a non-breaking space after `Prof.`. This binds the title and the name togeth
     + Prof.\xE2\x80\xAFMax Mustermann
     ```
 
--   With a non-breaking space for html (`&nbsp;`):
+-   With a non-breaking space for HTML (`&nbsp;`):
 
     ```diff
     - Prof. Max Mustermann
@@ -95,7 +95,7 @@ Add non-breaking spaces before and after ampersand characters. This rule affects
     + Welcome to Tobias\xE2\x80\xAF&\xE2\x80\xAFDeborah!
     ```
 
--   With a narrow non-breaking space for html (`&#8239;`):
+-   With a narrow non-breaking space for HTML (`&#8239;`):
 
     ```diff
     - Welcome to Tobias & Deborah!
@@ -943,7 +943,7 @@ Add thin non-breaking spaces between the number of a dot separated date.
     + 1.\xE2\x80\xA3.\xE2\x80\xA2025
     ```
 
--   With a narrow non-breaking space for html (`&#8239;`):
+-   With a narrow non-breaking space for HTML (`&#8239;`):
 
     ```diff
     - 01.03.2025
