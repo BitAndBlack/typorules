@@ -23,7 +23,7 @@ class CharacterDiff
 {
     private readonly OutputInterface $output;
 
-    public function __construct(OutputInterface $output = null)
+    public function __construct(OutputInterface|null $output = null)
     {
         $autoDecidedOutput = 'cli' === PHP_SAPI
             ? new CliOutput()
@@ -33,7 +33,7 @@ class CharacterDiff
         $this->output = $output ?? $autoDecidedOutput;
     }
 
-    public static function create(OutputInterface $output = null): self
+    public static function create(OutputInterface|null $output = null): self
     {
         return new self($output);
     }
