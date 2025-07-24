@@ -30,6 +30,7 @@ class AdvancedTypographyRuleSet extends AbstractRuleSet implements RuleSetInterf
             new Rule\AddNonBreakingSpaceBehindWordAfterExclamationMarkRule(),
             new Rule\AddNonBreakingSpaceBehindWordAfterQuestionMarkRule(),
             new Rule\AddNonBreakingSpaceBehindWordAfterSemicolonRule(),
+            new Rule\AddNonBreakingSpaceBetweenLastAndPenultimateWords(),
             new Rule\AddSoftHyphenToWordRule(),
             new Rule\AddSpaceBetweenBracketsRule(),
         );

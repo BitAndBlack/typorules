@@ -1,6 +1,6 @@
 # Rules documentation
 
-There are currently 61 rules available.
+There are currently 62 rules available.
 
 ## Rules
 
@@ -738,6 +738,35 @@ There is 1 possibility to customize this rule:
 #### File
 
 This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenGuillemetSingleRightCloseAndWordRule.php](../src/Rule/AddNonBreakingSpaceBetweenGuillemetSingleRightCloseAndWordRule.php)
+
+----
+
+### `AddNonBreakingSpaceBetweenLastAndPenultimateWords`
+
+#### Description
+
+Add a non-breaking space between the last and the penultimate words. Binding those words may lead to a more balanced text layout, where the last text row can't contain a single word only.
+
+#### Transformation example
+
+```diff
+- A short last word at the end.
++ A short last word at the\xC2\xA0end.
+```
+
+#### Possible rule customization
+
+There is 1 possibility to customize this rule:
+
+-   Configure the maximum length for the last word. It's `6` characters per default.
+
+    ```php
+    $addNonBreakingSpaceBetweenLastAndPenultimateWords->setLastWordMaxLength($lastWordMaxLength);
+    ```
+
+#### File
+
+This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenLastAndPenultimateWords.php](../src/Rule/AddNonBreakingSpaceBetweenLastAndPenultimateWords.php)
 
 ----
 
