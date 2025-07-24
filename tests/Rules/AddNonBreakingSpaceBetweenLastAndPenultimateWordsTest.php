@@ -36,7 +36,6 @@ class AddNonBreakingSpaceBetweenLastAndPenultimateWordsTest extends AbstractRule
             'Nur ganz kurz.',
         ];
 
-
         yield 'Long word outside range' => [
             'Etwas länger',
             'Etwas länger',

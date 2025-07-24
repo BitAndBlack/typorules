@@ -31,4 +31,6 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
     'Das ist Nummer 8.',
     'Das ist Nummer\xE2\x80\xAF8.',
 )]
-class AddNonBreakingSpaceBetweenNumberAndNumberRule extends AddNonBreakingSpaceBetweenWordNummerAndNumberRule {}
+class AddNonBreakingSpaceBetweenNumberAndNumberRule extends AddNonBreakingSpaceBetweenWordNummerAndNumberRule
+{
+}
