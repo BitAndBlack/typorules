@@ -14,8 +14,9 @@ namespace BitAndBlack\TypoRules\Documentation;
 use Attribute;
 
 /**
- * The TransformationExample attribute can be used to describe a transformation
- * a class can make.
+ * The TransformationExample attribute can be used to describe a transformation a class can make.
+ *
+ * @internal
  */
 #[Attribute(Attribute::TARGET_CLASS | Attribute::IS_REPEATABLE)]
 class TransformationExample

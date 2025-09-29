@@ -14,6 +14,9 @@ namespace BitAndBlack\TypoRules\Documentation;
 use BitAndBlack\Composer\VendorPath;
 use ReflectionException;
 
+/**
+ * @internal
+ */
 class DocumentationWriter
 {
     private string $classDescriptionSingular;

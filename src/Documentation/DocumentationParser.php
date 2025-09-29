@@ -15,6 +15,9 @@ use Nette\Loaders\RobotLoader;
 use ReflectionClass;
 use ReflectionMethod;
 
+/**
+ * @internal
+ */
 class DocumentationParser
 {
     /**

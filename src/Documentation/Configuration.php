@@ -16,6 +16,8 @@ use Attribute;
 /**
  * The Configuration attribute can be used to describe a method,
  * that can be used to customize or configure the behaviour of a class.
+ *
+ * @internal
  */
 #[Attribute(Attribute::TARGET_METHOD)]
 class Configuration

@@ -14,6 +14,9 @@ namespace BitAndBlack\TypoRules\Documentation;
 use ReflectionClass;
 use ReflectionException;
 
+/**
+ * @internal
+ */
 class ClassDocumentation
 {
     private ?string $description = null;

@@ -15,6 +15,8 @@ use Attribute;
 
 /**
  * The Description attribute can be used to describe a class and its meaning.
+ *
+ * @internal
  */
 #[Attribute(Attribute::TARGET_CLASS)]
 class Description
