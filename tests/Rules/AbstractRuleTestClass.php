@@ -29,7 +29,7 @@ abstract class AbstractRuleTestClass extends TestCase
         if (null !== $violatedPartExpected) {
             self::assertNotEmpty(
                 $violations,
-                'Expected violation but got none.'
+                'Expected violation but got none. (Pattern was `' . $ruleClass->getSearchPattern() . '`.)'
             );
 
             $violation = $violations[0];
