@@ -21,6 +21,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
  */
 #[Description(
     'Add a thin non-breaking space between the word `geb.` and the following year to disallow separating them from each other. '
+    . '*Attention*: This rule may also find numbers at the beginning of a sentence, where the previous sentence ends with `geb.`. It should only be used manually.'
 )]
 #[TransformationExample(
     'Tobias Mayer (geb. 1723)',
