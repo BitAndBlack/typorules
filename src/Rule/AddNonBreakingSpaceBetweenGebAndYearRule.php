@@ -17,28 +17,27 @@ use BitAndBlack\TypoRules\Documentation\Description;
 use BitAndBlack\TypoRules\Documentation\TransformationExample;
 
 /**
- * @see \BitAndBlack\TypoRules\Tests\Rules\AddNonBreakingSpaceBetweenNumberAndJahrhundertRuleTest
+ * @see \BitAndBlack\TypoRules\Tests\Rules\AddNonBreakingSpaceBetweenGebAndYearRuleTest
  */
 #[Description(
-    'Add a non-breaking space between a number (ending with a dot) and the following word `Jahrhundert` to disallow separating them from each other. '
-    . '*Attention*: This rule may also find numbers at the end of a sentence, where the new sentence starts with the word `Jahrhundert`. It should only be used manually.'
+    'Add a thin non-breaking space between the word `geb.` and the following year to disallow separating them from each other. '
 )]
 #[TransformationExample(
-    'Im 18. Jahrhundert',
-    'Im 18.\xC2\xA0Jahrhundert',
+    'Tobias Mayer (geb. 1723)',
+    'Tobias Mayer (geb.\xE2\x80\xAF1723)',
 )]
-class AddNonBreakingSpaceBetweenNumberAndJahrhundertRule extends AbstractRule implements RuleInterface
+class AddNonBreakingSpaceBetweenGebAndYearRule extends AbstractRule implements RuleInterface
 {
     protected string $nonBreakingSpace;
 
     public function __construct()
     {
-        $this->nonBreakingSpace = CharactersEnum::NON_BREAKING_SPACE->value;
+        $this->nonBreakingSpace = CharactersEnum::NON_BREAKING_SPACE_THIN->value;
     }
 
     public function getSearchPattern(): string
     {
-        return '/(?<=\d\.)[' . CharactersEnum::ALL_SPACES->value . ']*(?=Jahrhundert)/';
+        return '/(?<=geb\.)[' . CharactersEnum::ALL_SPACES->value . ']*(?=\d{3,4})/';
     }
 
     public static function create(): self

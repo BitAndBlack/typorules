@@ -1,6 +1,6 @@
 # Rules documentation
 
-There are currently 63 rules available.
+There are currently 64 rules available.
 
 ## Rules
 
@@ -625,6 +625,35 @@ This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenEingetragenerA
 
 ----
 
+### `AddNonBreakingSpaceBetweenGebAndYearRule`
+
+#### Description
+
+Add a thin non-breaking space between the word `geb.` and the following year to disallow separating them from each other. 
+
+#### Transformation example
+
+```diff
+- Tobias Mayer (geb. 1723)
++ Tobias Mayer (geb.\xE2\x80\xAF1723)
+```
+
+#### Possible rule customization
+
+There is 1 possibility to customize this rule:
+
+-   Configure the type of the space. Per default, a thin non-breaking space will be used.
+
+    ```php
+    $addNonBreakingSpaceBetweenGebAndYearRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
+
+#### File
+
+This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenGebAndYearRule.php](../src/Rule/AddNonBreakingSpaceBetweenGebAndYearRule.php)
+
+----
+
 ### `AddNonBreakingSpaceBetweenGuillemetLeftOpenAndWordRule`
 
 #### Description
@@ -814,7 +843,13 @@ Add a non-breaking space between a number (ending with a dot) and the following 
 
 #### Possible rule customization
 
-This rule doesn't allow any customization.
+There is 1 possibility to customize this rule:
+
+-   Configure the type of the space. Per default, a thin non-breaking space will be used.
+
+    ```php
+    $addNonBreakingSpaceBetweenNumberAndJahrhundertRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
 
 #### File
 
