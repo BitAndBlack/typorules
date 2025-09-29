@@ -1,6 +1,6 @@
 # Rules documentation
 
-There are currently 62 rules available.
+There are currently 63 rules available.
 
 ## Rules
 
@@ -796,6 +796,29 @@ There is 1 possibility to customize this rule:
 #### File
 
 This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenNumberAndJahrRule.php](../src/Rule/AddNonBreakingSpaceBetweenNumberAndJahrRule.php)
+
+----
+
+### `AddNonBreakingSpaceBetweenNumberAndJahrhundertRule`
+
+#### Description
+
+Add a non-breaking space between a number (ending with a dot) and the following word `Jahrhundert` to disallow separating them from each other. *Attention*: This rule may also find numbers at the end of a sentence, where the new sentence starts with the word `Jahrhundert`. It should only be used manually.
+
+#### Transformation example
+
+```diff
+- Im 18. Jahrhundert
++ Im 18.\xC2\xA0Jahrhundert
+```
+
+#### Possible rule customization
+
+This rule doesn't allow any customization.
+
+#### File
+
+This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenNumberAndJahrhundertRule.php](../src/Rule/AddNonBreakingSpaceBetweenNumberAndJahrhundertRule.php)
 
 ----
 
