@@ -1,6 +1,6 @@
 # Rules documentation
 
-There are currently 64 rules available.
+There are currently 65 rules available.
 
 ## Rules
 
@@ -796,6 +796,35 @@ There is 1 possibility to customize this rule:
 #### File
 
 This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenLastAndPenultimateWords.php](../src/Rule/AddNonBreakingSpaceBetweenLastAndPenultimateWords.php)
+
+----
+
+### `AddNonBreakingSpaceBetweenNAndChrRule`
+
+#### Description
+
+Add a thin non-breaking space between the words `n.` and `Chr.` to disallow separating them from each other. *Attention*: This rule may also find situations, where those words mark an end and a beginning of a sentence. It should only be used manually.
+
+#### Transformation example
+
+```diff
+- 25 n. Chr.
++ 25 n.\xE2\x80\xAFChr.
+```
+
+#### Possible rule customization
+
+There is 1 possibility to customize this rule:
+
+-   Configure the type of the space. Per default, a thin non-breaking space will be used.
+
+    ```php
+    $addNonBreakingSpaceBetweenNAndChrRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
+
+#### File
+
+This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenNAndChrRule.php](../src/Rule/AddNonBreakingSpaceBetweenNAndChrRule.php)
 
 ----
 
