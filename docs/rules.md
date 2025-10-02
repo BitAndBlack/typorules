@@ -1,6 +1,6 @@
 # Rules documentation
 
-There are currently 65 rules available.
+There are currently 66 rules available.
 
 ## Rules
 
@@ -940,6 +940,35 @@ There is 1 possibility to customize this rule:
 #### File
 
 This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenNumberAndUnitRule.php](../src/Rule/AddNonBreakingSpaceBetweenNumberAndUnitRule.php)
+
+----
+
+### `AddNonBreakingSpaceBetweenVAndChrRule`
+
+#### Description
+
+Add a thin non-breaking space between the words `v.` and `Chr.` to disallow separating them from each other. *Attention*: This rule may also find situations, where those words mark an end and a beginning of a sentence. It should only be used manually.
+
+#### Transformation example
+
+```diff
+- 25 v. Chr.
++ 25 v.\xE2\x80\xAFChr.
+```
+
+#### Possible rule customization
+
+There is 1 possibility to customize this rule:
+
+-   Configure the type of the space. Per default, a thin non-breaking space will be used.
+
+    ```php
+    $addNonBreakingSpaceBetweenVAndChrRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
+
+#### File
+
+This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenVAndChrRule.php](../src/Rule/AddNonBreakingSpaceBetweenVAndChrRule.php)
 
 ----
 
