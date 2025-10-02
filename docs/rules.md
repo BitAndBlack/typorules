@@ -1,6 +1,6 @@
 # Rules documentation
 
-There are currently 66 rules available.
+There are currently 67 rules available.
 
 ## Rules
 
@@ -883,6 +883,35 @@ There is 1 possibility to customize this rule:
 #### File
 
 This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenNumberAndJahrhundertRule.php](../src/Rule/AddNonBreakingSpaceBetweenNumberAndJahrhundertRule.php)
+
+----
+
+### `AddNonBreakingSpaceBetweenNumberAndJhRule`
+
+#### Description
+
+Add a non-breaking space between a number (ending with a dot) and the following word `Jh.` to disallow separating them from each other. *Attention*: This rule may also find numbers at the end of a sentence, where the new sentence starts with `Jh.`. It should only be used manually.
+
+#### Transformation example
+
+```diff
+- Im 18. Jh.
++ Im 18.\xC2\xA0Jh.
+```
+
+#### Possible rule customization
+
+There is 1 possibility to customize this rule:
+
+-   Configure the type of the space. Per default, a thin non-breaking space will be used.
+
+    ```php
+    $addNonBreakingSpaceBetweenNumberAndJhRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
+
+#### File
+
+This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenNumberAndJhRule.php](../src/Rule/AddNonBreakingSpaceBetweenNumberAndJhRule.php)
 
 ----
 
