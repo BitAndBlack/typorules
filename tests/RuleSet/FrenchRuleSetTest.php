@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Bit&Black TypoRules.
  *
@@ -16,7 +18,7 @@ use Generator;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
-class FrenchRuleSetTest extends TestCase
+final class FrenchRuleSetTest extends TestCase
 {
     public static function getCanHandleRulesData(): Generator
     {

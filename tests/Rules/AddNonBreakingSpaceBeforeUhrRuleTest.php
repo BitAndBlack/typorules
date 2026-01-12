@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Bit&Black TypoRules.
  *
@@ -15,7 +17,7 @@ use BitAndBlack\TypoRules\CharactersEnum;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBeforeUhrRule;
 use Generator;
 
-class AddNonBreakingSpaceBeforeUhrRuleTest extends AbstractRuleTestClass
+final class AddNonBreakingSpaceBeforeUhrRuleTest extends AbstractRuleTestClass
 {
     public function getBaseTestClass(): string
     {

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Bit&Black TypoRules.
  *
@@ -19,7 +21,7 @@ use Generator;
  * @deprecated
  * @todo Remove in v1.0.
  */
-class BindWordAfterSemicolonRuleTest extends AbstractRuleTestClass
+final class BindWordAfterSemicolonRuleTest extends AbstractRuleTestClass
 {
     public function getBaseTestClass(): string
     {

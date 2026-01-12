@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Bit&Black TypoRules.
  *
@@ -15,7 +17,7 @@ use BitAndBlack\TypoRules\CharactersEnum;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenGuillemetLeftOpenAndWordRule;
 use Generator;
 
-class AddNonBreakingSpaceBetweenGuillemetLeftOpenAndWordRuleTest extends AbstractRuleTestClass
+final class AddNonBreakingSpaceBetweenGuillemetLeftOpenAndWordRuleTest extends AbstractRuleTestClass
 {
     public function getBaseTestClass(): string
     {

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Bit&Black TypoRules.
  *
@@ -15,7 +17,7 @@ use BitAndBlack\TypoRules\CharactersEnum;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenLastAndPenultimateWords;
 use Generator;
 
-class AddNonBreakingSpaceBetweenLastAndPenultimateWordsTest extends AbstractRuleTestClass
+final class AddNonBreakingSpaceBetweenLastAndPenultimateWordsTest extends AbstractRuleTestClass
 {
     public function getBaseTestClass(): string
     {

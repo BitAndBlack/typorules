@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Bit&Black TypoRules.
  *
@@ -15,7 +17,7 @@ use BitAndBlack\TypoRules\CharactersEnum;
 use BitAndBlack\TypoRules\Rule\AddSpaceBetweenBracketsRule;
 use Generator;
 
-class AddSpaceBetweenBracketsRuleTest extends AbstractRuleTestClass
+final class AddSpaceBetweenBracketsRuleTest extends AbstractRuleTestClass
 {
     public function getBaseTestClass(): string
     {

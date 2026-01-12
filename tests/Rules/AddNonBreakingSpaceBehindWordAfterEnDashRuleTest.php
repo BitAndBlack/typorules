@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Bit&Black TypoRules.
  *
@@ -15,7 +17,7 @@ use BitAndBlack\TypoRules\CharactersEnum;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBehindWordAfterEnDashRule;
 use Generator;
 
-class AddNonBreakingSpaceBehindWordAfterEnDashRuleTest extends AbstractRuleTestClass
+final class AddNonBreakingSpaceBehindWordAfterEnDashRuleTest extends AbstractRuleTestClass
 {
     public function getBaseTestClass(): string
     {

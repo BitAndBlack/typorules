@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Bit&Black TypoRules.
  *
@@ -19,7 +21,7 @@ use Generator;
  * @deprecated
  * @todo Remove in v1.0.
  */
-class BindWordAfterColonRuleTest extends AbstractRuleTestClass
+final class BindWordAfterColonRuleTest extends AbstractRuleTestClass
 {
     public function getBaseTestClass(): string
     {

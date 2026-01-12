@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Bit&Black TypoRules.
  *
@@ -15,7 +17,7 @@ use BitAndBlack\TypoRules\CharactersEnum;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBehindWordAfterSemicolonRule;
 use Generator;
 
-class AddNonBreakingSpaceBehindWordAfterSemicolonRuleTest extends AbstractRuleTestClass
+final class AddNonBreakingSpaceBehindWordAfterSemicolonRuleTest extends AbstractRuleTestClass
 {
     public function getBaseTestClass(): string
     {

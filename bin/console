@@ -27,16 +27,22 @@ function includeIfExists(string $file): mixed
 }
 
 if (
-    (!$loader = includeIfExists(__DIR__ . '/../vendor/autoload.php')) &&
-    (!$loader = includeIfExists(__DIR__ . '/../../../autoload.php'))
+    (!$loader = includeIfExists(__DIR__ . '/../vendor/autoload.php'))
+    && (!$loader = includeIfExists(__DIR__ . '/../../../autoload.php'))
 ) {
-    $msg = 'You must set up the project dependencies, run the following commands:' . PHP_EOL .
+    $message = 'You must set up the project dependencies, run the following commands:' . PHP_EOL .
         'curl -sS https://getcomposer.org/installer | php' . PHP_EOL .
         'php composer.phar install' . PHP_EOL;
-    fwrite(STDERR, $msg);
+    fwrite(STDERR, $message);
     exit(1);
 }
 
 $application = new Application();
-$application->add(new DocumentationCreateCommand());
+
+if (true === method_exists($application, 'add')) {
+    $application->add(new DocumentationCreateCommand());
+} else {
+    $application->addCommand(new DocumentationCreateCommand());
+}
+
 $application->run();

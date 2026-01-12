@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Bit&Black TypoRules.
  *
@@ -15,7 +17,7 @@ use BitAndBlack\TypoRules\CharactersEnum;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpacesForDotSeparatedDateRule;
 use Generator;
 
-class AddNonBreakingSpacesForDotSeparatedDateRuleTest extends AbstractRuleTestClass
+final class AddNonBreakingSpacesForDotSeparatedDateRuleTest extends AbstractRuleTestClass
 {
     public function getBaseTestClass(): string
     {

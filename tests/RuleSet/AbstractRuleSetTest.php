@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Bit&Black TypoRules.
  *
@@ -15,7 +17,7 @@ use BitAndBlack\TypoRules\Rule\RemoveDuplicatedWhitespaceRule;
 use BitAndBlack\TypoRules\RuleSet\AbstractRuleSet;
 use PHPUnit\Framework\TestCase;
 
-class AbstractRuleSetTest extends TestCase
+final class AbstractRuleSetTest extends TestCase
 {
     public function testCanAddRules(): void
     {

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Bit&Black TypoRules.
  *
@@ -14,7 +16,7 @@ namespace BitAndBlack\TypoRules\Tests\Rules;
 use BitAndBlack\TypoRules\Rule\RemoveWhitespaceAtBeginningRule;
 use Generator;
 
-class RemoveWhitespaceAtBeginningRuleTest extends AbstractRuleTestClass
+final class RemoveWhitespaceAtBeginningRuleTest extends AbstractRuleTestClass
 {
     public function getBaseTestClass(): string
     {

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Bit&Black TypoRules.
  *
@@ -15,7 +17,7 @@ use BitAndBlack\TypoRules\CharactersEnum;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBeforeColonRule;
 use Generator;
 
-class AddNonBreakingSpaceBeforeColonRuleTest extends AbstractRuleTestClass
+final class AddNonBreakingSpaceBeforeColonRuleTest extends AbstractRuleTestClass
 {
     public function getBaseTestClass(): string
     {
