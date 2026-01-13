@@ -785,12 +785,18 @@ Add a non-breaking space between the last and the penultimate words. Binding tho
 
 #### Possible rule customization
 
-There is 1 possibility to customize this rule:
+There are 2 possibilities to customize this rule:
 
 -   Configure the maximum length for the last word. It's `6` characters per default.
 
     ```php
     $addNonBreakingSpaceBetweenLastAndPenultimateWords->setLastWordMaxLength($lastWordMaxLength);
+    ```
+
+-   Configure the type of the space.
+
+    ```php
+    $addNonBreakingSpaceBetweenLastAndPenultimateWords->setNonBreakingSpace($nonBreakingSpace);
     ```
 
 #### File
@@ -935,7 +941,13 @@ Add a thin non-breaking space between the words `Nr.` or `Nummer` and a followin
 
 #### Possible rule customization
 
-This rule doesn't allow any customization.
+There is 1 possibility to customize this rule:
+
+-   Configure the type of the space. Per default, a thin non-breaking space will be used.
+
+    ```php
+    $addNonBreakingSpaceBetweenNumberAndNumberRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
 
 #### File
 
@@ -1026,7 +1038,13 @@ Add a thin non-breaking space between the words `Nr.` or `Number` and a followin
 
 #### Possible rule customization
 
-This rule doesn't allow any customization.
+There is 1 possibility to customize this rule:
+
+-   Configure the type of the space. Per default, a thin non-breaking space will be used.
+
+    ```php
+    $addNonBreakingSpaceBetweenWordNumberAndNumberRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
 
 #### File
 
@@ -1059,7 +1077,13 @@ Add a thin non-breaking space between the words `n°` or `numéro` and a followi
 
 #### Possible rule customization
 
-This rule doesn't allow any customization.
+There is 1 possibility to customize this rule:
+
+-   Configure the type of the space. Per default, a thin non-breaking space will be used.
+
+    ```php
+    $addNonBreakingSpaceBetweenWordNumeroAndNumberRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
 
 #### File
 
@@ -1087,7 +1111,13 @@ Add a thin non-breaking space between the words `Nr.` or `Nummer` and a followin
 
 #### Possible rule customization
 
-This rule doesn't allow any customization.
+There is 1 possibility to customize this rule:
+
+-   Configure the type of the space. Per default, a thin non-breaking space will be used.
+
+    ```php
+    $addNonBreakingSpaceBetweenWordNummerAndNumberRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
 
 #### File
 
@@ -1340,7 +1370,13 @@ Add a thin non-breaking space between the words `Nr.` or `Nummer` and a followin
 
 #### Possible rule customization
 
-This rule doesn't allow any customization.
+There is 1 possibility to customize this rule:
+
+-   Configure the type of the space. Per default, a thin non-breaking space will be used.
+
+    ```php
+    $bindNumberToNumberRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
 
 #### File
 

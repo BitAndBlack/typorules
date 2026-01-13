@@ -33,9 +33,11 @@ class AddNonBreakingSpaceBetweenLastAndPenultimateWords extends AbstractRule imp
      */
     protected int $lastWordMaxLength = 6;
 
-    public function getSearchPattern(): string
+    protected string $nonBreakingSpace;
+
+    public function __construct()
     {
-        return '/' . CharactersEnum::ALL_SPACES->value . '(?=\w{,' . $this->lastWordMaxLength . '}[\.|\!|\?])/u';
+        $this->nonBreakingSpace = CharactersEnum::NON_BREAKING_SPACE->value;
     }
 
     public static function create(): self
@@ -43,9 +45,14 @@ class AddNonBreakingSpaceBetweenLastAndPenultimateWords extends AbstractRule imp
         return new self();
     }
 
+    public function getSearchPattern(): string
+    {
+        return '/' . CharactersEnum::ALL_SPACES->value . '(?=\w{,' . $this->lastWordMaxLength . '}[\.|\!|\?])/u';
+    }
+
     public function getReplacePattern(): string
     {
-        return CharactersEnum::NON_BREAKING_SPACE->value;
+        return $this->nonBreakingSpace;
     }
 
     /**
@@ -64,6 +71,13 @@ class AddNonBreakingSpaceBetweenLastAndPenultimateWords extends AbstractRule imp
     public function setLastWordMaxLength(int $lastWordMaxLength): self
     {
         $this->lastWordMaxLength = $lastWordMaxLength;
+        return $this;
+    }
+
+    #[Configuration('Configure the type of the space.')]
+    public function setNonBreakingSpace(string $nonBreakingSpace): self
+    {
+        $this->nonBreakingSpace = $nonBreakingSpace;
         return $this;
     }
 }

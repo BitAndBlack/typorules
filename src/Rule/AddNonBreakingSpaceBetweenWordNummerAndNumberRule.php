@@ -12,6 +12,7 @@
 namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\TypoRules\CharactersEnum;
+use BitAndBlack\TypoRules\Documentation\Configuration;
 use BitAndBlack\TypoRules\Documentation\Description;
 use BitAndBlack\TypoRules\Documentation\TransformationExample;
 
@@ -31,9 +32,11 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 )]
 class AddNonBreakingSpaceBetweenWordNummerAndNumberRule extends AbstractRule implements RuleInterface
 {
-    public function getSearchPattern(): string
+    protected string $nonBreakingSpace;
+
+    public function __construct()
     {
-        return '/(?<=Nr\.|[Nn]ummer)[' . CharactersEnum::ALL_SPACES->value . '](?=\d)/';
+        $this->nonBreakingSpace = CharactersEnum::NON_BREAKING_SPACE_THIN->value;
     }
 
     public static function create(): self
@@ -41,8 +44,20 @@ class AddNonBreakingSpaceBetweenWordNummerAndNumberRule extends AbstractRule imp
         return new self();
     }
 
+    public function getSearchPattern(): string
+    {
+        return '/(?<=Nr\.|[Nn]ummer)[' . CharactersEnum::ALL_SPACES->value . '](?=\d)/';
+    }
+
     public function getReplacePattern(): string
     {
-        return CharactersEnum::NON_BREAKING_SPACE_THIN->value;
+        return $this->nonBreakingSpace;
+    }
+
+    #[Configuration('Configure the type of the space. Per default, a thin non-breaking space will be used.')]
+    public function setNonBreakingSpace(string $nonBreakingSpace): self
+    {
+        $this->nonBreakingSpace = $nonBreakingSpace;
+        return $this;
     }
 }
