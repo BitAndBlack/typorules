@@ -27,7 +27,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
  */
 class DocumentationCreateCommand extends Command
 {
-    public function configure(): void
+    protected function configure(): void
     {
         $this
             ->setName('documentation:create')

@@ -26,21 +26,21 @@ final class AddSpaceBehindExclamationMarkRuleTest extends AbstractRuleTestClass
     public static function getTestRuleData(): Generator
     {
         yield [
-            'Ganz am Ende!Wie geht\'s weiter!',
-            'Ganz am Ende! Wie geht\'s weiter!',
-            'Ganz am Ende!Wie geht\'s w...',
+            "Ganz am Ende!Wie geht's weiter!",
+            "Ganz am Ende! Wie geht's weiter!",
+            "Ganz am Ende!Wie geht's w...",
         ];
 
         yield [
-            'Ganz am Ende! Wie geht\'s weiter!',
-            'Ganz am Ende! Wie geht\'s weiter!',
+            "Ganz am Ende! Wie geht's weiter!",
+            "Ganz am Ende! Wie geht's weiter!",
             null,
         ];
 
         yield [
-            'Ganz am Ende!!!Wie geht\'s weiter!',
-            'Ganz am Ende!!! Wie geht\'s weiter!',
-            '...nz am Ende!!!Wie geht\'s w...',
+            "Ganz am Ende!!!Wie geht's weiter!",
+            "Ganz am Ende!!! Wie geht's weiter!",
+            "...nz am Ende!!!Wie geht's w...",
         ];
     }
 }

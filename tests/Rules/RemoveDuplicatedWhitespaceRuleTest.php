@@ -26,14 +26,14 @@ final class RemoveDuplicatedWhitespaceRuleTest extends AbstractRuleTestClass
     public static function getTestRuleData(): Generator
     {
         yield [
-            'Ganz am      Ende.  Wie geht\'s weiter?',
-            'Ganz am Ende. Wie geht\'s weiter?',
-            'Ganz am      Ende.  Wie geht\'s...',
+            "Ganz am      Ende.  Wie geht's weiter?",
+            "Ganz am Ende. Wie geht's weiter?",
+            "Ganz am      Ende.  Wie geht's...",
         ];
 
         yield [
-            'Ganz am Ende. Wie geht\'s weiter?',
-            'Ganz am Ende. Wie geht\'s weiter?',
+            "Ganz am Ende. Wie geht's weiter?",
+            "Ganz am Ende. Wie geht's weiter?",
             null,
         ];
     }

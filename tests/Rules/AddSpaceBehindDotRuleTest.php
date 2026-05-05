@@ -27,14 +27,14 @@ final class AddSpaceBehindDotRuleTest extends AbstractRuleTestClass
     public static function getTestRuleData(): Generator
     {
         yield [
-            'Ganz am Ende.Wie geht\'s weiter.',
-            'Ganz am Ende. Wie geht\'s weiter.',
-            'Ganz am Ende.Wie geht\'s w...',
+            "Ganz am Ende.Wie geht's weiter.",
+            "Ganz am Ende. Wie geht's weiter.",
+            "Ganz am Ende.Wie geht's w...",
         ];
 
         yield [
-            'Ganz am Ende. Wie geht\'s weiter.',
-            'Ganz am Ende. Wie geht\'s weiter.',
+            "Ganz am Ende. Wie geht's weiter.",
+            "Ganz am Ende. Wie geht's weiter.",
             null,
         ];
 

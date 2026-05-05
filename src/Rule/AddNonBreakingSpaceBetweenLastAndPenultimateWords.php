@@ -20,7 +20,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
  * @see \BitAndBlack\TypoRules\Tests\Rules\AddNonBreakingSpaceBetweenLastAndPenultimateWordsTest
  */
 #[Description(
-    'Add a non-breaking space between the last and the penultimate words. Binding those words may lead to a more balanced text layout, where the last text row can\'t contain a single word only.'
+    "Add a non-breaking space between the last and the penultimate words. Binding those words may lead to a more balanced text layout, where the last text row can't contain a single word only."
 )]
 #[TransformationExample(
     'A short last word at the end.',
@@ -67,7 +67,7 @@ class AddNonBreakingSpaceBetweenLastAndPenultimateWords extends AbstractRule imp
      * @param positive-int $lastWordMaxLength
      * @return $this
      */
-    #[Configuration('Configure the maximum length for the last word. It\'s `6` characters per default.')]
+    #[Configuration("Configure the maximum length for the last word. It's `6` characters per default.")]
     public function setLastWordMaxLength(int $lastWordMaxLength): self
     {
         $this->lastWordMaxLength = $lastWordMaxLength;

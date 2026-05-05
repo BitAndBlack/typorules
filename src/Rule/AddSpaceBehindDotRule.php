@@ -22,8 +22,8 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
     'Add a missing space behind a dot `.`.'
 )]
 #[TransformationExample(
-    'Ganz am Ende.Wie geht\'s weiter.',
-    'Ganz am Ende. Wie geht\'s weiter.',
+    "Ganz am Ende.Wie geht's weiter.",
+    "Ganz am Ende. Wie geht's weiter.",
 )]
 class AddSpaceBehindDotRule extends AbstractRule implements RuleInterface
 {

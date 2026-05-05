@@ -21,8 +21,8 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
     'Add a missing space behind a question mark `?`.'
 )]
 #[TransformationExample(
-    'Ganz am Ende?Wie geht\'s weiter!',
-    'Ganz am Ende? Wie geht\'s weiter!',
+    "Ganz am Ende?Wie geht's weiter!",
+    "Ganz am Ende? Wie geht's weiter!",
 )]
 class AddSpaceBehindQuestionMarkRule extends AbstractRule implements RuleInterface
 {

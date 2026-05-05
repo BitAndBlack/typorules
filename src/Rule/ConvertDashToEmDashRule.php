@@ -22,7 +22,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
     'Convert a dash `-` into an em dash `—` when there is whitespace before and after.'
 )]
 #[TransformationExample(
-    'And if so - I don\'t think so!',
+    "And if so - I don't think so!",
     'And if so — I don\'t think so!',
 )]
 class ConvertDashToEmDashRule extends AbstractRule implements RuleInterface

@@ -112,7 +112,7 @@ class DocumentationWriter
                     $output .= $this->addCode('php', $configurationPossibility[1], 1);
                 }
             } else {
-                $output .= 'This ' . $this->classDescriptionSingular . ' doesn\'t allow any customization.';
+                $output .= 'This ' . $this->classDescriptionSingular . " doesn't allow any customization.";
             }
 
             $output .= $this->addSectionSeparator();

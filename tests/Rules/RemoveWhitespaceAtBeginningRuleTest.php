@@ -32,9 +32,9 @@ final class RemoveWhitespaceAtBeginningRuleTest extends AbstractRuleTestClass
         ];
 
         yield [
-            'Ganz am Ende. ' . PHP_EOL . ' Wie geht\'s weiter?',
-            'Ganz am Ende. ' . PHP_EOL . 'Wie geht\'s weiter?',
-            '...z am Ende. ' . PHP_EOL . ' Wie geht\'s w...',
+            'Ganz am Ende. ' . PHP_EOL . " Wie geht's weiter?",
+            'Ganz am Ende. ' . PHP_EOL . "Wie geht's weiter?",
+            '...z am Ende. ' . PHP_EOL . " Wie geht's w...",
         ];
     }
 }

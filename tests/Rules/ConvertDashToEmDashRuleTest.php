@@ -26,9 +26,9 @@ final class ConvertDashToEmDashRuleTest extends AbstractRuleTestClass
     public static function getTestRuleData(): Generator
     {
         yield [
-            'And if so - I don\'t think so!',
+            "And if so - I don't think so!",
             'And if so — I don\'t think so!',
-            'And if so - I don\'t think s...',
+            "And if so - I don't think s...",
         ];
 
         yield [
