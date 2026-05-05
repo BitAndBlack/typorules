@@ -20,6 +20,9 @@ use PHPUnit\Framework\TestCase;
 
 final class EnglishRuleSetTest extends TestCase
 {
+    /**
+     * @return Generator<(array<int, int>|array<int, string>)>
+     */
     public static function getCanHandleRulesData(): Generator
     {
         yield [

@@ -14,6 +14,7 @@ namespace BitAndBlack\TypoRules\Documentation;
 use Nette\Loaders\RobotLoader;
 use ReflectionClass;
 use ReflectionMethod;
+use ReflectionParameter;
 
 /**
  * @internal
@@ -95,7 +96,7 @@ class DocumentationParser
                     $methodParametersString = implode(
                         ', ',
                         array_map(
-                            static fn ($parameter) => '$' . $parameter->getName(),
+                            static fn (ReflectionParameter $parameter): string => '$' . $parameter->getName(),
                             $methodParameters
                         )
                     );
