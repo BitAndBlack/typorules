@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Rector\Config\RectorConfig;
 use Rector\PHPUnit\CodeQuality\Rector\Class_\PreferPHPUnitThisCallRector;
 use Rector\PHPUnit\Set\PHPUnitSetList;
@@ -22,5 +24,6 @@ return RectorConfig::configure()
     ->withImportNames()
     ->withPreparedSets(
         deadCode: true,
+        codeQuality: true,
     )
 ;

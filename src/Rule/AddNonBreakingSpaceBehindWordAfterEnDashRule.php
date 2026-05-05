@@ -30,15 +30,13 @@ class AddNonBreakingSpaceBehindWordAfterEnDashRule extends AbstractRule implemen
 {
     protected string $nonBreakingSpace;
 
-    protected int $wordMaxLength;
+    protected int $wordMaxLength = 3;
 
-    protected int $wordAheadMaxLength;
+    protected int $wordAheadMaxLength = 5;
 
     public function __construct()
     {
         $this->nonBreakingSpace = CharactersEnum::NON_BREAKING_SPACE->value;
-        $this->wordMaxLength = 3;
-        $this->wordAheadMaxLength = 5;
     }
 
     public static function create(): self

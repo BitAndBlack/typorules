@@ -27,12 +27,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 )]
 class RemoveUnnecessaryQuestionMarksRule extends AbstractRule implements RuleInterface
 {
-    private int $maxCountQuestionMark;
-
-    public function __construct()
-    {
-        $this->maxCountQuestionMark = 2;
-    }
+    private int $maxCountQuestionMark = 2;
 
     public static function create(): self
     {

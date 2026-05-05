@@ -19,11 +19,11 @@ use ReflectionException;
  */
 class DocumentationWriter
 {
-    private string $classDescriptionSingular;
+    private string $classDescriptionSingular = 'entity';
 
-    private string $classDescriptionPlural;
+    private string $classDescriptionPlural = 'entities';
 
-    private bool $addTOCtoDocumentation;
+    private bool $addTOCtoDocumentation = true;
 
     /**
      * @param array<int, ClassDocumentation> $classDocumentations
@@ -31,9 +31,6 @@ class DocumentationWriter
     public function __construct(
         private readonly array $classDocumentations,
     ) {
-        $this->classDescriptionSingular = 'entity';
-        $this->classDescriptionPlural = 'entities';
-        $this->addTOCtoDocumentation = true;
     }
 
     /**
@@ -205,7 +202,7 @@ class DocumentationWriter
         $output .= $whitspace . '- ' . $before . PHP_EOL;
         $output .= $whitspace . '+ ' . $after . PHP_EOL;
 
-        return $output . ($whitspace . '```');
+        return $output . $whitspace . '```';
     }
 
     private function getWhitespaceForIndentationLevel(int $indentationLevel): string

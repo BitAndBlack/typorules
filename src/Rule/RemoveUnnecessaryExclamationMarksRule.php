@@ -27,12 +27,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 )]
 class RemoveUnnecessaryExclamationMarksRule extends AbstractRule implements RuleInterface
 {
-    private int $maxCountExclamationMark;
-
-    public function __construct()
-    {
-        $this->maxCountExclamationMark = 2;
-    }
+    private int $maxCountExclamationMark = 2;
 
     public static function create(): self
     {
