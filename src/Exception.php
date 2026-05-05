@@ -22,8 +22,6 @@ class Exception extends \Exception
 {
     /**
      * Exception constructor.
-     *
-     * @param Throwable|null $previous
      */
     public function __construct(string $message = '', int $code = 0, Throwable|null $previous = null)
     {

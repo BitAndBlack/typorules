@@ -188,9 +188,8 @@ class DocumentationWriter
 
         $output = $whitspace . '```' . $language . PHP_EOL;
         $output .= $whitspace . $code . PHP_EOL;
-        $output .= $whitspace . '```';
 
-        return $output;
+        return $output . ($whitspace . '```');
     }
 
     private function addLine(): string
@@ -205,9 +204,8 @@ class DocumentationWriter
         $output = $whitspace . '```diff' . PHP_EOL;
         $output .= $whitspace . '- ' . $before . PHP_EOL;
         $output .= $whitspace . '+ ' . $after . PHP_EOL;
-        $output .= $whitspace . '```';
 
-        return $output;
+        return $output . ($whitspace . '```');
     }
 
     private function getWhitespaceForIndentationLevel(int $indentationLevel): string

@@ -41,7 +41,6 @@ class CustomRule extends AbstractRule implements RuleInterface
     /**
      * Defines the search pattern.
      *
-     * @param string $searchPattern
      * @return $this
      */
     #[Configuration('Define the search pattern.')]
@@ -54,7 +53,6 @@ class CustomRule extends AbstractRule implements RuleInterface
     /**
      * Defines the replacement pattern.
      *
-     * @param string $replacePattern
      * @return $this
      */
     #[Configuration('Define the replacement pattern.')]

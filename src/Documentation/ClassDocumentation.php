@@ -111,8 +111,6 @@ class ClassDocumentation
 
     /**
      * Thanks {@see https://stackoverflow.com/a/2638272/8252855} from user {@see https://stackoverflow.com/users/208809/gordon}.
-     *
-     * @return string
      */
     public function getRelativePath(string $from, string $to): string
     {

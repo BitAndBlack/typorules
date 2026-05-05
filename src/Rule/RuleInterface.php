@@ -26,22 +26,16 @@ interface RuleInterface
 
     /**
      * Returns the search pattern for this rule.
-     *
-     * @return string
      */
     public function getSearchPattern(): string;
 
     /**
      * Returns the replacement pattern for this rule.
-     *
-     * @return string
      */
     public function getReplacePattern(): string;
 
     /**
      * Returns the fixed input content.
-     *
-     * @return string
      */
     public function getContentFixed(string $content): string;
 }

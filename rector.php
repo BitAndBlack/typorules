@@ -20,4 +20,7 @@ return RectorConfig::configure()
         PHPUnitSetList::PHPUNIT_CODE_QUALITY,
     ])
     ->withImportNames()
+    ->withPreparedSets(
+        deadCode: true,
+    )
 ;

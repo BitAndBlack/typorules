@@ -55,9 +55,6 @@ abstract class AbstractRuleSet implements RuleSetInterface
 
     /**
      * Returns the fixed content.
-     *
-     * @param string $content
-     * @return string
      */
     public function getContentFixed(string $content): string
     {
@@ -70,9 +67,6 @@ abstract class AbstractRuleSet implements RuleSetInterface
 
     /**
      * Adds one or more rules to the set list.
-     *
-     * @param RuleInterface ...$rules
-     * @return AbstractRuleSet
      */
     public function withRule(RuleInterface ...$rules): self
     {
@@ -89,7 +83,6 @@ abstract class AbstractRuleSet implements RuleSetInterface
      * Removes one or more rules from the set list.
      *
      * @param RuleInterface|class-string<RuleInterface> ...$rules
-     * @return AbstractRuleSet
      */
     public function withoutRule(RuleInterface|string ...$rules): self
     {
@@ -112,8 +105,6 @@ abstract class AbstractRuleSet implements RuleSetInterface
 
     /**
      * Adds one or more rule sets with all its rules to the set list.
-     *
-     * @return AbstractRuleSet
      */
     public function withRuleSet(RuleSetInterface ...$ruleSets): self
     {
@@ -130,7 +121,6 @@ abstract class AbstractRuleSet implements RuleSetInterface
      * Removes one or more rule sets with all its rules from the set list.
      *
      * @param RuleSetInterface|class-string<RuleSetInterface> ...$ruleSets
-     * @return AbstractRuleSet
      */
     public function withoutRuleSet(RuleSetInterface|string ...$ruleSets): self
     {
