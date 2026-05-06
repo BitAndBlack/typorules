@@ -14,34 +14,34 @@ declare(strict_types=1);
 namespace BitAndBlack\TypoRules\Tests\Rules;
 
 use BitAndBlack\TypoRules\CharactersEnum;
-use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenWordNumberAndNumberRule;
+use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenWordNummerAndNumberRule;
 use Generator;
 
 final class AddNonBreakingSpaceBetweenWordNummerAndNumberRuleTest extends AbstractRuleTestClass
 {
     public function getBaseTestClass(): string
     {
-        return AddNonBreakingSpaceBetweenWordNumberAndNumberRule::class;
+        return AddNonBreakingSpaceBetweenWordNummerAndNumberRule::class;
     }
 
     public static function getTestRuleData(): Generator
     {
         yield [
-            'This is no. 8.',
-            'This is no.' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . '8.',
-            'This is no. 8.',
+            'Das ist Nr. 8.',
+            'Das ist Nr.' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . '8.',
+            'Das ist Nr. 8.',
         ];
 
         yield [
-            'This is number 8.',
-            'This is number' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . '8.',
-            '...is is number 8.',
+            'Das ist Nr.8.',
+            'Das ist Nr.' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . '8.',
+            'Das ist Nr.8.',
         ];
 
         yield [
-            '№ 8.',
-            '№' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . '8.',
-            '№ 8.',
+            'Das ist Nummer 8.',
+            'Das ist Nummer' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . '8.',
+            '...s ist Nummer 8.',
         ];
     }
 }

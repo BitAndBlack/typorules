@@ -17,7 +17,7 @@ use BitAndBlack\TypoRules\Documentation\Description;
 use BitAndBlack\TypoRules\Documentation\TransformationExample;
 
 /**
- * @see \BitAndBlack\TypoRules\Tests\Rules\AddNonBreakingSpaceBetweenNummerAndNumberRuleTest
+ * @see \BitAndBlack\TypoRules\Tests\Rules\AddNonBreakingSpaceBetweenWordNummerAndNumberRuleTest
  */
 #[Description(
     'Add a thin non-breaking space between the words `Nr.` or `Nummer` and a following number to disallow separating them from each other.'
@@ -46,7 +46,7 @@ class AddNonBreakingSpaceBetweenWordNummerAndNumberRule extends AbstractRule imp
 
     public function getSearchPattern(): string
     {
-        return '/(?<=Nr\.|[Nn]ummer)[' . CharactersEnum::ALL_SPACES->value . '](?=\d)/';
+        return '/(?<=Nr\.|[Nn]ummer)[' . CharactersEnum::ALL_SPACES->value . ']*(?=\d)/';
     }
 
     public function getReplacePattern(): string
