@@ -55,7 +55,7 @@ $violations = $removeDuplicatedWhitespaceRule->getViolations($content);
 $contentFixed = $removeDuplicatedWhitespaceRule->getContentFixed($content);
 ```
 
-You can find a similar example under [`/examples/1-single-rule.php`](./examples/1-single-rule.php).
+You can find a similar example under [`/examples/1-single-rule-without-html.php`](examples/1-single-rule-without-html.php).
 
 ### Using a rule set
 
