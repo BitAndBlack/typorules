@@ -36,6 +36,6 @@ class AddSpaceBehindDotRule extends AbstractRule implements RuleInterface
 
     public function getSearchPattern(): string
     {
-        return '/(?<!^\d)(?<!\s\d)\.(?!' . CharactersEnum::ALL_SPACES->value . ')(?!$)/';
+        return '/(?<!^\d)(?<!\s\d)\.(?!' . CharactersEnum::ALL_SPACES->value . ')(?!$)(?!\d)/';
     }
 }

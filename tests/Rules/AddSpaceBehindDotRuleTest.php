@@ -49,5 +49,11 @@ final class AddSpaceBehindDotRuleTest extends AbstractRuleTestClass
             'Supersport 500 e.' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . 'V.',
             null,
         ];
+
+        yield [
+            'Um 15.00h',
+            'Um 15.00h',
+            null,
+        ];
     }
 }
