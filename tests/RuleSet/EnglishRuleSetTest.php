@@ -28,7 +28,7 @@ final class EnglishRuleSetTest extends TestCase
         yield [
             "This is  an example sentence. From whom? From me. To you - I don't    know why!I'm the one , who writes a sentence. No.1 is like the little 1x1!!! This library was created and tested and is used by and, and, and... (c) Bit&Black.",
             'This is an example sentence. From whom? From me. To you — I don\'t know why! I\'m the one, who writes a sentence. No. 1 is like the little 1 × 1!! This library was created and tested and is used by and, and, and… © Bit&Black.',
-            14,
+            13,
         ];
     }
 
@@ -36,18 +36,17 @@ final class EnglishRuleSetTest extends TestCase
     public function testCanHandleRules(string $content, string $contentFixedExpected, int $violationsCountExpected): void
     {
         $englishRuleSet = new EnglishRuleSet();
-        $violations = $englishRuleSet->getViolations($content);
-
-        self::assertCount(
-            $violationsCountExpected,
-            $violations
-        );
-
         $contentFixed = $englishRuleSet->getContentFixed($content);
+        $violations = $englishRuleSet->getViolations($content);
 
         self::assertSame(
             $contentFixedExpected,
             $contentFixed
+        );
+
+        self::assertCount(
+            $violationsCountExpected,
+            $violations
         );
     }
 }

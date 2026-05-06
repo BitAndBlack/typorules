@@ -36,18 +36,17 @@ final class FrenchRuleSetTest extends TestCase
     public function testCanHandleRules(string $content, string $contentFixedExpected, int $violationsCountExpected): void
     {
         $frenchRuleSet = new FrenchRuleSet();
-        $violations = $frenchRuleSet->getViolations($content);
-
-        self::assertCount(
-            $violationsCountExpected,
-            $violations
-        );
-
         $contentFixed = $frenchRuleSet->getContentFixed($content);
+        $violations = $frenchRuleSet->getViolations($content);
 
         self::assertSame(
             $contentFixedExpected,
             $contentFixed
+        );
+
+        self::assertCount(
+            $violationsCountExpected,
+            $violations
         );
     }
 }
