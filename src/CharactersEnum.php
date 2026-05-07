@@ -61,6 +61,11 @@ enum CharactersEnum: string
     case LDQUO = '“';
 
     /**
+     * &rdquo; or &#8221;
+     */
+    case RDQUO = '”';
+
+    /**
      * &mdash; or &#x2014;
      */
     case MDASH = '—';
@@ -91,18 +96,18 @@ enum CharactersEnum: string
     case RIGHT_ANGLE_QUOTE_SINGLE = '›';
 
     /**
-     * &rdquo; or &#8221;
-     */
-    case RDQUO = '”';
-
-    /**
      * &reg;
      */
     case REGISTERED = '®';
 
     /**
+     * &lsquo;
+     */
+    case LSQUO = '‘';
+
+    /**
      * &rsquo;
-    */
+     */
     case RSQUO = '’';
 
     /**
@@ -119,4 +124,31 @@ enum CharactersEnum: string
      * &trade;
      */
     case TRADEMARK = '™';
+
+    /**
+     * &sbquo;
+     */
+    case SBQUO = '‚';
+
+    public static function getAllQuotes(): string
+    {
+        $quotes = [
+            '"',
+            self::BDQUO->value,
+            self::SBQUO->value,
+            self::LEFT_ANGLE_QUOTE->value,
+            self::LEFT_ANGLE_QUOTE_SINGLE->value,
+            self::RIGHT_ANGLE_QUOTE->value,
+            self::RIGHT_ANGLE_QUOTE_SINGLE->value,
+            self::LDQUO->value,
+            self::LSQUO->value,
+            self::RDQUO->value,
+            self::RSQUO->value,
+        ];
+
+        return implode(
+            '|',
+            $quotes
+        );
+    }
 }

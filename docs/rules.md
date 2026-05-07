@@ -1,6 +1,6 @@
 # Rules documentation
 
-There are currently 67 rules available.
+There are currently 68 rules available.
 
 ## Rules
 
@@ -2135,6 +2135,29 @@ There is 1 possibility to customize this rule:
 #### File
 
 This rule is located under [../src/Rule/RemoveUnnecessaryQuestionMarksRule.php](../src/Rule/RemoveUnnecessaryQuestionMarksRule.php)
+
+----
+
+### `RemoveWhitespaceAfterOpeningQuoteRule`
+
+#### Description
+
+Remove whitespace after an opening quote.
+
+#### Transformation example
+
+```diff
+- Besonders „ wichtige“ Information
++ Besonders „wichtige“ Information
+```
+
+#### Possible rule customization
+
+This rule doesn't allow any customization.
+
+#### File
+
+This rule is located under [../src/Rule/RemoveWhitespaceAfterOpeningQuoteRule.php](../src/Rule/RemoveWhitespaceAfterOpeningQuoteRule.php)
 
 ----
 
