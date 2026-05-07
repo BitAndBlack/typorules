@@ -50,6 +50,7 @@ class GermanRuleSet extends AbstractRuleSet implements RuleSetInterface
             new Rule\RemoveWhitespaceAfterOpeningQuoteRule(),
             new Rule\RemoveWhitespaceBeforeClosingQuoteRule(),
             new Rule\AddNonBreakingSpaceBetweenZAndBRule(),
+            new Rule\AddNonBreakingSpaceBetweenUAndAUmlautRule(),
         );
     }
 

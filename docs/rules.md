@@ -1,6 +1,6 @@
 # Rules documentation
 
-There are currently 70 rules available.
+There are currently 71 rules available.
 
 ## Rules
 
@@ -981,6 +981,35 @@ There is 1 possibility to customize this rule:
 #### File
 
 This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenNumberAndUnitRule.php](../src/Rule/AddNonBreakingSpaceBetweenNumberAndUnitRule.php)
+
+----
+
+### `AddNonBreakingSpaceBetweenUAndAUmlautRule`
+
+#### Description
+
+Add a thin non-breaking space between the words `u.` (or `U.`) and `Ä.` to disallow separating them from each other. 
+
+#### Transformation example
+
+```diff
+- u. Ä.
++ u.\xE2\x80\xAFÄ.
+```
+
+#### Possible rule customization
+
+There is 1 possibility to customize this rule:
+
+-   Configure the type of the space. Per default, a thin non-breaking space will be used.
+
+    ```php
+    $addNonBreakingSpaceBetweenUAndAUmlautRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
+
+#### File
+
+This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenUAndAUmlautRule.php](../src/Rule/AddNonBreakingSpaceBetweenUAndAUmlautRule.php)
 
 ----
 
