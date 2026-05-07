@@ -1,6 +1,6 @@
 # Rules documentation
 
-There are currently 69 rules available.
+There are currently 70 rules available.
 
 ## Rules
 
@@ -1122,6 +1122,35 @@ There is 1 possibility to customize this rule:
 #### File
 
 This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenWordNummerAndNumberRule.php](../src/Rule/AddNonBreakingSpaceBetweenWordNummerAndNumberRule.php)
+
+----
+
+### `AddNonBreakingSpaceBetweenZAndBRule`
+
+#### Description
+
+Add a thin non-breaking space between the words `z.` (or `Z.`) and `B.` to disallow separating them from each other. 
+
+#### Transformation example
+
+```diff
+- z. B.
++ z.\xE2\x80\xAFB.
+```
+
+#### Possible rule customization
+
+There is 1 possibility to customize this rule:
+
+-   Configure the type of the space. Per default, a thin non-breaking space will be used.
+
+    ```php
+    $addNonBreakingSpaceBetweenZAndBRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
+
+#### File
+
+This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenZAndBRule.php](../src/Rule/AddNonBreakingSpaceBetweenZAndBRule.php)
 
 ----
 
