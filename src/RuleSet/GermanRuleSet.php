@@ -48,6 +48,7 @@ class GermanRuleSet extends AbstractRuleSet implements RuleSetInterface
             new Rule\RemoveUnnecessaryExclamationMarksRule(),
             new Rule\RemoveUnnecessaryQuestionMarksRule(),
             new Rule\RemoveWhitespaceAfterOpeningQuoteRule(),
+            new Rule\RemoveWhitespaceBeforeClosingQuoteRule(),
         );
     }
 

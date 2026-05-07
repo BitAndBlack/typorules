@@ -1,6 +1,6 @@
 # Rules documentation
 
-There are currently 68 rules available.
+There are currently 69 rules available.
 
 ## Rules
 
@@ -2181,6 +2181,29 @@ This rule doesn't allow any customization.
 #### File
 
 This rule is located under [../src/Rule/RemoveWhitespaceAtBeginningRule.php](../src/Rule/RemoveWhitespaceAtBeginningRule.php)
+
+----
+
+### `RemoveWhitespaceBeforeClosingQuoteRule`
+
+#### Description
+
+Remove whitespace before a closing quote.
+
+#### Transformation example
+
+```diff
+- Besonders „wichtige “ Information
++ Besonders „wichtige“ Information
+```
+
+#### Possible rule customization
+
+This rule doesn't allow any customization.
+
+#### File
+
+This rule is located under [../src/Rule/RemoveWhitespaceBeforeClosingQuoteRule.php](../src/Rule/RemoveWhitespaceBeforeClosingQuoteRule.php)
 
 ----
 

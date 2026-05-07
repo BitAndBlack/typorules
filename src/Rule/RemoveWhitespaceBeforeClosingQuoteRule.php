@@ -16,16 +16,16 @@ use BitAndBlack\TypoRules\Documentation\Description;
 use BitAndBlack\TypoRules\Documentation\TransformationExample;
 
 /**
- * @see \BitAndBlack\TypoRules\Tests\Rules\RemoveWhitespaceAfterOpeningQuoteRuleTest
+ * @see \BitAndBlack\TypoRules\Tests\Rules\RemoveWhitespaceBeforeClosingQuoteRuleTest
  */
 #[Description(
-    'Remove whitespace after an opening quote.'
+    'Remove whitespace before a closing quote.'
 )]
 #[TransformationExample(
-    'Besonders „ wichtige“ Information',
+    'Besonders „wichtige “ Information',
     'Besonders „wichtige“ Information',
 )]
-class RemoveWhitespaceAfterOpeningQuoteRule extends AbstractRule implements RuleInterface
+class RemoveWhitespaceBeforeClosingQuoteRule extends AbstractRule implements RuleInterface
 {
     public static function create(): self
     {
@@ -34,7 +34,7 @@ class RemoveWhitespaceAfterOpeningQuoteRule extends AbstractRule implements Rule
 
     public function getSearchPattern(): string
     {
-        return '/(^|' . CharactersEnum::ALL_SPACES->value . '|\()(' . CharactersEnum::getAllQuotes() . ')' . CharactersEnum::ALL_SPACES->value . '+([^' . CharactersEnum::getAllQuotes() . ']+)(' . CharactersEnum::getAllQuotes() . ')/';
+        return '/(' . CharactersEnum::getAllQuotes() . ')([^' . CharactersEnum::getAllQuotes() . ']+)' . CharactersEnum::ALL_SPACES->value . '+(' . CharactersEnum::getAllQuotes() . ')($|' . CharactersEnum::ALL_SPACES->value . '|\))/';
     }
 
     public function getReplacePattern(): string
