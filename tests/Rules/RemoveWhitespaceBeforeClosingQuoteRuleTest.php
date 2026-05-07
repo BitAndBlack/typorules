@@ -42,5 +42,17 @@ final class RemoveWhitespaceBeforeClosingQuoteRuleTest extends AbstractRuleTestC
             'Besonders »wichtige« Information',
             '...s »wichtige « Information...',
         ];
+
+        yield [
+            'Besonders "wichtig "',
+            'Besonders "wichtig"',
+            '...ers "wichtig "',
+        ];
+
+        yield [
+            'Besonders "wichtig ".',
+            'Besonders "wichtig".',
+            '...ers "wichtig ".',
+        ];
     }
 }
