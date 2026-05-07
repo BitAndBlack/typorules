@@ -1,6 +1,6 @@
 # Rules documentation
 
-There are currently 71 rules available.
+There are currently 72 rules available.
 
 ## Rules
 
@@ -1010,6 +1010,35 @@ There is 1 possibility to customize this rule:
 #### File
 
 This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenUAndAUmlautRule.php](../src/Rule/AddNonBreakingSpaceBetweenUAndAUmlautRule.php)
+
+----
+
+### `AddNonBreakingSpaceBetweenUAndVAndMRule`
+
+#### Description
+
+Add a thin non-breaking space between the words `u.` (or `U.`), `v.` (or `V.`) and `m.` (or `M.`) to disallow separating them from each other. 
+
+#### Transformation example
+
+```diff
+- u. v. m.
++ u.\xE2\x80\xAFv.\xE2\x80\xAFm.
+```
+
+#### Possible rule customization
+
+There is 1 possibility to customize this rule:
+
+-   Configure the type of the space. Per default, a thin non-breaking space will be used.
+
+    ```php
+    $addNonBreakingSpaceBetweenUAndVAndMRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
+
+#### File
+
+This rule is located under [../src/Rule/AddNonBreakingSpaceBetweenUAndVAndMRule.php](../src/Rule/AddNonBreakingSpaceBetweenUAndVAndMRule.php)
 
 ----
 
