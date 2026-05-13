@@ -12,6 +12,7 @@
 namespace BitAndBlack\TypoRules\Rule;
 
 use BitAndBlack\Helpers\XMLHelper;
+use BitAndBlack\TypoRules\Util\StringHelper;
 use BitAndBlack\TypoRules\Violation;
 use DOMDocument;
 use DOMElement;
@@ -31,8 +32,7 @@ abstract class AbstractRule implements RuleInterface
      */
     public function getViolations(string $content): array
     {
-        $contentStriped = strip_tags($content);
-        $doesContentContainHtml = $content !== $contentStriped;
+        $doesContentContainHtml = StringHelper::doesStringContainHtml($content);
 
         $violations = [];
 
@@ -110,8 +110,7 @@ abstract class AbstractRule implements RuleInterface
      */
     public function getContentFixed(string $content): string
     {
-        $contentStriped = strip_tags($content);
-        $doesContentContainHtml = $content !== $contentStriped;
+        $doesContentContainHtml = StringHelper::doesStringContainHtml($content);
 
         if (false === $doesContentContainHtml) {
             return (string) preg_replace(
