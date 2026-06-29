@@ -43,5 +43,17 @@ final class AddNonBreakingSpaceBetweenLastAndPenultimateWordsTest extends Abstra
             'Etwas länger',
             null,
         ];
+
+        yield 'With a space at the end' => [
+            'Nur ganz kurz. ',
+            'Nur ganz' . CharactersEnum::NON_BREAKING_SPACE->value . 'kurz. ',
+            'Nur ganz kurz. ',
+        ];
+
+        yield 'With a space at the end and a linebreak' => [
+            'Nur ganz kurz. ' . PHP_EOL . 'Zeilenumbruch.',
+            'Nur ganz' . CharactersEnum::NON_BREAKING_SPACE->value . 'kurz. ' . PHP_EOL . 'Zeilenumbruch.',
+            'Nur ganz kurz. ' . PHP_EOL . 'Zeilenumb...',
+        ];
     }
 }
