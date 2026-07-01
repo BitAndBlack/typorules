@@ -192,7 +192,7 @@ abstract class AbstractRule implements RuleInterface
                      */
                     $hasElementSiblings = false;
 
-                    foreach ($domNode->childNodes as $sibling) {
+                    foreach ($child->childNodes as $sibling) {
                         if ($sibling instanceof DOMElement) {
                             $hasElementSiblings = true;
                             break;
