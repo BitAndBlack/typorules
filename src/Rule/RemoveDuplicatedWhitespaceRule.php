@@ -26,7 +26,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 )]
 class RemoveDuplicatedWhitespaceRule extends AbstractRule implements RuleInterface
 {
-    protected string $searchPattern = '/\s{2,}/';
+    protected string $searchPattern = '/[^\S\r\n]{2,}/';
 
     protected string $replacePattern = ' ';
 

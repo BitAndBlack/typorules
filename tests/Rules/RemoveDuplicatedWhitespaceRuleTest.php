@@ -46,7 +46,8 @@ final class RemoveDuplicatedWhitespaceRuleTest extends AbstractRuleTestClass
             ,
             <<<HTML
                 <h1 class="h1 h1--modifier">Überschrift!</h1>
-                <p>Dies ist ein Beispielsatz.Von wem? Von mir. An dich.</p> <p title="Wundervoller Titel!">Keine Ahnung warum!Ich bin der, der einen Satz schreibt.</p>
+                <p>Dies ist ein Beispielsatz.Von wem? Von mir. An dich.</p> 
+                <p title="Wundervoller Titel!">Keine Ahnung warum!Ich bin der, der einen Satz schreibt.</p>
                 HTML,
             '...   Ahnung warum!Ich bin de...',
         ];
