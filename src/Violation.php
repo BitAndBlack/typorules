@@ -43,13 +43,13 @@ class Violation
     public function getViolationPreview(int $length = 12): string
     {
         $content = $this->content;
-        $contentLength = strlen($content);
+        $contentLength = mb_strlen($content);
 
         $stringBefore = '...';
         $stringAfter = '...';
 
         $start = $this->violationPosition - $length;
-        $end = ($length * 2) + strlen($this->violatedPart);
+        $end = ($length * 2) + mb_strlen($this->violatedPart);
 
         if ($start <= 0) {
             $start = 0;
@@ -61,7 +61,7 @@ class Violation
             $stringAfter = '';
         }
 
-        $preview = substr($content, $start, $end);
+        $preview = mb_substr($content, $start, $end);
 
         return $stringBefore . $preview . $stringAfter;
     }

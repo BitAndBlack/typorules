@@ -29,7 +29,7 @@ final class AddNonBreakingSpaceAfterProfessorRuleTest extends AbstractRuleTestCl
         yield [
             'Hier kommt Prof. Tobias Köngeter',
             'Hier kommt Prof.' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . 'Tobias Köngeter',
-            'Hier kommt Prof. Tobias Könge...',
+            'Hier kommt Prof. Tobias Könget...',
         ];
     }
 }

@@ -29,7 +29,7 @@ final class AddNonBreakingSpaceBetweenGuillemetLeftOpenAndWordRuleTest extends A
         yield [
             'J\'ai dit « non » à toi.',
             'J\'ai dit «' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . 'non » à toi.',
-            'J\'ai dit « non » à toi...',
+            'J\'ai dit « non » à toi.',
         ];
 
         yield [

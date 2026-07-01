@@ -29,13 +29,13 @@ final class AddNonBreakingSpaceBeforeSemicolonRuleTest extends AbstractRuleTestC
         yield [
             'Concept, création et réalisation technique ; Bit&Black',
             'Concept, création et réalisation technique' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . '; Bit&Black',
-            '...on technique ; Bit&Black...',
+            '... technique ; Bit&Black...',
         ];
 
         yield [
             'Concept, création et réalisation technique; Bit&Black',
             'Concept, création et réalisation technique' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . '; Bit&Black',
-            '...on technique; Bit&Black...',
+            '... technique; Bit&Black...',
         ];
     }
 }

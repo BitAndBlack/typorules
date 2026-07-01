@@ -34,7 +34,7 @@ final class RemoveWhitespaceAfterOpeningQuoteRuleTest extends AbstractRuleTestCl
         yield [
             'Besonders „ wichtige “ Information',
             'Besonders „wichtige “ Information',
-            '...esonders „ wichtige “ Information...',
+            '...esonders „ wichtige “ Information',
         ];
 
         yield [

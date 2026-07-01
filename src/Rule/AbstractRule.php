@@ -61,7 +61,7 @@ abstract class AbstractRule implements RuleInterface
         $domDocument = new DOMDocument('1.0', 'UTF-8');
         XMLHelper::loadHTML($domDocument, '<' . $tempNodeName . '>' . $content . '</' . $tempNodeName . '>');
 
-        $callback = function (string $contentExtracted) use (&$violations): string {
+        $callback = function (string $contentExtracted) use ($content, &$violations): string {
             preg_match_all(
                 $this->getSearchPattern(),
                 $contentExtracted,
@@ -69,11 +69,14 @@ abstract class AbstractRule implements RuleInterface
                 PREG_OFFSET_CAPTURE
             );
 
+            $contentBefore = mb_substr($content, 0, -mb_strlen($contentExtracted));
+            $lengthToAdd = mb_strlen($contentBefore);
+
             foreach ($violationsFound[0] as $violation) {
                 $violations[] = new Violation(
                     $this,
-                    $contentExtracted,
-                    $violation[1],
+                    $content,
+                    $this->convertByteOffsetToCharOffset($contentExtracted, $violation[1]) + $lengthToAdd,
                     $violation[0],
                 );
             }
@@ -223,5 +226,13 @@ abstract class AbstractRule implements RuleInterface
         }
 
         $traverse($node);
+    }
+
+    private function convertByteOffsetToCharOffset(string $string, int $byteOffset, string $encoding = 'UTF-8'): int
+    {
+        return mb_strlen(
+            substr($string, 0, $byteOffset),
+            $encoding
+        );
     }
 }

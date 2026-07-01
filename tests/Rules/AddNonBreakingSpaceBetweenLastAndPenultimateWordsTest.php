@@ -55,5 +55,11 @@ final class AddNonBreakingSpaceBetweenLastAndPenultimateWordsTest extends Abstra
             'Nur ganz' . CharactersEnum::NON_BREAKING_SPACE->value . 'kurz. ' . PHP_EOL . 'Zeilenumbruch.',
             'Nur ganz kurz. ' . PHP_EOL . 'Zeilenumb...',
         ];
+
+        yield 'Works also with HTML' => [
+            'Nach <strong>21</strong> Jahren in der Druck- und Medien-Branche gibt es eine Menge Ihnen für Vorträge zur Verfügung und berichtet jederzeit gerne über Automatisierungen im Bereich Layout, über Programmierung von Drucksachen, über Machine Learning für die Druckbranche, über perfekte Druckdaten und über Typografie, wie sie sein sollte.',
+            'Nach <strong>21</strong> Jahren in der Druck- und Medien-Branche gibt es eine Menge Ihnen für Vorträge zur Verfügung und berichtet jederzeit gerne über Automatisierungen im Bereich Layout, über Programmierung von Drucksachen, über Machine Learning für die Druckbranche, über perfekte Druckdaten und über Typografie, wie sie sein' . CharactersEnum::NON_BREAKING_SPACE->value . 'sollte.',
+            '...wie sie sein sollte....',
+        ];
     }
 }
