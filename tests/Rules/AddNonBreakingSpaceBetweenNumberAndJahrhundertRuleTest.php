@@ -38,4 +38,15 @@ final class AddNonBreakingSpaceBetweenNumberAndJahrhundertRuleTest extends Abstr
             'Ende des 1. Jahrhunderts',
         ];
     }
+
+    public function testCanHandleHtmlCharacters(): void
+    {
+        $rule = new AddNonBreakingSpaceBetweenNumberAndJahrhundertRule();
+        $rule->setNonBreakingSpace('&nbsp;');
+
+        self::assertSame(
+            'Im 18.&nbsp;Jahrhundert',
+            $rule->getContentFixed('Im 18. Jahrhundert')
+        );
+    }
 }

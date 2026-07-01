@@ -149,7 +149,9 @@ abstract class AbstractRule implements RuleInterface
             $childNodesHtml[] = $domDocument->saveHTML($childNode);
         }
 
-        return implode('', $childNodesHtml);
+        return htmlspecialchars_decode(
+            implode('', $childNodesHtml)
+        );
     }
 
     /**
