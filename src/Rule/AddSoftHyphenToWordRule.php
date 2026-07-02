@@ -44,18 +44,8 @@ class AddSoftHyphenToWordRule extends AbstractRule implements RuleInterface
 
     protected int $minWordCharacterCount;
 
-    /**
-     * @throws MissingDependencyException
-     */
     public function __construct()
     {
-        if (false === Composer::classExists(Hyphenator::class)) {
-            throw new MissingDependencyException(
-                static::class,
-                Hyphenator::class
-            );
-        }
-
         $this->minCharacterCountBefore = 5;
         $this->minCharacterCountAfter = 5;
         $this->minWordCharacterCount = $this->minCharacterCountBefore + $this->minCharacterCountAfter;
@@ -127,6 +117,18 @@ class AddSoftHyphenToWordRule extends AbstractRule implements RuleInterface
      */
     public function getContentFixed(string $content): string
     {
+        /**
+         * Throw exception when library is missing.
+         * This happens only when the fixer method is getting called,
+         * to not disturb autoloading and constructing of this class.
+         */
+        if (false === Composer::classExists(Hyphenator::class)) {
+            throw new MissingDependencyException(
+                static::class,
+                Hyphenator::class
+            );
+        }
+
         $hyphenator = Hyphenator::factory(null, $this->languageCode);
 
         $options = $hyphenator->getOptions();
