@@ -59,7 +59,9 @@ abstract class AbstractRuleSet implements RuleSetInterface
     public function getContentFixed(string $content): string
     {
         foreach ($this->getRuleSet() as $rule) {
-            $content = $rule->getContentFixed($content);
+            if ([] !== $rule->getViolations($content)) {
+                $content = $rule->getContentFixed($content);
+            }
         }
 
         return $content;
