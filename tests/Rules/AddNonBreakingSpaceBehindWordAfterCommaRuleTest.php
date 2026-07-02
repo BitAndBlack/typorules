@@ -28,7 +28,7 @@ final class AddNonBreakingSpaceBehindWordAfterCommaRuleTest extends AbstractRule
     {
         yield [
             'Glaube mir, es war so schön!',
-            'Glaube mir, es' . CharactersEnum::NON_BREAKING_SPACE->value . 'war so schön!',
+            'Glaube mir, es' . CharactersEnum::NON_BREAKING_SPACE_UTF8->value . 'war so schön!',
             'Glaube mir, es war so schön!',
         ];
 

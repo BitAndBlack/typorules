@@ -38,7 +38,7 @@ class AddNonBreakingSpaceAfterProfessorRule extends AbstractRule implements Rule
 
     public function __construct()
     {
-        $this->nonBreakingSpace = CharactersEnum::NON_BREAKING_SPACE_THIN->value;
+        $this->preferUtf8OverHtmlCharacters();
     }
 
     public static function create(): self
@@ -46,9 +46,23 @@ class AddNonBreakingSpaceAfterProfessorRule extends AbstractRule implements Rule
         return new self();
     }
 
+    public function preferHtmlOverUtf8Characters(): self
+    {
+        return $this->setNonBreakingSpace(
+            CharactersEnum::NON_BREAKING_SPACE_THIN_HTML->value
+        );
+    }
+
+    public function preferUtf8OverHtmlCharacters(): self
+    {
+        return $this->setNonBreakingSpace(
+            CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value
+        );
+    }
+
     public function getSearchPattern(): string
     {
-        return '/(Prof\.)(' . CharactersEnum::ALL_SPACES->value . ')+/';
+        return '/(Prof\.)(' . CharactersEnum::getAllSpacesRegex() . ')+/';
     }
 
     public function getReplacePattern(): string

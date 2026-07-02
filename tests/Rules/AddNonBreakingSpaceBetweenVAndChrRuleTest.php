@@ -28,7 +28,7 @@ final class AddNonBreakingSpaceBetweenVAndChrRuleTest extends AbstractRuleTestCl
     {
         yield [
             '25 v. Chr.',
-            '25 v.' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . 'Chr.',
+            '25 v.' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . 'Chr.',
             '25 v. Chr.',
         ];
     }

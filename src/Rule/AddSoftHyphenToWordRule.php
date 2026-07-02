@@ -36,7 +36,7 @@ class AddSoftHyphenToWordRule extends AbstractRule implements RuleInterface
 
     protected ?string $languageCode = null;
 
-    protected string $hyphen;
+    protected string $softHyphen;
 
     protected int $minCharacterCountBefore;
 
@@ -56,15 +56,30 @@ class AddSoftHyphenToWordRule extends AbstractRule implements RuleInterface
             );
         }
 
-        $this->hyphen = CharactersEnum::SOFT_HYPHEN->value;
         $this->minCharacterCountBefore = 5;
         $this->minCharacterCountAfter = 5;
         $this->minWordCharacterCount = $this->minCharacterCountBefore + $this->minCharacterCountAfter;
+
+        $this->preferUtf8OverHtmlCharacters();
     }
 
     public static function create(): self
     {
         return new self();
+    }
+
+    public function preferHtmlOverUtf8Characters(): self
+    {
+        return $this->setSoftHyphen(
+            CharactersEnum::SOFT_HYPHEN_HTML->value
+        );
+    }
+
+    public function preferUtf8OverHtmlCharacters(): self
+    {
+        return $this->setSoftHyphen(
+            CharactersEnum::SOFT_HYPHEN_UTF8->value
+        );
     }
 
     public function getSearchPattern(): string
@@ -79,10 +94,10 @@ class AddSoftHyphenToWordRule extends AbstractRule implements RuleInterface
         return $this;
     }
 
-    #[Configuration('Define the hyphenation character.')]
-    public function setHyphen(string $hyphen): self
+    #[Configuration('Define the soft hyphenation character(s).')]
+    public function setSoftHyphen(string $softHyphen): self
     {
-        $this->hyphen = $hyphen;
+        $this->softHyphen = $softHyphen;
         return $this;
     }
 
@@ -116,7 +131,7 @@ class AddSoftHyphenToWordRule extends AbstractRule implements RuleInterface
 
         $options = $hyphenator->getOptions();
         $options
-            ->setHyphen($this->hyphen)
+            ->setHyphen($this->softHyphen)
             ->setLeftMin($this->minCharacterCountBefore)
             ->setRightMin($this->minCharacterCountAfter)
             ->setMinWordLength($this->minWordCharacterCount)

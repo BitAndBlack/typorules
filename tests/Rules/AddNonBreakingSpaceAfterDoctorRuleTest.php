@@ -28,7 +28,7 @@ final class AddNonBreakingSpaceAfterDoctorRuleTest extends AbstractRuleTestClass
     {
         yield [
             'Hier kommt Dr. Tobias Köngeter',
-            'Hier kommt Dr.' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . 'Tobias Köngeter',
+            'Hier kommt Dr.' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . 'Tobias Köngeter',
             'Hier kommt Dr. Tobias Könget...',
         ];
     }

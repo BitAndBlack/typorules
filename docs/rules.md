@@ -1272,7 +1272,7 @@ Add a non-breaking space between to words that have a dash between `/` to **allo
 
 #### Possible rule customization
 
-There are 2 possibilities to customize this rule:
+There are 3 possibilities to customize this rule:
 
 -   Configure the minimum length for the word **before** the dash. It needs to have a length of `3` characters per default.
 
@@ -1284,6 +1284,12 @@ There are 2 possibilities to customize this rule:
 
     ```php
     $addSoftHyphenBetweenDashSeparatedWordsRule->setMinLengthWordAfter($minLengthWordAfter);
+    ```
+
+-   Configure the soft hyphen character(s).
+
+    ```php
+    $addSoftHyphenBetweenDashSeparatedWordsRule->setSoftHyphen($softHyphen);
     ```
 
 #### File
@@ -1315,10 +1321,10 @@ There are 5 possibilities to customize this rule:
     $addSoftHyphenToWordRule->setLanguageCode($languageCode);
     ```
 
--   Define the hyphenation character.
+-   Define the soft hyphenation character(s).
 
     ```php
-    $addSoftHyphenToWordRule->setHyphen($hyphen);
+    $addSoftHyphenToWordRule->setSoftHyphen($softHyphen);
     ```
 
 -   Define, how many characters a word must have before the first hyphen may appear.
@@ -1429,7 +1435,13 @@ Add a hair space between brackets. The space will be added behind left (opening)
 
 #### Possible rule customization
 
-This rule doesn't allow any customization.
+There is 1 possibility to customize this rule:
+
+-   Configure the space character(s).
+
+    ```php
+    $addSpaceBetweenBracketsRule->setSpace($space);
+    ```
 
 #### File
 
@@ -2003,7 +2015,13 @@ Recognises a measurement and inserts thin non-breaking spaces before and after t
 
 #### Possible rule customization
 
-This rule doesn't allow any customization.
+There is 1 possibility to customize this rule:
+
+-   Configure the type of the space. Per default, a thin non-breaking space will be used.
+
+    ```php
+    $convertSpacesBetweenTimesAndNumbersRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
 
 #### File
 

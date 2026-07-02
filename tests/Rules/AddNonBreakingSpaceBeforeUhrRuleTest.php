@@ -28,7 +28,7 @@ final class AddNonBreakingSpaceBeforeUhrRuleTest extends AbstractRuleTestClass
     {
         yield [
             'Es ist 12.30 Uhr.',
-            'Es ist 12.30' . CharactersEnum::NON_BREAKING_SPACE->value . 'Uhr.',
+            'Es ist 12.30' . CharactersEnum::NON_BREAKING_SPACE_UTF8->value . 'Uhr.',
             'Es ist 12.30 Uhr.',
         ];
 

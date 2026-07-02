@@ -34,7 +34,7 @@ final class AddSoftHyphenBetweenDashSeparatedWordsRuleTest extends AbstractRuleT
 
         yield [
             'Von Paris/Frankreich nach Stuttgart/Deutschland.',
-            'Von Paris/' . CharactersEnum::SOFT_HYPHEN->value . 'Frankreich nach Stuttgart/' . CharactersEnum::SOFT_HYPHEN->value . 'Deutschland.',
+            'Von Paris/' . CharactersEnum::SOFT_HYPHEN_UTF8->value . 'Frankreich nach Stuttgart/' . CharactersEnum::SOFT_HYPHEN_UTF8->value . 'Deutschland.',
             'Von Paris/Frankreich nach Stuttgart/Deut...',
         ];
 

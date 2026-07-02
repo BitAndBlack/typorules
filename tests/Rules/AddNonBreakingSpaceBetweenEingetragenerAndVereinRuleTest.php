@@ -28,13 +28,13 @@ final class AddNonBreakingSpaceBetweenEingetragenerAndVereinRuleTest extends Abs
     {
         yield [
             'Supersport 500 e.V.',
-            'Supersport 500 e.' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . 'V.',
+            'Supersport 500 e.' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . 'V.',
             '...sport 500 e.V.',
         ];
 
         yield [
             'Supersport 500 e. V.',
-            'Supersport 500 e.' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . 'V.',
+            'Supersport 500 e.' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . 'V.',
             '...sport 500 e. V.',
         ];
     }

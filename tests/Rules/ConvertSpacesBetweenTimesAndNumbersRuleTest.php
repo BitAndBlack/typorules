@@ -28,13 +28,13 @@ final class ConvertSpacesBetweenTimesAndNumbersRuleTest extends AbstractRuleTest
     {
         yield [
             'Format: 15 × 9 cm.',
-            'Format: 15' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . '×' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . '9 cm.',
+            'Format: 15' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . '×' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . '9 cm.',
             'Format: 15 × 9 cm.',
         ];
 
         yield [
             'Format: 15 x 9 cm.',
-            'Format: 15' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . 'x' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . '9 cm.',
+            'Format: 15' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . 'x' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . '9 cm.',
             'Format: 15 x 9 cm.',
         ];
     }

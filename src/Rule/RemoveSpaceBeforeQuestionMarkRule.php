@@ -36,6 +36,6 @@ class RemoveSpaceBeforeQuestionMarkRule extends AbstractRule implements RuleInte
 
     public function getSearchPattern(): string
     {
-        return '/[' . CharactersEnum::ALL_SPACES->value . ']+(\?)/';
+        return '/[' . CharactersEnum::getAllSpacesRegex() . ']+(\?)/';
     }
 }

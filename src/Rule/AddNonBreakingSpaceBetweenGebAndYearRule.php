@@ -33,18 +33,33 @@ class AddNonBreakingSpaceBetweenGebAndYearRule extends AbstractRule implements R
 
     public function __construct()
     {
-        $this->nonBreakingSpace = CharactersEnum::NON_BREAKING_SPACE_THIN->value;
-    }
-
-    public function getSearchPattern(): string
-    {
-        return '/(?<=geb\.)[' . CharactersEnum::ALL_SPACES->value . ']*(?=\d{3,4})/';
+        $this->preferUtf8OverHtmlCharacters();
     }
 
     public static function create(): self
     {
         return new self();
     }
+
+    public function preferHtmlOverUtf8Characters(): self
+    {
+        return $this->setNonBreakingSpace(
+            CharactersEnum::NON_BREAKING_SPACE_THIN_HTML->value
+        );
+    }
+
+    public function preferUtf8OverHtmlCharacters(): self
+    {
+        return $this->setNonBreakingSpace(
+            CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value
+        );
+    }
+
+    public function getSearchPattern(): string
+    {
+        return '/(?<=geb\.)[' . CharactersEnum::getAllSpacesRegex() . ']*(?=\d{3,4})/';
+    }
+
 
     public function getReplacePattern(): string
     {

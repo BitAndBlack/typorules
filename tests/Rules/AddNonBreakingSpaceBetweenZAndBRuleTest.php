@@ -28,7 +28,7 @@ final class AddNonBreakingSpaceBetweenZAndBRuleTest extends AbstractRuleTestClas
     {
         yield [
             'z. B.',
-            'z.' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . 'B.',
+            'z.' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . 'B.',
             'z. B.',
         ];
 

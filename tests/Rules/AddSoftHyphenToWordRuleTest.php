@@ -28,7 +28,7 @@ final class AddSoftHyphenToWordRuleTest extends AbstractRuleTestClass
     {
         yield [
             'Kann man mit gutem Gewissen Bodenseefelchen essen?',
-            'Kann man mit gutem Gewissen Boden' . CharactersEnum::SOFT_HYPHEN->value . 'see' . CharactersEnum::SOFT_HYPHEN->value . 'felchen essen?',
+            'Kann man mit gutem Gewissen Boden' . CharactersEnum::SOFT_HYPHEN_UTF8->value . 'see' . CharactersEnum::SOFT_HYPHEN_UTF8->value . 'felchen essen?',
             '...em Gewissen Bodenseefelchen essen?...',
         ];
 
@@ -45,7 +45,7 @@ final class AddSoftHyphenToWordRuleTest extends AbstractRuleTestClass
             ->setMinCharacterCountBefore(2)
             ->setMinCharacterCountBefore(2)
             ->setMinWordCharacterCount(6)
-            ->setHyphen('&shy;')
+            ->setSoftHyphen('&shy;')
         ;
 
         $content = 'Bodenseefelchen';

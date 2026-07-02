@@ -16,123 +16,141 @@ namespace BitAndBlack\TypoRules;
 enum CharactersEnum: string
 {
     /**
-     * All supported spaces, used in regexps. Better than \s
-     */
-    case ALL_SPACES = "\xE2\x80\xAF|\xC2\xAD|\xC2\xA0|\\s";
-
-    /**
-     * &commat;
+     * `&commat;`
      */
     case AT = '@';
 
     /**
-     * &bdquo; or &#8222;
+     * `&bdquo;` or `&#8222`;
      */
     case BDQUO = '„';
 
     /**
-     * &copy;
+     * `&copy;`
      */
     case COPY = '©';
 
     /**
-     * &#160;
+     * `&#160;`
      */
     case ELLIPSIS = '…';
 
     /**
-     * &#8202;
+     * @see CharactersEnum::HAIR_SPACE_HTML
      */
-    case HAIR_SPACE = "\xE2\x80\x8A";
+    case HAIR_SPACE_UTF8 = "\xE2\x80\x8A";
 
     /**
-     * &laquo;
+     * @see CharactersEnum::HAIR_SPACE_UTF8
+     */
+    case HAIR_SPACE_HTML = '&#8202;';
+
+    /**
+     * `&laquo;`
      */
     case LEFT_ANGLE_QUOTE = '«';
 
     /**
-     * &lsaquo;
+     * `&lsaquo;`
      */
     case LEFT_ANGLE_QUOTE_SINGLE = '‹';
 
     /**
-     * &ldquo; or &#8220;
+     * `&ldquo;` or `&#8220;`
      */
     case LDQUO = '“';
 
     /**
-     * &rdquo; or &#8221;
+     * `&rdquo;` or `&#8221;`
      */
     case RDQUO = '”';
 
     /**
-     * &mdash; or &#x2014;
+     * `&mdash;` or `&#x2014;`
      */
     case MDASH = '—';
 
     /**
-     * &ndash; or &#x2013;
+     * `&ndash;` or `&#x2013;`
      */
     case NDASH = '–';
 
     /**
-     * &#8239;
+     * @see CharactersEnum::NON_BREAKING_SPACE_THIN_HTML
      */
-    case NON_BREAKING_SPACE_THIN = "\xE2\x80\xAF";
+    case NON_BREAKING_SPACE_THIN_UTF8 = "\xE2\x80\xAF";
 
     /**
-     * &nbsp;
+     * @see CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8
      */
-    case NON_BREAKING_SPACE = "\xC2\xA0";
+    case NON_BREAKING_SPACE_THIN_HTML = '&#8239;';
 
     /**
-     * &raquo;
+     * @see CharactersEnum::NON_BREAKING_SPACE_HTML
+     */
+    case NON_BREAKING_SPACE_UTF8 = "\xC2\xA0";
+
+    /**
+     * @see CharactersEnum::NON_BREAKING_SPACE_UTF8
+     */
+    case NON_BREAKING_SPACE_HTML = '&nbsp;';
+
+    /**
+     * `&raquo;`
      */
     case RIGHT_ANGLE_QUOTE = '»';
 
     /**
-     * &rsaquo;
+     * `&rsaquo;`
      */
     case RIGHT_ANGLE_QUOTE_SINGLE = '›';
 
     /**
-     * &reg;
+     * `&reg;`
      */
     case REGISTERED = '®';
 
     /**
-     * &lsquo;
+     * `&lsquo;`
      */
     case LSQUO = '‘';
 
     /**
-     * &rsquo;
+     * `&rsquo;`
      */
     case RSQUO = '’';
 
     /**
-     * &shy;
+     * @see CharactersEnum::SOFT_HYPHEN_HTML
      */
-    case SOFT_HYPHEN = "\xC2\xAD";
+    case SOFT_HYPHEN_UTF8 = "\xC2\xAD";
 
     /**
-     * &times;
+     * @see CharactersEnum::SOFT_HYPHEN_UTF8
+     */
+    case SOFT_HYPHEN_HTML = '&shy;';
+
+    /**
+     * `&times;`
      */
     case TIMES = '×';
 
     /**
-     * &trade;
+     * `&trade;`
      */
     case TRADEMARK = '™';
 
     /**
-     * &sbquo;
+     * `&sbquo;`
      */
     case SBQUO = '‚';
 
-    public static function getAllQuotes(): string
+    /**
+     * Returns all kinds of quotes as regex string.
+     */
+    public static function getAllQuotesRegex(): string
     {
-        $quotes = [
+        return self::getContentForRegex(
             '"',
             self::BDQUO->value,
             self::SBQUO->value,
@@ -144,11 +162,31 @@ enum CharactersEnum: string
             self::LSQUO->value,
             self::RDQUO->value,
             self::RSQUO->value,
-        ];
+        );
+    }
 
+    /**
+     * Returns all kinds of spaces as regex string.
+     */
+    public static function getAllSpacesRegex(): string
+    {
+        return self::getContentForRegex(
+            self::NON_BREAKING_SPACE_THIN_UTF8->value,
+            self::SOFT_HYPHEN_UTF8->value,
+            self::NON_BREAKING_SPACE_UTF8->value,
+            '\s',
+        );
+    }
+
+    /**
+     * @param string ...$content
+     * @return string
+     */
+    private static function getContentForRegex(string ...$content): string
+    {
         return implode(
             '|',
-            $quotes
+            $content
         );
     }
 }

@@ -36,6 +36,6 @@ class RemoveSpaceBeforeExclamationMarkRule extends AbstractRule implements RuleI
 
     public function getSearchPattern(): string
     {
-        return '/[' . CharactersEnum::ALL_SPACES->value . ']+(!)/';
+        return '/[' . CharactersEnum::getAllSpacesRegex() . ']+(!)/';
     }
 }

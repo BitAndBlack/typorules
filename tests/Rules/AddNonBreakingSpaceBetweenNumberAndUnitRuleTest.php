@@ -28,7 +28,7 @@ final class AddNonBreakingSpaceBetweenNumberAndUnitRuleTest extends AbstractRule
     {
         yield [
             '1 km, 200 ° C, 1,2 Minuten',
-            '1 km, 200' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . '° C, 1,2 Minuten',
+            '1 km, 200' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . '° C, 1,2 Minuten',
             '1 km, 200 ° C, 1,2 Minuten',
         ];
 

@@ -28,19 +28,19 @@ final class AddNonBreakingSpaceBetweenWordNummerAndNumberRuleTest extends Abstra
     {
         yield [
             'Das ist Nr. 8.',
-            'Das ist Nr.' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . '8.',
+            'Das ist Nr.' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . '8.',
             'Das ist Nr. 8.',
         ];
 
         yield [
             'Das ist Nr.8.',
-            'Das ist Nr.' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . '8.',
+            'Das ist Nr.' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . '8.',
             'Das ist Nr.8.',
         ];
 
         yield [
             'Das ist Nummer 8.',
-            'Das ist Nummer' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . '8.',
+            'Das ist Nummer' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . '8.',
             '...s ist Nummer 8.',
         ];
     }

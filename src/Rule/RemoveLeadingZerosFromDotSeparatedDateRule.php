@@ -40,6 +40,6 @@ class RemoveLeadingZerosFromDotSeparatedDateRule extends AbstractRule implements
 
     public function getSearchPattern(): string
     {
-        return '/0?(\d\.[' . CharactersEnum::ALL_SPACES->value . ']*)0?(\d\.[' . CharactersEnum::ALL_SPACES->value . ']*(\d{4}|\d{2}))/';
+        return '/0?(\d\.[' . CharactersEnum::getAllSpacesRegex() . ']*)0?(\d\.[' . CharactersEnum::getAllSpacesRegex() . ']*(\d{4}|\d{2}))/';
     }
 }

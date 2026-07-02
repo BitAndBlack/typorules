@@ -28,7 +28,7 @@ final class AddNonBreakingSpaceBetweenNumberAndJahrRuleTest extends AbstractRule
     {
         yield [
             'Vor 30 Jahren',
-            'Vor 30' . CharactersEnum::NON_BREAKING_SPACE->value . 'Jahren',
+            'Vor 30' . CharactersEnum::NON_BREAKING_SPACE_UTF8->value . 'Jahren',
             'Vor 30 Jahren',
         ];
     }

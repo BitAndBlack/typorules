@@ -34,7 +34,7 @@ class ConvertCharactersToCopyrightCharRule extends AbstractRule implements RuleI
 
     public function getSearchPattern(): string
     {
-        return '/\((' . CharactersEnum::ALL_SPACES->value . ')*(c|C)(' . CharactersEnum::ALL_SPACES->value . ')*\)/';
+        return '/\((' . CharactersEnum::getAllSpacesRegex() . ')*(c|C)(' . CharactersEnum::getAllSpacesRegex() . ')*\)/';
     }
 
     public function getReplacePattern(): string

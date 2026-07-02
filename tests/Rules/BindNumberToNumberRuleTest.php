@@ -32,7 +32,7 @@ final class BindNumberToNumberRuleTest extends AbstractRuleTestClass
     {
         yield [
             'Das ist Nr. 8.',
-            'Das ist Nr.' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . '8.',
+            'Das ist Nr.' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . '8.',
             'Das ist Nr. 8.',
         ];
     }

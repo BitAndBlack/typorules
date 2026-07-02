@@ -28,13 +28,13 @@ final class AddNonBreakingSpaceBetweenNumberAndJahrhundertRuleTest extends Abstr
     {
         yield [
             'Im 18. Jahrhundert',
-            'Im 18.' . CharactersEnum::NON_BREAKING_SPACE->value . 'Jahrhundert',
+            'Im 18.' . CharactersEnum::NON_BREAKING_SPACE_UTF8->value . 'Jahrhundert',
             'Im 18. Jahrhundert',
         ];
 
         yield [
             'Ende des 1. Jahrhunderts',
-            'Ende des 1.' . CharactersEnum::NON_BREAKING_SPACE->value . 'Jahrhunderts',
+            'Ende des 1.' . CharactersEnum::NON_BREAKING_SPACE_UTF8->value . 'Jahrhunderts',
             'Ende des 1. Jahrhunderts',
         ];
     }

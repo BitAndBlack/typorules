@@ -33,17 +33,31 @@ class AddNonBreakingSpaceBetweenNumberAndJahrhundertRule extends AbstractRule im
 
     public function __construct()
     {
-        $this->nonBreakingSpace = CharactersEnum::NON_BREAKING_SPACE->value;
-    }
-
-    public function getSearchPattern(): string
-    {
-        return '/(?<=\d\.)[' . CharactersEnum::ALL_SPACES->value . ']*(?=Jahrhundert)/';
+        $this->preferUtf8OverHtmlCharacters();
     }
 
     public static function create(): self
     {
         return new self();
+    }
+
+    public function preferHtmlOverUtf8Characters(): self
+    {
+        return $this->setNonBreakingSpace(
+            CharactersEnum::NON_BREAKING_SPACE_HTML->value
+        );
+    }
+
+    public function preferUtf8OverHtmlCharacters(): self
+    {
+        return $this->setNonBreakingSpace(
+            CharactersEnum::NON_BREAKING_SPACE_UTF8->value
+        );
+    }
+
+    public function getSearchPattern(): string
+    {
+        return '/(?<=\d\.)[' . CharactersEnum::getAllSpacesRegex() . ']*(?=Jahrhundert)/';
     }
 
     public function getReplacePattern(): string

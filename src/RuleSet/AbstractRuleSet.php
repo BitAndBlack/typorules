@@ -136,4 +136,22 @@ abstract class AbstractRuleSet implements RuleSetInterface
 
         return $this;
     }
+
+    public function preferHtmlOverUtf8Characters(): self
+    {
+        foreach ($this->getRuleSet() as $rule) {
+            $rule->preferHtmlOverUtf8Characters();
+        }
+
+        return $this;
+    }
+
+    public function preferUtf8OverHtmlCharacters(): self
+    {
+        foreach ($this->getRuleSet() as $rule) {
+            $rule->preferUtf8OverHtmlCharacters();
+        }
+
+        return $this;
+    }
 }

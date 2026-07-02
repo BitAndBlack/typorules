@@ -28,13 +28,13 @@ final class AddNonBreakingSpaceBeforeQuestionMarkRuleTest extends AbstractRuleTe
     {
         yield [
             'On y va ?',
-            'On y va' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . '?',
+            'On y va' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . '?',
             'On y va ?',
         ];
 
         yield [
             'On y va?',
-            'On y va' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . '?',
+            'On y va' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . '?',
             'On y va?',
         ];
     }

@@ -32,9 +32,30 @@ class AddSoftHyphenBetweenDashSeparatedWordsRule extends AbstractRule implements
 
     protected int $minLengthWordAfter = 3;
 
+    protected string $softHyphen;
+
+    public function __construct()
+    {
+        $this->preferUtf8OverHtmlCharacters();
+    }
+
     public static function create(): self
     {
         return new self();
+    }
+
+    public function preferHtmlOverUtf8Characters(): self
+    {
+        return $this->setSoftHyphen(
+            CharactersEnum::SOFT_HYPHEN_HTML->value
+        );
+    }
+
+    public function preferUtf8OverHtmlCharacters(): self
+    {
+        return $this->setSoftHyphen(
+            CharactersEnum::SOFT_HYPHEN_UTF8->value
+        );
     }
 
     public function getSearchPattern(): string
@@ -44,7 +65,7 @@ class AddSoftHyphenBetweenDashSeparatedWordsRule extends AbstractRule implements
 
     public function getReplacePattern(): string
     {
-        return '$1/' . CharactersEnum::SOFT_HYPHEN->value . '$2';
+        return '$1/' . $this->softHyphen . '$2';
     }
 
     #[Configuration('Configure the minimum length for the word **before** the dash. It needs to have a length of `3` characters per default.')]
@@ -58,6 +79,13 @@ class AddSoftHyphenBetweenDashSeparatedWordsRule extends AbstractRule implements
     public function setMinLengthWordAfter(int $minLengthWordAfter): self
     {
         $this->minLengthWordAfter = $minLengthWordAfter;
+        return $this;
+    }
+
+    #[Configuration('Configure the soft hyphen character(s).')]
+    public function setSoftHyphen(string $softHyphen): self
+    {
+        $this->softHyphen = $softHyphen;
         return $this;
     }
 }

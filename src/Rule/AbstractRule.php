@@ -237,4 +237,14 @@ abstract class AbstractRule implements RuleInterface
             $encoding
         );
     }
+
+    public function preferHtmlOverUtf8Characters(): self
+    {
+        return $this;
+    }
+
+    public function preferUtf8OverHtmlCharacters(): self
+    {
+        return $this;
+    }
 }

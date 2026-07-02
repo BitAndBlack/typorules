@@ -36,7 +36,7 @@ class AddNonBreakingSpaceBetweenEingetragenerAndVereinRule extends AbstractRule 
 
     public function __construct()
     {
-        $this->nonBreakingSpace = CharactersEnum::NON_BREAKING_SPACE_THIN->value;
+        $this->preferUtf8OverHtmlCharacters();
     }
 
     public static function create(): self
@@ -44,9 +44,23 @@ class AddNonBreakingSpaceBetweenEingetragenerAndVereinRule extends AbstractRule 
         return new self();
     }
 
+    public function preferHtmlOverUtf8Characters(): self
+    {
+        return $this->setNonBreakingSpace(
+            CharactersEnum::NON_BREAKING_SPACE_THIN_HTML->value
+        );
+    }
+
+    public function preferUtf8OverHtmlCharacters(): self
+    {
+        return $this->setNonBreakingSpace(
+            CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value
+        );
+    }
+
     public function getSearchPattern(): string
     {
-        return '/(?<=e\.)(' . CharactersEnum::ALL_SPACES->value . ')*(?=V\.)/';
+        return '/(?<=e\.)(' . CharactersEnum::getAllSpacesRegex() . ')*(?=V\.)/';
     }
 
     public function getReplacePattern(): string

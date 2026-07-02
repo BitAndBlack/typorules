@@ -28,13 +28,13 @@ final class AddNonBreakingSpacesForDotSeparatedDateRuleTest extends AbstractRule
     {
         yield [
             'Einladung zur Feier am Freitag, dem 01.03.2025.',
-            'Einladung zur Feier am Freitag, dem 01.' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . '03.' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . '2025.',
+            'Einladung zur Feier am Freitag, dem 01.' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . '03.' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . '2025.',
             '...reitag, dem 01.03.2025....',
         ];
 
         yield [
             'Einladung zur Feier am Freitag, dem 01. 03. 2025.',
-            'Einladung zur Feier am Freitag, dem 01.' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . '03.' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . '2025.',
+            'Einladung zur Feier am Freitag, dem 01.' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . '03.' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . '2025.',
             '...reitag, dem 01. 03. 2025....',
         ];
     }

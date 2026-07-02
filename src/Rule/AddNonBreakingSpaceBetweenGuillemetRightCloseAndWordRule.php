@@ -32,7 +32,7 @@ class AddNonBreakingSpaceBetweenGuillemetRightCloseAndWordRule extends AbstractR
 
     public function __construct()
     {
-        $this->nonBreakingSpace = CharactersEnum::NON_BREAKING_SPACE_THIN->value;
+        $this->preferUtf8OverHtmlCharacters();
     }
 
     public static function create(): self
@@ -40,9 +40,23 @@ class AddNonBreakingSpaceBetweenGuillemetRightCloseAndWordRule extends AbstractR
         return new self();
     }
 
+    public function preferHtmlOverUtf8Characters(): self
+    {
+        return $this->setNonBreakingSpace(
+            CharactersEnum::NON_BREAKING_SPACE_THIN_HTML->value
+        );
+    }
+
+    public function preferUtf8OverHtmlCharacters(): self
+    {
+        return $this->setNonBreakingSpace(
+            CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value
+        );
+    }
+
     public function getSearchPattern(): string
     {
-        return '/(?<=\w)(' . CharactersEnum::ALL_SPACES->value . ')*(?=' . CharactersEnum::RIGHT_ANGLE_QUOTE->value . ')/';
+        return '/(?<=\w)(' . CharactersEnum::getAllSpacesRegex() . ')*(?=' . CharactersEnum::RIGHT_ANGLE_QUOTE->value . ')/';
     }
 
     public function getReplacePattern(): string

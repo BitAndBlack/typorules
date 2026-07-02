@@ -42,24 +42,36 @@ interface RuleSetInterface
     /**
      * Adds one or more rules to the set list.
      */
-    public function withRule(RuleInterface ...$rules): RuleSetInterface;
+    public function withRule(RuleInterface ...$rules): self;
 
     /**
      * Removes one or more rules from the set list.
      *
      * @param RuleInterface|class-string<RuleInterface> ...$rules
      */
-    public function withoutRule(RuleInterface|string ...$rules): RuleSetInterface;
+    public function withoutRule(RuleInterface|string ...$rules): self;
 
     /**
      * Adds one or more rule sets with all its rules to the set list.
      */
-    public function withRuleSet(RuleSetInterface ...$ruleSets): RuleSetInterface;
+    public function withRuleSet(RuleSetInterface ...$ruleSets): self;
 
     /**
      * Removes one or more rule sets with all its rules from the set list.
      *
      * @param RuleSetInterface|class-string<RuleSetInterface> ...$ruleSets
      */
-    public function withoutRuleSet(RuleSetInterface|string ...$ruleSets): RuleSetInterface;
+    public function withoutRuleSet(RuleSetInterface|string ...$ruleSets): self;
+
+    /**
+     * Changes UTF-8 characters into their HTML equivalent, if available.
+     * __Attention__: This method overrides custom added characters.
+     */
+    public function preferHtmlOverUtf8Characters(): self;
+
+    /**
+     * Changes HTML characters into their UTF-8 equivalent, if available.
+     * __Attention__: This method overrides custom added characters.
+     */
+    public function preferUtf8OverHtmlCharacters(): self;
 }

@@ -28,7 +28,7 @@ final class AddNonBreakingSpaceBetweenNumberAndJhRuleTest extends AbstractRuleTe
     {
         yield [
             'Im 18. Jh.',
-            'Im 18.' . CharactersEnum::NON_BREAKING_SPACE->value . 'Jh.',
+            'Im 18.' . CharactersEnum::NON_BREAKING_SPACE_UTF8->value . 'Jh.',
             'Im 18. Jh.',
         ];
     }

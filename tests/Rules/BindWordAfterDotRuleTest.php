@@ -32,7 +32,7 @@ final class BindWordAfterDotRuleTest extends AbstractRuleTestClass
     {
         yield [
             'Schon vorbei. Von wegen!',
-            'Schon vorbei. Von' . CharactersEnum::NON_BREAKING_SPACE->value . 'wegen!',
+            'Schon vorbei. Von' . CharactersEnum::NON_BREAKING_SPACE_UTF8->value . 'wegen!',
             '...hon vorbei. Von wegen!',
         ];
 

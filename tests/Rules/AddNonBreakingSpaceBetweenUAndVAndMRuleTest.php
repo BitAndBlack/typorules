@@ -28,13 +28,13 @@ final class AddNonBreakingSpaceBetweenUAndVAndMRuleTest extends AbstractRuleTest
     {
         yield [
             'u. v. m.',
-            'u.' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . 'v.' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . 'm.',
+            'u.' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . 'v.' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . 'm.',
             'u. v. m.',
         ];
 
         yield [
             'u.v.m.',
-            'u.' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . 'v.' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . 'm.',
+            'u.' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . 'v.' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . 'm.',
             'u.v.m.',
         ];
     }

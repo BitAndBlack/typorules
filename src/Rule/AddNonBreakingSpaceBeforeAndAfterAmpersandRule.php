@@ -38,7 +38,7 @@ class AddNonBreakingSpaceBeforeAndAfterAmpersandRule extends AbstractRule implem
 
     public function __construct()
     {
-        $this->nonBreakingSpace = CharactersEnum::NON_BREAKING_SPACE_THIN->value;
+        $this->preferUtf8OverHtmlCharacters();
     }
 
     public static function create(): self
@@ -46,9 +46,23 @@ class AddNonBreakingSpaceBeforeAndAfterAmpersandRule extends AbstractRule implem
         return new self();
     }
 
+    public function preferHtmlOverUtf8Characters(): self
+    {
+        return $this->setNonBreakingSpace(
+            CharactersEnum::NON_BREAKING_SPACE_THIN_HTML->value
+        );
+    }
+
+    public function preferUtf8OverHtmlCharacters(): self
+    {
+        return $this->setNonBreakingSpace(
+            CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value
+        );
+    }
+
     public function getSearchPattern(): string
     {
-        return '/(\d+|\w+)(' . CharactersEnum::ALL_SPACES->value . ')+&(' . CharactersEnum::ALL_SPACES->value . ')+(\d+|\w+)/';
+        return '/(\d+|\w+)(' . CharactersEnum::getAllSpacesRegex() . ')+&(' . CharactersEnum::getAllSpacesRegex() . ')+(\d+|\w+)/';
     }
 
     public function getReplacePattern(): string

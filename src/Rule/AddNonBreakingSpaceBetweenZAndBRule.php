@@ -32,17 +32,31 @@ class AddNonBreakingSpaceBetweenZAndBRule extends AbstractRule implements RuleIn
 
     public function __construct()
     {
-        $this->nonBreakingSpace = CharactersEnum::NON_BREAKING_SPACE_THIN->value;
-    }
-
-    public function getSearchPattern(): string
-    {
-        return '/(?<=(^|' . CharactersEnum::ALL_SPACES->value . '|\(|\[)(z|Z)\.)[' . CharactersEnum::ALL_SPACES->value . ']*(?=B\.)/';
+        $this->preferUtf8OverHtmlCharacters();
     }
 
     public static function create(): self
     {
         return new self();
+    }
+
+    public function preferHtmlOverUtf8Characters(): self
+    {
+        return $this->setNonBreakingSpace(
+            CharactersEnum::NON_BREAKING_SPACE_THIN_HTML->value
+        );
+    }
+
+    public function preferUtf8OverHtmlCharacters(): self
+    {
+        return $this->setNonBreakingSpace(
+            CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value
+        );
+    }
+
+    public function getSearchPattern(): string
+    {
+        return '/(?<=(^|' . CharactersEnum::getAllSpacesRegex() . '|\(|\[)(z|Z)\.)[' . CharactersEnum::getAllSpacesRegex() . ']*(?=B\.)/';
     }
 
     public function getReplacePattern(): string

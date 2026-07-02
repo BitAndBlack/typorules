@@ -22,7 +22,7 @@ echo 'Running the AddNonBreakingSpaceAfterDoctorRule with content "' . $content 
 echo PHP_EOL;
 
 $addNonBreakingSpaceAfterDoctorRule = AddNonBreakingSpaceAfterDoctorRule::create()
-    ->setNonBreakingSpace(CharactersEnum::NON_BREAKING_SPACE_THIN->value)
+    ->setNonBreakingSpace(CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value)
 ;
 
 $violations = $addNonBreakingSpaceAfterDoctorRule->getViolations($content);

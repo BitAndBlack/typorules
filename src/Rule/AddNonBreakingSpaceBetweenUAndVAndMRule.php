@@ -32,17 +32,31 @@ class AddNonBreakingSpaceBetweenUAndVAndMRule extends AbstractRule implements Ru
 
     public function __construct()
     {
-        $this->nonBreakingSpace = CharactersEnum::NON_BREAKING_SPACE_THIN->value;
-    }
-
-    public function getSearchPattern(): string
-    {
-        return '/(?<=^|' . CharactersEnum::ALL_SPACES->value . '|\(|\[)([u|U]\.)[' . CharactersEnum::ALL_SPACES->value . ']*([v|V]\.)[' . CharactersEnum::ALL_SPACES->value . ']*([m|M]\.)/';
+        $this->preferUtf8OverHtmlCharacters();
     }
 
     public static function create(): self
     {
         return new self();
+    }
+
+    public function preferHtmlOverUtf8Characters(): self
+    {
+        return $this->setNonBreakingSpace(
+            CharactersEnum::NON_BREAKING_SPACE_THIN_HTML->value
+        );
+    }
+
+    public function preferUtf8OverHtmlCharacters(): self
+    {
+        return $this->setNonBreakingSpace(
+            CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value
+        );
+    }
+
+    public function getSearchPattern(): string
+    {
+        return '/(?<=^|' . CharactersEnum::getAllSpacesRegex() . '|\(|\[)([u|U]\.)[' . CharactersEnum::getAllSpacesRegex() . ']*([v|V]\.)[' . CharactersEnum::getAllSpacesRegex() . ']*([m|M]\.)/';
     }
 
     public function getReplacePattern(): string

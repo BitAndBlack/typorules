@@ -32,7 +32,7 @@ final class BindWordAfterExclamationMarkRuleTest extends AbstractRuleTestClass
     {
         yield [
             'Sicher! Ich denke nicht.',
-            'Sicher! Ich' . CharactersEnum::NON_BREAKING_SPACE->value . 'denke nicht.',
+            'Sicher! Ich' . CharactersEnum::NON_BREAKING_SPACE_UTF8->value . 'denke nicht.',
             'Sicher! Ich denke nicht.',
         ];
 

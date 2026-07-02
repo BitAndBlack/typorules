@@ -28,13 +28,13 @@ final class AddNonBreakingSpaceBetweenLastAndPenultimateWordsTest extends Abstra
     {
         yield 'Umlaut and exclamation mark' => [
             'Glaube mir: es war so schön!',
-            'Glaube mir: es war so' . CharactersEnum::NON_BREAKING_SPACE->value . 'schön!',
+            'Glaube mir: es war so' . CharactersEnum::NON_BREAKING_SPACE_UTF8->value . 'schön!',
             '...r: es war so schön!...',
         ];
 
         yield 'Short word in range' => [
             'Nur ganz kurz.',
-            'Nur ganz' . CharactersEnum::NON_BREAKING_SPACE->value . 'kurz.',
+            'Nur ganz' . CharactersEnum::NON_BREAKING_SPACE_UTF8->value . 'kurz.',
             'Nur ganz kurz.',
         ];
 
@@ -46,19 +46,19 @@ final class AddNonBreakingSpaceBetweenLastAndPenultimateWordsTest extends Abstra
 
         yield 'With a space at the end' => [
             'Nur ganz kurz. ',
-            'Nur ganz' . CharactersEnum::NON_BREAKING_SPACE->value . 'kurz. ',
+            'Nur ganz' . CharactersEnum::NON_BREAKING_SPACE_UTF8->value . 'kurz. ',
             'Nur ganz kurz. ',
         ];
 
         yield 'With a space at the end and a linebreak' => [
             'Nur ganz kurz. ' . PHP_EOL . 'Zeilenumbruch.',
-            'Nur ganz' . CharactersEnum::NON_BREAKING_SPACE->value . 'kurz. ' . PHP_EOL . 'Zeilenumbruch.',
+            'Nur ganz' . CharactersEnum::NON_BREAKING_SPACE_UTF8->value . 'kurz. ' . PHP_EOL . 'Zeilenumbruch.',
             'Nur ganz kurz. ' . PHP_EOL . 'Zeilenumb...',
         ];
 
         yield 'Works also with HTML' => [
             'Nach <strong>21</strong> Jahren in der Druck- und Medien-Branche gibt es eine Menge Ihnen für Vorträge zur Verfügung und berichtet jederzeit gerne über Automatisierungen im Bereich Layout, über Programmierung von Drucksachen, über Machine Learning für die Druckbranche, über perfekte Druckdaten und über Typografie, wie sie sein sollte.',
-            'Nach <strong>21</strong> Jahren in der Druck- und Medien-Branche gibt es eine Menge Ihnen für Vorträge zur Verfügung und berichtet jederzeit gerne über Automatisierungen im Bereich Layout, über Programmierung von Drucksachen, über Machine Learning für die Druckbranche, über perfekte Druckdaten und über Typografie, wie sie sein' . CharactersEnum::NON_BREAKING_SPACE->value . 'sollte.',
+            'Nach <strong>21</strong> Jahren in der Druck- und Medien-Branche gibt es eine Menge Ihnen für Vorträge zur Verfügung und berichtet jederzeit gerne über Automatisierungen im Bereich Layout, über Programmierung von Drucksachen, über Machine Learning für die Druckbranche, über perfekte Druckdaten und über Typografie, wie sie sein' . CharactersEnum::NON_BREAKING_SPACE_UTF8->value . 'sollte.',
             '...wie sie sein sollte....',
         ];
     }

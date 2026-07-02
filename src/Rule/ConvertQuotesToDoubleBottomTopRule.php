@@ -34,7 +34,7 @@ class ConvertQuotesToDoubleBottomTopRule extends AbstractRule implements RuleInt
 
     public function getSearchPattern(): string
     {
-        return '/(' . CharactersEnum::getAllQuotes() . ')([^' . CharactersEnum::getAllQuotes() . ']+)(' . CharactersEnum::getAllQuotes() . ')/';
+        return '/(' . CharactersEnum::getAllQuotesRegex() . ')([^' . CharactersEnum::getAllQuotesRegex() . ']+)(' . CharactersEnum::getAllQuotesRegex() . ')/';
     }
 
     public function getReplacePattern(): string

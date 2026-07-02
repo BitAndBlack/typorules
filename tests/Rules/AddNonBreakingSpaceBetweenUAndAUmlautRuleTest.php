@@ -28,7 +28,7 @@ final class AddNonBreakingSpaceBetweenUAndAUmlautRuleTest extends AbstractRuleTe
     {
         yield [
             'u. Ä.',
-            'u.' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . 'Ä.',
+            'u.' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . 'Ä.',
             'u. Ä.',
         ];
 

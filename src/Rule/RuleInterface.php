@@ -40,4 +40,16 @@ interface RuleInterface
      * Returns the fixed input content.
      */
     public function getContentFixed(string $content): string;
+
+    /**
+     * Changes UTF-8 characters into their HTML equivalent, if available.
+     * __Attention__: This method overrides custom added characters.
+     */
+    public function preferHtmlOverUtf8Characters(): self;
+
+    /**
+     * Changes HTML characters into their UTF-8 equivalent, if available.
+     * __Attention__: This method overrides custom added characters.
+     */
+    public function preferUtf8OverHtmlCharacters(): self;
 }

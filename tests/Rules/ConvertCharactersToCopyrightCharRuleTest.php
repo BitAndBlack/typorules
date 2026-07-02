@@ -45,9 +45,9 @@ final class ConvertCharactersToCopyrightCharRuleTest extends AbstractRuleTestCla
         ];
 
         yield [
-            '(' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . 'c' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . ') Bit&Black',
+            '(' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . 'c' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . ') Bit&Black',
             CharactersEnum::COPY->value . ' Bit&Black',
-            '(' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . 'c' . CharactersEnum::NON_BREAKING_SPACE_THIN->value . ') Bit&Black',
+            '(' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . 'c' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . ') Bit&Black',
         ];
     }
 }

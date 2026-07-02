@@ -34,7 +34,7 @@ class RemoveWhitespaceAfterOpeningQuoteRule extends AbstractRule implements Rule
 
     public function getSearchPattern(): string
     {
-        return '/(^|' . CharactersEnum::ALL_SPACES->value . '|\(|\[)(' . CharactersEnum::getAllQuotes() . ')' . CharactersEnum::ALL_SPACES->value . '+([^' . CharactersEnum::getAllQuotes() . ']+)(' . CharactersEnum::getAllQuotes() . ')/';
+        return '/(^|' . CharactersEnum::getAllSpacesRegex() . '|\(|\[)(' . CharactersEnum::getAllQuotesRegex() . ')' . CharactersEnum::getAllSpacesRegex() . '+([^' . CharactersEnum::getAllQuotesRegex() . ']+)(' . CharactersEnum::getAllQuotesRegex() . ')/';
     }
 
     public function getReplacePattern(): string
