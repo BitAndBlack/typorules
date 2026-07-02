@@ -126,6 +126,10 @@ $diff = CharacterDiff::create()->getDiff($content, $contentFixed);
 
 The [`CharacterDiff`](./src/Diff/CharacterDiff.php) class can be initialized with the [`CliOutput`](./src/Diff/Output/CliOutput.php) or the [`HtmlOutput`](./src/Diff/Output/HtmlOutput.php) class, and will decide the output format by itself if you don't set up one of those.
 
+## Handling UTF-8 and HTML 
+
+Per default, this library uses utf-8 characters. In same cases, you may prefer HTML characters instead. This can be changed in rules and rule sets as well by calling the methods `preferHtmlOverUtf8Characters()` or `preferUtf8OverHtmlCharacters()`.
+
 ## Thanks
 
 Our thanking goes to the contributors of [JoliTypo](https://github.com/jolicode/JoliTypo), that have inspired our development of this library.
