@@ -37,5 +37,23 @@ final class AddNonBreakingSpaceBetweenZAndBRuleTest extends AbstractRuleTestClas
             'Das war zu kurz. B. sah sich um.',
             null,
         ];
+
+        yield [
+            'z.  B.',
+            'z.' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . 'B.',
+            'z.  B.',
+        ];
+
+        yield [
+            'z. &nbsp;B.',
+            'z.' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . 'B.',
+            'z. &nbsp;B.',
+        ];
+
+        yield [
+            'z.&nbsp;B.',
+            'z.' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . 'B.',
+            'z.&nbsp;B.',
+        ];
     }
 }
