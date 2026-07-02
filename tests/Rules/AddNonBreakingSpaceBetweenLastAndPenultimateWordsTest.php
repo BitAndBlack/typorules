@@ -61,5 +61,12 @@ final class AddNonBreakingSpaceBetweenLastAndPenultimateWordsTest extends Abstra
             'Nach <strong>21</strong> Jahren in der Druck- und Medien-Branche gibt es eine Menge Ihnen für Vorträge zur Verfügung und berichtet jederzeit gerne über Automatisierungen im Bereich Layout, über Programmierung von Drucksachen, über Machine Learning für die Druckbranche, über perfekte Druckdaten und über Typografie, wie sie sein' . CharactersEnum::NON_BREAKING_SPACE_UTF8->value . 'sollte.',
             '...wie sie sein sollte....',
         ];
+
+        /** @todo Fix wrong preview */
+        yield 'With different UTF-8 characters' => [
+            'Nach 21' . CharactersEnum::NON_BREAKING_SPACE_UTF8->value . 'Jahren in der Druck- und Medien-Branche gibt es eine Menge zu erzählen. <strong>Tobias Köngeter</strong> steht Ihnen für Vorträge zur Verfügung und berichtet jederzeit gerne über Auto' . CharactersEnum::SOFT_HYPHEN_UTF8->value . 'matisierungen im Bereich Layout, über Programmierung von Drucksachen, über Machine Learning für die Druck' . CharactersEnum::SOFT_HYPHEN_UTF8->value . 'branche, über perfekte Druckdaten und über Typografie, wie sie sein sollte.',
+            'Nach 21' . CharactersEnum::NON_BREAKING_SPACE_UTF8->value . 'Jahren in der Druck- und Medien-Branche gibt es eine Menge zu erzählen. <strong>Tobias Köngeter</strong> steht Ihnen für Vorträge zur Verfügung und berichtet jederzeit gerne über Auto' . CharactersEnum::SOFT_HYPHEN_UTF8->value . 'matisierungen im Bereich Layout, über Programmierung von Drucksachen, über Machine Learning für die Druck' . CharactersEnum::SOFT_HYPHEN_UTF8->value . 'branche, über perfekte Druckdaten und über Typografie, wie sie sein' . CharactersEnum::NON_BREAKING_SPACE_UTF8->value . 'sollte.',
+            '...die Druck' . CharactersEnum::SOFT_HYPHEN_UTF8->value . 'branche, über p...',
+        ];
     }
 }

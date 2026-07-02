@@ -172,7 +172,6 @@ enum CharactersEnum: string
     {
         return self::getContentForRegex(
             self::NON_BREAKING_SPACE_THIN_UTF8->value,
-            self::SOFT_HYPHEN_UTF8->value,
             self::NON_BREAKING_SPACE_UTF8->value,
             '\s',
         );
