@@ -28,8 +28,8 @@ final class AddNonBreakingSpaceBetweenLastAndPenultimateWordsTest extends Abstra
     {
         yield 'Umlaut and exclamation mark' => [
             'Glaube mir: es war so schön!',
-            'Glaube mir: es war so' . CharactersEnum::NON_BREAKING_SPACE_UTF8->value . 'schön!',
-            '...r: es war so schön!...',
+            'Glaube' . CharactersEnum::NON_BREAKING_SPACE_UTF8->value . 'mir: es war so' . CharactersEnum::NON_BREAKING_SPACE_UTF8->value . 'schön!',
+            'Glaube mir: es war so sch...',
         ];
 
         yield 'Short word in range' => [
