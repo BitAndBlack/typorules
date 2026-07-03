@@ -31,5 +31,11 @@ final class AddNonBreakingSpaceBetweenGebAndYearRuleTest extends AbstractRuleTes
             'Tobias Mayer (geb.' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . '1723)',
             '... Mayer (geb. 1723)',
         ];
+
+        yield [
+            'Tobias Mayer (geb.' . CharactersEnum::NON_BREAKING_SPACE_THIN_HTML->value . '1723)',
+            'Tobias Mayer (geb.' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . '1723)',
+            '... Mayer (geb.' . CharactersEnum::NON_BREAKING_SPACE_THIN_HTML->value . '1723)',
+        ];
     }
 }
