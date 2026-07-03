@@ -67,7 +67,7 @@ class AddNonBreakingSpacesForDotSeparatedDateRule extends AbstractRule implement
 
     public function getSearchPattern(): string
     {
-        return '/(\d?\d\.)[' . CharactersEnum::getAllSpacesRegex() . ']*(\d?\d\.)[' . CharactersEnum::getAllSpacesRegex() . ']*(\d{4}|\d{2})/';
+        return '/(\d{1,2}\.)(?:' . CharactersEnum::getAllSpacesRegex() . ')*(\d{1,2}\.)(?:' . CharactersEnum::getAllSpacesRegex() . ')*(\d{2,4})/u';
     }
 
     public function getReplacePattern(): string
