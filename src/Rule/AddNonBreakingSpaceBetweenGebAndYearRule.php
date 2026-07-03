@@ -26,6 +26,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 #[TransformationExample(
     'Tobias Mayer (geb. 1723)',
     'Tobias Mayer (geb.\xE2\x80\xAF1723)',
+    'With a thin utf-8 non-breaking space (`\xE2\x80\xAF`)'
 )]
 class AddNonBreakingSpaceBetweenGebAndYearRule extends AbstractRule implements RuleInterface
 {

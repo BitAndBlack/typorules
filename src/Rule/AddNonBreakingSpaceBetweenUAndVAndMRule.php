@@ -25,6 +25,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 #[TransformationExample(
     'u. v. m.',
     'u.\xE2\x80\xAFv.\xE2\x80\xAFm.',
+    'With a thin utf-8 non-breaking space (`\xE2\x80\xAF`)'
 )]
 class AddNonBreakingSpaceBetweenUAndVAndMRule extends AbstractRule implements RuleInterface
 {

@@ -25,10 +25,12 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 #[TransformationExample(
     'C\'est le n° 8.',
     'C\'est le n°\xE2\x80\xAF8.',
+    'With a thin utf-8 non-breaking space (`\xE2\x80\xAF`)'
 )]
 #[TransformationExample(
     'C\'est le numéro 8.',
-    'C\'est le numéro\xE2\x80\xAF8.',
+    'C\'est le numéro&#8239;8.',
+    'With a thin HTML non-breaking space (`&#8239;`)'
 )]
 #[TransformationExample(
     'N°8',

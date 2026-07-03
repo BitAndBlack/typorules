@@ -25,12 +25,12 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 #[TransformationExample(
     'Prof. Max Mustermann',
     'Prof.\xE2\x80\xAFMax Mustermann',
-    'With a thin non-breaking space (`\xE2\x80\xAF`)'
+    'With a thin utf-8 non-breaking space (`\xE2\x80\xAF`)'
 )]
 #[TransformationExample(
     'Prof. Max Mustermann',
     'Prof.&nbsp;Max Mustermann',
-    'With a non-breaking space for HTML (`&nbsp;`)'
+    'With a thin HTML non-breaking space (`&#8239;`)'
 )]
 class AddNonBreakingSpaceAfterProfessorRule extends AbstractRule implements RuleInterface
 {

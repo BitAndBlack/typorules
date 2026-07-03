@@ -25,6 +25,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 #[TransformationExample(
     'J\'ai dit « non » à toi.',
     'J\'ai dit «\xE2\x80\xAFnon » à toi.',
+    'With a thin utf-8 non-breaking space (`\xE2\x80\xAF`)'
 )]
 class AddNonBreakingSpaceBetweenGuillemetLeftOpenAndWordRule extends AbstractRule implements RuleInterface
 {

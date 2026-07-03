@@ -25,6 +25,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 #[TransformationExample(
     'z. B.',
     'z.\xE2\x80\xAFB.',
+    'With a thin utf-8 non-breaking space (`\xE2\x80\xAF`)'
 )]
 class AddNonBreakingSpaceBetweenZAndBRule extends AbstractRule implements RuleInterface
 {

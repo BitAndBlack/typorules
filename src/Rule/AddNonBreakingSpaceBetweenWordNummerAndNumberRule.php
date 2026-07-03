@@ -25,10 +25,12 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 #[TransformationExample(
     'Das ist Nr. 8.',
     'Das ist Nr.\xE2\x80\xAF8.',
+    'With a thin utf-8 non-breaking space (`\xE2\x80\xAF`)'
 )]
 #[TransformationExample(
     'Das ist Nummer 8.',
-    'Das ist Nummer\xE2\x80\xAF8.',
+    'Das ist Nummer&#8239;8.',
+    'With a thin HTML non-breaking space (`&#8239;`)'
 )]
 class AddNonBreakingSpaceBetweenWordNummerAndNumberRule extends AbstractRule implements RuleInterface
 {

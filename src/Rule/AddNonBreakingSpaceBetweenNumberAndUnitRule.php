@@ -25,6 +25,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 #[TransformationExample(
     '200 ° C',
     '200\xE2\x80\xAF° C',
+    'With a thin utf-8 non-breaking space (`\xE2\x80\xAF`)'
 )]
 class AddNonBreakingSpaceBetweenNumberAndUnitRule extends AbstractRule implements RuleInterface
 {

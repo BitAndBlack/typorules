@@ -25,12 +25,12 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 #[TransformationExample(
     'Welcome to Tobias & Deborah!',
     'Welcome to Tobias\xE2\x80\xAF&\xE2\x80\xAFDeborah!',
-    'With a thin non-breaking space (`\xE2\x80\xAF`)'
+    'With a thin utf-8 non-breaking space (`\xE2\x80\xAF`)'
 )]
 #[TransformationExample(
-    'Welcome to Tobias & Deborah!',
-    'Welcome to Tobias&#8239;&&#8239;Deborah!',
-    'With a narrow non-breaking space for HTML (`&#8239;`)'
+    'Welcome to T & D!',
+    'Welcome to T&#8239;&&#8239;D!',
+    'With a thin HTML non-breaking space (`&#8239;`)'
 )]
 class AddNonBreakingSpaceBeforeAndAfterAmpersandRule extends AbstractRule implements RuleInterface
 {

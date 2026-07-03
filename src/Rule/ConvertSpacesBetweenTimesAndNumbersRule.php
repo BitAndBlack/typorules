@@ -25,10 +25,12 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 #[TransformationExample(
     'Format: 15 x 9 cm.',
     'Format: 15\xE2\x80\xAFx\xE2\x80\xAF9 cm.',
+    'With a thin utf-8 non-breaking space (`\xE2\x80\xAF`)'
 )]
 #[TransformationExample(
     'Format: 15 × 9 cm.',
-    'Format: 15\xE2\x80\xAF×\xE2\x80\xAF9 cm.',
+    'Format: 15&#8239;×&#8239;9 cm.',
+    'With a thin HTML non-breaking space (`&#8239;`)'
 )]
 class ConvertSpacesBetweenTimesAndNumbersRule extends AbstractRule implements RuleInterface
 {

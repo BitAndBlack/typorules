@@ -12,18 +12,18 @@ Add a non-breaking space after `Dr.`. This binds the title and the name together
 
 #### Transformation example
 
--   With a thin non-breaking space (`\xE2\x80\xAF`):
+-   With a thin utf-8 non-breaking space (`\xE2\x80\xAF`):
 
     ```diff
     - Dr. Max Mustermann
     + Dr.\xE2\x80\xAFMax Mustermann
     ```
 
--   With a non-breaking space for HTML (`&nbsp;`):
+-   With a thin HTML non-breaking space (`&#8239;`):
 
     ```diff
     - Dr. Max Mustermann
-    + Dr.&nbsp;Max Mustermann
+    + Dr.&#8239;Max Mustermann
     ```
 
 #### Possible rule customization
@@ -50,14 +50,14 @@ Add a non-breaking space after `Prof.`. This binds the title and the name togeth
 
 #### Transformation example
 
--   With a thin non-breaking space (`\xE2\x80\xAF`):
+-   With a thin utf-8 non-breaking space (`\xE2\x80\xAF`):
 
     ```diff
     - Prof. Max Mustermann
     + Prof.\xE2\x80\xAFMax Mustermann
     ```
 
--   With a non-breaking space for HTML (`&nbsp;`):
+-   With a thin HTML non-breaking space (`&#8239;`):
 
     ```diff
     - Prof. Max Mustermann
@@ -88,18 +88,18 @@ Add non-breaking spaces before and after ampersand characters. This rule affects
 
 #### Transformation example
 
--   With a thin non-breaking space (`\xE2\x80\xAF`):
+-   With a thin utf-8 non-breaking space (`\xE2\x80\xAF`):
 
     ```diff
     - Welcome to Tobias & Deborah!
     + Welcome to Tobias\xE2\x80\xAF&\xE2\x80\xAFDeborah!
     ```
 
--   With a narrow non-breaking space for HTML (`&#8239;`):
+-   With a thin HTML non-breaking space (`&#8239;`):
 
     ```diff
-    - Welcome to Tobias & Deborah!
-    + Welcome to Tobias&#8239;&&#8239;Deborah!
+    - Welcome to T & D!
+    + Welcome to T&#8239;&&#8239;D!
     ```
 
 #### Possible rule customization
@@ -126,10 +126,12 @@ Add a non-breaking space between before a colon to disallow separating it from t
 
 #### Transformation example
 
-```diff
-- Concept, création et réalisation technique : Bit&Black
-+ Concept, création et réalisation technique\xE2\x80\xAF: Bit&Black
-```
+-   With a thin utf-8 non-breaking space (`\xE2\x80\xAF`):
+
+    ```diff
+    - Concept, création et réalisation technique : Bit&Black
+    + Concept, création et réalisation technique\xE2\x80\xAF: Bit&Black
+    ```
 
 #### Possible rule customization
 
@@ -155,10 +157,12 @@ Add a non-breaking space between before a exclamation mark to disallow separatin
 
 #### Transformation example
 
-```diff
-- On y va !
-+ On y va\xE2\x80\xAF!
-```
+-   With a thin utf-8 non-breaking space (`\xE2\x80\xAF`):
+
+    ```diff
+    - On y va !
+    + On y va\xE2\x80\xAF!
+    ```
 
 #### Possible rule customization
 
@@ -184,10 +188,12 @@ Add a non-breaking space between before a question mark to disallow separating i
 
 #### Transformation example
 
-```diff
-- On y va ?
-+ On y va\xE2\x80\xAF?
-```
+-   With a thin utf-8 non-breaking space (`\xE2\x80\xAF`):
+
+    ```diff
+    - On y va ?
+    + On y va\xE2\x80\xAF?
+    ```
 
 #### Possible rule customization
 
@@ -213,10 +219,12 @@ Add a non-breaking space between before a semicolon to disallow separating it fr
 
 #### Transformation example
 
-```diff
-- Concept, création et réalisation technique : Bit&Black
-+ Concept, création et réalisation technique\xE2\x80\xAF: Bit&Black
-```
+-   With a thin utf-8 non-breaking space (`\xE2\x80\xAF`):
+
+    ```diff
+    - Concept, création et réalisation technique : Bit&Black
+    + Concept, création et réalisation technique\xE2\x80\xAF: Bit&Black
+    ```
 
 #### Possible rule customization
 
@@ -599,15 +607,19 @@ Add a non-breaking space between `e.` and `V.` to disallow separating those two.
 
 #### Transformation example
 
-```diff
-- Supersport 500 e.V.
-+ Supersport 500 e.\xC2\xA0V.
-```
+-   With a thin utf-8 non-breaking space (`\xE2\x80\xAF`):
 
-```diff
-- Supersport 500 e. V.
-+ Supersport 500 e.\xC2\xA0V.
-```
+    ```diff
+    - Supersport 500 e.V.
+    + Supersport 500 e.\xE2\x80V.
+    ```
+
+-   With a thin HTML non-breaking space (`&#8239;`):
+
+    ```diff
+    - Supersport 500 e. V.
+    + Supersport 500 e.&#8239;V.
+    ```
 
 #### Possible rule customization
 
@@ -633,10 +645,12 @@ Add a thin non-breaking space between the word `geb.` and the following year to 
 
 #### Transformation example
 
-```diff
-- Tobias Mayer (geb. 1723)
-+ Tobias Mayer (geb.\xE2\x80\xAF1723)
-```
+-   With a thin utf-8 non-breaking space (`\xE2\x80\xAF`):
+
+    ```diff
+    - Tobias Mayer (geb. 1723)
+    + Tobias Mayer (geb.\xE2\x80\xAF1723)
+    ```
 
 #### Possible rule customization
 
@@ -662,10 +676,12 @@ Add a thin non-breaking space between a left angle quote `«` and a word **after
 
 #### Transformation example
 
-```diff
-- J'ai dit « non » à toi.
-+ J'ai dit «\xE2\x80\xAFnon » à toi.
-```
+-   With a thin utf-8 non-breaking space (`\xE2\x80\xAF`):
+
+    ```diff
+    - J'ai dit « non » à toi.
+    + J'ai dit «\xE2\x80\xAFnon » à toi.
+    ```
 
 #### Possible rule customization
 
@@ -691,10 +707,12 @@ Add a thin non-breaking space between a right angle quote `»` and a word **befo
 
 #### Transformation example
 
-```diff
-- J'ai dit « non » à toi.
-+ J'ai dit « non\xE2\x80\xAF» à toi.
-```
+-   With a thin utf-8 non-breaking space (`\xE2\x80\xAF`):
+
+    ```diff
+    - J'ai dit « non » à toi.
+    + J'ai dit « non\xE2\x80\xAF» à toi.
+    ```
 
 #### Possible rule customization
 
@@ -720,10 +738,12 @@ Add a thin non-breaking space between a single left angle quote `‹` and a word
 
 #### Transformation example
 
-```diff
-- Je t'ai dit « non », car « tout à l'heure, tu m'as dit ‹ oui › ».
-+ Je t'ai dit « non », car « tout à l'heure, tu m'as dit ‹\xE2\x80\xAFoui › ».
-```
+-   With a thin utf-8 non-breaking space (`\xE2\x80\xAF`):
+
+    ```diff
+    - Je t'ai dit « non », car « tout à l'heure, tu m'as dit ‹ oui › ».
+    + Je t'ai dit « non », car « tout à l'heure, tu m'as dit ‹\xE2\x80\xAFoui › ».
+    ```
 
 #### Possible rule customization
 
@@ -749,10 +769,12 @@ Add a thin non-breaking space between a single right angle quote `›` and a wor
 
 #### Transformation example
 
-```diff
-- Je t'ai dit « non », car « tout à l'heure, tu m'as dit ‹ oui › ».
-+ Je t'ai dit « non », car « tout à l'heure, tu m'as dit ‹ oui\xE2\x80\xAF› ».
-```
+-   With a thin utf-8 non-breaking space (`\xE2\x80\xAF`):
+
+    ```diff
+    - Je t'ai dit « non », car « tout à l'heure, tu m'as dit ‹ oui › ».
+    + Je t'ai dit « non », car « tout à l'heure, tu m'as dit ‹ oui\xE2\x80\xAF› ».
+    ```
 
 #### Possible rule customization
 
@@ -813,10 +835,12 @@ Add a thin non-breaking space between the words `n.` and `Chr.` to disallow sepa
 
 #### Transformation example
 
-```diff
-- 25 n. Chr.
-+ 25 n.\xE2\x80\xAFChr.
-```
+-   With a thin utf-8 non-breaking space (`\xE2\x80\xAF`):
+
+    ```diff
+    - 25 n. Chr.
+    + 25 n.\xE2\x80\xAFChr.
+    ```
 
 #### Possible rule customization
 
@@ -963,10 +987,12 @@ Add a thin non-breaking space between a number and the following unit to disallo
 
 #### Transformation example
 
-```diff
-- 200 ° C
-+ 200\xE2\x80\xAF° C
-```
+-   With a thin utf-8 non-breaking space (`\xE2\x80\xAF`):
+
+    ```diff
+    - 200 ° C
+    + 200\xE2\x80\xAF° C
+    ```
 
 #### Possible rule customization
 
@@ -992,10 +1018,12 @@ Add a thin non-breaking space between the words `u.` (or `U.`) and `Ä.` to disa
 
 #### Transformation example
 
-```diff
-- u. Ä.
-+ u.\xE2\x80\xAFÄ.
-```
+-   With a thin utf-8 non-breaking space (`\xE2\x80\xAF`):
+
+    ```diff
+    - u. Ä.
+    + u.\xE2\x80\xAFÄ.
+    ```
 
 #### Possible rule customization
 
@@ -1021,10 +1049,12 @@ Add a thin non-breaking space between the words `u.` (or `U.`), `v.` (or `V.`) a
 
 #### Transformation example
 
-```diff
-- u. v. m.
-+ u.\xE2\x80\xAFv.\xE2\x80\xAFm.
-```
+-   With a thin utf-8 non-breaking space (`\xE2\x80\xAF`):
+
+    ```diff
+    - u. v. m.
+    + u.\xE2\x80\xAFv.\xE2\x80\xAFm.
+    ```
 
 #### Possible rule customization
 
@@ -1050,10 +1080,12 @@ Add a thin non-breaking space between the words `v.` and `Chr.` to disallow sepa
 
 #### Transformation example
 
-```diff
-- 25 v. Chr.
-+ 25 v.\xE2\x80\xAFChr.
-```
+-   With a thin utf-8 non-breaking space (`\xE2\x80\xAF`):
+
+    ```diff
+    - 25 v. Chr.
+    + 25 v.\xE2\x80\xAFChr.
+    ```
 
 #### Possible rule customization
 
@@ -1079,20 +1111,24 @@ Add a thin non-breaking space between the words `Nr.` or `Number` and a followin
 
 #### Transformation example
 
-```diff
-- This is no. 8.
-+ This is no.\xE2\x80\xAF8.
-```
+-   With a thin utf-8 non-breaking space (`\xE2\x80\xAF`):
 
-```diff
-- This is number 8.
-+ This is number\xE2\x80\xAF8.
-```
+    ```diff
+    - This is no. 8.
+    + This is no.\xE2\x80\xAF8.
+    ```
 
-```diff
-- № 8.
-+ №\xE2\x80\xAF8.
-```
+-   With a thin HTML non-breaking space (`&#8239;`):
+
+    ```diff
+    - № 8.
+    + №&#8239;8.
+    ```
+
+    ```diff
+    - This is number 8.
+    + This is number\xE2\x80\xAF8.
+    ```
 
 #### Possible rule customization
 
@@ -1118,20 +1154,24 @@ Add a thin non-breaking space between the words `n°` or `numéro` and a followi
 
 #### Transformation example
 
-```diff
-- C'est le n° 8.
-+ C'est le n°\xE2\x80\xAF8.
-```
+-   With a thin utf-8 non-breaking space (`\xE2\x80\xAF`):
 
-```diff
-- C'est le numéro 8.
-+ C'est le numéro\xE2\x80\xAF8.
-```
+    ```diff
+    - C'est le n° 8.
+    + C'est le n°\xE2\x80\xAF8.
+    ```
 
-```diff
-- N°8
-+ N°\xE2\x80\xAF8
-```
+-   With a thin HTML non-breaking space (`&#8239;`):
+
+    ```diff
+    - C'est le numéro 8.
+    + C'est le numéro&#8239;8.
+    ```
+
+    ```diff
+    - N°8
+    + N°\xE2\x80\xAF8
+    ```
 
 #### Possible rule customization
 
@@ -1157,15 +1197,19 @@ Add a thin non-breaking space between the words `Nr.` or `Nummer` and a followin
 
 #### Transformation example
 
-```diff
-- Das ist Nr. 8.
-+ Das ist Nr.\xE2\x80\xAF8.
-```
+-   With a thin utf-8 non-breaking space (`\xE2\x80\xAF`):
 
-```diff
-- Das ist Nummer 8.
-+ Das ist Nummer\xE2\x80\xAF8.
-```
+    ```diff
+    - Das ist Nr. 8.
+    + Das ist Nr.\xE2\x80\xAF8.
+    ```
+
+-   With a thin HTML non-breaking space (`&#8239;`):
+
+    ```diff
+    - Das ist Nummer 8.
+    + Das ist Nummer&#8239;8.
+    ```
 
 #### Possible rule customization
 
@@ -1191,10 +1235,12 @@ Add a thin non-breaking space between the words `z.` (or `Z.`) and `B.` to disal
 
 #### Transformation example
 
-```diff
-- z. B.
-+ z.\xE2\x80\xAFB.
-```
+-   With a thin utf-8 non-breaking space (`\xE2\x80\xAF`):
+
+    ```diff
+    - z. B.
+    + z.\xE2\x80\xAFB.
+    ```
 
 #### Possible rule customization
 
@@ -1220,25 +1266,23 @@ Add thin non-breaking spaces between the number of a dot separated date.
 
 #### Transformation example
 
--   Without spaces at the beginning:
+-   With a thin utf-8 non-breaking space (`\xE2\x80\xAF`):
 
     ```diff
     - 01.03.2025
-    + 1.\xE2\x80\xA3.\xE2\x80\xA2025
+    + 1.\xE2\x80\xAF3.\xE2\x80\xAF2025
     ```
 
--   With spaces at the beginning:
-
-    ```diff
-    - 01. 03. 2025
-    + 1.\xE2\x80\xA3.\xE2\x80\xA2025
-    ```
-
--   With a narrow non-breaking space for HTML (`&#8239;`):
+-   With a thin HTML non-breaking space (`&#8239;`):
 
     ```diff
     - 01.03.2025
     + 1.&#8239;3.&#8239;2025
+    ```
+
+    ```diff
+    - 01. 03. 2025
+    + 1.\xE2\x80\xAF3.\xE2\x80\xAF2025
     ```
 
 #### Possible rule customization
@@ -2003,15 +2047,19 @@ Recognises a measurement and inserts thin non-breaking spaces before and after t
 
 #### Transformation example
 
-```diff
-- Format: 15 x 9 cm.
-+ Format: 15\xE2\x80\xAFx\xE2\x80\xAF9 cm.
-```
+-   With a thin utf-8 non-breaking space (`\xE2\x80\xAF`):
 
-```diff
-- Format: 15 × 9 cm.
-+ Format: 15\xE2\x80\xAF×\xE2\x80\xAF9 cm.
-```
+    ```diff
+    - Format: 15 x 9 cm.
+    + Format: 15\xE2\x80\xAFx\xE2\x80\xAF9 cm.
+    ```
+
+-   With a thin HTML non-breaking space (`&#8239;`):
+
+    ```diff
+    - Format: 15 × 9 cm.
+    + Format: 15&#8239;×&#8239;9 cm.
+    ```
 
 #### Possible rule customization
 

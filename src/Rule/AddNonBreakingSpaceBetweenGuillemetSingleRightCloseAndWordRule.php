@@ -25,6 +25,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 #[TransformationExample(
     'Je t\'ai dit « non », car « tout à l\'heure, tu m\'as dit ‹ oui › ».',
     'Je t\'ai dit « non », car « tout à l\'heure, tu m\'as dit ‹ oui\xE2\x80\xAF› ».',
+    'With a thin utf-8 non-breaking space (`\xE2\x80\xAF`)'
 )]
 class AddNonBreakingSpaceBetweenGuillemetSingleRightCloseAndWordRule extends AbstractRule implements RuleInterface
 {

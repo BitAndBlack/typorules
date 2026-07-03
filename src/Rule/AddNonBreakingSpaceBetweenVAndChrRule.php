@@ -26,6 +26,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 #[TransformationExample(
     '25 v. Chr.',
     '25 v.\xE2\x80\xAFChr.',
+    'With a thin utf-8 non-breaking space (`\xE2\x80\xAF`)'
 )]
 class AddNonBreakingSpaceBetweenVAndChrRule extends AbstractRule implements RuleInterface
 {

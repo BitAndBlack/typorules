@@ -24,11 +24,13 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 )]
 #[TransformationExample(
     'Supersport 500 e.V.',
-    'Supersport 500 e.\xC2\xA0V.',
+    'Supersport 500 e.\xE2\x80V.',
+    'With a thin utf-8 non-breaking space (`\xE2\x80\xAF`)'
 )]
 #[TransformationExample(
     'Supersport 500 e. V.',
-    'Supersport 500 e.\xC2\xA0V.',
+    'Supersport 500 e.&#8239;V.',
+    'With a thin HTML non-breaking space (`&#8239;`)'
 )]
 class AddNonBreakingSpaceBetweenEingetragenerAndVereinRule extends AbstractRule implements RuleInterface
 {

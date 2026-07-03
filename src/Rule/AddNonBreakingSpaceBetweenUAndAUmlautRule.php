@@ -25,6 +25,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 #[TransformationExample(
     'u. Ä.',
     'u.\xE2\x80\xAFÄ.',
+    'With a thin utf-8 non-breaking space (`\xE2\x80\xAF`)'
 )]
 class AddNonBreakingSpaceBetweenUAndAUmlautRule extends AbstractRule implements RuleInterface
 {

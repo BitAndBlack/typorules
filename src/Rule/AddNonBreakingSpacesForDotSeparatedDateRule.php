@@ -24,18 +24,17 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 )]
 #[TransformationExample(
     '01.03.2025',
-    '1.\xE2\x80\xA3.\xE2\x80\xA2025',
-    'Without spaces at the beginning'
-)]
-#[TransformationExample(
-    '01. 03. 2025',
-    '1.\xE2\x80\xA3.\xE2\x80\xA2025',
-    'With spaces at the beginning'
+    '1.\xE2\x80\xAF3.\xE2\x80\xAF2025',
+    'With a thin utf-8 non-breaking space (`\xE2\x80\xAF`)'
 )]
 #[TransformationExample(
     '01.03.2025',
     '1.&#8239;3.&#8239;2025',
-    'With a narrow non-breaking space for HTML (`&#8239;`)'
+    'With a thin HTML non-breaking space (`&#8239;`)'
+)]
+#[TransformationExample(
+    '01. 03. 2025',
+    '1.\xE2\x80\xAF3.\xE2\x80\xAF2025',
 )]
 class AddNonBreakingSpacesForDotSeparatedDateRule extends AbstractRule implements RuleInterface
 {
