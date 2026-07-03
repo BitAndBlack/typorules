@@ -36,6 +36,6 @@ class RemoveSpaceBeforeCommaRule extends AbstractRule implements RuleInterface
 
     public function getSearchPattern(): string
     {
-        return '/[' . CharactersEnum::getAllSpacesRegex() . ']+(,)[' . CharactersEnum::getAllSpacesRegex() . ']*/';
+        return '/(?:' . CharactersEnum::getAllSpacesRegex() . ')+(,)(?:' . CharactersEnum::getAllSpacesRegex() . ')*/';
     }
 }
