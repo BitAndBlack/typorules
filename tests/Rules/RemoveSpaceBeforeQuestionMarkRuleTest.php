@@ -36,5 +36,11 @@ final class RemoveSpaceBeforeQuestionMarkRuleTest extends AbstractRuleTestClass
             'Glaubst du?',
             null,
         ];
+
+        yield [
+            'Was geschieht mit meinen Daten?',
+            'Was geschieht mit meinen Daten?',
+            null,
+        ];
     }
 }
