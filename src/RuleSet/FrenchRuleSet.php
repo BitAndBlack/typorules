@@ -22,6 +22,7 @@ class FrenchRuleSet extends AbstractRuleSet implements RuleSetInterface
     public function __construct()
     {
         $this->withRule(
+            new Rule\ConvertQuotesToGuillemetFacingOutwardsRule(),
             new Rule\AddNonBreakingSpaceBeforeAndAfterAmpersandRule(),
             new Rule\AddNonBreakingSpaceBetweenNumberAndUnitRule(),
             new Rule\AddNonBreakingSpaceBeforeColonRule(),
