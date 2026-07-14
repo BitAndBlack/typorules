@@ -1,6 +1,6 @@
 # Rules documentation
 
-There are currently 74 rules available.
+There are currently 75 rules available.
 
 ## Rules
 
@@ -2036,6 +2036,29 @@ This rule doesn't allow any customization.
 #### File
 
 This rule is located under [../src/Rule/ConvertQuotesToDoubleBottomTopRule.php](../src/Rule/ConvertQuotesToDoubleBottomTopRule.php)
+
+----
+
+### `ConvertQuotesToGuillemetFacingInwardsRule`
+
+#### Description
+
+Convert opening and closing quotes to Guillemets, facing inwards.
+
+#### Transformation example
+
+```diff
+- Besonders "wichtige" Information
++ Besonders »wichtige« Information
+```
+
+#### Possible rule customization
+
+This rule doesn't allow any customization.
+
+#### File
+
+This rule is located under [../src/Rule/ConvertQuotesToGuillemetFacingInwardsRule.php](../src/Rule/ConvertQuotesToGuillemetFacingInwardsRule.php)
 
 ----
 
