@@ -79,7 +79,6 @@ class AddNonBreakingSpaceBetweenLastAndPenultimateWords extends AbstractRule imp
 
     /**
      * @param positive-int $lastWordMaxLength
-     * @return $this
      */
     #[Configuration("Configure the maximum length for the last word. It's `6` characters per default.")]
     public function setLastWordMaxLength(int $lastWordMaxLength): self

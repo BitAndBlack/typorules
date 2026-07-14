@@ -179,10 +179,6 @@ enum CharactersEnum: string
         );
     }
 
-    /**
-     * @param string ...$content
-     * @return string
-     */
     private static function getContentForRegex(string ...$content): string
     {
         return implode(
