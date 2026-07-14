@@ -16,7 +16,7 @@ use BitAndBlack\TypoRules\Documentation\Description;
 use BitAndBlack\TypoRules\Documentation\TransformationExample;
 
 /**
- * @see \BitAndBlack\TypoRules\Tests\Rules\ConvertQuotesToDoubleLowerUpperRuleTest
+ * @see \BitAndBlack\TypoRules\Tests\Rules\ConvertQuotesToDoubleBottomTopRuleTest
  */
 #[Description(
     'Convert opening and closing quotes to double quotes, starting bottom and ending top.'
