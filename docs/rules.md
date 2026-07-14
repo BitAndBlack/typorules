@@ -1,6 +1,6 @@
 # Rules documentation
 
-There are currently 75 rules available.
+There are currently 76 rules available.
 
 ## Rules
 
@@ -115,6 +115,44 @@ There is 1 possibility to customize this rule:
 #### File
 
 This rule is located under [../src/Rule/AddNonBreakingSpaceBeforeAndAfterAmpersandRule.php](../src/Rule/AddNonBreakingSpaceBeforeAndAfterAmpersandRule.php)
+
+----
+
+### `AddNonBreakingSpaceBeforeAndAfterPlusRule`
+
+#### Description
+
+Add non-breaking spaces before and after plus (`+`) characters. This rule affects only situations, where the plus character has whitespaces before and after (`T + D` or `Tobias + Deborah`).
+
+#### Transformation example
+
+-   With a thin utf-8 non-breaking space (`\xE2\x80\xAF`):
+
+    ```diff
+    - Welcome to Tobias + Deborah!
+    + Welcome to Tobias\xE2\x80\xAF+\xE2\x80\xAFDeborah!
+    ```
+
+-   With a thin HTML non-breaking space (`&#8239;`):
+
+    ```diff
+    - Welcome to T + D!
+    + Welcome to T&#8239;+&#8239;D!
+    ```
+
+#### Possible rule customization
+
+There is 1 possibility to customize this rule:
+
+-   Configure the type of the space. Per default, a thin non-breaking space will be used.
+
+    ```php
+    $addNonBreakingSpaceBeforeAndAfterPlusRule->setNonBreakingSpace($nonBreakingSpace);
+    ```
+
+#### File
+
+This rule is located under [../src/Rule/AddNonBreakingSpaceBeforeAndAfterPlusRule.php](../src/Rule/AddNonBreakingSpaceBeforeAndAfterPlusRule.php)
 
 ----
 
