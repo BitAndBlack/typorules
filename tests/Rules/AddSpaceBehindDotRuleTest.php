@@ -55,5 +55,11 @@ final class AddSpaceBehindDotRuleTest extends AbstractRuleTestClass
             'Um 15.00h',
             null,
         ];
+
+        yield [
+            'Weitere Informationen können unter www.example.org?foo=bar abgerufen werden.',
+            'Weitere Informationen können unter www.example.org?foo=bar abgerufen werden.',
+            null,
+        ];
     }
 }

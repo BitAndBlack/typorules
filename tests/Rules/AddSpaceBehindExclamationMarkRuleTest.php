@@ -42,5 +42,17 @@ final class AddSpaceBehindExclamationMarkRuleTest extends AbstractRuleTestClass
             "Ganz am Ende!!! Wie geht's weiter!",
             "...nz am Ende!!!Wie geht's w...",
         ];
+
+        yield [
+            'Weitere Informationen können unter www.example.org/foo!bar abgerufen werden.',
+            'Weitere Informationen können unter www.example.org/foo!bar abgerufen werden.',
+            null,
+        ];
+
+        yield [
+            "Ganz am Ende!»Wie geht's weiter!«",
+            "Ganz am Ende! »Wie geht's weiter!«",
+            "Ganz am Ende!»Wie geht's ...",
+        ];
     }
 }

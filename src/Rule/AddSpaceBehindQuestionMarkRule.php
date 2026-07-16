@@ -11,6 +11,7 @@
 
 namespace BitAndBlack\TypoRules\Rule;
 
+use BitAndBlack\TypoRules\CharactersEnum;
 use BitAndBlack\TypoRules\Documentation\Description;
 use BitAndBlack\TypoRules\Documentation\TransformationExample;
 
@@ -26,12 +27,15 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 )]
 class AddSpaceBehindQuestionMarkRule extends AbstractRule implements RuleInterface
 {
-    protected string $searchPattern = '/\?(?!\s|\?)(?!$)/';
-
     protected string $replacePattern = '? ';
 
     public static function create(): self
     {
         return new self();
+    }
+
+    public function getSearchPattern(): string
+    {
+        return '/\?(?=(' . CharactersEnum::getAllQuotesRegex() . ')?[A-Z])/u';
     }
 }
