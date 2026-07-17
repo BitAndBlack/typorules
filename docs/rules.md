@@ -2193,7 +2193,7 @@ An empty rule that can be configured completely by yourself. It allows you to de
 ```php
 $customRule = new CustomRule();
 $customRule
-    ->setSearchPattern('\s+/')
+    ->setSearchPattern('/\s+/u')
     ->setReplacePattern('\s')
 ;
 ```
@@ -2202,13 +2202,13 @@ $customRule
 
 There are 2 possibilities to customize this rule:
 
--   Define the search pattern.
+-   Defines the search pattern. Needs to be a valid regex, for example `/\s+/u`.
 
     ```php
     $customRule->setSearchPattern($searchPattern);
     ```
 
--   Define the replacement pattern.
+-   Defines the replacement pattern, for example `\s`.
 
     ```php
     $customRule->setReplacePattern($replacePattern);

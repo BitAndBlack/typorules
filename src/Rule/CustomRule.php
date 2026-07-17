@@ -25,7 +25,7 @@ use BitAndBlack\TypoRules\Documentation\Description;
     ```php
     $customRule = new CustomRule();
     $customRule
-        ->setSearchPattern('\s+/')
+        ->setSearchPattern('/\s+/u')
         ->setReplacePattern('\s')
     ;
     ```
@@ -39,9 +39,9 @@ class CustomRule extends AbstractRule implements RuleInterface
     }
 
     /**
-     * Defines the search pattern.
+     * Defines the search pattern. Needs to be a valid regex, for example `/\s+/u`.
      */
-    #[Configuration('Define the search pattern.')]
+    #[Configuration('Defines the search pattern. Needs to be a valid regex, for example `/\s+/u`.')]
     public function setSearchPattern(string $searchPattern): self
     {
         $this->searchPattern = $searchPattern;
@@ -49,9 +49,9 @@ class CustomRule extends AbstractRule implements RuleInterface
     }
 
     /**
-     * Defines the replacement pattern.
+     * Defines the replacement pattern, for example `\s`.
      */
-    #[Configuration('Define the replacement pattern.')]
+    #[Configuration('Defines the replacement pattern, for example `\s`.')]
     public function setReplacePattern(string $replacePattern): self
     {
         $this->replacePattern = $replacePattern;
