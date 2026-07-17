@@ -36,5 +36,11 @@ final class RemoveSpaceBeforeExclamationMarkRuleTest extends AbstractRuleTestCla
             'Ich glaube nicht!',
             null,
         ];
+
+        yield [
+            'Lass\' uns darüber reden!',
+            'Lass\' uns darüber reden!',
+            null,
+        ];
     }
 }

@@ -27,7 +27,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 )]
 class RemoveSpaceBeforeQuestionMarkRule extends AbstractRule implements RuleInterface
 {
-    protected string $replacePattern = '$1';
+    protected string $replacePattern = '';
 
     public static function create(): self
     {

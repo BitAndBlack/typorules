@@ -37,5 +37,11 @@ final class AddNonBreakingSpaceBeforeExclamationMarkRuleTest extends AbstractRul
             'On y va' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . '!',
             'On y va!',
         ];
+
+        yield [
+            'Lass\' uns darüber reden!',
+            'Lass\' uns darüber reden' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . '!',
+            '...rüber reden!',
+        ];
     }
 }

@@ -27,7 +27,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 )]
 class RemoveSpaceBeforeExclamationMarkRule extends AbstractRule implements RuleInterface
 {
-    protected string $replacePattern = '$1';
+    protected string $replacePattern = '';
 
     public static function create(): self
     {
@@ -36,6 +36,6 @@ class RemoveSpaceBeforeExclamationMarkRule extends AbstractRule implements RuleI
 
     public function getSearchPattern(): string
     {
-        return '/[' . CharactersEnum::getAllSpacesRegex() . ']+(!)/';
+        return '/(?:' . CharactersEnum::getAllSpacesRegex() . ')+(?=\!)/u';
     }
 }
