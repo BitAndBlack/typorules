@@ -1506,7 +1506,7 @@ This rule is located under [../src/Rule/AddSpaceBehindQuestionMarkRule.php](../s
 
 #### Description
 
-Add a hair space between brackets. The space will be added behind left (opening) brackets and before right (closing) brackets.
+Add a non-breaking hair space between brackets. The space will be added behind left (opening) brackets and before right (closing) brackets.
 
 #### Transformation example
 

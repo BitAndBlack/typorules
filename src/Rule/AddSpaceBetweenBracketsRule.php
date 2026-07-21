@@ -20,7 +20,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
  * @see \BitAndBlack\TypoRules\Tests\Rules\AddSpaceBetweenBracketsRuleTest
  */
 #[Description(
-    'Add a hair space between brackets. The space will be added behind left (opening) brackets and before right (closing) brackets.'
+    'Add a non-breaking hair space between brackets. The space will be added behind left (opening) brackets and before right (closing) brackets.'
 )]
 #[TransformationExample(
     'Es geht los (warum auch immer)!',
@@ -45,14 +45,14 @@ class AddSpaceBetweenBracketsRule extends AbstractRule implements RuleInterface
     public function preferHtmlOverUtf8Characters(): self
     {
         return $this->setSpace(
-            CharactersEnum::HAIR_SPACE_HTML->value,
+            CharactersEnum::NON_BREAKING_HAIR_SPACE_HTML->value,
         );
     }
 
     public function preferUtf8OverHtmlCharacters(): self
     {
         return $this->setSpace(
-            CharactersEnum::HAIR_SPACE_UTF8->value,
+            CharactersEnum::NON_BREAKING_HAIR_SPACE_UTF8->value,
         );
     }
 

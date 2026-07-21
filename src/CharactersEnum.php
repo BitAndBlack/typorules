@@ -37,11 +37,13 @@ enum CharactersEnum: string
 
     /**
      * @see CharactersEnum::HAIR_SPACE_HTML
+     * @see CharactersEnum::NON_BREAKING_HAIR_SPACE_HTML
      */
     case HAIR_SPACE_UTF8 = "\xE2\x80\x8A";
 
     /**
      * @see CharactersEnum::HAIR_SPACE_UTF8
+     * @see CharactersEnum::NON_BREAKING_HAIR_SPACE_UTF8
      */
     case HAIR_SPACE_HTML = '&#8202;';
 
@@ -74,6 +76,22 @@ enum CharactersEnum: string
      * `&ndash;` or `&#x2013;`
      */
     case NDASH = '–';
+
+    /**
+     * Based on {@link https://stackoverflow.com/questions/70989277/how-to-make-a-hair-space-and-thin-space-non-breaking/70991540#70991540}-
+     *
+     * @see CharactersEnum::NON_BREAKING_HAIR_SPACE_UTF8
+     * @see CharactersEnum::HAIR_SPACE_UTF8
+     */
+    case NON_BREAKING_HAIR_SPACE_HTML = '&#x200A;&#x200D;';
+
+    /**
+     * Based on {@link https://stackoverflow.com/questions/70989277/how-to-make-a-hair-space-and-thin-space-non-breaking/70991540#70991540}-
+     *
+     * @see CharactersEnum::NON_BREAKING_HAIR_SPACE_HTML
+     * @see CharactersEnum::HAIR_SPACE_HTML
+     */
+    case NON_BREAKING_HAIR_SPACE_UTF8 = "\xE2\x80\x8A\xE2\x80\x8D";
 
     /**
      * @see CharactersEnum::NON_BREAKING_SPACE_THIN_HTML
