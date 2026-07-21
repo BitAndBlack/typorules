@@ -28,7 +28,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 )]
 class AddSpaceBetweenBracketsRule extends AbstractRule implements RuleInterface
 {
-    protected string $searchPattern = '/(?<=(\(|\[|\{))(?=[^ ])|(?<=[^ \.\,])(?=(\)|\^]|\}))/';
+    protected string $searchPattern = '/(?<=(\(|\[|\{))(?=[^ ])|(?<=[^ \.\,\-])(?=(\)|\^]|\}))/';
 
     protected string $space;
 

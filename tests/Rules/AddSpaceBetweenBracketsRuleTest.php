@@ -43,5 +43,11 @@ final class AddSpaceBetweenBracketsRuleTest extends AbstractRuleTestClass
             '(' . CharactersEnum::NON_BREAKING_HAIR_SPACE_UTF8->value . 'Einfach nein,) vermutlich',
             '(Einfach nein,) vermutli...',
         ];
+
+        yield [
+            '(Übel-)riechend',
+            '(' . CharactersEnum::NON_BREAKING_HAIR_SPACE_UTF8->value . 'Übel-)riechend',
+            '(Übel-)riechend',
+        ];
     }
 }
