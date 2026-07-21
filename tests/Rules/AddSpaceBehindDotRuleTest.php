@@ -61,5 +61,11 @@ final class AddSpaceBehindDotRuleTest extends AbstractRuleTestClass
             'Weitere Informationen können unter www.example.org?foo=bar abgerufen werden.',
             null,
         ];
+
+        yield [
+            'Bananen (o. Ä.)',
+            'Bananen (o. Ä.)',
+            null,
+        ];
     }
 }
