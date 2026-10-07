@@ -41,7 +41,7 @@ final class AddNonBreakingSpaceBeforeExclamationMarkRuleTest extends AbstractRul
         yield [
             'Lass\' uns darüber reden!',
             'Lass\' uns darüber reden' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . '!',
-            '...rüber reden!',
+            '...arüber reden!',
         ];
     }
 }

@@ -29,7 +29,7 @@ final class ConvertDotsToEllipsisRuleTest extends AbstractRuleTestClass
         yield [
             'Ich weiß nicht...',
             'Ich weiß nicht' . CharactersEnum::ELLIPSIS->value,
-            '... weiß nicht...',
+            '...h weiß nicht...',
         ];
 
         yield [
@@ -47,13 +47,13 @@ final class ConvertDotsToEllipsisRuleTest extends AbstractRuleTestClass
         yield [
             'Du weißt nicht. . .',
             'Du weißt nicht' . CharactersEnum::ELLIPSIS->value,
-            '...weißt nicht. . .',
+            '... weißt nicht. . .',
         ];
 
         yield [
             'Du weißt nicht. . . ',
             'Du weißt nicht' . CharactersEnum::ELLIPSIS->value . ' ',
-            '...weißt nicht. . . ',
+            '... weißt nicht. . . ',
         ];
     }
 }

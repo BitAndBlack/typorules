@@ -49,7 +49,7 @@ final class RemoveDuplicatedWhitespaceRuleTest extends AbstractRuleTestClass
                 <p>Dies ist ein Beispielsatz.Von wem? Von mir. An dich.</p> 
                 <p title="Wundervoller Titel!">Keine Ahnung warum!Ich bin der, der einen Satz schreibt.</p>
                 HTML,
-            '...   Ahnung warum!Ich bin de...',
+            "...\n<p>Dies ist  ein Beispiel...",
         ];
     }
 }

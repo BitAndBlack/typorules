@@ -33,7 +33,7 @@ final class BindWordAfterEmDashRuleTest extends AbstractRuleTestClass
         yield [
             'Already over — not at all!',
             'Already over — not' . CharactersEnum::NON_BREAKING_SPACE_UTF8->value . 'at all!',
-            '...dy over — not at all!',
+            '...eady over — not at all!',
         ];
 
         yield [

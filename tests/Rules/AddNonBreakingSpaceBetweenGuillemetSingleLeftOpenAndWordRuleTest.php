@@ -29,13 +29,13 @@ final class AddNonBreakingSpaceBetweenGuillemetSingleLeftOpenAndWordRuleTest ext
         yield [
             'Je t\'ai dit « non », car « tout à l\'heure, tu m\'as dit ‹ oui › ».',
             'Je t\'ai dit « non », car « tout à l\'heure, tu m\'as dit ‹' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . 'oui › ».',
-            '... dit ‹ oui › »....',
+            '...u m\'as dit ‹ oui › »....',
         ];
 
         yield [
             'Je t\'ai dit «non», car «tout à l\'heure, tu m\'as dit ‹oui›».',
             'Je t\'ai dit «non», car «tout à l\'heure, tu m\'as dit ‹' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . 'oui›».',
-            '... dit ‹oui›»....',
+            '...u m\'as dit ‹oui›»....',
         ];
     }
 }

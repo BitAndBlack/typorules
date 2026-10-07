@@ -33,7 +33,7 @@ final class BindWordAfterEnDashRuleTest extends AbstractRuleTestClass
         yield [
             'Schon vorbei – von wegen!',
             'Schon vorbei – von' . CharactersEnum::NON_BREAKING_SPACE_UTF8->value . 'wegen!',
-            '... vorbei – von wegen!',
+            '...on vorbei – von wegen!',
         ];
 
         yield [

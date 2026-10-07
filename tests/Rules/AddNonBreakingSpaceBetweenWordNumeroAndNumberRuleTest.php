@@ -41,7 +41,7 @@ final class AddNonBreakingSpaceBetweenWordNumeroAndNumberRuleTest extends Abstra
         yield [
             'C\'est le numéro 8.',
             'C\'est le numéro' . CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value . '8.',
-            '...t le numéro 8.',
+            '...st le numéro 8.',
         ];
 
         yield [

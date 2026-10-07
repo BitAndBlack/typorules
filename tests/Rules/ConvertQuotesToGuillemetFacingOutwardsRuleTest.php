@@ -28,7 +28,7 @@ final class ConvertQuotesToGuillemetFacingOutwardsRuleTest extends AbstractRuleT
         yield [
             'Information particulièrement "importante"',
             'Information particulièrement «importante»',
-            '...ulièrement "importante"...',
+            '...culièrement "importante"...',
         ];
     }
 }

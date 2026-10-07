@@ -112,8 +112,8 @@ class CharacterDiff
     public function getDiff(string $before, string $after): string
     {
         $diff = $this->computeDiff(
-            str_split($before),
-            str_split($after)
+            mb_str_split($before),
+            mb_str_split($after)
         );
 
         $diffValue = $diff['values'];
