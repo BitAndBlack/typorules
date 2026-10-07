@@ -29,7 +29,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 )]
 #[TransformationExample(
     'Prof. Max Mustermann',
-    'Prof.&nbsp;Max Mustermann',
+    'Prof.&#8239;Max Mustermann',
     'With a thin HTML non-breaking space (`&#8239;`)'
 )]
 class AddNonBreakingSpaceAfterProfessorRule extends AbstractRule implements RuleInterface

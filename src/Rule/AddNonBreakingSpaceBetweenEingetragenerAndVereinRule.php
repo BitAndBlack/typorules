@@ -24,7 +24,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 )]
 #[TransformationExample(
     'Supersport 500 e.V.',
-    'Supersport 500 e.\xE2\x80V.',
+    'Supersport 500 e.\xE2\x80\xAFV.',
     'With a thin utf-8 non-breaking space (`\xE2\x80\xAF`)'
 )]
 #[TransformationExample(

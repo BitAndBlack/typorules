@@ -61,7 +61,7 @@ Add a non-breaking space after `Prof.`. This binds the title and the name togeth
 
     ```diff
     - Prof. Max Mustermann
-    + Prof.&nbsp;Max Mustermann
+    + Prof.&#8239;Max Mustermann
     ```
 
 #### Possible rule customization
@@ -260,8 +260,8 @@ Add a non-breaking space between before a semicolon to disallow separating it fr
 -   With a thin utf-8 non-breaking space (`\xE2\x80\xAF`):
 
     ```diff
-    - Concept, création et réalisation technique : Bit&Black
-    + Concept, création et réalisation technique\xE2\x80\xAF: Bit&Black
+    - Concept, création et réalisation technique ; Bit&Black
+    + Concept, création et réalisation technique\xE2\x80\xAF; Bit&Black
     ```
 
 #### Possible rule customization
@@ -649,7 +649,7 @@ Add a non-breaking space between `e.` and `V.` to disallow separating those two.
 
     ```diff
     - Supersport 500 e.V.
-    + Supersport 500 e.\xE2\x80V.
+    + Supersport 500 e.\xE2\x80\xAFV.
     ```
 
 -   With a thin HTML non-breaking space (`&#8239;`):
