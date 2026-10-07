@@ -30,7 +30,7 @@ class TransformationExample
     public function __construct(
         private readonly string $before,
         private readonly string $after,
-        private readonly ?string $description = null,
+        private readonly string|null $description = null,
     ) {
     }
 
@@ -44,7 +44,7 @@ class TransformationExample
         return $this->after;
     }
 
-    public function getDescription(): ?string
+    public function getDescription(): string|null
     {
         return $this->description;
     }

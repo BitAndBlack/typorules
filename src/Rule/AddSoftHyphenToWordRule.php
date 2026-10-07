@@ -34,7 +34,7 @@ class AddSoftHyphenToWordRule extends AbstractRule implements RuleInterface
 {
     protected string $replacePattern = '$1';
 
-    protected ?string $languageCode = null;
+    protected string|null $languageCode = null;
 
     protected string $softHyphen;
 
@@ -78,7 +78,7 @@ class AddSoftHyphenToWordRule extends AbstractRule implements RuleInterface
     }
 
     #[Configuration('Define the language code.')]
-    public function setLanguageCode(?string $languageCode): self
+    public function setLanguageCode(string|null $languageCode): self
     {
         $this->languageCode = $languageCode;
         return $this;

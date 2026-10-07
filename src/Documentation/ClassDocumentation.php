@@ -19,9 +19,9 @@ use ReflectionException;
  */
 class ClassDocumentation
 {
-    private ?string $description = null;
+    private string|null $description = null;
 
-    private ?string $path = null;
+    private string|null $path = null;
 
     /**
      * @var array<int, array{
@@ -62,7 +62,7 @@ class ClassDocumentation
         return $reflectionClass->getShortName();
     }
 
-    public function getDescription(): ?string
+    public function getDescription(): string|null
     {
         return $this->description;
     }
@@ -73,7 +73,7 @@ class ClassDocumentation
         return $this;
     }
 
-    public function getPath(): ?string
+    public function getPath(): string|null
     {
         return $this->path;
     }
@@ -99,7 +99,7 @@ class ClassDocumentation
     public function addTransformationExample(
         string $before,
         string $after,
-        ?string $description = null,
+        string|null $description = null,
     ): self {
         $this->transformationExamples[] = [
             'before' => $before,
