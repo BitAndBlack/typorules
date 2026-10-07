@@ -61,7 +61,7 @@ class AddNonBreakingSpaceBetweenLastAndPenultimateWords extends AbstractRule imp
 
     public function getSearchPattern(): string
     {
-        return '/' . CharactersEnum::getAllSpacesRegex() . '(?=\w{0,' . $this->lastWordMaxLength . '}[\.|\!|\?|:|;])/u';
+        return '/' . CharactersEnum::getAllHorizontalSpacesRegex() . '(?=\w{0,' . $this->lastWordMaxLength . '}[\.|\!|\?|:|;])/u';
     }
 
     public function getReplacePattern(): string

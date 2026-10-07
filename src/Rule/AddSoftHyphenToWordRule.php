@@ -74,7 +74,7 @@ class AddSoftHyphenToWordRule extends AbstractRule implements RuleInterface
 
     public function getSearchPattern(): string
     {
-        return '/(\w{' . $this->minWordCharacterCount . ',})/';
+        return '/(\w{' . $this->minWordCharacterCount . ',})/u';
     }
 
     #[Configuration('Define the language code.')]

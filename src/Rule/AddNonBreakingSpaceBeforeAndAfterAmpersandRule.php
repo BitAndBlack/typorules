@@ -62,7 +62,7 @@ class AddNonBreakingSpaceBeforeAndAfterAmpersandRule extends AbstractRule implem
 
     public function getSearchPattern(): string
     {
-        return '/(\d+|\w+)(' . CharactersEnum::getAllSpacesRegex() . ')+&(' . CharactersEnum::getAllSpacesRegex() . ')+(\d+|\w+)/';
+        return '/(\d+|\w+)(' . CharactersEnum::getAllSpacesRegex() . ')+&(' . CharactersEnum::getAllSpacesRegex() . ')+(\d+|\w+)/u';
     }
 
     public function getReplacePattern(): string

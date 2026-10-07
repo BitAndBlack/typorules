@@ -57,7 +57,7 @@ class AddNonBreakingSpaceBeforeQuestionMarkRule extends AbstractRule implements 
 
     public function getSearchPattern(): string
     {
-        return '/(?<=\w)(' . CharactersEnum::getAllSpacesRegex() . ')*(?=\?)/';
+        return '/(?<=\w)(' . CharactersEnum::getAllSpacesRegex() . ')*(?=\?)/u';
     }
 
     public function getReplacePattern(): string

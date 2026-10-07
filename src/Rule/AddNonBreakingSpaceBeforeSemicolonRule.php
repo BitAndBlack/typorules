@@ -57,7 +57,7 @@ class AddNonBreakingSpaceBeforeSemicolonRule extends AbstractRule implements Rul
 
     public function getSearchPattern(): string
     {
-        return '/(?<=\w)(' . CharactersEnum::getAllHorizontalSpacesRegex() . ')*(?=\;(' . CharactersEnum::getAllHorizontalSpacesRegex() . '))/';
+        return '/(?<=\w)(' . CharactersEnum::getAllHorizontalSpacesRegex() . ')*(?=\;(' . CharactersEnum::getAllHorizontalSpacesRegex() . '))/u';
     }
 
     public function getReplacePattern(): string

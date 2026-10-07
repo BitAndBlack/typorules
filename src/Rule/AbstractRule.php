@@ -35,17 +35,25 @@ abstract class AbstractRule implements RuleInterface
     {
         $this->assertPatternsAreUsable();
 
+        if (false === mb_check_encoding($content, 'UTF-8')) {
+            return [];
+        }
+
         $doesContentContainHtml = StringHelper::doesStringContainHtml($content);
 
         $violations = [];
 
         if (false === $doesContentContainHtml) {
-            preg_match_all(
+            $result = preg_match_all(
                 $this->getSearchPattern(),
                 $content,
                 $violationsFound,
                 PREG_OFFSET_CAPTURE
             );
+
+            if (false === $result) {
+                return [];
+            }
 
             foreach ($violationsFound[0] as $violation) {
                 $violations[] = new Violation(
@@ -137,14 +145,24 @@ abstract class AbstractRule implements RuleInterface
     {
         $this->assertPatternsAreUsable();
 
+        if (false === mb_check_encoding($content, 'UTF-8')) {
+            return $content;
+        }
+
         $doesContentContainHtml = StringHelper::doesStringContainHtml($content);
 
         if (false === $doesContentContainHtml) {
-            return (string) preg_replace(
+            $contentFixed = preg_replace(
                 $this->getSearchPattern(),
                 $this->getReplacePattern(),
                 $content
             );
+
+            if (null === $contentFixed) {
+                return $content;
+            }
+
+            return $contentFixed;
         }
 
         $tempNodeName = 'temp';

@@ -14,15 +14,24 @@ declare(strict_types=1);
 namespace BitAndBlack\TypoRules\Tests\Rules;
 
 use BitAndBlack\TypoRules\CharactersEnum;
+use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBeforeAndAfterAmpersandRule;
+use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBeforeAndAfterPlusRule;
+use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBeforeColonRule;
+use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBeforeExclamationMarkRule;
+use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBeforeQuestionMarkRule;
+use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBeforeSemicolonRule;
+use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBehindWordAfterDotRule;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenGebAndYearRule;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenLastAndPenultimateWords;
 use BitAndBlack\TypoRules\Rule\AddNonBreakingSpaceBetweenWordNummerAndNumberRule;
 use BitAndBlack\TypoRules\Rule\AddSoftHyphenBetweenDashSeparatedWordsRule;
+use BitAndBlack\TypoRules\Rule\AddSoftHyphenToWordRule;
 use BitAndBlack\TypoRules\Rule\AddSpaceBetweenBracketsRule;
 use BitAndBlack\TypoRules\Rule\ConvertDashToEmDashRule;
 use BitAndBlack\TypoRules\Rule\ConvertDashToEnDashRule;
 use BitAndBlack\TypoRules\Rule\ConvertQuotesToDoubleBottomTopRule;
 use BitAndBlack\TypoRules\Rule\ConvertSpacesBetweenTimesAndNumbersRule;
+use BitAndBlack\TypoRules\Rule\RemoveDuplicatedWhitespaceRule;
 use BitAndBlack\TypoRules\Rule\RemoveSpaceBeforeCommaRule;
 use BitAndBlack\TypoRules\Rule\RemoveSpaceBeforeExclamationMarkRule;
 use BitAndBlack\TypoRules\Rule\RemoveSpaceBeforeQuestionMarkRule;
@@ -261,6 +270,98 @@ final class RegressionTest extends TestCase
         self::assertSame(
             'Nur ganz@kurz.',
             $rule->getContentFixed('Nur ganz kurz.')
+        );
+    }
+
+    public function testPunctuationRulesBindWordsEndingWithUnicodeCharacters(): void
+    {
+        $nbsp = CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value;
+
+        $exclamationMarkRule = new AddNonBreakingSpaceBeforeExclamationMarkRule();
+        $questionMarkRule = new AddNonBreakingSpaceBeforeQuestionMarkRule();
+
+        $this->assertSame(
+            'café' . $nbsp . '!',
+            $exclamationMarkRule->getContentFixed('café !')
+        );
+
+        $this->assertSame(
+            'café' . $nbsp . '?',
+            $questionMarkRule->getContentFixed('café ?')
+        );
+
+        $colonRule = new AddNonBreakingSpaceBeforeColonRule();
+        $semicolonRule = new AddNonBreakingSpaceBeforeSemicolonRule();
+
+        $this->assertSame(
+            'café' . $nbsp . ': bon',
+            $colonRule->getContentFixed('café : bon')
+        );
+
+        $this->assertSame(
+            'café' . $nbsp . '; bon',
+            $semicolonRule->getContentFixed('café ; bon')
+        );
+    }
+
+    public function testAmpersandAndPlusRulesBindWordsEndingWithUnicodeCharacters(): void
+    {
+        $nbsp = CharactersEnum::NON_BREAKING_SPACE_THIN_UTF8->value;
+
+        $ampersandRule = new AddNonBreakingSpaceBeforeAndAfterAmpersandRule();
+        $plusRule = new AddNonBreakingSpaceBeforeAndAfterPlusRule();
+
+        $this->assertSame(
+            'café' . $nbsp . '&' . $nbsp . 'thé',
+            $ampersandRule->getContentFixed('café & thé')
+        );
+
+        $this->assertSame(
+            'café' . $nbsp . '+' . $nbsp . 'thé',
+            $plusRule->getContentFixed('café + thé')
+        );
+    }
+
+    public function testAddSoftHyphenToWordHyphenatesCompleteUnicodeWords(): void
+    {
+        $rule = AddSoftHyphenToWordRule::create();
+
+        $this->assertSame(
+            'Wörter' . CharactersEnum::SOFT_HYPHEN_UTF8->value
+                . 'buch' . CharactersEnum::SOFT_HYPHEN_UTF8->value
+                . 'ver' . CharactersEnum::SOFT_HYPHEN_UTF8->value
+                . 'zeichnis',
+            $rule->getContentFixed('Wörterbuchverzeichnis')
+        );
+    }
+
+    public function testInvalidUtf8ContentIsNotWipedOnPlainText(): void
+    {
+        $rule = new AddNonBreakingSpaceBehindWordAfterDotRule();
+
+        $content = "caf\xE9 done";
+
+        $this->assertSame($content, $rule->getContentFixed($content));
+        $this->assertSame([], $rule->getViolations($content));
+    }
+
+    public function testInvalidUtf8ContentIsNotCorruptedInHtmlInput(): void
+    {
+        $rule = new RemoveDuplicatedWhitespaceRule();
+
+        $content = "<p>caf\xE9 done</p>";
+
+        $this->assertSame($content, $rule->getContentFixed($content));
+        $this->assertSame([], $rule->getViolations($content));
+    }
+
+    public function testAddNonBreakingSpaceBetweenLastAndPenultimateWordsKeepsLineBreak(): void
+    {
+        $rule = AddNonBreakingSpaceBetweenLastAndPenultimateWords::create();
+
+        $this->assertSame(
+            "Das ist das\nEnde.",
+            $rule->getContentFixed("Das ist das\nEnde.")
         );
     }
 }

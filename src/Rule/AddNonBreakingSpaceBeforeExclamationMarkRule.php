@@ -57,7 +57,7 @@ class AddNonBreakingSpaceBeforeExclamationMarkRule extends AbstractRule implemen
 
     public function getSearchPattern(): string
     {
-        return '/(?<=\w)(' . CharactersEnum::getAllSpacesRegex() . ')*(?=\!)/';
+        return '/(?<=\w)(' . CharactersEnum::getAllSpacesRegex() . ')*(?=\!)/u';
     }
 
     public function getReplacePattern(): string
