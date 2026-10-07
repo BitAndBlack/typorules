@@ -57,7 +57,7 @@ class AddNonBreakingSpaceBetweenNumberAndJahrhundertRule extends AbstractRule im
 
     public function getSearchPattern(): string
     {
-        return '/(?<=\d\.)[' . CharactersEnum::getAllSpacesRegex() . ']*(?=Jahrhundert)/';
+        return '/(?<=\d\.)(?:' . CharactersEnum::getAllSpacesRegex() . ')*(?=Jahrhundert)/';
     }
 
     public function getReplacePattern(): string

@@ -20,6 +20,9 @@ class StringHelper
 {
     public static function doesStringContainHtml(string $input): bool
     {
-        return 0 !== preg_match('/(?<!\w)<\/?[a-zA-Z][a-zA-Z0-9]*(?=[ \/>])[^>]*>/', $input);
+        return 0 !== preg_match(
+            '/(?<!\w)<\/?[a-zA-Z][a-zA-Z0-9]*(?=[ \/>])(?:\s*[a-zA-Z_:][-a-zA-Z0-9_:.]*\s*=\s*(?:"[^"]*"|\'[^\']*\'|[^\s>]+)\s*|\s*\/)*\s*>/',
+            $input
+        );
     }
 }

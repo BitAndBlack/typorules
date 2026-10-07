@@ -18,6 +18,7 @@ use DOMDocument;
 use DOMElement;
 use DOMNode;
 use DOMText;
+use InvalidArgumentException;
 
 abstract class AbstractRule implements RuleInterface
 {
@@ -32,6 +33,8 @@ abstract class AbstractRule implements RuleInterface
      */
     public function getViolations(string $content): array
     {
+        $this->assertPatternsAreUsable();
+
         $doesContentContainHtml = StringHelper::doesStringContainHtml($content);
 
         $violations = [];
@@ -48,7 +51,7 @@ abstract class AbstractRule implements RuleInterface
                 $violations[] = new Violation(
                     $this,
                     $content,
-                    $violation[1],
+                    $this->convertByteOffsetToCharOffset($content, $violation[1]),
                     $violation[0],
                 );
             }
@@ -61,7 +64,9 @@ abstract class AbstractRule implements RuleInterface
         $domDocument = new DOMDocument('1.0', 'UTF-8');
         XMLHelper::loadHTML($domDocument, '<' . $tempNodeName . '>' . $content . '</' . $tempNodeName . '>');
 
-        $callback = function (string $contentExtracted) use ($content, &$violations): string {
+        $offsetCursor = 0;
+
+        $callback = function (string $contentExtracted) use ($content, &$violations, &$offsetCursor): string {
             preg_match_all(
                 $this->getSearchPattern(),
                 $contentExtracted,
@@ -69,14 +74,15 @@ abstract class AbstractRule implements RuleInterface
                 PREG_OFFSET_CAPTURE
             );
 
-            $contentBefore = mb_substr($content, 0, -mb_strlen($contentExtracted));
-            $lengthToAdd = mb_strlen($contentBefore);
+            $nodeOffset = $this->findOffsetInContent($content, $contentExtracted, $offsetCursor);
+            $offsetCursor = $nodeOffset + strlen($contentExtracted);
+            $nodeOffsetInChars = $this->convertByteOffsetToCharOffset($content, $nodeOffset);
 
             foreach ($violationsFound[0] as $violation) {
                 $violations[] = new Violation(
                     $this,
                     $content,
-                    $this->convertByteOffsetToCharOffset($contentExtracted, $violation[1]) + $lengthToAdd,
+                    $nodeOffsetInChars + $this->convertByteOffsetToCharOffset($contentExtracted, $violation[1]),
                     $violation[0],
                 );
             }
@@ -94,17 +100,33 @@ abstract class AbstractRule implements RuleInterface
 
     /**
      * Returns the search pattern for this rule.
+     *
+     * @throws InvalidArgumentException when the pattern has not been configured
      */
     public function getSearchPattern(): string
     {
+        if (false === isset($this->searchPattern)) {
+            throw new InvalidArgumentException(
+                'The search pattern of `' . static::class . '` has not been configured.'
+            );
+        }
+
         return $this->searchPattern;
     }
 
     /**
      * Returns the replacement pattern for this rule.
+     *
+     * @throws InvalidArgumentException when the pattern has not been configured
      */
     public function getReplacePattern(): string
     {
+        if (false === isset($this->replacePattern)) {
+            throw new InvalidArgumentException(
+                'The replacement pattern of `' . static::class . '` has not been configured.'
+            );
+        }
+
         return $this->replacePattern;
     }
 
@@ -113,6 +135,8 @@ abstract class AbstractRule implements RuleInterface
      */
     public function getContentFixed(string $content): string
     {
+        $this->assertPatternsAreUsable();
+
         $doesContentContainHtml = StringHelper::doesStringContainHtml($content);
 
         if (false === $doesContentContainHtml) {
@@ -149,9 +173,74 @@ abstract class AbstractRule implements RuleInterface
             $childNodesHtml[] = $domDocument->saveHTML($childNode);
         }
 
-        return htmlspecialchars_decode(
-            implode('', $childNodesHtml)
+        return $this->restoreEntitiesInsertedByRules(implode('', $childNodesHtml));
+    }
+
+    /**
+     * Rules may insert literal HTML entities like `&shy;` into text nodes.
+     * The HTML serializer escapes their ampersand, so those entities have to be
+     * restored. Entities that were part of the original content are serialized
+     * escaped only once and therefore stay untouched.
+     */
+    private function restoreEntitiesInsertedByRules(string $html): string
+    {
+        return (string) preg_replace(
+            '/&amp;((?:#[0-9]+|#[xX][0-9a-fA-F]+|[a-zA-Z][a-zA-Z0-9]+);)/',
+            '&$1',
+            $html
         );
+    }
+
+    /**
+     * @throws InvalidArgumentException when one of the patterns is missing or not a valid regex
+     */
+    private function assertPatternsAreUsable(): void
+    {
+        $searchPattern = $this->getSearchPattern();
+        $this->getReplacePattern();
+
+        set_error_handler(static fn (): bool => true);
+
+        try {
+            $isValidPattern = false !== preg_match($searchPattern, '');
+        } finally {
+            restore_error_handler();
+        }
+
+        if (false === $isValidPattern) {
+            throw new InvalidArgumentException(
+                'The search pattern `' . $searchPattern . '` of `' . static::class . '` is not a valid regular expression.'
+            );
+        }
+    }
+
+    /**
+     * Returns the byte offset of the given (extracted) content within the original content.
+     *
+     * The extracted content is searched forward from the given cursor, as the
+     * extracted parts are handed over in document order.
+     */
+    private function findOffsetInContent(string $content, string $contentExtracted, int $cursor): int
+    {
+        if ('' === $contentExtracted) {
+            return $cursor;
+        }
+
+        $offset = strpos($content, $contentExtracted, $cursor);
+
+        if (false === $offset) {
+            $offset = strpos($content, $contentExtracted);
+        }
+
+        if (false === $offset) {
+            /**
+             * The extracted content is not part of the original content anymore,
+             * for example because entities have been decoded by the DOM.
+             */
+            return max(0, strlen($content) - strlen($contentExtracted));
+        }
+
+        return $offset;
     }
 
     /**
@@ -189,34 +278,19 @@ abstract class AbstractRule implements RuleInterface
                 }
 
                 if ($child instanceof DOMText) {
-                    /**
-                     * Only process text nodes that aren't pure indentation.
-                     * Indentation nodes appear between tags and have no sibling elements
-                     * at the same level — but the safest check is whether the parent
-                     * has any element children at all (mixed content vs text-only).
-                     */
-                    $hasElementSiblings = false;
-
-                    foreach ($child->childNodes as $sibling) {
-                        if ($sibling instanceof DOMElement) {
-                            $hasElementSiblings = true;
-                            break;
-                        }
-                    }
+                    $value = $child->nodeValue;
 
                     /**
-                     * Text-only parent: this is real content, not indentation.
+                     * Text nodes that only contain whitespace are pure indentation
+                     * between tags. They must not be processed, otherwise the
+                     * indentation of the document would be removed.
                      */
-                    if (false === $hasElementSiblings) {
-                        $value = $child->nodeValue;
-
-                        if ('' === $value || null === $value) {
-                            continue;
-                        }
-
-                        $value = $callback($value);
-                        $child->nodeValue = $value;
+                    if ('' === $value || null === $value || '' === trim($value)) {
+                        continue;
                     }
+
+                    $value = $callback($value);
+                    $child->nodeValue = $value;
                 }
             }
         };

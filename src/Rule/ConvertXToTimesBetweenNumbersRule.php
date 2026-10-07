@@ -34,7 +34,7 @@ class ConvertXToTimesBetweenNumbersRule extends AbstractRule implements RuleInte
 
     public function getSearchPattern(): string
     {
-        return '/(\d)([' . CharactersEnum::getAllSpacesRegex() . ']*)(x|X)([' . CharactersEnum::getAllSpacesRegex() . ']*)(\d)/';
+        return '/(\d)((?:' . CharactersEnum::getAllSpacesRegex() . ')*)(x|X)((?:' . CharactersEnum::getAllSpacesRegex() . ')*)(\d)/';
     }
 
     public function getReplacePattern(): string

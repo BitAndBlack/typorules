@@ -58,7 +58,7 @@ class AddNonBreakingSpaceBetweenVAndChrRule extends AbstractRule implements Rule
 
     public function getSearchPattern(): string
     {
-        return '/(?<=v\.)[' . CharactersEnum::getAllSpacesRegex() . ']*(?=Chr\.)/';
+        return '/(?<=v\.)(?:' . CharactersEnum::getAllSpacesRegex() . ')*(?=Chr\.)/';
     }
 
     public function getReplacePattern(): string

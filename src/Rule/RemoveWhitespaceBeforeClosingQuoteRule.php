@@ -34,7 +34,7 @@ class RemoveWhitespaceBeforeClosingQuoteRule extends AbstractRule implements Rul
 
     public function getSearchPattern(): string
     {
-        return '/(' . CharactersEnum::getAllQuotesRegex() . ')([^' . CharactersEnum::getAllQuotesRegex() . ']+)(?:' . CharactersEnum::getAllSpacesRegex() . ')+(' . CharactersEnum::getAllQuotesRegex() . ')($|' . CharactersEnum::getAllSpacesRegex() . '|\)|\]|[.,;:!?])/u';
+        return '/(' . CharactersEnum::getAllQuotesRegex() . ')([^' . CharactersEnum::getAllQuotesRegexForCharacterClass() . ']+)(?:' . CharactersEnum::getAllSpacesRegex() . ')+(' . CharactersEnum::getAllQuotesRegex() . ')($|' . CharactersEnum::getAllSpacesRegex() . '|\)|\]|[.,;:!?])/u';
     }
 
     public function getReplacePattern(): string

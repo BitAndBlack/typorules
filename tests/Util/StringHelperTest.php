@@ -51,6 +51,11 @@ final class StringHelperTest extends TestCase
         ];
 
         yield [
+            'a <b && c> d',
+            false,
+        ];
+
+        yield [
             '<>',
             false,
         ];

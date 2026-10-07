@@ -60,7 +60,7 @@ class AddSoftHyphenBetweenDashSeparatedWordsRule extends AbstractRule implements
 
     public function getSearchPattern(): string
     {
-        return '/(\w{' . $this->minLengthWordBefore . ',})\/(\w{' . $this->minLengthWordBefore . ',})/';
+        return '/([\p{L}\p{N}]{' . $this->minLengthWordBefore . ',})\/([\p{L}\p{N}]{' . $this->minLengthWordAfter . ',})/u';
     }
 
     public function getReplacePattern(): string

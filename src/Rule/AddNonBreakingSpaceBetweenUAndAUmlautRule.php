@@ -57,7 +57,7 @@ class AddNonBreakingSpaceBetweenUAndAUmlautRule extends AbstractRule implements 
 
     public function getSearchPattern(): string
     {
-        return '/(?<=(^|' . CharactersEnum::getAllSpacesRegex() . '|\(|\[)(u|U)\.)[' . CharactersEnum::getAllSpacesRegex() . ']*(?=Ä\.)/';
+        return '/(?<=(^|' . CharactersEnum::getAllSpacesRegex() . '|\(|\[)(u|U)\.)(?:' . CharactersEnum::getAllSpacesRegex() . ')*(?=Ä\.)/';
     }
 
     public function getReplacePattern(): string

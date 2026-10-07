@@ -164,11 +164,15 @@ enum CharactersEnum: string
     case SBQUO = '‚';
 
     /**
-     * Returns all kinds of quotes as regex string.
+     * Returns all kinds of quotes as a non-capturing regex group.
+     *
+     * The result is meant to be used as a whole, for example `(quotes)`.
+     * It must not be placed inside a character class — use
+     * {@see CharactersEnum::getAllQuotesRegexForCharacterClass()} for that.
      */
     public static function getAllQuotesRegex(): string
     {
-        return self::getContentForRegex(
+        return '(?:' . self::getContentForRegex(
             '"',
             self::BDQUO->value,
             self::SBQUO->value,
@@ -180,21 +184,66 @@ enum CharactersEnum: string
             self::LSQUO->value,
             self::RDQUO->value,
             self::RSQUO->value,
+        ) . ')';
+    }
+
+    /**
+     * Returns all quote characters as content for a character class, for example `[^quotes]`.
+     *
+     * The result must only be used inside a character class, as it contains single
+     * characters without any escaping or grouping.
+     */
+    public static function getAllQuotesRegexForCharacterClass(): string
+    {
+        return implode(
+            '',
+            [
+                '"',
+                self::BDQUO->value,
+                self::SBQUO->value,
+                self::LEFT_ANGLE_QUOTE->value,
+                self::LEFT_ANGLE_QUOTE_SINGLE->value,
+                self::RIGHT_ANGLE_QUOTE->value,
+                self::RIGHT_ANGLE_QUOTE_SINGLE->value,
+                self::LDQUO->value,
+                self::LSQUO->value,
+                self::RDQUO->value,
+                self::RSQUO->value,
+            ]
         );
     }
 
     /**
-     * Returns all kinds of spaces as regex string.
+     * Returns all kinds of spaces as a non-capturing regex group.
+     *
+     * The result is meant to be used as a whole, for example `(spaces)*`.
+     * It must not be placed inside a character class, as it contains
+     * multi-character alternatives like `&nbsp;`.
      */
     public static function getAllSpacesRegex(): string
     {
-        return self::getContentForRegex(
+        return '(?:' . self::getContentForRegex(
             self::NON_BREAKING_SPACE_THIN_UTF8->value,
             self::NON_BREAKING_SPACE_THIN_HTML->value,
             self::NON_BREAKING_SPACE_UTF8->value,
             self::NON_BREAKING_SPACE_HTML->value,
             '\s',
-        );
+        ) . ')';
+    }
+
+    /**
+     * Returns all kinds of spaces that may not contain a line break as a
+     * non-capturing regex group.
+     */
+    public static function getAllHorizontalSpacesRegex(): string
+    {
+        return '(?:' . self::getContentForRegex(
+            self::NON_BREAKING_SPACE_THIN_UTF8->value,
+            self::NON_BREAKING_SPACE_THIN_HTML->value,
+            self::NON_BREAKING_SPACE_UTF8->value,
+            self::NON_BREAKING_SPACE_HTML->value,
+            '[^\S\r\n]',
+        ) . ')';
     }
 
     private static function getContentForRegex(string ...$content): string

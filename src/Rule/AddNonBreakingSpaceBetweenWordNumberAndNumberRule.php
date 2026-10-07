@@ -66,7 +66,7 @@ class AddNonBreakingSpaceBetweenWordNumberAndNumberRule extends AbstractRule imp
 
     public function getSearchPattern(): string
     {
-        return '/(?<=[Nn]o\.|[Nn]umber|№)[' . CharactersEnum::getAllSpacesRegex() . ']*(?=\d)/';
+        return '/(?<=[Nn]o\.|[Nn]umber|№)(?:' . CharactersEnum::getAllSpacesRegex() . ')*(?=\d)/';
     }
 
     public function getReplacePattern(): string

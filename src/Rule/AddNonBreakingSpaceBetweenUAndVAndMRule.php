@@ -57,7 +57,7 @@ class AddNonBreakingSpaceBetweenUAndVAndMRule extends AbstractRule implements Ru
 
     public function getSearchPattern(): string
     {
-        return '/(?<=^|' . CharactersEnum::getAllSpacesRegex() . '|\(|\[)([u|U]\.)[' . CharactersEnum::getAllSpacesRegex() . ']*([v|V]\.)[' . CharactersEnum::getAllSpacesRegex() . ']*([m|M]\.)/';
+        return '/(?<=^|' . CharactersEnum::getAllSpacesRegex() . '|\(|\[)([u|U]\.)(?:' . CharactersEnum::getAllSpacesRegex() . ')*([v|V]\.)(?:' . CharactersEnum::getAllSpacesRegex() . ')*([m|M]\.)/';
     }
 
     public function getReplacePattern(): string

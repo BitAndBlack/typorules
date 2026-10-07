@@ -57,7 +57,7 @@ class AddNonBreakingSpaceBetweenZAndBRule extends AbstractRule implements RuleIn
 
     public function getSearchPattern(): string
     {
-        return '/(?<=(^|' . CharactersEnum::getAllSpacesRegex() . '|\(|\[)(z|Z)\.)[' . CharactersEnum::getAllSpacesRegex() . ']*(?=B\.)/';
+        return '/(?<=(^|' . CharactersEnum::getAllSpacesRegex() . '|\(|\[)(z|Z)\.)(?:' . CharactersEnum::getAllSpacesRegex() . ')*(?=B\.)/';
     }
 
     public function getReplacePattern(): string

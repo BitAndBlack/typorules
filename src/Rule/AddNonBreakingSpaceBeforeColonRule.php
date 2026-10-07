@@ -57,7 +57,7 @@ class AddNonBreakingSpaceBeforeColonRule extends AbstractRule implements RuleInt
 
     public function getSearchPattern(): string
     {
-        return '/(?<=\w)(' . CharactersEnum::getAllSpacesRegex() . ')*(?=\:(' . CharactersEnum::getAllSpacesRegex() . '))/';
+        return '/(?<=\w)(' . CharactersEnum::getAllHorizontalSpacesRegex() . ')*(?=\:(' . CharactersEnum::getAllHorizontalSpacesRegex() . '))/';
     }
 
     public function getReplacePattern(): string

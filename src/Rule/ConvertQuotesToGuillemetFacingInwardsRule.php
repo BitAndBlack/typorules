@@ -34,7 +34,7 @@ class ConvertQuotesToGuillemetFacingInwardsRule extends AbstractRule implements 
 
     public function getSearchPattern(): string
     {
-        return '/(' . CharactersEnum::getAllQuotesRegex() . ')([^' . CharactersEnum::getAllQuotesRegex() . ']+)(' . CharactersEnum::getAllQuotesRegex() . ')/';
+        return '/(' . CharactersEnum::getAllQuotesRegex() . ')([^' . CharactersEnum::getAllQuotesRegexForCharacterClass() . ']+)(' . CharactersEnum::getAllQuotesRegex() . ')/u';
     }
 
     public function getReplacePattern(): string

@@ -36,6 +36,6 @@ class RemoveWhitespaceAtBeginningRule extends AbstractRule implements RuleInterf
 
     public function getSearchPattern(): string
     {
-        return '/(^[' . CharactersEnum::getAllSpacesRegex() . ']+|(?<=\\n)[' . CharactersEnum::getAllSpacesRegex() . ']+)/';
+        return '/(^(?:' . CharactersEnum::getAllSpacesRegex() . ')+|(?<=\\n)(?:' . CharactersEnum::getAllSpacesRegex() . ')+)/';
     }
 }

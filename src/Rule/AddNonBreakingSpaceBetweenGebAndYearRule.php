@@ -58,7 +58,7 @@ class AddNonBreakingSpaceBetweenGebAndYearRule extends AbstractRule implements R
 
     public function getSearchPattern(): string
     {
-        return '/(?<=geb\.)[' . CharactersEnum::getAllSpacesRegex() . ']*(?=\d{3,4})/';
+        return '/(?<=geb\.)(?:' . CharactersEnum::getAllSpacesRegex() . ')*(?=\d{3,4})/';
     }
 
 

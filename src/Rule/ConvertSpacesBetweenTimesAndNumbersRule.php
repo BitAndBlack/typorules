@@ -62,7 +62,7 @@ class ConvertSpacesBetweenTimesAndNumbersRule extends AbstractRule implements Ru
 
     public function getSearchPattern(): string
     {
-        return '/(\d)([' . CharactersEnum::getAllSpacesRegex() . ']*)(' . CharactersEnum::TIMES->value . '|x|X)([' . CharactersEnum::getAllSpacesRegex() . ']*)(\d)/';
+        return '/(\d)((?:' . CharactersEnum::getAllSpacesRegex() . ')*)(' . CharactersEnum::TIMES->value . '|x|X)((?:' . CharactersEnum::getAllSpacesRegex() . ')*)(\d)/';
     }
 
     public function getReplacePattern(): string

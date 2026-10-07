@@ -27,7 +27,7 @@ use BitAndBlack\TypoRules\Documentation\TransformationExample;
 )]
 class ConvertDashToEmDashRule extends AbstractRule implements RuleInterface
 {
-    protected string $searchPattern = '/\s\-\s/';
+    protected string $searchPattern = '/\h\-\h/';
 
     public static function create(): self
     {

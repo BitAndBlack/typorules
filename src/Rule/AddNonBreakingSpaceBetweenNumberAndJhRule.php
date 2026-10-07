@@ -57,7 +57,7 @@ class AddNonBreakingSpaceBetweenNumberAndJhRule extends AbstractRule implements 
 
     public function getSearchPattern(): string
     {
-        return '/(?<=\d\.)[' . CharactersEnum::getAllSpacesRegex() . ']*(?=Jh\.)/';
+        return '/(?<=\d\.)(?:' . CharactersEnum::getAllSpacesRegex() . ')*(?=Jh\.)/';
     }
 
     public function getReplacePattern(): string
